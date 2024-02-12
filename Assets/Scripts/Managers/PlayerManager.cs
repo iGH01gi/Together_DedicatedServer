@@ -5,9 +5,8 @@ public class PlayerManager
     
     object _lock = new object();
     Dictionary<int,Player> _players = new Dictionary<int, Player>();
-    int _playerId = 1; //TODO 
 
-    public Player Add()
+    /*public Player SpawnInit()
     {
         Player player = new Player();
         
@@ -19,7 +18,7 @@ public class PlayerManager
         }
 
         return player;
-    }
+    }*/
     
     public bool Remove(int playerId)
     {
