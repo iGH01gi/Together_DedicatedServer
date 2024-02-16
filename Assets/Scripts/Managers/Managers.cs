@@ -12,12 +12,14 @@ public class Managers : MonoBehaviour
     SceneManagerEx _scene = new SceneManagerEx();
     PlayerManager _player = new PlayerManager();
     InputManager _input = new InputManager();
+    NetworkManager _network = new NetworkManager();
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
     public static PoolManager Pool { get { return Instance._pool; } }
     public static SceneManagerEx Scene { get { return Instance._scene; } }
     public static PlayerManager Player { get { return Instance._player; } }
     public static InputManager Input { get { return Instance._input; } }
+    public static NetworkManager Network { get { return Instance._network; } }
     
 
 
@@ -46,6 +48,7 @@ public class Managers : MonoBehaviour
             _instance = go.GetComponent<Managers>();
             _instance._pool.Init();
             _instance._input.Init();
+            _instance._network.Init();
         }
     }
     

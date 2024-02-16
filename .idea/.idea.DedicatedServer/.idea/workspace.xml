@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b00603ef-65dc-42c1-a819-214618bd05ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Managers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Managers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Packet.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Packet/DedicatedServerPacketManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/DedicatedServerPacketManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Packet/DedicatedServerPacketManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/DedicatedServerPacketManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Packet/Protocol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Packet/Protocol.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/Connector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/Connector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/Connector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/Connector.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/JobQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/JobQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/Listener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/Listener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/Listener.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/Listener.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/PriorityQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/PriorityQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/PriorityQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/PriorityQueue.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/RecvBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/RecvBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/RecvBuffer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/RecvBuffer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/Session.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ServerCore/Session.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/Session.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/DedicatedServerPacketManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/DedicatedServerPacketManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sesison.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sesison/ClientSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/ClientSession.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sesison/ClientSession.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/ClientSession.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sesison/SessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/SessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sesison/SessionManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/SessionManager.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +25,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/Window/TimelineWindow_PlayableLookup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/EventSystem/EventTriggerEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UnityEvent/UnityEventInvoke.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/MouseUpdate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/InputField/DesktopInputFieldTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/HorizonalLayoutGroupTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -119,6 +109,7 @@
       <updated>1707827499225</updated>
       <workItem from="1707827500310" duration="1177000" />
       <workItem from="1707838924297" duration="4536000" />
+      <workItem from="1708077518069" duration="2582000" />
     </task>
     <servers />
   </component>

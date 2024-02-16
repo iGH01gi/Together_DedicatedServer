@@ -8,6 +8,8 @@ public class ClientSession : PacketSession
 {
     public Player MyPlayer { get; set; }
     public int SessionId { get; set; }
+    
+    public PingPong PingPong { get; set; }
 
     public void Send(IMessage packet)
     {
@@ -31,6 +33,9 @@ public class ClientSession : PacketSession
     public override void OnConnected(EndPoint endPoint)
     {
         Console.WriteLine($"OnConnected : {endPoint}");
+        
+        PingPong = new PingPong(this);
+        PingPong.SendPing();
     }
 
     public override void OnRecvPacket(ArraySegment<byte> buffer)

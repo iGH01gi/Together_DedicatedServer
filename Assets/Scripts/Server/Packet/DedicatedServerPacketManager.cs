@@ -21,7 +21,9 @@ class PacketManager
 	public Action<PacketSession, IMessage, ushort> CustomHandler { get; set; }
 		
 	public void Register()
-	{
+	{		
+		_onRecv.Add((ushort)MsgId.CdsPingPong, MakePacket<CDS_PingPong>);
+		_handler.Add((ushort)MsgId.CdsPingPong, PacketHandler.CDS_PingPongHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)
