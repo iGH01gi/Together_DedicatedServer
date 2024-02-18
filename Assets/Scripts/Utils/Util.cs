@@ -75,4 +75,10 @@ public class Util
     {
         return Array.IndexOf(Enum.GetValues(e.GetType()), e);
     }
+    
+    public static void PrintLog(string log)
+    {
+        Debug.Log(log);
+        Console.WriteLine(log);
+    }
 }

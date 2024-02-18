@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Managers : MonoBehaviour
     PlayerManager _player = new PlayerManager();
     InputManager _input = new InputManager();
     NetworkManager _network = new NetworkManager();
+    SessionManager _session = new SessionManager();
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
     public static PoolManager Pool { get { return Instance._pool; } }
@@ -20,17 +22,30 @@ public class Managers : MonoBehaviour
     public static PlayerManager Player { get { return Instance._player; } }
     public static InputManager Input { get { return Instance._input; } }
     public static NetworkManager Network { get { return Instance._network; } }
-    
+    public static SessionManager Session { get { return Instance._session; } }
 
 
     void Start()
     {
         Init();
     }
+
+    //private float _logicalInterval = 0.1f; //0.1초마다 게임 로직 시뮬레이션 (클라와 맞춰야함 파일 불러오기 등으로)
+    //private float _passedTime=0.0f; //마지막 로직처리후 흐른 시간
     
     void Update()
     {
-
+        _network.Update();
+        JobTimer.Instance.Flush();
+        
+        /*_passedTime += Time.deltaTime;
+        if (_passedTime >= _logicalInterval)
+        {
+            //실제 시뮬레이션 게임로직 처리
+            
+            //로직처리후 흐른시간 초기화
+            _passedTime = 0;
+        }*/
     }
 
     static void Init()
@@ -49,6 +64,7 @@ public class Managers : MonoBehaviour
             _instance._pool.Init();
             _instance._input.Init();
             _instance._network.Init();
+            _instance._session.Init();
         }
     }
     
@@ -58,5 +74,7 @@ public class Managers : MonoBehaviour
         Scene.Clear();
         Pool.Clear();
     }
+    
+
     
 }

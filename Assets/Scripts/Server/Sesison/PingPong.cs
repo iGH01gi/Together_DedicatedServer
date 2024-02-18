@@ -2,7 +2,7 @@
 using Google.Protobuf.Protocol;
 using UnityEngine;
 
-public class PingPong : MonoBehaviour
+public class PingPong
 {
     ClientSession _session;
     
@@ -22,7 +22,7 @@ public class PingPong : MonoBehaviour
         SC_PingPong sendPacket = new SC_PingPong();
         _session.Send(sendPacket);
         
-        Invoke("CheckPong", 3f); //3초 간격으로 확인
+        JobTimer.Instance.Push(CheckPong, 3000); //3초 간격으로 확인
     }
 
     /// <summary>
@@ -35,8 +35,9 @@ public class PingPong : MonoBehaviour
             _connectionLossCount++;
             if (_connectionLossCount >= 3)
             {
-                Console.WriteLine($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");
-                Debug.Log($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");
+                Util.PrintLog($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");
+                /*Console.WriteLine($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");
+                Debug.Log($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");*/
                 _session.Disconnect();
                 return;
             }

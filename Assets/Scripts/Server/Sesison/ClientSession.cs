@@ -7,7 +7,7 @@ using Google.Protobuf.Protocol;
 public class ClientSession : PacketSession
 {
     public Player MyPlayer { get; set; }
-    public int SessionId { get; set; }
+    public int SessionId { get; set; } // 플레이어id에서도 이 값을 똑같이 사용함
     
     public PingPong PingPong { get; set; }
 
@@ -34,6 +34,14 @@ public class ClientSession : PacketSession
     {
         Console.WriteLine($"OnConnected : {endPoint}");
         
+        if (PacketManager.Instance.CustomHandler == null)
+        {
+            PacketManager.Instance.CustomHandler = (s, m, i) =>
+            {
+                PacketQueue.Instance.Push(s, i, m);
+            };
+        }
+        
         PingPong = new PingPong(this);
         PingPong.SendPing();
     }
@@ -45,7 +53,11 @@ public class ClientSession : PacketSession
 
     public override void OnDisconnected(EndPoint endPoint)
     {
-        SessionManager.Instance.Remove(this);
+        if (MyPlayer != null)
+        {
+            Managers.Player.LeaveGame(MyPlayer.Session.SessionId);
+        }
+        Managers.Session.Remove(this);
         Console.WriteLine($"OnDisconnected : {endPoint}");
     }
 
