@@ -32,7 +32,7 @@ public class ClientSession : PacketSession
 
     public override void OnConnected(EndPoint endPoint)
     {
-        Console.WriteLine($"OnConnected : {endPoint}");
+        Util.PrintLog($"OnConnected : {endPoint}");
         
         if (PacketManager.Instance.CustomHandler == null)
         {

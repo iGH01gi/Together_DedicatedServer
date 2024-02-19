@@ -19,7 +19,8 @@ public class PingPong
     /// </summary>
     public void SendPing()
     {
-        SC_PingPong sendPacket = new SC_PingPong();
+        Util.PrintLog("핑보냄");
+        DSC_PingPong sendPacket = new DSC_PingPong();
         _session.Send(sendPacket);
         
         JobTimer.Instance.Push(CheckPong, 3000); //3초 간격으로 확인

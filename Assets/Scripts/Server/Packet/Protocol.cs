@@ -54,7 +54,7 @@ namespace Google.Protobuf.Protocol {
             "RW50ZXJHYW1lEhsKE215RGVkaWNhdGVkUGxheWVySWQYASABKAUSJQoHcGxh",
             "eWVycxgCIAMoCzIULlByb3RvY29sLlBsYXllckluZm8iTQoiRFNDX0luZm9y",
             "bU5ld0ZhY2VJbkRlZGljYXRlZFNlcnZlchInCgluZXdQbGF5ZXIYASABKAsy",
-            "FC5Qcm90b2NvbC5QbGF5ZXJJbmZvKoEDCgVNc2dJZBIQCgxDU19ST09NX0xJ",
+            "FC5Qcm90b2NvbC5QbGF5ZXJJbmZvKq4DCgVNc2dJZBIQCgxDU19ST09NX0xJ",
             "U1QQABIQCgxTQ19ST09NX0xJU1QQARIQCgxDU19NQUtFX1JPT00QAhIQCgxT",
             "Q19NQUtFX1JPT00QAxIRCg1DU19FTlRFUl9ST09NEAQSFwoTU0NfQUxMT1df",
             "RU5URVJfUk9PTRAFEh4KGlNDX0lORk9STV9ORVdfRkFDRV9JTl9ST09NEAYS",
@@ -63,7 +63,8 @@ namespace Google.Protobuf.Protocol {
             "EAsSEQoNQ0RTX1BJTkdfUE9ORxAMEh8KG0NTX0NPTk5FQ1RfREVESUNBVEVE",
             "X1NFUlZFUhANEh8KG1NDX0NPTk5FQ1RfREVESUNBVEVEX1NFUlZFUhAOEhgK",
             "FENEU19BTExPV19FTlRFUl9HQU1FEA8SGAoURFNDX0FMTE9XX0VOVEVSX0dB",
-            "TUUQECpbCg5SZWFzb25SZWplY3RlZBIQCgxSb29tTm90RXhpc3QQABIUChBD",
+            "TUUQEBIrCidEU0NfSU5GT1JNX05FV19GQUNFX0lOX0RFRElDQVRFRF9TRVJW",
+            "RVIQESpbCg5SZWFzb25SZWplY3RlZBIQCgxSb29tTm90RXhpc3QQABIUChBD",
             "dXJyZW50bHlQbGF5aW5nEAESDgoKUm9vbUlzRnVsbBACEhEKDVdyb25nUGFz",
             "c3dvcmQQA0IbqgIYR29vZ2xlLlByb3RvYnVmLlByb3RvY29sYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -126,6 +127,10 @@ namespace Google.Protobuf.Protocol {
     ///데디서버로부터 인게임 접속 가능여부 응답
     /// </summary>
     [pbr::OriginalName("DSC_ALLOW_ENTER_GAME")] DscAllowEnterGame = 16,
+    /// <summary>
+    ///데디서버로부터 새로운 플레이어가 접속했다는 정보
+    /// </summary>
+    [pbr::OriginalName("DSC_INFORM_NEW_FACE_IN_DEDICATED_SERVER")] DscInformNewFaceInDedicatedServer = 17,
   }
 
   public enum ReasonRejected {

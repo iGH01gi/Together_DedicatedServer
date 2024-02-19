@@ -14,6 +14,8 @@ public class PacketHandler
 
     public static void CDS_AllowEnterGameHandler(PacketSession session, IMessage packet)
     {
+        Util.PrintLog("CDS_AllowEnterGameHandler");
+        
         CDS_AllowEnterGame allowEnterGamePacket = packet as CDS_AllowEnterGame;
         ClientSession clientSession = session as ClientSession;
 
