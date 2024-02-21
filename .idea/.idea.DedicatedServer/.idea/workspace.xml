@@ -7,10 +7,8 @@
     <list default="true" id="b00603ef-65dc-42c1-a819-214618bd05ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/ClientSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/ClientSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/PingPong.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Sesison/PingPong.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +115,8 @@
       <workItem from="1708161871367" duration="3990000" />
       <workItem from="1708185041744" duration="24446000" />
       <workItem from="1708311675695" duration="8021000" />
+      <workItem from="1708412019543" duration="8973000" />
+      <workItem from="1708507769220" duration="5621000" />
     </task>
     <servers />
   </component>

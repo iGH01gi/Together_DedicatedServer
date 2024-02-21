@@ -55,9 +55,9 @@ public class ClientSession : PacketSession
     {
         if (MyPlayer != null)
         {
-            Managers.Player.LeaveGame(MyPlayer.Session.SessionId);
+            Managers.Player.LeaveGame(MyPlayer.Session.SessionId); //플레이어매니저에서 정리 + 다른 클라이언트들한테 알림
         }
-        Managers.Session.Remove(this);
+        Managers.Session.Remove(this); //세션매니저에서 정리
         Console.WriteLine($"OnDisconnected : {endPoint}");
     }
 

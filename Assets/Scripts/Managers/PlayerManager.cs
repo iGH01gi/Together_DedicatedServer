@@ -87,8 +87,28 @@ public class PlayerManager
         }
     }
 
+    /// <summary>
+    /// 플레이어 매니저에서 플레이어를 제거하고, 모든 클라이언트에게 제거된 플레이어의 정보를 알림
+    /// </summary>
+    /// <param name="playerId">제거해야할 플레이어id</param>
     public void LeaveGame(int playerId)
     {
-        
+        if (_players.ContainsKey(playerId))
+        {
+            _players.Remove(playerId);
+            foreach (Player player in _players.Values)
+            {
+                DSC_InformLeaveDedicatedServer informLeaveDedicatedServerPacket = new DSC_InformLeaveDedicatedServer();
+                informLeaveDedicatedServerPacket.LeavePlayerId = playerId;
+                
+                if (player.Session != null)
+                {
+                    ClientSession session = player.Session;
+                    session.Send(informLeaveDedicatedServerPacket); 
+                }
+                
+            }
+
+        }
     }
 }
