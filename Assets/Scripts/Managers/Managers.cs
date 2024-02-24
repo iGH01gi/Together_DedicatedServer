@@ -15,6 +15,7 @@ public class Managers : MonoBehaviour
     InputManager _input = new InputManager();
     NetworkManager _network = new NetworkManager();
     SessionManager _session = new SessionManager();
+    ObjectManager _object = new ObjectManager();
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
     public static PoolManager Pool { get { return Instance._pool; } }
@@ -23,6 +24,7 @@ public class Managers : MonoBehaviour
     public static InputManager Input { get { return Instance._input; } }
     public static NetworkManager Network { get { return Instance._network; } }
     public static SessionManager Session { get { return Instance._session; } }
+    public static ObjectManager Object { get { return Instance._object; } }
 
 
     void Start()
