@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
    
                 //플레이어 관리목록에 추가
                 GameObject newPlayerObj= Managers.Object.SpawnPlayer(newPlayer);
+                newPlayerObj.name = $"Player_{newPlayer.Info.PlayerId}"; //플레이어 오브젝트 이름을 "Player_플레이어id"로 설정
                 _players.Add(newPlayer.Info.PlayerId, newPlayerObj);
                 
                 //본인한테 입장 허용 패킷 보냄
