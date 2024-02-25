@@ -3,7 +3,7 @@ using System.Linq;
 using Google.Protobuf.Protocol;
 using UnityEngine;
 
-public class PlayerManager
+public class PlayerManager : MonoBehaviour
 {
     object _lock = new object();
     Dictionary<int,GameObject> _players = new Dictionary<int, GameObject>(); //key: 데디서버의 playerId, value: 플레이어 정보
@@ -28,7 +28,6 @@ public class PlayerManager
                 newPlayer.Info.Transform = null;
                 newPlayer.RoomId = roomId;
                 newPlayer.Session = session;
-                session.MyPlayer= newPlayer; //세션에 플레이어 정보 저장
    
                 //플레이어 관리목록에 추가
                 GameObject newPlayerObj= Managers.Object.SpawnPlayer(newPlayer);
@@ -66,7 +65,7 @@ public class PlayerManager
             if (_players.TryGetValue(playerId, out GameObject playerObj))
             {
                 if(playerObj!=null)
-                    GameObject.Destroy(playerObj);
+                    Managers.Object.DespawnPlayer(playerObj);
                 
                 return _players.Remove(playerId);
             }
@@ -75,17 +74,6 @@ public class PlayerManager
         }
     }
     
-    /*public Player Find(int playerId)
-    {
-        lock (_lock)
-        {
-            Player player = null;
-            if (_players.TryGetValue(playerId, out player))
-                return player;
-            
-            return null;
-        }
-    }*/
 
     /// <summary>
     /// 플레이어 destroy하고 플레이어 매니저에서 플레이어를 제거하고, 모든 클라이언트에게 제거된 플레이어의 정보를 알림

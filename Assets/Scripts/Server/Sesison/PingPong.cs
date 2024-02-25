@@ -39,7 +39,8 @@ public class PingPong
                 Util.PrintLog($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");
                 /*Console.WriteLine($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");
                 Debug.Log($"3회 핑퐁 실패 세션아이디:{_session.SessionId} ");*/
-                _session.Disconnect();
+                MainThreadJobQueue.Instance.Push(_session.Disconnect);
+                
                 return;
             }
         }

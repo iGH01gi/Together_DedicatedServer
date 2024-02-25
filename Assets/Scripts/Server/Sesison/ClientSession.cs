@@ -6,7 +6,6 @@ using Google.Protobuf.Protocol;
 
 public class ClientSession : PacketSession
 {
-    public Player MyPlayer { get; set; } //실제 하이레키에 존재하는 컴포넌트아님. 순수 데이터 클래스만 들고있는것임. (실제 컴포넌트는 플레이어매니저에서 관리)
     public int SessionId { get; set; } // 플레이어id에서도 이 값을 똑같이 사용함
     
     public PingPong PingPong { get; set; }
@@ -53,12 +52,9 @@ public class ClientSession : PacketSession
 
     public override void OnDisconnected(EndPoint endPoint)
     {
-        if (MyPlayer != null)
-        {
-            Managers.Player.LeaveGame(MyPlayer.Session.SessionId); //플레이어매니저에서 정리 + 다른 클라이언트들한테 알림
-        }
+        Managers.Player.LeaveGame(SessionId); //플레이어매니저에서 정리 + 다른 클라이언트들한테 알림
         Managers.Session.Remove(this); //세션매니저에서 정리
-        Console.WriteLine($"OnDisconnected : {endPoint}");
+        Util.PrintLog($"OnDisconnected : {endPoint}");
     }
 
     public override void OnSend(int numOfBytes)

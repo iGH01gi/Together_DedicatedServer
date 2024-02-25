@@ -112,6 +112,10 @@ public abstract class Session
         }
     }
 
+    /// <summary>
+    /// 속에서 게임오브젝트를 파괴시키기 때문에, 반드시 메인쓰레드에서 호출해야함
+    /// (MainThreadJobQueue.Instance.Push(Disconnect);)를 사용
+    /// </summary>
     public void Disconnect()
     {
         if (Interlocked.Exchange(ref _disconnected, 1) == 1)
@@ -174,7 +178,7 @@ public abstract class Session
             }
             else
             {
-                Disconnect();
+                MainThreadJobQueue.Instance.Push(Disconnect);
             }
         }
     }
@@ -212,7 +216,7 @@ public abstract class Session
                 //Write 커서 이동
                 if (_recvBuffer.OnWrite(args.BytesTransferred) == false)
                 {
-                    Disconnect();
+                    MainThreadJobQueue.Instance.Push(Disconnect);
                     return;
                 }
 
@@ -220,14 +224,14 @@ public abstract class Session
                 int processLen=OnRecv(_recvBuffer.ReadSegment);
                 if (processLen < 0 || _recvBuffer.DataSize<processLen)
                 {
-                    Disconnect();
+                    MainThreadJobQueue.Instance.Push(Disconnect);
                     return;
                 }
 
                 //Read 커서 이동
                 if (_recvBuffer.OnRead(processLen) == false)
                 {
-                    Disconnect();
+                    MainThreadJobQueue.Instance.Push(Disconnect);
                     return;
                 }
 
@@ -241,7 +245,7 @@ public abstract class Session
         else
         {
             //TODO
-            Disconnect();
+            MainThreadJobQueue.Instance.Push(Disconnect);
         }
     }
 

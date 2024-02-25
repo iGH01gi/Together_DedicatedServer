@@ -8,22 +8,23 @@ public class Managers : MonoBehaviour
     static Managers _instance; 
     static Managers Instance {get { Init(); return _instance; } } 
     
+    
     ResourceManager _resource = new ResourceManager();
     PoolManager _pool = new PoolManager();
     SceneManagerEx _scene = new SceneManagerEx();
-    PlayerManager _player = new PlayerManager();
     InputManager _input = new InputManager();
     NetworkManager _network = new NetworkManager();
     SessionManager _session = new SessionManager();
-    ObjectManager _object = new ObjectManager();
+    PlayerManager _player;
+    ObjectManager _object;
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
     public static PoolManager Pool { get { return Instance._pool; } }
     public static SceneManagerEx Scene { get { return Instance._scene; } }
-    public static PlayerManager Player { get { return Instance._player; } }
     public static InputManager Input { get { return Instance._input; } }
     public static NetworkManager Network { get { return Instance._network; } }
     public static SessionManager Session { get { return Instance._session; } }
+    public static PlayerManager Player { get { return Instance._player; } }
     public static ObjectManager Object { get { return Instance._object; } }
 
 
@@ -39,15 +40,7 @@ public class Managers : MonoBehaviour
     {
         _network.Update();
         JobTimer.Instance.Flush();
-        
-        /*_passedTime += Time.deltaTime;
-        if (_passedTime >= _logicalInterval)
-        {
-            //실제 시뮬레이션 게임로직 처리
-            
-            //로직처리후 흐른시간 초기화
-            _passedTime = 0;
-        }*/
+        MainThreadJobQueue.Instance.Flush(); //메인쓰레드에서 처리하도록 일감만 밀어넣고 직접 실행X하기 위한 잡큐
     }
 
     static void Init()
@@ -59,10 +52,14 @@ public class Managers : MonoBehaviour
             {
                 go = new GameObject { name = "@Managers" };
                 go.AddComponent<Managers>();
+                go.AddComponent<PlayerManager>(); //특별처리 (모노비헤비어)
+                go.AddComponent<ObjectManager>(); //특별처리 (모노비헤비어)
             }
 
             DontDestroyOnLoad(go);
             _instance = go.GetComponent<Managers>();
+            _instance._player = go.GetComponent<PlayerManager>(); //특별처리 (모노비헤비어)
+            _instance._object = go.GetComponent<ObjectManager>(); //특별처리 (모노비헤비어)
             _instance._pool.Init();
             _instance._input.Init();
             _instance._network.Init();
