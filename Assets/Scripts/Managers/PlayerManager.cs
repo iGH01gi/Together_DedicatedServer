@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     object _lock = new object();
     Dictionary<int,GameObject> _players = new Dictionary<int, GameObject>(); //key: 데디서버의 playerId, value: 플레이어 정보
+    public string _tempPlayerPrefabPath = "Player/Player";
     
     /// <summary>
     /// 플레이어를 스폰하고 정보를 저장함. 모든이에게 추가된 플레이어의 정보를 알림
@@ -30,7 +31,7 @@ public class PlayerManager : MonoBehaviour
                 newPlayer.Session = session;
    
                 //플레이어 관리목록에 추가
-                GameObject newPlayerObj= Managers.Object.SpawnPlayer(newPlayer);
+                GameObject newPlayerObj= SpawnPlayer(newPlayer);
                 newPlayerObj.name = $"Player_{newPlayer.Info.PlayerId}"; //플레이어 오브젝트 이름을 "Player_플레이어id"로 설정
                 _players.Add(newPlayer.Info.PlayerId, newPlayerObj);
                 
@@ -66,7 +67,7 @@ public class PlayerManager : MonoBehaviour
             if (_players.TryGetValue(playerId, out GameObject playerObj))
             {
                 if(playerObj!=null)
-                    Managers.Object.DespawnPlayer(playerObj);
+                    DespawnPlayer(playerObj);
                 
                 return _players.Remove(playerId);
             }
@@ -98,5 +99,29 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
+    }
+    
+    /// <summary>
+    /// 데디서버 플레이어를 실제로 생성하는 함수
+    /// </summary>
+    /// <param name="dediPlayer">갖고 있어야할 플레이어 정보</param>
+    /// <returns></returns>
+    public GameObject SpawnPlayer(Player dediPlayer)
+    {
+        GameObject obj =Managers.Resource.Instantiate(_tempPlayerPrefabPath);
+        Player dediPlayerComponent = obj.AddComponent<Player>();
+        
+        dediPlayerComponent.CopyFrom(dediPlayer);
+
+        return obj;
+    }
+
+    /// <summary>
+    /// 플레이어를 게임상에서 제거하는 함수 (Destroy처리)
+    /// </summary>
+    /// <param name="dediPlayer">Destroy할 플레이어 오브젝트</param>
+    public void DespawnPlayer(GameObject dediPlayerObj)
+    {
+        Managers.Resource.Destroy(dediPlayerObj);
     }
 }
