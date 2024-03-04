@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     {
         Info.PlayerId = dediPlayer.Info.PlayerId;
         Info.Name = dediPlayer.Info.Name;
-        Info.Transform = dediPlayer.Info.Transform;
         RoomId = dediPlayer.RoomId;
         Session = dediPlayer.Session;
     }

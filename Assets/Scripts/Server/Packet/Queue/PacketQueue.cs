@@ -2,6 +2,7 @@
 using Google.Protobuf;
 
 
+
 public class PacketMessage
 {
     public PacketSession Session { get; set; }
@@ -11,6 +12,7 @@ public class PacketMessage
 
 //유니티메인쓰레드와 백그라운드 쓰레드(네트워크를 처리하는) 사이의 소통을 PacketQueue라는 통로를 이용해서 처리
 //메인 쓰레드에서는 Pop을 사용해서 처리
+//인게임 로직과는 상관없는 패킷을 처리하는 패킷큐
 public class PacketQueue
 {
     public static PacketQueue Instance { get; } = new PacketQueue();

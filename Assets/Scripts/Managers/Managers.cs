@@ -17,6 +17,8 @@ public class Managers : MonoBehaviour
     SessionManager _session = new SessionManager();
     PlayerManager _player;
     ObjectManager _object;
+    LogicManager _logic = new LogicManager();
+    
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
     public static PoolManager Pool { get { return Instance._pool; } }
@@ -26,6 +28,7 @@ public class Managers : MonoBehaviour
     public static SessionManager Session { get { return Instance._session; } }
     public static PlayerManager Player { get { return Instance._player; } }
     public static ObjectManager Object { get { return Instance._object; } }
+    public static LogicManager Logic { get { return Instance._logic; } }
 
 
     void Start()
@@ -40,7 +43,7 @@ public class Managers : MonoBehaviour
     {
         _network.Update();
         JobTimer.Instance.Flush();
-        MainThreadJobQueue.Instance.Flush(); //메인쓰레드에서 처리하도록 일감만 밀어넣고 직접 실행X하기 위한 잡큐
+        MainThreadJobQueue.Instance.Flush(); //메인쓰레드에서 처리하도록 일감만 밀어넣고 직접 실행X하기 위한 잡큐 (discoonect처리하고 있음)
     }
 
     static void Init()

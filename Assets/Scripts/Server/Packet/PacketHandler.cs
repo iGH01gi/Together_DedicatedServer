@@ -26,4 +26,12 @@ public class PacketHandler
         string name = allowEnterGamePacket.Name;
         Managers.Player.AddPlayer(clientSession, roomId, name);
     }
+    
+    public static void CDS_MoveHandler(PacketSession session, IMessage packet)
+    {
+        CDS_Move movePacket = packet as CDS_Move;
+        ClientSession clientSession = session as ClientSession;
+        
+        Managers.Player.SetTargetGhost(clientSession.SessionId, movePacket);
+    }
 }
