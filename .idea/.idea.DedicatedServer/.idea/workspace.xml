@@ -6,20 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b00603ef-65dc-42c1-a819-214618bd05ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameMap0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameMap0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Managers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Managers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/TargetGhost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/TargetGhost.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/DedicatedServerPacketManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/DedicatedServerPacketManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Queue/PacketQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Queue/PacketQueue.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue/JobQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue/JobQueue.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/MainThreadJobQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue/MainThreadJobQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/MainThreadJobQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerCore/JobQueue/MainThreadJobQueue.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/InGameInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/InGameInput.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Ghost.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Server/JobTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_TextUtilities.cs" root0="SKIP_HIGHLIGHTING" />
@@ -146,7 +137,8 @@
       <workItem from="1709110462255" duration="1197000" />
       <workItem from="1709276939419" duration="5995000" />
       <workItem from="1709371119111" duration="8411000" />
-      <workItem from="1709536250587" duration="7055000" />
+      <workItem from="1709536250587" duration="7804000" />
+      <workItem from="1709709879894" duration="6916000" />
     </task>
     <servers />
   </component>
