@@ -159,13 +159,14 @@ public class PlayerManager : MonoBehaviour
             float rotY = movePacket.Transform.RotY;
             float rotZ = movePacket.Transform.RotZ;
             float rotW = movePacket.Transform.RotW;
+            Quaternion localRotation = new Quaternion(rotX,rotY,rotZ,rotW);
             
             CharacterController ghostController = ghostObj.GetComponent<CharacterController>();
             ghostController.transform.position = new Vector3(posX,posY,posZ); //고스트 위치 순간이동
             ghostObj.transform.rotation = new Quaternion(rotX,rotY,rotZ,rotW); //고스트 회전
             
             //TODO : 눌린 방향키 해석해서 velocity구한다음에 이동시키는 코드 추가하기
-            ghostObj.GetComponent<Ghost>().CalculateVelocity(movePacket.KeyboardInput);
+            ghostObj.GetComponent<Ghost>().CalculateVelocity(movePacket.KeyboardInput, localRotation);
         }
         
     }
