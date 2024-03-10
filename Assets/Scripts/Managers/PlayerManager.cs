@@ -167,6 +167,10 @@ public class PlayerManager : MonoBehaviour
             
             //TODO : 눌린 방향키 해석해서 velocity구한다음에 이동시키는 코드 추가하기
             ghostObj.GetComponent<Ghost>().CalculateVelocity(movePacket.KeyboardInput, localRotation);
+            if(_players.TryGetValue(playerId,out GameObject playerObj))
+            {
+                playerObj.GetComponent<Player>().SetGhostLastState(movePacket.KeyboardInput, localRotation);
+            }
         }
         
     }

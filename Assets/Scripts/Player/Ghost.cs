@@ -30,6 +30,10 @@ public class Ghost : MonoBehaviour
 
     void Update()
     {
+        if (!_controller.isGrounded)
+        {
+            _velocity.y = -10f;
+        }
         _controller.Move(_velocity * Time.deltaTime);
     }
 
@@ -56,21 +60,13 @@ public class Ghost : MonoBehaviour
 
             if (isRunning)
             {
-                velocity = localRotation.normalized *
-                           new Vector3(_runSpeed * moveInputVector.x, 0, _runSpeed * moveInputVector.y);
+                velocity = localRotation.normalized * new Vector3( moveInputVector.x, 0,  moveInputVector.y) * _runSpeed;
             }
             else
             {
-                velocity = localRotation.normalized *
-                           new Vector3(_walkSpeed * moveInputVector.x, 0, _walkSpeed * moveInputVector.y);
+                velocity = localRotation.normalized * new Vector3( moveInputVector.x, 0,  moveInputVector.y) * _walkSpeed;
             }
         }
-
-        if (!_controller.isGrounded)
-        {
-            velocity.y = -10f;
-        }
-
         _velocity = velocity;
     }
 }
