@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Water
+  m_Shader: {fileID: 4800000, guid: 31af792a5ce8fd24d835ae83cc172590, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _PATTERNINVERTBW_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 3756fb4f5b68d9645aa50d0d995f7ee4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Pattern:
+        m_Texture: {fileID: 2800000, guid: 12e64357f6ce7a548bb38f65e3418e53, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blend1: -0.35
+    - _Blend2: -0.36
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _Depth: 2.98
+    - _DepthMultiply: 2
+    - _DetailNormalMapScale: 1
+    - _DisplacementAmount: 0.4
+    - _DistortionStr: 0.24
+    - _DstBlend: 0
+    - _EdgeLength: 30
+    - _FoamDistortionAmount: 0.03
+    - _FoamDistortionScale: 4
+    - _FoamDistortionSpeed: 1.5
+    - _FoamScale: 4
+    - _FoamWidth: 0.39
+    - _FresnelBias: -0.04
+    - _FresnelPower: 5
+    - _FresnelScale: 0.18
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Layer1Speed: 0.6
+    - _Layer1Tiling: 0.05
+    - _Layer2Speed: 0.4
+    - _Layer2Tiling: 0.15
+    - _Layer3Speed: 0.2
+    - _Layer3Tiling: 0.2
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PatternInvertBW: 1
+    - _RefractionScale: 0.15
+    - _RefractionSpeed: 1
+    - _RefractionStr: 0.04
+    - _ScaleDistortion: 1.63
+    - _ShoreWaveScale: 2.4
+    - _ShoreWaveSpeed: -1.8
+    - _ShoreWaveWidth: 0.05
+    - _ShoreWidth: 1
+    - _Smoothness: 0.919
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _TessMaxDisp: 25
+    - _Tessellation: 4
+    - _UVSec: 0
+    - _WaveBigPower: 4.94
+    - _WaveBigScale: 0.79
+    - _WaveBigSpeed: 1.5
+    - _WaveBlend: 0
+    - _WaveScale: 0.04
+    - _WaveSmallPower: 4.4
+    - _WaveSmallScale: 0.85
+    - _WaveSmallSpeed: 1.7
+    - _WaveSpeed: 4
+    - _WavesMultiply: 2.53
+    - _WavesNormalStr: 2.04
+    - _ZWrite: 1
+    - __dirty: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.42779157, g: 0.74325734, b: 0.9716981, a: 1}
+    - _Color2: {r: 0.45478812, g: 0.841861, b: 0.990566, a: 1}
+    - _ColorDepth: {r: 0.01568628, g: 0.41960788, b: 0.6313726, a: 1}
+    - _ColorSurface: {r: 0.050980374, g: 0.67058825, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Layer1Direction: {r: 0.5, g: 0, b: 0, a: 0}
+    - _Layer2Direction: {r: 0.5, g: 0, b: 0, a: 0}
+    - _Layer3Direction: {r: 0, g: -0.5, b: 0, a: 0}
+    - _RefractionDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _RefractionTillingNoise: {r: 0.3, g: 1, b: 0, a: 0}
+    - _WaveTiling: {r: 0.2, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
