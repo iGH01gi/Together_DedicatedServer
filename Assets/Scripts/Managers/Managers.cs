@@ -67,6 +67,7 @@ public class Managers : MonoBehaviour
             _instance._input.Init();
             _instance._network.Init();
             _instance._session.Init();
+            _instance._player.Init();
         }
     }
     

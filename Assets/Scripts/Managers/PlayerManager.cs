@@ -10,7 +10,14 @@ public class PlayerManager : MonoBehaviour
     Dictionary<int,GameObject> _ghosts = new Dictionary<int, GameObject>()   ; //key: 데디서버의 playerId, value: 고스트 오브젝트
     public string _tempPlayerPrefabPath = "Player/Player";
     public string _tempTargetGhost = "Player/TargetGhost";
-    
+    public Transform _spawnPointCenter;
+    private bool[] _possibleSpawnPoint; //8개의 스폰포인트 중에 가능한 스폰포인트를 체크하는 배열
+
+    public void Init()
+    {
+        _spawnPointCenter = GameObject.Find("Map/SpawnPoint").transform;
+        _possibleSpawnPoint = new bool[8]{true,true,true,true,true,true,true,true};
+    }
     
     /// <summary>
     /// 플레이어를 스폰하고 정보를 저장함. 모든이에게 추가된 플레이어의 정보를 알림
@@ -25,31 +32,51 @@ public class PlayerManager : MonoBehaviour
         {
             if (!_players.ContainsKey(session.SessionId))//이미 생성돼있는 플레이어가 아닐때
             {
-                //플레이어 생성
-                Player newPlayer = new Player();
-                newPlayer.Info.PlayerId = session.SessionId;
-                newPlayer.Info.Name = name;
-                newPlayer.RoomId = roomId;
-                newPlayer.Session = session;
+                //플레이어 정보 생성 + 실체 생성 + 관리목록에 추가
+                GameObject newPlayerObj= SpawnPlayer(session, roomId, name);
+                _players.Add(session.SessionId, newPlayerObj);
                 
-                //고스트 생성
-                GameObject newGhost = Managers.Resource.Instantiate(_tempTargetGhost);
-                newGhost.name = $"Ghost_{session.SessionId}"; //고스트 오브젝트 이름을 "Ghost_플레이어id"로 설정
-                newGhost.transform.position = new Vector3(session.SessionId,session.SessionId,session.SessionId);
+                //고스트 실체 생성 + 관리목록에 추가
+                GameObject newGhost = SpawnGhost(session.SessionId);
                 _ghosts.Add(session.SessionId,newGhost); //고스트목록에 추가
-   
-                //플레이어 관리목록에 추가
-                GameObject newPlayerObj= SpawnPlayer(newPlayer);
-                newPlayerObj.name = $"Player_{newPlayer.Info.PlayerId}"; //플레이어 오브젝트 이름을 "Player_플레이어id"로 설정
-                _players.Add(newPlayer.Info.PlayerId, newPlayerObj);
+
                 
                 //본인한테 입장 허용 패킷 보냄
+                Player newPlayer = newPlayerObj.GetComponent<Player>();
                 allowEnterPacket.MyDedicatedPlayerId = newPlayer.Info.PlayerId;
                 _players.Values.ToList().ForEach(player => allowEnterPacket.Players.Add(player.GetComponent<Player>().Info));
+                Dictionary<int,TransformInfo> playerTransforms = new Dictionary<int, TransformInfo>();
+                foreach (KeyValuePair<int,GameObject> a in _players)
+                {
+                    GameObject playerObj = a.Value;
+                    if (playerObj != null)
+                    {
+                        Player player = playerObj.GetComponent<Player>();
+                        TransformInfo transformInfo = new TransformInfo();
+                        transformInfo.PosX = playerObj.transform.position.x;
+                        transformInfo.PosY = playerObj.transform.position.y;
+                        transformInfo.PosZ = playerObj.transform.position.z;
+                        transformInfo.RotX = playerObj.transform.rotation.x;
+                        transformInfo.RotY = playerObj.transform.rotation.y;
+                        transformInfo.RotZ = playerObj.transform.rotation.z;
+                        transformInfo.RotW = playerObj.transform.rotation.w;
+                        playerTransforms.Add(player.Info.PlayerId,transformInfo);
+                    }
+                }
+                allowEnterPacket.PlayerTransforms.Add(playerTransforms);
                 session.Send(allowEnterPacket);
                 
                 //다른 클라이언트에게 새로운 플레이어가 게임에 접속했음을 전송함
                 informNewFaceInDedicatedServerPacket.NewPlayer = newPlayer.Info;
+                TransformInfo newPlayerTransformInfo = new TransformInfo();
+                newPlayerTransformInfo.PosX = newPlayerObj.transform.position.x;
+                newPlayerTransformInfo.PosY = newPlayerObj.transform.position.y;
+                newPlayerTransformInfo.PosZ = newPlayerObj.transform.position.z;
+                newPlayerTransformInfo.RotX = newPlayerObj.transform.rotation.x;
+                newPlayerTransformInfo.RotY = newPlayerObj.transform.rotation.y;
+                newPlayerTransformInfo.RotZ = newPlayerObj.transform.rotation.z;
+                newPlayerTransformInfo.RotW = newPlayerObj.transform.rotation.w;
+                informNewFaceInDedicatedServerPacket.SpawnTransform = newPlayerTransformInfo;
                 foreach (KeyValuePair<int,GameObject> a in _players)
                 {
                     GameObject existingPlayerObj = a.Value;
@@ -124,20 +151,72 @@ public class PlayerManager : MonoBehaviour
     }
     
     /// <summary>
-    /// 데디서버 플레이어를 실제로 생성하는 함수
+    /// 데디서버 플레이어의 정보와 실체를 실제로 생성하는 함수(관리목록 추가는 안함)
     /// </summary>
     /// <param name="dediPlayer">갖고 있어야할 플레이어 정보</param>
     /// <returns></returns>
-    public GameObject SpawnPlayer(Player dediPlayer)
+    public GameObject SpawnPlayer(ClientSession session,int roomId,string name)
     {
-        GameObject obj =Managers.Resource.Instantiate(_tempPlayerPrefabPath);
-        //위치 임시 설정 (나중에 수정해야함)
-        obj.transform.position = new Vector3(dediPlayer.Info.PlayerId,dediPlayer.Info.PlayerId,dediPlayer.Info.PlayerId);
-        Player dediPlayerComponent = obj.AddComponent<Player>();
+        Player newPlayer = new Player();
+        newPlayer.Info.PlayerId = session.SessionId;
+        newPlayer.Info.Name = name;
+        newPlayer.RoomId = roomId;
+        newPlayer.Session = session;
         
-        dediPlayerComponent.CopyFrom(dediPlayer);
+        GameObject obj =Managers.Resource.Instantiate(_tempPlayerPrefabPath);
+        obj.name = $"Player_{newPlayer.Info.PlayerId}"; //플레이어 오브젝트 이름을 "Player_플레이어id"로 설정
+        
+        //가능한 spawnPoint들 중에 랜덤으로 1개 선택해서 위치 설정. 그리고 해당 spawnPoint는 사용불가로 설정
+        List<int> trueIndices = new List<int>();
+        
+        for (int i = 0; i < _possibleSpawnPoint.Length; i++)
+        {
+            if (_possibleSpawnPoint[i])
+            {
+                trueIndices.Add(i);
+            }
+        }
+
+        if (trueIndices.Count > 0)
+        {
+            int randomIndex = Random.Range(0, trueIndices.Count); 
+            //_spawnPointCenter의 randomIndex번째 자식의 transform을 가져옴
+            Transform spawnPoint = _spawnPointCenter.GetChild(trueIndices[randomIndex]);
+            //obj의 transform을 spawnPoint와 동일하게 설정
+            obj.transform.position = spawnPoint.position;
+            obj.transform.rotation = spawnPoint.rotation;
+            
+        }
+        else
+        {
+            Util.PrintLog("가능한 스폰포인트가 없습니다");
+        }
+        
+        //플레이어 컴포넌트 추가
+        Player dediPlayerComponent = obj.AddComponent<Player>();
+        dediPlayerComponent.CopyFrom(newPlayer);
 
         return obj;
+    }
+    /// <summary>
+    /// 플레이어id(=세션id)에 해당하는 고스트를 생성하는 함수. 위치도 초기 위치로 설정
+    /// </summary>
+    /// <param name="sessionId">대응되는 플레이어의 id</param>
+    /// <returns></returns>
+    public GameObject SpawnGhost(int playerId)
+    {
+        GameObject newGhost = Managers.Resource.Instantiate(_tempTargetGhost);
+        newGhost.name = $"Ghost_{playerId}"; //고스트 오브젝트 이름을 "Ghost_플레이어id"로 설정
+        //위치는 대응되는 플레이어의 초기 위치로 설정
+        
+        _players.TryGetValue(playerId, out GameObject playerObj);
+        if (playerObj != null)
+        {
+            newGhost.transform.position = playerObj.transform.position;
+            newGhost.transform.rotation = playerObj.transform.rotation;
+        }
+
+        return newGhost;
     }
 
 
