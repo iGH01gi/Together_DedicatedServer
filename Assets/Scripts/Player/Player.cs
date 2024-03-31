@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
             //목표 위치까지 거리가 0.1보다 작으면 도착한것으로 간주하고 실제 패킷의 회전방향으로 부드럽게 돌려줌
             if (directionToGhost.magnitude < 0.1f)
             {
-                Util.PrintLog("도착했음");
                 _velocity = Vector3.zero;
                 _controller.Move(_velocity);
                 transform.rotation = Quaternion.Slerp(transform.rotation,_ghostRotation, Time.deltaTime * rotationSpeed);
