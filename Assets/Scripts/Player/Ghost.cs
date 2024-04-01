@@ -53,18 +53,18 @@ public class Ghost : MonoBehaviour
         }
         else
         {
-            if ((keyboardInput & _runBit) == 1)
+            if ((keyboardInput & _runBit) != 0)
             {
                 isRunning = true;
             }
 
             if (isRunning)
             {
-                velocity = localRotation.normalized * new Vector3( moveInputVector.x, 0,  moveInputVector.y) * _runSpeed;
+                velocity = localRotation.normalized * new Vector3( moveInputVector.x, 0,  moveInputVector.y).normalized * _runSpeed;
             }
             else
             {
-                velocity = localRotation.normalized * new Vector3( moveInputVector.x, 0,  moveInputVector.y) * _walkSpeed;
+                velocity = localRotation.normalized * new Vector3( moveInputVector.x, 0,  moveInputVector.y).normalized * _walkSpeed;
             }
         }
         _velocity = velocity;
