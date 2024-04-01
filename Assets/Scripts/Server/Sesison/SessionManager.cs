@@ -6,7 +6,7 @@ public class SessionManager
 {
     int _sessionId = 0;
     
-    Dictionary<int, ClientSession> _sessions = new Dictionary<int, ClientSession>();
+    public Dictionary<int, ClientSession> _sessions = new Dictionary<int, ClientSession>();
     object _lock = new object();
 
     public void Init()

@@ -43,7 +43,6 @@ public class Listener
     {
         if (args.SocketError == SocketError.Success)
         {
-            //TODO
             Session session = _sessionFactory.Invoke();
             session.Start(args.AcceptSocket);
             session.OnConnected(args.AcceptSocket.RemoteEndPoint);

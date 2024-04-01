@@ -222,34 +222,57 @@ public class PlayerManager : MonoBehaviour
 
 
     /// <summary>
-    /// 팔로워가 따라갈 targetGhost를 설정함. (추측항법)
-    /// 받은 위치에다가 키입력에따른 속도벡터만큼 이동한곳이 targetPos의 시작위치
-    /// 그리고 속도벡터만큼 계속 targetPos를 이동시킴
-    /// 팔로워는 targetPos를 계속 따라가게됨
+    /// 핵 검사한 후 팔로워가 따라갈 targetGhost를 설정함. (추측항법)
+    /// 핵 아닐때만 다른 클라이언트들에게 동기화 패킷을 보냄
     /// </summary>
     /// <param name="movePacket"></param>
-    public void SetTargetGhost(int playerId,CDS_Move movePacket)
+    public void ProcessingCDSMove(int playerId,CDS_Move movePacket)
     {
         if (_ghosts.TryGetValue(playerId, out GameObject ghostObj))
         {
-            float posX = movePacket.Transform.PosX;
-            float posY = movePacket.Transform.PosY;
-            float posZ = movePacket.Transform.PosZ;
-            float rotX = movePacket.Transform.RotX;
-            float rotY = movePacket.Transform.RotY;
-            float rotZ = movePacket.Transform.RotZ;
-            float rotW = movePacket.Transform.RotW;
-            Quaternion localRotation = new Quaternion(rotX,rotY,rotZ,rotW);
-            
-            CharacterController ghostController = ghostObj.GetComponent<CharacterController>();
-            ghostController.transform.position = new Vector3(posX,posY,posZ); //고스트 위치 순간이동
-            ghostObj.transform.rotation = new Quaternion(rotX,rotY,rotZ,rotW); //고스트 회전
-            
-            //TODO : 눌린 방향키 해석해서 velocity구한다음에 이동시키는 코드 추가하기
-            ghostObj.GetComponent<Ghost>().CalculateVelocity(movePacket.KeyboardInput, localRotation);
-            if(_players.TryGetValue(playerId,out GameObject playerObj))
             {
-                playerObj.GetComponent<Player>().SetGhostLastState(movePacket.KeyboardInput, localRotation);
+                float posX = movePacket.Transform.PosX;
+                float posY = movePacket.Transform.PosY;
+                float posZ = movePacket.Transform.PosZ;
+                float rotX = movePacket.Transform.RotX;
+                float rotY = movePacket.Transform.RotY;
+                float rotZ = movePacket.Transform.RotZ;
+                float rotW = movePacket.Transform.RotW;
+                Quaternion localRotation = new Quaternion(rotX, rotY, rotZ, rotW);
+
+                //TODO : 데디서버의 고스트의 위치와 받은 패킷의 정보를 대조해서 해킹인지 아닌지 판별하는 코드가 필요 (해킹같다면 return해서 무시)
+
+
+                CharacterController ghostController = ghostObj.GetComponent<CharacterController>();
+                ghostController.transform.position = new Vector3(posX, posY, posZ); //고스트 위치 순간이동
+                ghostObj.transform.rotation = new Quaternion(rotX, rotY, rotZ, rotW); //고스트 회전
+
+                ghostObj.GetComponent<Ghost>().CalculateVelocity(movePacket.KeyboardInput, localRotation);
+                if (_players.TryGetValue(playerId, out GameObject playerObj))
+                {
+                    playerObj.GetComponent<Player>().SetGhostLastState(movePacket.KeyboardInput, localRotation);
+                }
+            }
+
+            {
+                //다른 클라이언트들에게 동기화 패킷 보냄 (고스트 정보임)
+                foreach (KeyValuePair<int, GameObject> a in _players)
+                {
+                    if (a.Key == movePacket.MyDediplayerId) //본인한테는 보내지 않음
+                    {
+                        continue;
+                    }
+                    
+                    Managers.Session._sessions.TryGetValue(a.Key, out ClientSession session);
+                    if (session != null)
+                    {
+                        DSC_Move dscMovePacket = new DSC_Move();
+                        dscMovePacket.PlayerId = playerId;
+                        dscMovePacket.Transform = movePacket.Transform;
+                        dscMovePacket.KeyboardInput = movePacket.KeyboardInput;
+                        session.Send(dscMovePacket);
+                    }
+                }
             }
         }
         

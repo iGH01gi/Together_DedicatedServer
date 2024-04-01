@@ -4,6 +4,7 @@ using Google.Protobuf.Protocol;
 
 public class PacketHandler
 {
+    //클라가 데디서버와 연결되어있음을 확인시키기 위해서 보내는 핑퐁 패킷을 처리
     public static void CDS_PingPongHandler(PacketSession session, IMessage packet)
     {
         CDS_PingPong pingPongPacket = packet as CDS_PingPong;
@@ -12,6 +13,7 @@ public class PacketHandler
         clientSession.PingPong._isPong = true;
     }
 
+    //데디서버 입장을 요청하는 패킷을 처리
     public static void CDS_AllowEnterGameHandler(PacketSession session, IMessage packet)
     {
         Util.PrintLog("CDS_AllowEnterGameHandler");
@@ -27,11 +29,12 @@ public class PacketHandler
         Managers.Player.AddPlayer(clientSession, roomId, name);
     }
     
+    //클라에서 주기적으로 보내는 움직임동기화 패킷을 처리(핵 아닐시 고스트 위치 설정 + 다른 클라들에게 움직임 동기화패킷 보냄)
     public static void CDS_MoveHandler(PacketSession session, IMessage packet)
     {
         CDS_Move movePacket = packet as CDS_Move;
         ClientSession clientSession = session as ClientSession;
         
-        Managers.Player.SetTargetGhost(clientSession.SessionId, movePacket);
+        Managers.Player.ProcessingCDSMove(clientSession.SessionId, movePacket);
     }
 }
