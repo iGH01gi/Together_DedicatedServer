@@ -186,7 +186,10 @@ public class PlayerManager : MonoBehaviour
             obj.transform.position = spawnPoint.position;
             obj.transform.rotation = spawnPoint.rotation;
             
-            Util.PrintLog($"{newPlayer.Info.PlayerId}번 플레이어는 {randomIndex}번째 스폰포인트에 스폰되었습니다");
+            Util.PrintLog($"{newPlayer.Info.PlayerId}번 플레이어는 {trueIndices[randomIndex]}번째 스폰포인트에 스폰되었습니다");
+            
+            //해당 스폰포인트는 사용불가로 설정
+            _possibleSpawnPoint[trueIndices[randomIndex]] = false;
         }
         else
         {
