@@ -53,13 +53,20 @@ public class PlayerManager : MonoBehaviour
                     {
                         Player player = playerObj.GetComponent<Player>();
                         TransformInfo transformInfo = new TransformInfo();
-                        transformInfo.PosX = playerObj.transform.position.x;
-                        transformInfo.PosY = playerObj.transform.position.y;
-                        transformInfo.PosZ = playerObj.transform.position.z;
-                        transformInfo.RotX = playerObj.transform.rotation.x;
-                        transformInfo.RotY = playerObj.transform.rotation.y;
-                        transformInfo.RotZ = playerObj.transform.rotation.z;
-                        transformInfo.RotW = playerObj.transform.rotation.w;
+                        PositionInfo positionInfo = new PositionInfo();
+                        RotationInfo rotationInfo = new RotationInfo();
+                        
+                        positionInfo.PosX = playerObj.transform.position.x;
+                        positionInfo.PosY = playerObj.transform.position.y;
+                        positionInfo.PosZ = playerObj.transform.position.z;
+                        rotationInfo.RotX = playerObj.transform.rotation.x;
+                        rotationInfo.RotY = playerObj.transform.rotation.y;
+                        rotationInfo.RotZ = playerObj.transform.rotation.z;
+                        rotationInfo.RotW = playerObj.transform.rotation.w;
+                        
+                        transformInfo.Position = positionInfo;
+                        transformInfo.Rotation = rotationInfo;
+                        
                         playerTransforms.Add(player.Info.PlayerId,transformInfo);
                     }
                 }
@@ -69,13 +76,20 @@ public class PlayerManager : MonoBehaviour
                 //다른 클라이언트에게 새로운 플레이어가 게임에 접속했음을 전송함
                 informNewFaceInDedicatedServerPacket.NewPlayer = newPlayer.Info;
                 TransformInfo newPlayerTransformInfo = new TransformInfo();
-                newPlayerTransformInfo.PosX = newPlayerObj.transform.position.x;
-                newPlayerTransformInfo.PosY = newPlayerObj.transform.position.y;
-                newPlayerTransformInfo.PosZ = newPlayerObj.transform.position.z;
-                newPlayerTransformInfo.RotX = newPlayerObj.transform.rotation.x;
-                newPlayerTransformInfo.RotY = newPlayerObj.transform.rotation.y;
-                newPlayerTransformInfo.RotZ = newPlayerObj.transform.rotation.z;
-                newPlayerTransformInfo.RotW = newPlayerObj.transform.rotation.w;
+                PositionInfo newPlayerPositionInfo = new PositionInfo();
+                RotationInfo newPlayerRotationInfo = new RotationInfo();
+                
+                newPlayerPositionInfo.PosX = newPlayerObj.transform.position.x;
+                newPlayerPositionInfo.PosY = newPlayerObj.transform.position.y;
+                newPlayerPositionInfo.PosZ = newPlayerObj.transform.position.z;
+                newPlayerRotationInfo.RotX = newPlayerObj.transform.rotation.x;
+                newPlayerRotationInfo.RotY = newPlayerObj.transform.rotation.y;
+                newPlayerRotationInfo.RotZ = newPlayerObj.transform.rotation.z;
+                newPlayerRotationInfo.RotW = newPlayerObj.transform.rotation.w;
+                
+                newPlayerTransformInfo.Position = newPlayerPositionInfo;
+                newPlayerTransformInfo.Rotation = newPlayerRotationInfo;
+                
                 informNewFaceInDedicatedServerPacket.SpawnTransform = newPlayerTransformInfo;
                 foreach (KeyValuePair<int,GameObject> a in _players)
                 {
@@ -234,13 +248,13 @@ public class PlayerManager : MonoBehaviour
         if (_ghosts.TryGetValue(playerId, out GameObject ghostObj))
         {
             {
-                float posX = movePacket.Transform.PosX;
-                float posY = movePacket.Transform.PosY;
-                float posZ = movePacket.Transform.PosZ;
-                float rotX = movePacket.Transform.RotX;
-                float rotY = movePacket.Transform.RotY;
-                float rotZ = movePacket.Transform.RotZ;
-                float rotW = movePacket.Transform.RotW;
+                float posX = movePacket.GhostTransform.Position.PosX;
+                float posY = movePacket.GhostTransform.Position.PosY;
+                float posZ = movePacket.GhostTransform.Position.PosZ;
+                float rotX = movePacket.GhostTransform.Rotation.RotX;
+                float rotY = movePacket.GhostTransform.Rotation.RotY;
+                float rotZ = movePacket.GhostTransform.Rotation.RotZ;
+                float rotW = movePacket.GhostTransform.Rotation.RotW;
                 Quaternion localRotation = new Quaternion(rotX, rotY, rotZ, rotW);
 
                 //TODO : 데디서버의 고스트의 위치와 받은 패킷의 정보를 대조해서 해킹인지 아닌지 판별하는 코드가 필요 (해킹같다면 return해서 무시)
@@ -254,6 +268,13 @@ public class PlayerManager : MonoBehaviour
                 if (_players.TryGetValue(playerId, out GameObject playerObj))
                 {
                     playerObj.GetComponent<Player>().SetGhostLastState(movePacket.KeyboardInput, localRotation);
+                    
+                    //플레이어 회전정보 동기화
+                    float playerRotX = movePacket.PlayerRotation.RotX;
+                    float playerRotY = movePacket.PlayerRotation.RotY;
+                    float playerRotZ = movePacket.PlayerRotation.RotZ;
+                    float playerRotW = movePacket.PlayerRotation.RotW;
+                    playerObj.transform.rotation = new Quaternion(playerRotX, playerRotY, playerRotZ, playerRotW);
                 }
             }
 
@@ -271,8 +292,9 @@ public class PlayerManager : MonoBehaviour
                     {
                         DSC_Move dscMovePacket = new DSC_Move();
                         dscMovePacket.PlayerId = playerId;
-                        dscMovePacket.Transform = movePacket.Transform;
+                        dscMovePacket.GhostTransform = movePacket.GhostTransform;
                         dscMovePacket.KeyboardInput = movePacket.KeyboardInput;
+                        dscMovePacket.PlayerRotation = movePacket.PlayerRotation;
                         session.Send(dscMovePacket);
                     }
                 }

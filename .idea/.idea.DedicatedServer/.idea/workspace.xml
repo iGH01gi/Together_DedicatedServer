@@ -7,6 +7,8 @@
     <list default="true" id="b00603ef-65dc-42c1-a819-214618bd05ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +60,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor &amp; Play.executor&quot;: &quot;Debug&quot;,
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -159,6 +162,8 @@
       <workItem from="1711994572090" duration="2613000" />
       <workItem from="1715023650626" duration="1140000" />
       <workItem from="1715026243477" duration="2056000" />
+      <workItem from="1715497798871" duration="11516000" />
+      <workItem from="1715515708884" duration="1858000" />
     </task>
     <servers />
   </component>

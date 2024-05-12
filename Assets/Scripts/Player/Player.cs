@@ -40,9 +40,10 @@ public class Player : MonoBehaviour
 
         FollowGhost();
     }
+    
 
     /// <summary>
-    /// 자신의 ghost를 따라서 자연스럽게 움직이는 코드
+    /// 자신의 ghost를 따라서 자연스럽게 움직이는 코드 (회전은 고스트 따라할필요 x)
     /// </summary>
     private void FollowGhost()
     {
@@ -52,18 +53,14 @@ public class Player : MonoBehaviour
             Vector3 directionToGhost = _ghost.transform.position - transform.position;
             directionToGhost.y = 0;
 
-            //목표 위치까지 거리가 0.02보다 작으면 도착한것으로 간주하고 실제 패킷의 회전방향으로 부드럽게 돌려줌
-            if (directionToGhost.magnitude < 0.02f)
+            //목표 위치까지 거리가 0.05보다 작으면 도착한것으로 간주하고 멈춤
+            if (directionToGhost.magnitude < 0.05f)
             {
                 _velocity = Vector3.zero;
                 _controller.Move(_velocity);
-                transform.rotation = Quaternion.Slerp(transform.rotation,_ghostRotation, Time.deltaTime * rotationSpeed);
                 return;
             }
-
-            // 현재 회전에서 목표 회전까지 부드럽게 회전시킵니다.
-            Quaternion targetRotation = Quaternion.LookRotation(directionToGhost);
-            transform.rotation = targetRotation;
+            
 
             // 목표 방향으로 이동합니다.
             _velocity = directionToGhost.normalized;
