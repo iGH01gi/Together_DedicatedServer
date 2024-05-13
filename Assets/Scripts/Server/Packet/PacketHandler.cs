@@ -26,7 +26,7 @@ public class PacketHandler
         //마지막으로 내부적으로 DSC_InformNewFaceInDedicatedServer을 모든 클라이언트에게 보내서 해당 플레이어가 데디서버에 접속하였음을 알림 
         int roomId = allowEnterGamePacket.RoomId;
         string name = allowEnterGamePacket.Name;
-        Managers.Player.AddPlayer(clientSession, roomId, name);
+        Managers.Player.AddPlayer(clientSession, roomId, name); Managers.Object.SpawnAllChest();//임시테스트
     }
     
     //클라에서 주기적으로 보내는 움직임동기화 패킷을 처리(핵 아닐시 고스트 위치 설정 + 다른 클라들에게 움직임 동기화패킷 보냄)

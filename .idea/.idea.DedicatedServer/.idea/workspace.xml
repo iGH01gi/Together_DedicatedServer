@@ -6,9 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b00603ef-65dc-42c1-a819-214618bd05ac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DedicatedServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Animators.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Animators.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Models.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Models.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Particles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Particles.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Particles/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Particles/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Particles/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Particles/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Prefabs/Chests.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Prefabs/Chests.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Map/Tresure Chests - Animated/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameMap0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameMap0.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Ghost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Ghost.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/Protocol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/Packet/PacketHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Etc/Chest/Chest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Ghost.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Server/JobTimer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -34,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/Window/TimelineWindow_StateChange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/treeview/Drawers/Layers/MarkersLayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/EventSystem/EventTriggerEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/MenuOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/RawImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/RectMask2D.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,6 +61,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/HorizonalLayoutGroupTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/MaskClipping/RectMask2DClipping.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/NestedLayout/SceneWithNestedLayoutElementsLoadScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollBar/ScrollBarTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -163,7 +177,8 @@
       <workItem from="1715023650626" duration="1140000" />
       <workItem from="1715026243477" duration="2056000" />
       <workItem from="1715497798871" duration="11516000" />
-      <workItem from="1715515708884" duration="1858000" />
+      <workItem from="1715515708884" duration="2401000" />
+      <workItem from="1715590630369" duration="18884000" />
     </task>
     <servers />
   </component>

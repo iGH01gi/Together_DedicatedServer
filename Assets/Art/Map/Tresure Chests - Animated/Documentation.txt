@@ -1,0 +1,22 @@
+This package contains 3 game-ready chest models of different kinds, ideal for mobile games:
+- Standard
+- Rare
+- Mythical
+
+All chests are animated:
+- Bouncing animation
+- Opening animation
+- Closing animation
+
+Particle effects included.
+
+Number of textures: 1
+Texture dimensions: 512x512
+Number of meshes/prefabs: 3
+Rigging: Yes
+Animation count: 3
+Animation type list:
+- Bouncing
+- Opening
+- Closing
+UV mapping: Yes

@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     int _downBit = (1 << 1);
     int _rightBit = 1;
 
-    static float _walkSpeed = 5f;
-    static float _runSpeed = 7.5f;
+    static float _walkSpeed = 2f;
+    static float _runSpeed = 3f;
 
     private void Start()
     {
@@ -53,8 +53,8 @@ public class Player : MonoBehaviour
             Vector3 directionToGhost = _ghost.transform.position - transform.position;
             directionToGhost.y = 0;
 
-            //목표 위치까지 거리가 0.05보다 작으면 도착한것으로 간주하고 멈춤
-            if (directionToGhost.magnitude < 0.05f)
+            //목표 위치까지 거리가 0.1보다 작으면 도착한것으로 간주하고 멈춤
+            if (directionToGhost.magnitude < 0.1f)
             {
                 _velocity = Vector3.zero;
                 _controller.Move(_velocity);
