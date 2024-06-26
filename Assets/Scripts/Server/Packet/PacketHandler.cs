@@ -12,6 +12,25 @@ public class PacketHandler
 
         clientSession.PingPong._isPong = true;
     }
+    
+    //방장이 데디서버에게 방 정보를 보내는 패킷을 처리
+    public static void CDS_InformRoomInfoHandler(PacketSession session, IMessage packet)
+    {
+        CDS_InformRoomInfo informRoomInfoPacket = packet as CDS_InformRoomInfo;
+        ClientSession clientSession = session as ClientSession;
+        
+        Managers.Player.SetRoomInfo(informRoomInfoPacket.RoomId, informRoomInfoPacket.PlayerNum);
+        
+        Util.PrintLog($"방장이 알려준 방정보 : 방번호 {informRoomInfoPacket.RoomId}, 방인원 {informRoomInfoPacket.PlayerNum}명");
+        
+        //방장이 방 정보를 알려줬으면 3초 후에 게임 시작 패킷을 모두에게 보냄.(이 패킷을 받은 클라는  3,2,1 카운트 후 게임을 시작함)
+        JobTimer.Instance.Push(() =>
+        {
+            DSC_StartGame sendPacket = new DSC_StartGame();
+            Managers.Player.Broadcast(sendPacket);
+        }, 3000);
+        
+    }
 
     //데디서버 입장을 요청하는 패킷을 처리
     public static void CDS_AllowEnterGameHandler(PacketSession session, IMessage packet)
@@ -27,6 +46,8 @@ public class PacketHandler
         int roomId = allowEnterGamePacket.RoomId;
         string name = allowEnterGamePacket.Name;
         Managers.Player.AddPlayer(clientSession, roomId, name); Managers.Object.SpawnAllChest();//임시테스트
+        
+        
     }
     
     //클라에서 주기적으로 보내는 움직임동기화 패킷을 처리(핵 아닐시 고스트 위치 설정 + 다른 클라들에게 움직임 동기화패킷 보냄)

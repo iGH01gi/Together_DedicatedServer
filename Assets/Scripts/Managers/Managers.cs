@@ -18,6 +18,7 @@ public class Managers : MonoBehaviour
     PlayerManager _player;
     ObjectManager _object;
     LogicManager _logic = new LogicManager();
+    TimeManager _time = new TimeManager();
     
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
@@ -29,6 +30,7 @@ public class Managers : MonoBehaviour
     public static PlayerManager Player { get { return Instance._player; } }
     public static ObjectManager Object { get { return Instance._object; } }
     public static LogicManager Logic { get { return Instance._logic; } }
+    public static TimeManager Time { get { return Instance._time; } }
 
 
     void Start()

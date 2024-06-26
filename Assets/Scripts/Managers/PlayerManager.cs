@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using UnityEngine;
 
@@ -13,10 +14,42 @@ public class PlayerManager : MonoBehaviour
     public Transform _spawnPointCenter;
     private bool[] _possibleSpawnPoint; //8개의 스폰포인트 중에 가능한 스폰포인트를 체크하는 배열
 
+    public int _configuredPlayerCount = 8; //방장이 알려준 플레이어 수(대기할때 사용됨, 기본값은 8, 3초까지 기다림)
+    public int _roomId = -1; //방장이 알려준 방id(혹시 몰라서 들고있음, 기본값은 -1)
+
     public void Init()
     {
         _spawnPointCenter = GameObject.Find("Map/SpawnPoint").transform;
         _possibleSpawnPoint = new bool[8]{true,true,true,true,true,true,true,true};
+    }
+    
+    /// <summary>
+    /// 방장이 보내준 방 정보 저장
+    /// </summary>
+    /// <param name="roomId">방 번호</param>
+    /// <param name="playerCount">데디서버에 접속될 플레이어 수</param>
+    public void SetRoomInfo(int roomId,int playerCount)
+    {
+        _roomId = roomId;
+        _configuredPlayerCount = playerCount;
+    }
+    
+    //모든 플레이어에게 패킷 전송
+    public void Broadcast(IMessage packet)
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            /*if (a.Key == movePacket.MyDediplayerId) //본인한테는 보내지 않음
+            {
+                continue;
+            }*/
+                    
+            Managers.Session._sessions.TryGetValue(a.Key, out ClientSession session);
+            if (session != null)
+            {
+                session.Send(packet);
+            }
+        }
     }
     
     /// <summary>
