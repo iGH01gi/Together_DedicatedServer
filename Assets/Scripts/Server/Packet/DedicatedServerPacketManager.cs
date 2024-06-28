@@ -29,7 +29,9 @@ class PacketManager
 		_onRecv.Add((ushort)MsgId.CdsAllowEnterGame, MakePacket<CDS_AllowEnterGame>);
 		_handler.Add((ushort)MsgId.CdsAllowEnterGame, PacketHandler.CDS_AllowEnterGameHandler);		
 		_onRecv.Add((ushort)MsgId.CdsMove, MakePacket<CDS_Move>);
-		_handler.Add((ushort)MsgId.CdsMove, PacketHandler.CDS_MoveHandler);
+		_handler.Add((ushort)MsgId.CdsMove, PacketHandler.CDS_MoveHandler);		
+		_onRecv.Add((ushort)MsgId.CdsTryChestOpen, MakePacket<CDS_TryChestOpen>);
+		_handler.Add((ushort)MsgId.CdsTryChestOpen, PacketHandler.CDS_TryChestOpenHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)

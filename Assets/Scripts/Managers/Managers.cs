@@ -65,6 +65,7 @@ public class Managers : MonoBehaviour
             _instance = go.GetComponent<Managers>();
             _instance._player = go.GetComponent<PlayerManager>(); //특별처리 (모노비헤비어)
             _instance._object = go.GetComponent<ObjectManager>(); //특별처리 (모노비헤비어)
+            _instance._object.Init();
             _instance._pool.Init();
             _instance._input.Init();
             _instance._network.Init();
