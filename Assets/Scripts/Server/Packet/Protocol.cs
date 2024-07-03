@@ -36,7 +36,8 @@ namespace Google.Protobuf.Protocol {
             "CG1heENvdW50GAQgASgFEhEKCWlzUHJpdmF0ZRgFIAEoCBIRCglpc1BsYXlp",
             "bmcYBiABKAgSGgoScm9vbU1hc3RlclBsYXllcklkGAcgASgFIkQKCUNoZXN0",
             "SW5mbxIPCgdjaGVzdElkGAEgASgFEhIKCmNoZXN0TGV2ZWwYAiABKAUSEgoK",
-            "Y2hlc3RQb2ludBgDIAEoBSINCgtDU19Sb29tTGlzdCIwCgtTQ19Sb29tTGlz",
+            "Y2hlc3RQb2ludBgDIAEoBSIrCghWZWxvY2l0eRIJCgF4GAEgASgCEgkKAXkY",
+            "AiABKAISCQoBehgDIAEoAiINCgtDU19Sb29tTGlzdCIwCgtTQ19Sb29tTGlz",
             "dBIhCgVyb29tcxgBIAMoCzISLlByb3RvY29sLlJvb21JbmZvIkEKC0NTX01h",
             "a2VSb29tEg0KBXRpdGxlGAEgASgJEhEKCWlzUHJpdmF0ZRgCIAEoCBIQCghw",
             "YXNzd29yZBgDIAEoCSJBCgtTQ19NYWtlUm9vbRIgCgRyb29tGAEgASgLMhIu",
@@ -66,37 +67,42 @@ namespace Google.Protobuf.Protocol {
             "U2VydmVyEicKCW5ld1BsYXllchgBIAEoCzIULlByb3RvY29sLlBsYXllcklu",
             "Zm8SLwoOc3Bhd25UcmFuc2Zvcm0YAiABKAsyFy5Qcm90b2NvbC5UcmFuc2Zv",
             "cm1JbmZvIjcKHkRTQ19JbmZvcm1MZWF2ZURlZGljYXRlZFNlcnZlchIVCg1s",
-            "ZWF2ZVBsYXllcklkGAEgASgFIg8KDURTQ19TdGFydEdhbWUimgEKCENEU19N",
-            "b3ZlEhYKDm15RGVkaXBsYXllcklkGAEgASgFEi8KDmdob3N0VHJhbnNmb3Jt",
-            "GAIgASgLMhcuUHJvdG9jb2wuVHJhbnNmb3JtSW5mbxIVCg1rZXlib2FyZElu",
-            "cHV0GAMgASgFEi4KDnBsYXllclJvdGF0aW9uGAQgASgLMhYuUHJvdG9jb2wu",
-            "Um90YXRpb25JbmZvIpQBCghEU0NfTW92ZRIQCghwbGF5ZXJJZBgBIAEoBRIv",
-            "Cg5naG9zdFRyYW5zZm9ybRgCIAEoCzIXLlByb3RvY29sLlRyYW5zZm9ybUlu",
-            "Zm8SFQoNa2V5Ym9hcmRJbnB1dBgDIAEoBRIuCg5wbGF5ZXJSb3RhdGlvbhgE",
-            "IAEoCzIWLlByb3RvY29sLlJvdGF0aW9uSW5mbyKcAQoRRFNDX05ld0NoZXN0",
-            "c0luZm8SPwoKY2hlc3RzSW5mbxgBIAMoCzIrLlByb3RvY29sLkRTQ19OZXdD",
-            "aGVzdHNJbmZvLkNoZXN0c0luZm9FbnRyeRpGCg9DaGVzdHNJbmZvRW50cnkS",
-            "CwoDa2V5GAEgASgFEiIKBXZhbHVlGAIgASgLMhMuUHJvdG9jb2wuQ2hlc3RJ",
-            "bmZvOgI4ASI7ChBDRFNfVHJ5Q2hlc3RPcGVuEhYKDm15RGVkaXBsYXllcklk",
-            "GAEgASgFEg8KB2NoZXN0SWQYAiABKAUiOQoURFNDX0NoZXN0T3BlblN1Y2Nl",
-            "c3MSDwoHY2hlc3RJZBgBIAEoBRIQCghwbGF5ZXJJZBgCIAEoBSqCBgoFTXNn",
-            "SWQSEAoMQ1NfUk9PTV9MSVNUEAASEAoMU0NfUk9PTV9MSVNUEAESEAoMQ1Nf",
-            "TUFLRV9ST09NEAISEAoMU0NfTUFLRV9ST09NEAMSEQoNQ1NfRU5URVJfUk9P",
-            "TRAEEhcKE1NDX0FMTE9XX0VOVEVSX1JPT00QBRIeChpTQ19JTkZPUk1fTkVX",
-            "X0ZBQ0VfSU5fUk9PTRAGEhEKDUNTX0xFQVZFX1JPT00QBxIRCg1TQ19MRUFW",
-            "RV9ST09NEAgSEAoMU0NfUElOR19QT05HEAkSEAoMQ1NfUElOR19QT05HEAoS",
-            "EQoNRFNDX1BJTkdfUE9ORxALEhEKDUNEU19QSU5HX1BPTkcQDBIfChtDU19D",
-            "T05ORUNUX0RFRElDQVRFRF9TRVJWRVIQDRIfChtTQ19DT05ORUNUX0RFRElD",
-            "QVRFRF9TRVJWRVIQDhIYChRDRFNfSU5GT1JNX1JPT01fSU5GTxAPEhgKFENE",
-            "U19BTExPV19FTlRFUl9HQU1FEBASGAoURFNDX0FMTE9XX0VOVEVSX0dBTUUQ",
-            "ERIrCidEU0NfSU5GT1JNX05FV19GQUNFX0lOX0RFRElDQVRFRF9TRVJWRVIQ",
-            "EhIlCiFEU0NfSU5GT1JNX0xFQVZFX0RFRElDQVRFRF9TRVJWRVIQExISCg5E",
-            "U0NfU1RBUlRfR0FNRRAUEgwKCENEU19NT1ZFEBUSDAoIRFNDX01PVkUQFhIX",
-            "ChNEU0NfREFZX1RJTUVSX1NUQVJUEBcSFgoSRFNDX0RBWV9USU1FUl9TWU5D",
-            "EBgSFQoRRFNDX0RBWV9USU1FUl9FTkQQGRIZChVEU0NfTklHSFRfVElNRVJf",
-            "U1RBUlQQGhIYChREU0NfTklHSFRfVElNRVJfU1lOQxAbEhcKE0RTQ19OSUdI",
-            "VF9USU1FUl9FTkQQHBIXChNEU0NfTkVXX0NIRVNUU19JTkZPEB0SFgoSQ0RT",
-            "X1RSWV9DSEVTVF9PUEVOEB4SGgoWRFNDX0NIRVNUX09QRU5fU1VDQ0VTUxAf",
+            "ZWF2ZVBsYXllcklkGAEgASgFIg8KDURTQ19TdGFydEdhbWUivAEKCENEU19N",
+            "b3ZlEhQKDGRlZGlwbGF5ZXJJZBgBIAEoBRIuCg10cmFuc2Zvcm1JbmZvGAIg",
+            "ASgLMhcuUHJvdG9jb2wuVHJhbnNmb3JtSW5mbxIVCg1rZXlib2FyZElucHV0",
+            "GAMgASgFEiQKCHZlbG9jaXR5GAQgASgLMhIuUHJvdG9jb2wuVmVsb2NpdHkS",
+            "LQoJdGltZXN0YW1wGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
+            "cCK8AQoIRFNDX01vdmUSFAoMZGVkaXBsYXllcklkGAEgASgFEi4KDXRyYW5z",
+            "Zm9ybUluZm8YAiABKAsyFy5Qcm90b2NvbC5UcmFuc2Zvcm1JbmZvEhUKDWtl",
+            "eWJvYXJkSW5wdXQYAyABKAUSJAoIdmVsb2NpdHkYBCABKAsyEi5Qcm90b2Nv",
+            "bC5WZWxvY2l0eRItCgl0aW1lc3RhbXAYBSABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuVGltZXN0YW1wIpwBChFEU0NfTmV3Q2hlc3RzSW5mbxI/CgpjaGVzdHNJ",
+            "bmZvGAEgAygLMisuUHJvdG9jb2wuRFNDX05ld0NoZXN0c0luZm8uQ2hlc3Rz",
+            "SW5mb0VudHJ5GkYKD0NoZXN0c0luZm9FbnRyeRILCgNrZXkYASABKAUSIgoF",
+            "dmFsdWUYAiABKAsyEy5Qcm90b2NvbC5DaGVzdEluZm86AjgBIjsKEENEU19U",
+            "cnlDaGVzdE9wZW4SFgoObXlEZWRpcGxheWVySWQYASABKAUSDwoHY2hlc3RJ",
+            "ZBgCIAEoBSI5ChREU0NfQ2hlc3RPcGVuU3VjY2VzcxIPCgdjaGVzdElkGAEg",
+            "ASgFEhAKCHBsYXllcklkGAIgASgFIhYKFENEU19SZXF1ZXN0VGltZXN0YW1w",
+            "IkYKFURTQ19SZXNwb25zZVRpbWVzdGFtcBItCgl0aW1lc3RhbXAYASABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wKrkGCgVNc2dJZBIQCgxDU19S",
+            "T09NX0xJU1QQABIQCgxTQ19ST09NX0xJU1QQARIQCgxDU19NQUtFX1JPT00Q",
+            "AhIQCgxTQ19NQUtFX1JPT00QAxIRCg1DU19FTlRFUl9ST09NEAQSFwoTU0Nf",
+            "QUxMT1dfRU5URVJfUk9PTRAFEh4KGlNDX0lORk9STV9ORVdfRkFDRV9JTl9S",
+            "T09NEAYSEQoNQ1NfTEVBVkVfUk9PTRAHEhEKDVNDX0xFQVZFX1JPT00QCBIQ",
+            "CgxTQ19QSU5HX1BPTkcQCRIQCgxDU19QSU5HX1BPTkcQChIRCg1EU0NfUElO",
+            "R19QT05HEAsSEQoNQ0RTX1BJTkdfUE9ORxAMEh8KG0NTX0NPTk5FQ1RfREVE",
+            "SUNBVEVEX1NFUlZFUhANEh8KG1NDX0NPTk5FQ1RfREVESUNBVEVEX1NFUlZF",
+            "UhAOEhgKFENEU19JTkZPUk1fUk9PTV9JTkZPEA8SGAoUQ0RTX0FMTE9XX0VO",
+            "VEVSX0dBTUUQEBIYChREU0NfQUxMT1dfRU5URVJfR0FNRRAREisKJ0RTQ19J",
+            "TkZPUk1fTkVXX0ZBQ0VfSU5fREVESUNBVEVEX1NFUlZFUhASEiUKIURTQ19J",
+            "TkZPUk1fTEVBVkVfREVESUNBVEVEX1NFUlZFUhATEhIKDkRTQ19TVEFSVF9H",
+            "QU1FEBQSDAoIQ0RTX01PVkUQFRIMCghEU0NfTU9WRRAWEhcKE0RTQ19EQVlf",
+            "VElNRVJfU1RBUlQQFxIWChJEU0NfREFZX1RJTUVSX1NZTkMQGBIVChFEU0Nf",
+            "REFZX1RJTUVSX0VORBAZEhkKFURTQ19OSUdIVF9USU1FUl9TVEFSVBAaEhgK",
+            "FERTQ19OSUdIVF9USU1FUl9TWU5DEBsSFwoTRFNDX05JR0hUX1RJTUVSX0VO",
+            "RBAcEhcKE0RTQ19ORVdfQ0hFU1RTX0lORk8QHRIWChJDRFNfVFJZX0NIRVNU",
+            "X09QRU4QHhIaChZEU0NfQ0hFU1RfT1BFTl9TVUNDRVNTEB8SGQoVQ0RTX1JF",
+            "UVVFU1RfVElNRVNUQU1QECASGgoWRFNDX1JFU1BPTlNFX1RJTUVTVEFNUBAh",
             "KlsKDlJlYXNvblJlamVjdGVkEhAKDFJvb21Ob3RFeGlzdBAAEhQKEEN1cnJl",
             "bnRseVBsYXlpbmcQARIOCgpSb29tSXNGdWxsEAISEQoNV3JvbmdQYXNzd29y",
             "ZBADQhuqAhhHb29nbGUuUHJvdG9idWYuUHJvdG9jb2xiBnByb3RvMw=="));
@@ -109,6 +115,7 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.TransformInfo), global::Google.Protobuf.Protocol.TransformInfo.Parser, new[]{ "Position", "Rotation" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.RoomInfo), global::Google.Protobuf.Protocol.RoomInfo.Parser, new[]{ "RoomId", "Title", "CurrentCount", "MaxCount", "IsPrivate", "IsPlaying", "RoomMasterPlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.ChestInfo), global::Google.Protobuf.Protocol.ChestInfo.Parser, new[]{ "ChestId", "ChestLevel", "ChestPoint" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.Velocity), global::Google.Protobuf.Protocol.Velocity.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CS_RoomList), global::Google.Protobuf.Protocol.CS_RoomList.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.SC_RoomList), global::Google.Protobuf.Protocol.SC_RoomList.Parser, new[]{ "Rooms" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CS_MakeRoom), global::Google.Protobuf.Protocol.CS_MakeRoom.Parser, new[]{ "Title", "IsPrivate", "Password" }, null, null, null, null),
@@ -130,11 +137,13 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_InformNewFaceInDedicatedServer), global::Google.Protobuf.Protocol.DSC_InformNewFaceInDedicatedServer.Parser, new[]{ "NewPlayer", "SpawnTransform" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_InformLeaveDedicatedServer), global::Google.Protobuf.Protocol.DSC_InformLeaveDedicatedServer.Parser, new[]{ "LeavePlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_StartGame), global::Google.Protobuf.Protocol.DSC_StartGame.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_Move), global::Google.Protobuf.Protocol.CDS_Move.Parser, new[]{ "MyDediplayerId", "GhostTransform", "KeyboardInput", "PlayerRotation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_Move), global::Google.Protobuf.Protocol.DSC_Move.Parser, new[]{ "PlayerId", "GhostTransform", "KeyboardInput", "PlayerRotation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_Move), global::Google.Protobuf.Protocol.CDS_Move.Parser, new[]{ "DediplayerId", "TransformInfo", "KeyboardInput", "Velocity", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_Move), global::Google.Protobuf.Protocol.DSC_Move.Parser, new[]{ "DediplayerId", "TransformInfo", "KeyboardInput", "Velocity", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NewChestsInfo), global::Google.Protobuf.Protocol.DSC_NewChestsInfo.Parser, new[]{ "ChestsInfo" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_TryChestOpen), global::Google.Protobuf.Protocol.CDS_TryChestOpen.Parser, new[]{ "MyDediplayerId", "ChestId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess), global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess.Parser, new[]{ "ChestId", "PlayerId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess), global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess.Parser, new[]{ "ChestId", "PlayerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_RequestTimestamp), global::Google.Protobuf.Protocol.CDS_RequestTimestamp.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ResponseTimestamp), global::Google.Protobuf.Protocol.DSC_ResponseTimestamp.Parser, new[]{ "Timestamp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -231,6 +240,14 @@ namespace Google.Protobuf.Protocol {
     ///데디서버가 모든 클라에게 상자 열기 성공 결과 전달
     /// </summary>
     [pbr::OriginalName("DSC_CHEST_OPEN_SUCCESS")] DscChestOpenSuccess = 31,
+    /// <summary>
+    ///클라가 데디서버에게 타임스탬프 요청
+    /// </summary>
+    [pbr::OriginalName("CDS_REQUEST_TIMESTAMP")] CdsRequestTimestamp = 32,
+    /// <summary>
+    ///데디서버가 클라에게 타임스탬프 응답
+    /// </summary>
+    [pbr::OriginalName("DSC_RESPONSE_TIMESTAMP")] DscResponseTimestamp = 33,
   }
 
   public enum ReasonRejected {
@@ -1449,6 +1466,191 @@ namespace Google.Protobuf.Protocol {
 
   }
 
+  public sealed partial class Velocity : pb::IMessage<Velocity> {
+    private static readonly pb::MessageParser<Velocity> _parser = new pb::MessageParser<Velocity>(() => new Velocity());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Velocity> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Velocity() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Velocity(Velocity other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Velocity Clone() {
+      return new Velocity(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Velocity);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Velocity other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Velocity other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class CS_RoomList : pb::IMessage<CS_RoomList> {
     private static readonly pb::MessageParser<CS_RoomList> _parser = new pb::MessageParser<CS_RoomList>(() => new CS_RoomList());
     private pb::UnknownFieldSet _unknownFields;
@@ -1457,7 +1659,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1558,7 +1760,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1679,7 +1881,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1864,7 +2066,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2027,7 +2229,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2212,7 +2414,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2451,7 +2653,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2642,7 +2844,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2771,7 +2973,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2934,7 +3136,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3035,7 +3237,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3136,7 +3338,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3237,7 +3439,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3338,7 +3540,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3467,7 +3669,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3624,7 +3826,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3781,7 +3983,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3938,7 +4140,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4110,7 +4312,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4279,7 +4481,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4408,7 +4610,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4509,7 +4711,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4526,10 +4728,11 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CDS_Move(CDS_Move other) : this() {
-      myDediplayerId_ = other.myDediplayerId_;
-      ghostTransform_ = other.ghostTransform_ != null ? other.ghostTransform_.Clone() : null;
+      dediplayerId_ = other.dediplayerId_;
+      transformInfo_ = other.transformInfo_ != null ? other.transformInfo_.Clone() : null;
       keyboardInput_ = other.keyboardInput_;
-      playerRotation_ = other.playerRotation_ != null ? other.playerRotation_.Clone() : null;
+      velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4538,31 +4741,31 @@ namespace Google.Protobuf.Protocol {
       return new CDS_Move(this);
     }
 
-    /// <summary>Field number for the "myDediplayerId" field.</summary>
-    public const int MyDediplayerIdFieldNumber = 1;
-    private int myDediplayerId_;
+    /// <summary>Field number for the "dediplayerId" field.</summary>
+    public const int DediplayerIdFieldNumber = 1;
+    private int dediplayerId_;
     /// <summary>
     ///이거 아마 지워도될듯?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int MyDediplayerId {
-      get { return myDediplayerId_; }
+    public int DediplayerId {
+      get { return dediplayerId_; }
       set {
-        myDediplayerId_ = value;
+        dediplayerId_ = value;
       }
     }
 
-    /// <summary>Field number for the "ghostTransform" field.</summary>
-    public const int GhostTransformFieldNumber = 2;
-    private global::Google.Protobuf.Protocol.TransformInfo ghostTransform_;
+    /// <summary>Field number for the "transformInfo" field.</summary>
+    public const int TransformInfoFieldNumber = 2;
+    private global::Google.Protobuf.Protocol.TransformInfo transformInfo_;
     /// <summary>
-    ///고스트의 transform 정보
+    ///플레이어의 transform 정보
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.TransformInfo GhostTransform {
-      get { return ghostTransform_; }
+    public global::Google.Protobuf.Protocol.TransformInfo TransformInfo {
+      get { return transformInfo_; }
       set {
-        ghostTransform_ = value;
+        transformInfo_ = value;
       }
     }
 
@@ -4577,17 +4780,31 @@ namespace Google.Protobuf.Protocol {
       }
     }
 
-    /// <summary>Field number for the "playerRotation" field.</summary>
-    public const int PlayerRotationFieldNumber = 4;
-    private global::Google.Protobuf.Protocol.RotationInfo playerRotation_;
+    /// <summary>Field number for the "velocity" field.</summary>
+    public const int VelocityFieldNumber = 4;
+    private global::Google.Protobuf.Protocol.Velocity velocity_;
     /// <summary>
-    ///플레이어의 회전정보
+    ///속도
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.RotationInfo PlayerRotation {
-      get { return playerRotation_; }
+    public global::Google.Protobuf.Protocol.Velocity Velocity {
+      get { return velocity_; }
       set {
-        playerRotation_ = value;
+        velocity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    /// <summary>
+    ///서버시간으로 동기화된 타임스탬프 
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
       }
     }
 
@@ -4604,20 +4821,22 @@ namespace Google.Protobuf.Protocol {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MyDediplayerId != other.MyDediplayerId) return false;
-      if (!object.Equals(GhostTransform, other.GhostTransform)) return false;
+      if (DediplayerId != other.DediplayerId) return false;
+      if (!object.Equals(TransformInfo, other.TransformInfo)) return false;
       if (KeyboardInput != other.KeyboardInput) return false;
-      if (!object.Equals(PlayerRotation, other.PlayerRotation)) return false;
+      if (!object.Equals(Velocity, other.Velocity)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (MyDediplayerId != 0) hash ^= MyDediplayerId.GetHashCode();
-      if (ghostTransform_ != null) hash ^= GhostTransform.GetHashCode();
+      if (DediplayerId != 0) hash ^= DediplayerId.GetHashCode();
+      if (transformInfo_ != null) hash ^= TransformInfo.GetHashCode();
       if (KeyboardInput != 0) hash ^= KeyboardInput.GetHashCode();
-      if (playerRotation_ != null) hash ^= PlayerRotation.GetHashCode();
+      if (velocity_ != null) hash ^= Velocity.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4631,21 +4850,25 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (MyDediplayerId != 0) {
+      if (DediplayerId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(MyDediplayerId);
+        output.WriteInt32(DediplayerId);
       }
-      if (ghostTransform_ != null) {
+      if (transformInfo_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(GhostTransform);
+        output.WriteMessage(TransformInfo);
       }
       if (KeyboardInput != 0) {
         output.WriteRawTag(24);
         output.WriteInt32(KeyboardInput);
       }
-      if (playerRotation_ != null) {
+      if (velocity_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(PlayerRotation);
+        output.WriteMessage(Velocity);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Timestamp);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4655,17 +4878,20 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (MyDediplayerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MyDediplayerId);
+      if (DediplayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DediplayerId);
       }
-      if (ghostTransform_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GhostTransform);
+      if (transformInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TransformInfo);
       }
       if (KeyboardInput != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(KeyboardInput);
       }
-      if (playerRotation_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerRotation);
+      if (velocity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
+      }
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4678,23 +4904,29 @@ namespace Google.Protobuf.Protocol {
       if (other == null) {
         return;
       }
-      if (other.MyDediplayerId != 0) {
-        MyDediplayerId = other.MyDediplayerId;
+      if (other.DediplayerId != 0) {
+        DediplayerId = other.DediplayerId;
       }
-      if (other.ghostTransform_ != null) {
-        if (ghostTransform_ == null) {
-          GhostTransform = new global::Google.Protobuf.Protocol.TransformInfo();
+      if (other.transformInfo_ != null) {
+        if (transformInfo_ == null) {
+          TransformInfo = new global::Google.Protobuf.Protocol.TransformInfo();
         }
-        GhostTransform.MergeFrom(other.GhostTransform);
+        TransformInfo.MergeFrom(other.TransformInfo);
       }
       if (other.KeyboardInput != 0) {
         KeyboardInput = other.KeyboardInput;
       }
-      if (other.playerRotation_ != null) {
-        if (playerRotation_ == null) {
-          PlayerRotation = new global::Google.Protobuf.Protocol.RotationInfo();
+      if (other.velocity_ != null) {
+        if (velocity_ == null) {
+          Velocity = new global::Google.Protobuf.Protocol.Velocity();
         }
-        PlayerRotation.MergeFrom(other.PlayerRotation);
+        Velocity.MergeFrom(other.Velocity);
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4708,14 +4940,14 @@ namespace Google.Protobuf.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            MyDediplayerId = input.ReadInt32();
+            DediplayerId = input.ReadInt32();
             break;
           }
           case 18: {
-            if (ghostTransform_ == null) {
-              GhostTransform = new global::Google.Protobuf.Protocol.TransformInfo();
+            if (transformInfo_ == null) {
+              TransformInfo = new global::Google.Protobuf.Protocol.TransformInfo();
             }
-            input.ReadMessage(GhostTransform);
+            input.ReadMessage(TransformInfo);
             break;
           }
           case 24: {
@@ -4723,10 +4955,17 @@ namespace Google.Protobuf.Protocol {
             break;
           }
           case 34: {
-            if (playerRotation_ == null) {
-              PlayerRotation = new global::Google.Protobuf.Protocol.RotationInfo();
+            if (velocity_ == null) {
+              Velocity = new global::Google.Protobuf.Protocol.Velocity();
             }
-            input.ReadMessage(PlayerRotation);
+            input.ReadMessage(Velocity);
+            break;
+          }
+          case 42: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
             break;
           }
         }
@@ -4743,7 +4982,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4760,10 +4999,11 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DSC_Move(DSC_Move other) : this() {
-      playerId_ = other.playerId_;
-      ghostTransform_ = other.ghostTransform_ != null ? other.ghostTransform_.Clone() : null;
+      dediplayerId_ = other.dediplayerId_;
+      transformInfo_ = other.transformInfo_ != null ? other.transformInfo_.Clone() : null;
       keyboardInput_ = other.keyboardInput_;
-      playerRotation_ = other.playerRotation_ != null ? other.playerRotation_.Clone() : null;
+      velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4772,28 +5012,28 @@ namespace Google.Protobuf.Protocol {
       return new DSC_Move(this);
     }
 
-    /// <summary>Field number for the "playerId" field.</summary>
-    public const int PlayerIdFieldNumber = 1;
-    private int playerId_;
+    /// <summary>Field number for the "dediplayerId" field.</summary>
+    public const int DediplayerIdFieldNumber = 1;
+    private int dediplayerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PlayerId {
-      get { return playerId_; }
+    public int DediplayerId {
+      get { return dediplayerId_; }
       set {
-        playerId_ = value;
+        dediplayerId_ = value;
       }
     }
 
-    /// <summary>Field number for the "ghostTransform" field.</summary>
-    public const int GhostTransformFieldNumber = 2;
-    private global::Google.Protobuf.Protocol.TransformInfo ghostTransform_;
+    /// <summary>Field number for the "transformInfo" field.</summary>
+    public const int TransformInfoFieldNumber = 2;
+    private global::Google.Protobuf.Protocol.TransformInfo transformInfo_;
     /// <summary>
-    ///고스트의 transform 정보
+    ///transform 정보
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.TransformInfo GhostTransform {
-      get { return ghostTransform_; }
+    public global::Google.Protobuf.Protocol.TransformInfo TransformInfo {
+      get { return transformInfo_; }
       set {
-        ghostTransform_ = value;
+        transformInfo_ = value;
       }
     }
 
@@ -4808,17 +5048,31 @@ namespace Google.Protobuf.Protocol {
       }
     }
 
-    /// <summary>Field number for the "playerRotation" field.</summary>
-    public const int PlayerRotationFieldNumber = 4;
-    private global::Google.Protobuf.Protocol.RotationInfo playerRotation_;
+    /// <summary>Field number for the "velocity" field.</summary>
+    public const int VelocityFieldNumber = 4;
+    private global::Google.Protobuf.Protocol.Velocity velocity_;
     /// <summary>
-    ///플레이어의 회전정보
+    ///속도
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.RotationInfo PlayerRotation {
-      get { return playerRotation_; }
+    public global::Google.Protobuf.Protocol.Velocity Velocity {
+      get { return velocity_; }
       set {
-        playerRotation_ = value;
+        velocity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    /// <summary>
+    ///서버시간으로 동기화된 타임스탬프 
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
       }
     }
 
@@ -4835,20 +5089,22 @@ namespace Google.Protobuf.Protocol {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PlayerId != other.PlayerId) return false;
-      if (!object.Equals(GhostTransform, other.GhostTransform)) return false;
+      if (DediplayerId != other.DediplayerId) return false;
+      if (!object.Equals(TransformInfo, other.TransformInfo)) return false;
       if (KeyboardInput != other.KeyboardInput) return false;
-      if (!object.Equals(PlayerRotation, other.PlayerRotation)) return false;
+      if (!object.Equals(Velocity, other.Velocity)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
-      if (ghostTransform_ != null) hash ^= GhostTransform.GetHashCode();
+      if (DediplayerId != 0) hash ^= DediplayerId.GetHashCode();
+      if (transformInfo_ != null) hash ^= TransformInfo.GetHashCode();
       if (KeyboardInput != 0) hash ^= KeyboardInput.GetHashCode();
-      if (playerRotation_ != null) hash ^= PlayerRotation.GetHashCode();
+      if (velocity_ != null) hash ^= Velocity.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4862,21 +5118,25 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (PlayerId != 0) {
+      if (DediplayerId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(PlayerId);
+        output.WriteInt32(DediplayerId);
       }
-      if (ghostTransform_ != null) {
+      if (transformInfo_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(GhostTransform);
+        output.WriteMessage(TransformInfo);
       }
       if (KeyboardInput != 0) {
         output.WriteRawTag(24);
         output.WriteInt32(KeyboardInput);
       }
-      if (playerRotation_ != null) {
+      if (velocity_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(PlayerRotation);
+        output.WriteMessage(Velocity);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Timestamp);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4886,17 +5146,20 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (PlayerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      if (DediplayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DediplayerId);
       }
-      if (ghostTransform_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GhostTransform);
+      if (transformInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TransformInfo);
       }
       if (KeyboardInput != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(KeyboardInput);
       }
-      if (playerRotation_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerRotation);
+      if (velocity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
+      }
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4909,23 +5172,29 @@ namespace Google.Protobuf.Protocol {
       if (other == null) {
         return;
       }
-      if (other.PlayerId != 0) {
-        PlayerId = other.PlayerId;
+      if (other.DediplayerId != 0) {
+        DediplayerId = other.DediplayerId;
       }
-      if (other.ghostTransform_ != null) {
-        if (ghostTransform_ == null) {
-          GhostTransform = new global::Google.Protobuf.Protocol.TransformInfo();
+      if (other.transformInfo_ != null) {
+        if (transformInfo_ == null) {
+          TransformInfo = new global::Google.Protobuf.Protocol.TransformInfo();
         }
-        GhostTransform.MergeFrom(other.GhostTransform);
+        TransformInfo.MergeFrom(other.TransformInfo);
       }
       if (other.KeyboardInput != 0) {
         KeyboardInput = other.KeyboardInput;
       }
-      if (other.playerRotation_ != null) {
-        if (playerRotation_ == null) {
-          PlayerRotation = new global::Google.Protobuf.Protocol.RotationInfo();
+      if (other.velocity_ != null) {
+        if (velocity_ == null) {
+          Velocity = new global::Google.Protobuf.Protocol.Velocity();
         }
-        PlayerRotation.MergeFrom(other.PlayerRotation);
+        Velocity.MergeFrom(other.Velocity);
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4939,14 +5208,14 @@ namespace Google.Protobuf.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PlayerId = input.ReadInt32();
+            DediplayerId = input.ReadInt32();
             break;
           }
           case 18: {
-            if (ghostTransform_ == null) {
-              GhostTransform = new global::Google.Protobuf.Protocol.TransformInfo();
+            if (transformInfo_ == null) {
+              TransformInfo = new global::Google.Protobuf.Protocol.TransformInfo();
             }
-            input.ReadMessage(GhostTransform);
+            input.ReadMessage(TransformInfo);
             break;
           }
           case 24: {
@@ -4954,10 +5223,17 @@ namespace Google.Protobuf.Protocol {
             break;
           }
           case 34: {
-            if (playerRotation_ == null) {
-              PlayerRotation = new global::Google.Protobuf.Protocol.RotationInfo();
+            if (velocity_ == null) {
+              Velocity = new global::Google.Protobuf.Protocol.Velocity();
             }
-            input.ReadMessage(PlayerRotation);
+            input.ReadMessage(Velocity);
+            break;
+          }
+          case 42: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
             break;
           }
         }
@@ -4974,7 +5250,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5098,7 +5374,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5255,7 +5531,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5402,6 +5678,242 @@ namespace Google.Protobuf.Protocol {
           }
           case 16: {
             PlayerId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CDS_RequestTimestamp : pb::IMessage<CDS_RequestTimestamp> {
+    private static readonly pb::MessageParser<CDS_RequestTimestamp> _parser = new pb::MessageParser<CDS_RequestTimestamp>(() => new CDS_RequestTimestamp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CDS_RequestTimestamp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_RequestTimestamp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_RequestTimestamp(CDS_RequestTimestamp other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_RequestTimestamp Clone() {
+      return new CDS_RequestTimestamp(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CDS_RequestTimestamp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CDS_RequestTimestamp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CDS_RequestTimestamp other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_ResponseTimestamp : pb::IMessage<DSC_ResponseTimestamp> {
+    private static readonly pb::MessageParser<DSC_ResponseTimestamp> _parser = new pb::MessageParser<DSC_ResponseTimestamp>(() => new DSC_ResponseTimestamp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_ResponseTimestamp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[34]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_ResponseTimestamp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_ResponseTimestamp(DSC_ResponseTimestamp other) : this() {
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_ResponseTimestamp Clone() {
+      return new DSC_ResponseTimestamp(this);
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 1;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_ResponseTimestamp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_ResponseTimestamp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (timestamp_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_ResponseTimestamp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
             break;
           }
         }

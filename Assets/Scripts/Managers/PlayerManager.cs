@@ -1,14 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerManager : MonoBehaviour
 {
+    public PlayerMoveController _playerMoveController;
+    
     object _lock = new object();
-    Dictionary<int,GameObject> _players = new Dictionary<int, GameObject>(); //key: 데디서버의 playerId, value: 플레이어 오브젝트
-    Dictionary<int,GameObject> _ghosts = new Dictionary<int, GameObject>()   ; //key: 데디서버의 playerId, value: 고스트 오브젝트
+    public Dictionary<int,GameObject> _players = new Dictionary<int, GameObject>(); //key: 데디서버의 playerId, value: 플레이어 오브젝트
+    public Dictionary<int,GameObject> _ghosts = new Dictionary<int, GameObject>()   ; //key: 데디서버의 playerId, value: 고스트 오브젝트
     public string _tempPlayerPrefabPath = "Player/Player";
     public string _tempTargetGhost = "Player/TargetGhost";
     public Transform _spawnPointCenter;
@@ -19,6 +23,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Init()
     {
+        _playerMoveController = new PlayerMoveController();
         _spawnPointCenter = GameObject.Find("Map/SpawnPoint").transform;
         _possibleSpawnPoint = new bool[8]{true,true,true,true,true,true,true,true};
     }
@@ -269,70 +274,7 @@ public class PlayerManager : MonoBehaviour
 
         return newGhost;
     }
-
-
-    /// <summary>
-    /// 핵 검사한 후 팔로워가 따라갈 targetGhost를 설정함. (추측항법)
-    /// 핵 아닐때만 다른 클라이언트들에게 동기화 패킷을 보냄
-    /// </summary>
-    /// <param name="movePacket"></param>
-    public void ProcessingCDSMove(int playerId,CDS_Move movePacket)
-    {
-        if (_ghosts.TryGetValue(playerId, out GameObject ghostObj))
-        {
-            {
-                float posX = movePacket.GhostTransform.Position.PosX;
-                float posY = movePacket.GhostTransform.Position.PosY;
-                float posZ = movePacket.GhostTransform.Position.PosZ;
-                float rotX = movePacket.GhostTransform.Rotation.RotX;
-                float rotY = movePacket.GhostTransform.Rotation.RotY;
-                float rotZ = movePacket.GhostTransform.Rotation.RotZ;
-                float rotW = movePacket.GhostTransform.Rotation.RotW;
-                Quaternion localRotation = new Quaternion(rotX, rotY, rotZ, rotW);
-
-                //TODO : 데디서버의 고스트의 위치와 받은 패킷의 정보를 대조해서 해킹인지 아닌지 판별하는 코드가 필요 (해킹같다면 return해서 무시)
-
-
-                CharacterController ghostController = ghostObj.GetComponent<CharacterController>();
-                ghostController.transform.position = new Vector3(posX, posY, posZ); //고스트 위치 순간이동
-                ghostObj.transform.rotation = new Quaternion(rotX, rotY, rotZ, rotW); //고스트 회전
-
-                ghostObj.GetComponent<Ghost>().CalculateVelocity(movePacket.KeyboardInput, localRotation);
-                if (_players.TryGetValue(playerId, out GameObject playerObj))
-                {
-                    playerObj.GetComponent<Player>().SetGhostLastState(movePacket.KeyboardInput, localRotation);
-                    
-                    //플레이어 회전정보 동기화
-                    float playerRotX = movePacket.PlayerRotation.RotX;
-                    float playerRotY = movePacket.PlayerRotation.RotY;
-                    float playerRotZ = movePacket.PlayerRotation.RotZ;
-                    float playerRotW = movePacket.PlayerRotation.RotW;
-                    playerObj.transform.rotation = new Quaternion(playerRotX, playerRotY, playerRotZ, playerRotW);
-                }
-            }
-
-            {
-                //다른 클라이언트들에게 동기화 패킷 보냄 (고스트 정보임)
-                foreach (KeyValuePair<int, GameObject> a in _players)
-                {
-                    if (a.Key == movePacket.MyDediplayerId) //본인한테는 보내지 않음
-                    {
-                        continue;
-                    }
-                    
-                    Managers.Session._sessions.TryGetValue(a.Key, out ClientSession session);
-                    if (session != null)
-                    {
-                        DSC_Move dscMovePacket = new DSC_Move();
-                        dscMovePacket.PlayerId = playerId;
-                        dscMovePacket.GhostTransform = movePacket.GhostTransform;
-                        dscMovePacket.KeyboardInput = movePacket.KeyboardInput;
-                        dscMovePacket.PlayerRotation = movePacket.PlayerRotation;
-                        session.Send(dscMovePacket);
-                    }
-                }
-            }
-        }
-        
-    }
+    
 }
+
+

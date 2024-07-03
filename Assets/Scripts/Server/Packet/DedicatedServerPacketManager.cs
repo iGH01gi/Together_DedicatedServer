@@ -31,7 +31,9 @@ class PacketManager
 		_onRecv.Add((ushort)MsgId.CdsMove, MakePacket<CDS_Move>);
 		_handler.Add((ushort)MsgId.CdsMove, PacketHandler.CDS_MoveHandler);		
 		_onRecv.Add((ushort)MsgId.CdsTryChestOpen, MakePacket<CDS_TryChestOpen>);
-		_handler.Add((ushort)MsgId.CdsTryChestOpen, PacketHandler.CDS_TryChestOpenHandler);
+		_handler.Add((ushort)MsgId.CdsTryChestOpen, PacketHandler.CDS_TryChestOpenHandler);		
+		_onRecv.Add((ushort)MsgId.CdsRequestTimestamp, MakePacket<CDS_RequestTimestamp>);
+		_handler.Add((ushort)MsgId.CdsRequestTimestamp, PacketHandler.CDS_RequestTimestampHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)

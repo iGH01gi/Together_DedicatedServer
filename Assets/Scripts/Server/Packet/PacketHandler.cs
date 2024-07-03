@@ -1,6 +1,7 @@
 ﻿using System;
 using Google.Protobuf;
 using Google.Protobuf.Protocol;
+using Google.Protobuf.WellKnownTypes;
 
 public class PacketHandler
 {
@@ -23,7 +24,7 @@ public class PacketHandler
         
         Util.PrintLog($"방장이 알려준 방정보 : 방번호 {informRoomInfoPacket.RoomId}, 방인원 {informRoomInfoPacket.PlayerNum}명");
         
-        //방장이 방 정보를 알려줬으면 3초 후에 게임 시작 패킷을 모두에게 보냄.(이 패킷을 받은 클라는  3,2,1 카운트 후 게임을 시작함)
+        //방장이 방 정보를 알려줬으면 3초 후에 게임 시작 패킷을 모두에게 보냄.(이 패킷을 받은 클라는  3,2,1,카운트 후 GameStart를 띄우고  게임을 시작함)
         //이때 상자 생성패킷도 함께 보냄
         JobTimer.Instance.Push(() =>
         {
@@ -60,7 +61,12 @@ public class PacketHandler
         CDS_Move movePacket = packet as CDS_Move;
         ClientSession clientSession = session as ClientSession;
         
-        Managers.Player.ProcessingCDSMove(clientSession.SessionId, movePacket);
+        //10ms 레이턴시 가정하고 테스트
+        JobTimer.Instance.Push(() =>
+        {
+            Managers.Player._playerMoveController.ProcessingCDSMove(clientSession.SessionId, movePacket);
+        }, 10);
+       //Managers.Player._playerMoveController.ProcessingCDSMove(clientSession.SessionId, movePacket);
     }
     
     //클라에서 상자 열기를 요청하는 패킷을 처리
@@ -70,5 +76,16 @@ public class PacketHandler
         ClientSession clientSession = session as ClientSession;
         
         Managers.Object.ClientTryChestOpen(tryChestOpenPacket);
+    }
+    
+    //클라에서 타임스탬프를 요청하는 패킷을 처리
+    public static void CDS_RequestTimestampHandler(PacketSession session, IMessage packet)
+    {
+        CDS_RequestTimestamp requestTimestampPacket = packet as CDS_RequestTimestamp;
+        ClientSession clientSession = session as ClientSession;
+        
+        DSC_ResponseTimestamp sendPacket = new DSC_ResponseTimestamp();
+        sendPacket.Timestamp = DateTime.UtcNow.ToTimestamp();
+        clientSession.Send(sendPacket);
     }
 }
