@@ -3,7 +3,7 @@ using Google.Protobuf.Protocol;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InGameInputTemp : MonoBehaviour
+public class MovementInput : MonoBehaviour
 {
     int _runBit = (1 << 4);
     int _upBit = (1 << 3);
