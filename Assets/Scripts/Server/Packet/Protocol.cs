@@ -81,37 +81,42 @@ namespace Google.Protobuf.Protocol {
             "c2Zvcm1JbmZvGAIgASgLMhcuUHJvdG9jb2wuVHJhbnNmb3JtSW5mbxIVCg1r",
             "ZXlib2FyZElucHV0GAMgASgFEiQKCHZlbG9jaXR5GAQgASgLMhIuUHJvdG9j",
             "b2wuVmVsb2NpdHkSLQoJdGltZXN0YW1wGAUgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcCKcAQoRRFNDX05ld0NoZXN0c0luZm8SPwoKY2hlc3Rz",
-            "SW5mbxgBIAMoCzIrLlByb3RvY29sLkRTQ19OZXdDaGVzdHNJbmZvLkNoZXN0",
-            "c0luZm9FbnRyeRpGCg9DaGVzdHNJbmZvRW50cnkSCwoDa2V5GAEgASgFEiIK",
-            "BXZhbHVlGAIgASgLMhMuUHJvdG9jb2wuQ2hlc3RJbmZvOgI4ASI7ChBDRFNf",
-            "VHJ5Q2hlc3RPcGVuEhYKDm15RGVkaXBsYXllcklkGAEgASgFEg8KB2NoZXN0",
-            "SWQYAiABKAUiOQoURFNDX0NoZXN0T3BlblN1Y2Nlc3MSDwoHY2hlc3RJZBgB",
-            "IAEoBRIQCghwbGF5ZXJJZBgCIAEoBSIWChRDRFNfUmVxdWVzdFRpbWVzdGFt",
-            "cCJGChVEU0NfUmVzcG9uc2VUaW1lc3RhbXASLQoJdGltZXN0YW1wGAEgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCrfBgoFTXNnSWQSEAoMQ1Nf",
-            "Uk9PTV9MSVNUEAASEAoMU0NfUk9PTV9MSVNUEAESEAoMQ1NfTUFLRV9ST09N",
-            "EAISEAoMU0NfTUFLRV9ST09NEAMSEQoNQ1NfRU5URVJfUk9PTRAEEhcKE1ND",
-            "X0FMTE9XX0VOVEVSX1JPT00QBRIeChpTQ19JTkZPUk1fTkVXX0ZBQ0VfSU5f",
-            "Uk9PTRAGEhEKDUNTX0xFQVZFX1JPT00QBxIRCg1TQ19MRUFWRV9ST09NEAgS",
-            "EQoNQ1NfUkVBRFlfUk9PTRAJEhEKDVNDX1JFQURZX1JPT00QChIQCgxTQ19Q",
-            "SU5HX1BPTkcQCxIQCgxDU19QSU5HX1BPTkcQDBIRCg1EU0NfUElOR19QT05H",
-            "EA0SEQoNQ0RTX1BJTkdfUE9ORxAOEh8KG0NTX0NPTk5FQ1RfREVESUNBVEVE",
-            "X1NFUlZFUhAPEh8KG1NDX0NPTk5FQ1RfREVESUNBVEVEX1NFUlZFUhAQEhgK",
-            "FENEU19JTkZPUk1fUk9PTV9JTkZPEBESGAoUQ0RTX0FMTE9XX0VOVEVSX0dB",
-            "TUUQEhIYChREU0NfQUxMT1dfRU5URVJfR0FNRRATEisKJ0RTQ19JTkZPUk1f",
-            "TkVXX0ZBQ0VfSU5fREVESUNBVEVEX1NFUlZFUhAUEiUKIURTQ19JTkZPUk1f",
-            "TEVBVkVfREVESUNBVEVEX1NFUlZFUhAVEhIKDkRTQ19TVEFSVF9HQU1FEBYS",
-            "DAoIQ0RTX01PVkUQFxIMCghEU0NfTU9WRRAYEhcKE0RTQ19EQVlfVElNRVJf",
-            "U1RBUlQQGRIWChJEU0NfREFZX1RJTUVSX1NZTkMQGhIVChFEU0NfREFZX1RJ",
-            "TUVSX0VORBAbEhkKFURTQ19OSUdIVF9USU1FUl9TVEFSVBAcEhgKFERTQ19O",
-            "SUdIVF9USU1FUl9TWU5DEB0SFwoTRFNDX05JR0hUX1RJTUVSX0VORBAeEhcK",
-            "E0RTQ19ORVdfQ0hFU1RTX0lORk8QHxIWChJDRFNfVFJZX0NIRVNUX09QRU4Q",
-            "IBIaChZEU0NfQ0hFU1RfT1BFTl9TVUNDRVNTECESGQoVQ0RTX1JFUVVFU1Rf",
-            "VElNRVNUQU1QECISGgoWRFNDX1JFU1BPTlNFX1RJTUVTVEFNUBAjKlsKDlJl",
-            "YXNvblJlamVjdGVkEhAKDFJvb21Ob3RFeGlzdBAAEhQKEEN1cnJlbnRseVBs",
-            "YXlpbmcQARIOCgpSb29tSXNGdWxsEAISEQoNV3JvbmdQYXNzd29yZBADQhuq",
-            "AhhHb29nbGUuUHJvdG9idWYuUHJvdG9jb2xiBnByb3RvMw=="));
+            "YnVmLlRpbWVzdGFtcCInChFEU0NfRGF5VGltZXJTdGFydBISCgpkYXlTZWNv",
+            "bmRzGAEgASgFIi4KEERTQ19EYXlUaW1lclN5bmMSGgoSY3VycmVudFNlcnZl",
+            "clRpbWVyGAEgASgCIhEKD0RTQ19EYXlUaW1lckVuZCIrChNEU0NfTmlnaHRU",
+            "aW1lclN0YXJ0EhQKDG5pZ2h0U2Vjb25kcxgBIAEoBSIwChJEU0NfTmlnaHRU",
+            "aW1lclN5bmMSGgoSY3VycmVudFNlcnZlclRpbWVyGAEgASgCIhMKEURTQ19O",
+            "aWdodFRpbWVyRW5kIpwBChFEU0NfTmV3Q2hlc3RzSW5mbxI/CgpjaGVzdHNJ",
+            "bmZvGAEgAygLMisuUHJvdG9jb2wuRFNDX05ld0NoZXN0c0luZm8uQ2hlc3Rz",
+            "SW5mb0VudHJ5GkYKD0NoZXN0c0luZm9FbnRyeRILCgNrZXkYASABKAUSIgoF",
+            "dmFsdWUYAiABKAsyEy5Qcm90b2NvbC5DaGVzdEluZm86AjgBIjsKEENEU19U",
+            "cnlDaGVzdE9wZW4SFgoObXlEZWRpcGxheWVySWQYASABKAUSDwoHY2hlc3RJ",
+            "ZBgCIAEoBSI5ChREU0NfQ2hlc3RPcGVuU3VjY2VzcxIPCgdjaGVzdElkGAEg",
+            "ASgFEhAKCHBsYXllcklkGAIgASgFIhYKFENEU19SZXF1ZXN0VGltZXN0YW1w",
+            "IkYKFURTQ19SZXNwb25zZVRpbWVzdGFtcBItCgl0aW1lc3RhbXAYASABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wKt8GCgVNc2dJZBIQCgxDU19S",
+            "T09NX0xJU1QQABIQCgxTQ19ST09NX0xJU1QQARIQCgxDU19NQUtFX1JPT00Q",
+            "AhIQCgxTQ19NQUtFX1JPT00QAxIRCg1DU19FTlRFUl9ST09NEAQSFwoTU0Nf",
+            "QUxMT1dfRU5URVJfUk9PTRAFEh4KGlNDX0lORk9STV9ORVdfRkFDRV9JTl9S",
+            "T09NEAYSEQoNQ1NfTEVBVkVfUk9PTRAHEhEKDVNDX0xFQVZFX1JPT00QCBIR",
+            "Cg1DU19SRUFEWV9ST09NEAkSEQoNU0NfUkVBRFlfUk9PTRAKEhAKDFNDX1BJ",
+            "TkdfUE9ORxALEhAKDENTX1BJTkdfUE9ORxAMEhEKDURTQ19QSU5HX1BPTkcQ",
+            "DRIRCg1DRFNfUElOR19QT05HEA4SHwobQ1NfQ09OTkVDVF9ERURJQ0FURURf",
+            "U0VSVkVSEA8SHwobU0NfQ09OTkVDVF9ERURJQ0FURURfU0VSVkVSEBASGAoU",
+            "Q0RTX0lORk9STV9ST09NX0lORk8QERIYChRDRFNfQUxMT1dfRU5URVJfR0FN",
+            "RRASEhgKFERTQ19BTExPV19FTlRFUl9HQU1FEBMSKwonRFNDX0lORk9STV9O",
+            "RVdfRkFDRV9JTl9ERURJQ0FURURfU0VSVkVSEBQSJQohRFNDX0lORk9STV9M",
+            "RUFWRV9ERURJQ0FURURfU0VSVkVSEBUSEgoORFNDX1NUQVJUX0dBTUUQFhIM",
+            "CghDRFNfTU9WRRAXEgwKCERTQ19NT1ZFEBgSFwoTRFNDX0RBWV9USU1FUl9T",
+            "VEFSVBAZEhYKEkRTQ19EQVlfVElNRVJfU1lOQxAaEhUKEURTQ19EQVlfVElN",
+            "RVJfRU5EEBsSGQoVRFNDX05JR0hUX1RJTUVSX1NUQVJUEBwSGAoURFNDX05J",
+            "R0hUX1RJTUVSX1NZTkMQHRIXChNEU0NfTklHSFRfVElNRVJfRU5EEB4SFwoT",
+            "RFNDX05FV19DSEVTVFNfSU5GTxAfEhYKEkNEU19UUllfQ0hFU1RfT1BFThAg",
+            "EhoKFkRTQ19DSEVTVF9PUEVOX1NVQ0NFU1MQIRIZChVDRFNfUkVRVUVTVF9U",
+            "SU1FU1RBTVAQIhIaChZEU0NfUkVTUE9OU0VfVElNRVNUQU1QECMqWwoOUmVh",
+            "c29uUmVqZWN0ZWQSEAoMUm9vbU5vdEV4aXN0EAASFAoQQ3VycmVudGx5UGxh",
+            "eWluZxABEg4KClJvb21Jc0Z1bGwQAhIRCg1Xcm9uZ1Bhc3N3b3JkEANCG6oC",
+            "GEdvb2dsZS5Qcm90b2J1Zi5Qcm90b2NvbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.MsgId), typeof(global::Google.Protobuf.Protocol.ReasonRejected), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -147,6 +152,12 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_StartGame), global::Google.Protobuf.Protocol.DSC_StartGame.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_Move), global::Google.Protobuf.Protocol.CDS_Move.Parser, new[]{ "DediplayerId", "TransformInfo", "KeyboardInput", "Velocity", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_Move), global::Google.Protobuf.Protocol.DSC_Move.Parser, new[]{ "DediplayerId", "TransformInfo", "KeyboardInput", "Velocity", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerStart), global::Google.Protobuf.Protocol.DSC_DayTimerStart.Parser, new[]{ "DaySeconds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerSync), global::Google.Protobuf.Protocol.DSC_DayTimerSync.Parser, new[]{ "CurrentServerTimer" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerEnd), global::Google.Protobuf.Protocol.DSC_DayTimerEnd.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerStart), global::Google.Protobuf.Protocol.DSC_NightTimerStart.Parser, new[]{ "NightSeconds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerSync), global::Google.Protobuf.Protocol.DSC_NightTimerSync.Parser, new[]{ "CurrentServerTimer" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerEnd), global::Google.Protobuf.Protocol.DSC_NightTimerEnd.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NewChestsInfo), global::Google.Protobuf.Protocol.DSC_NewChestsInfo.Parser, new[]{ "ChestsInfo" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_TryChestOpen), global::Google.Protobuf.Protocol.CDS_TryChestOpen.Parser, new[]{ "MyDediplayerId", "ChestId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess), global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess.Parser, new[]{ "ChestId", "PlayerId" }, null, null, null, null),
@@ -5589,6 +5600,736 @@ namespace Google.Protobuf.Protocol {
 
   }
 
+  public sealed partial class DSC_DayTimerStart : pb::IMessage<DSC_DayTimerStart> {
+    private static readonly pb::MessageParser<DSC_DayTimerStart> _parser = new pb::MessageParser<DSC_DayTimerStart>(() => new DSC_DayTimerStart());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_DayTimerStart> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[32]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerStart() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerStart(DSC_DayTimerStart other) : this() {
+      daySeconds_ = other.daySeconds_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerStart Clone() {
+      return new DSC_DayTimerStart(this);
+    }
+
+    /// <summary>Field number for the "daySeconds" field.</summary>
+    public const int DaySecondsFieldNumber = 1;
+    private int daySeconds_;
+    /// <summary>
+    ///낮 시간(초)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DaySeconds {
+      get { return daySeconds_; }
+      set {
+        daySeconds_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_DayTimerStart);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_DayTimerStart other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DaySeconds != other.DaySeconds) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DaySeconds != 0) hash ^= DaySeconds.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (DaySeconds != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(DaySeconds);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (DaySeconds != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DaySeconds);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_DayTimerStart other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DaySeconds != 0) {
+        DaySeconds = other.DaySeconds;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            DaySeconds = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_DayTimerSync : pb::IMessage<DSC_DayTimerSync> {
+    private static readonly pb::MessageParser<DSC_DayTimerSync> _parser = new pb::MessageParser<DSC_DayTimerSync>(() => new DSC_DayTimerSync());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_DayTimerSync> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerSync() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerSync(DSC_DayTimerSync other) : this() {
+      currentServerTimer_ = other.currentServerTimer_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerSync Clone() {
+      return new DSC_DayTimerSync(this);
+    }
+
+    /// <summary>Field number for the "currentServerTimer" field.</summary>
+    public const int CurrentServerTimerFieldNumber = 1;
+    private float currentServerTimer_;
+    /// <summary>
+    ///서버의 현재 타이머 시간
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CurrentServerTimer {
+      get { return currentServerTimer_; }
+      set {
+        currentServerTimer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_DayTimerSync);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_DayTimerSync other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CurrentServerTimer, other.CurrentServerTimer)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurrentServerTimer != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CurrentServerTimer);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (CurrentServerTimer != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(CurrentServerTimer);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurrentServerTimer != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_DayTimerSync other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurrentServerTimer != 0F) {
+        CurrentServerTimer = other.CurrentServerTimer;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            CurrentServerTimer = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_DayTimerEnd : pb::IMessage<DSC_DayTimerEnd> {
+    private static readonly pb::MessageParser<DSC_DayTimerEnd> _parser = new pb::MessageParser<DSC_DayTimerEnd>(() => new DSC_DayTimerEnd());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_DayTimerEnd> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[34]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerEnd() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerEnd(DSC_DayTimerEnd other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_DayTimerEnd Clone() {
+      return new DSC_DayTimerEnd(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_DayTimerEnd);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_DayTimerEnd other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_DayTimerEnd other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_NightTimerStart : pb::IMessage<DSC_NightTimerStart> {
+    private static readonly pb::MessageParser<DSC_NightTimerStart> _parser = new pb::MessageParser<DSC_NightTimerStart>(() => new DSC_NightTimerStart());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_NightTimerStart> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[35]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerStart() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerStart(DSC_NightTimerStart other) : this() {
+      nightSeconds_ = other.nightSeconds_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerStart Clone() {
+      return new DSC_NightTimerStart(this);
+    }
+
+    /// <summary>Field number for the "nightSeconds" field.</summary>
+    public const int NightSecondsFieldNumber = 1;
+    private int nightSeconds_;
+    /// <summary>
+    ///밤 시간(초)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NightSeconds {
+      get { return nightSeconds_; }
+      set {
+        nightSeconds_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_NightTimerStart);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_NightTimerStart other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (NightSeconds != other.NightSeconds) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (NightSeconds != 0) hash ^= NightSeconds.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (NightSeconds != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(NightSeconds);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (NightSeconds != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NightSeconds);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_NightTimerStart other) {
+      if (other == null) {
+        return;
+      }
+      if (other.NightSeconds != 0) {
+        NightSeconds = other.NightSeconds;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            NightSeconds = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_NightTimerSync : pb::IMessage<DSC_NightTimerSync> {
+    private static readonly pb::MessageParser<DSC_NightTimerSync> _parser = new pb::MessageParser<DSC_NightTimerSync>(() => new DSC_NightTimerSync());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_NightTimerSync> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[36]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerSync() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerSync(DSC_NightTimerSync other) : this() {
+      currentServerTimer_ = other.currentServerTimer_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerSync Clone() {
+      return new DSC_NightTimerSync(this);
+    }
+
+    /// <summary>Field number for the "currentServerTimer" field.</summary>
+    public const int CurrentServerTimerFieldNumber = 1;
+    private float currentServerTimer_;
+    /// <summary>
+    ///서버의 현재 타이머 시간
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CurrentServerTimer {
+      get { return currentServerTimer_; }
+      set {
+        currentServerTimer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_NightTimerSync);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_NightTimerSync other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CurrentServerTimer, other.CurrentServerTimer)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurrentServerTimer != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CurrentServerTimer);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (CurrentServerTimer != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(CurrentServerTimer);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurrentServerTimer != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_NightTimerSync other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurrentServerTimer != 0F) {
+        CurrentServerTimer = other.CurrentServerTimer;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            CurrentServerTimer = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_NightTimerEnd : pb::IMessage<DSC_NightTimerEnd> {
+    private static readonly pb::MessageParser<DSC_NightTimerEnd> _parser = new pb::MessageParser<DSC_NightTimerEnd>(() => new DSC_NightTimerEnd());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_NightTimerEnd> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[37]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerEnd() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerEnd(DSC_NightTimerEnd other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NightTimerEnd Clone() {
+      return new DSC_NightTimerEnd(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_NightTimerEnd);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_NightTimerEnd other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_NightTimerEnd other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
   public sealed partial class DSC_NewChestsInfo : pb::IMessage<DSC_NewChestsInfo> {
     private static readonly pb::MessageParser<DSC_NewChestsInfo> _parser = new pb::MessageParser<DSC_NewChestsInfo>(() => new DSC_NewChestsInfo());
     private pb::UnknownFieldSet _unknownFields;
@@ -5597,7 +6338,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5721,7 +6462,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5878,7 +6619,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6041,7 +6782,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[35]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6142,7 +6883,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[36]; }
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

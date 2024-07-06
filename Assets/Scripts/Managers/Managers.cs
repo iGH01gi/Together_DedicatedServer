@@ -59,6 +59,7 @@ public class Managers : MonoBehaviour
                 go.AddComponent<Managers>();
                 go.AddComponent<PlayerManager>(); //특별처리 (모노비헤비어)
                 go.AddComponent<ObjectManager>(); //특별처리 (모노비헤비어)
+                go.AddComponent<TimeManager>(); //특별처리 (모노비헤비어)
             }
 
             DontDestroyOnLoad(go);

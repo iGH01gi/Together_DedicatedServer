@@ -28,11 +28,15 @@ public class PacketHandler
         //이때 상자 생성패킷도 함께 보냄
         JobTimer.Instance.Push(() =>
         {
+            //상자 생성 및 정보 전송
+            Managers.Object.ChestSetAllInOne();
+            
+            //시작 패킷 전송
             DSC_StartGame sendPacket = new DSC_StartGame();
             Managers.Player.Broadcast(sendPacket);
             
-            //상자 생성 및 정보 전송
-            Managers.Object.ChestSetAllInOne();
+            //낮 시작 패킷 전송
+            Managers.Time.DayTimerStart();
         }, 3000);
         
     }
