@@ -34,10 +34,13 @@ public class PacketHandler
             //시작 패킷 전송
             DSC_StartGame sendPacket = new DSC_StartGame();
             Managers.Player.Broadcast(sendPacket);
-            
+        }, 3000);
+        
+        JobTimer.Instance.Push(() =>
+        {
             //낮 시작 패킷 전송
             Managers.Time.DayTimerStart();
-        }, 3000);
+        }, 6000);
         
     }
 
