@@ -18,7 +18,7 @@ public class Managers : MonoBehaviour
     PlayerManager _player;
     ObjectManager _object;
     LogicManager _logic = new LogicManager();
-    TimeManager _time = new TimeManager();
+    TimeManager _time;
     
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
@@ -72,6 +72,7 @@ public class Managers : MonoBehaviour
             _instance._network.Init();
             _instance._session.Init();
             _instance._player.Init();
+            _instance._time = go.GetComponent<TimeManager>(); //특별처리 (모노비헤비어)
         }
     }
     

@@ -44,11 +44,6 @@ public class PlayerManager : MonoBehaviour
     {
         foreach (KeyValuePair<int, GameObject> a in _players)
         {
-            /*if (a.Key == movePacket.MyDediplayerId) //본인한테는 보내지 않음
-            {
-                continue;
-            }*/
-                    
             Managers.Session._sessions.TryGetValue(a.Key, out ClientSession session);
             if (session != null)
             {
