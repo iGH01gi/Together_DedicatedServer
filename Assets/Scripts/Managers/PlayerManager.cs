@@ -55,7 +55,9 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 플레이어를 스폰하고 정보를 저장함. 모든이에게 추가된 플레이어의 정보를 알림
     /// </summary>
-    /// <param name="playerId">독자적인 id</param>
+    /// <param name="session"></param>
+    /// <param name="roomId"></param>
+    /// <param name="name"></param>
     public void AddPlayer(ClientSession session,int roomId,string name)
     {
         DSC_AllowEnterGame allowEnterPacket = new DSC_AllowEnterGame();
@@ -162,7 +164,7 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 플레이어를 게임상에서 제거하는 함수 (Destroy처리)
     /// </summary>
-    /// <param name="dediPlayer">Destroy할 플레이어 오브젝트</param>
+    /// <param name="dediPlayerObj">Destroy할 플레이어 오브젝트</param>
     public void DespawnPlayer(GameObject dediPlayerObj)
     {
         Managers.Resource.Destroy(dediPlayerObj);
@@ -200,7 +202,9 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 데디서버 플레이어의 정보와 실체를 실제로 생성하는 함수(관리목록 추가는 안함)
     /// </summary>
-    /// <param name="dediPlayer">갖고 있어야할 플레이어 정보</param>
+    /// <param name="session"></param>
+    /// <param name="roomId"></param>
+    /// <param name="name"></param>
     /// <returns></returns>
     public GameObject SpawnPlayer(ClientSession session,int roomId,string name)
     {
@@ -252,7 +256,7 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 플레이어id(=세션id)에 해당하는 고스트를 생성하는 함수. 위치도 초기 위치로 설정
     /// </summary>
-    /// <param name="sessionId">대응되는 플레이어의 id</param>
+    /// <param name="playerId">대응되는 플레이어의 id</param>
     /// <returns></returns>
     public GameObject SpawnGhost(int playerId)
     {
@@ -268,6 +272,33 @@ public class PlayerManager : MonoBehaviour
         }
 
         return newGhost;
+    }
+    
+    /// <summary>
+    /// 랜덤으로 폭탄마를 선택하고 해당 플레이어의 isBomber를 true로 설정
+    /// </summary>
+    /// <returns>선정된 폭탄마id</returns>
+    public int RandomSelectBomber()
+    {
+        List<int> playerIds = new List<int>(_players.Keys);
+        int randomIndex = Random.Range(0, playerIds.Count);
+        
+        int bomberId = playerIds[randomIndex];
+        //해당 player.cs에 있는 isBomber를 true로 설정
+        _players[bomberId].GetComponent<Player>()._isBomber = true;
+        
+        return bomberId;
+    }
+
+    /// <summary>
+    /// 폭탄마를 해제하는 함수. 모든 플레이어의 isBomber를 false로 설정
+    /// </summary>
+    public void ClearBomber()
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            a.Value.GetComponent<Player>()._isBomber = false;
+        }
     }
     
 }

@@ -15,7 +15,7 @@ public class TimeManager : MonoBehaviour
     private float _syncPacketTimer = 0f; //동기화 패킷을 위한 타이머
     private float _syncPacketInterval = 5f; //동기화 패킷을 보내는 간격(초)
 
-    private int _dayNightInterval = 2;//낮, 밤 사이 전환 간격(초)
+    private int _dayNightInterval = 3;//낮, 밤 사이 전환 간격(초)
     
     private bool _isDay = false; 
     private bool _isNight = false;
@@ -75,6 +75,12 @@ public class TimeManager : MonoBehaviour
             if (_currentTimer <= 0) //낮이 끝났다는 패킷을 보내고 타이머를 멈춤 + n초후 밤 타이머 시작과 해당 패킷 전송
             {
                 DSC_DayTimerEnd dayTimerEndPacket = new DSC_DayTimerEnd();
+                
+                //폭탄마 초기화 + 선정
+                Managers.Player.ClearBomber();
+                int bomberId = Managers.Player.RandomSelectBomber();
+                dayTimerEndPacket.BomberPlayerId = bomberId;
+                
                 Managers.Player.Broadcast(dayTimerEndPacket);
                 TimerStop();
                 

@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public PlayerInfo Info { get; set; } = new PlayerInfo();
     public int RoomId { get; set; }
     public ClientSession Session { get; set; }
+    
+    public bool _isBomber = false; //폭탄마 여부
 
     CharacterController _controller;
     public GameObject _ghost;
