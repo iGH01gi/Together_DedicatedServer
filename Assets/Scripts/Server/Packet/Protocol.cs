@@ -83,7 +83,7 @@ namespace Google.Protobuf.Protocol {
             "b2wuVmVsb2NpdHkSLQoJdGltZXN0YW1wGAUgASgLMhouZ29vZ2xlLnByb3Rv",
             "YnVmLlRpbWVzdGFtcCInChFEU0NfRGF5VGltZXJTdGFydBISCgpkYXlTZWNv",
             "bmRzGAEgASgFIi4KEERTQ19EYXlUaW1lclN5bmMSGgoSY3VycmVudFNlcnZl",
-            "clRpbWVyGAEgASgCIikKD0RTQ19EYXlUaW1lckVuZBIWCg5ib21iZXJQbGF5",
+            "clRpbWVyGAEgASgCIikKD0RTQ19EYXlUaW1lckVuZBIWCg5raWxsZXJQbGF5",
             "ZXJJZBgBIAEoBSIrChNEU0NfTmlnaHRUaW1lclN0YXJ0EhQKDG5pZ2h0U2Vj",
             "b25kcxgBIAEoBSIwChJEU0NfTmlnaHRUaW1lclN5bmMSGgoSY3VycmVudFNl",
             "cnZlclRpbWVyGAEgASgCIhMKEURTQ19OaWdodFRpbWVyRW5kIpwBChFEU0Nf",
@@ -155,7 +155,7 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_Move), global::Google.Protobuf.Protocol.DSC_Move.Parser, new[]{ "DediplayerId", "TransformInfo", "KeyboardInput", "Velocity", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerStart), global::Google.Protobuf.Protocol.DSC_DayTimerStart.Parser, new[]{ "DaySeconds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerSync), global::Google.Protobuf.Protocol.DSC_DayTimerSync.Parser, new[]{ "CurrentServerTimer" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerEnd), global::Google.Protobuf.Protocol.DSC_DayTimerEnd.Parser, new[]{ "BomberPlayerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerEnd), global::Google.Protobuf.Protocol.DSC_DayTimerEnd.Parser, new[]{ "KillerPlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerStart), global::Google.Protobuf.Protocol.DSC_NightTimerStart.Parser, new[]{ "NightSeconds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerSync), global::Google.Protobuf.Protocol.DSC_NightTimerSync.Parser, new[]{ "CurrentServerTimer" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerEnd), global::Google.Protobuf.Protocol.DSC_NightTimerEnd.Parser, null, null, null, null, null),
@@ -5890,7 +5890,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DSC_DayTimerEnd(DSC_DayTimerEnd other) : this() {
-      bomberPlayerId_ = other.bomberPlayerId_;
+      killerPlayerId_ = other.killerPlayerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5899,17 +5899,17 @@ namespace Google.Protobuf.Protocol {
       return new DSC_DayTimerEnd(this);
     }
 
-    /// <summary>Field number for the "bomberPlayerId" field.</summary>
-    public const int BomberPlayerIdFieldNumber = 1;
-    private int bomberPlayerId_;
+    /// <summary>Field number for the "killerPlayerId" field.</summary>
+    public const int KillerPlayerIdFieldNumber = 1;
+    private int killerPlayerId_;
     /// <summary>
     ///폭탄을 가진 플레이어의 id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int BomberPlayerId {
-      get { return bomberPlayerId_; }
+    public int KillerPlayerId {
+      get { return killerPlayerId_; }
       set {
-        bomberPlayerId_ = value;
+        killerPlayerId_ = value;
       }
     }
 
@@ -5926,14 +5926,14 @@ namespace Google.Protobuf.Protocol {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BomberPlayerId != other.BomberPlayerId) return false;
+      if (KillerPlayerId != other.KillerPlayerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (BomberPlayerId != 0) hash ^= BomberPlayerId.GetHashCode();
+      if (KillerPlayerId != 0) hash ^= KillerPlayerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5947,9 +5947,9 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (BomberPlayerId != 0) {
+      if (KillerPlayerId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(BomberPlayerId);
+        output.WriteInt32(KillerPlayerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -5959,8 +5959,8 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (BomberPlayerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BomberPlayerId);
+      if (KillerPlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(KillerPlayerId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5973,8 +5973,8 @@ namespace Google.Protobuf.Protocol {
       if (other == null) {
         return;
       }
-      if (other.BomberPlayerId != 0) {
-        BomberPlayerId = other.BomberPlayerId;
+      if (other.KillerPlayerId != 0) {
+        KillerPlayerId = other.KillerPlayerId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5988,7 +5988,7 @@ namespace Google.Protobuf.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            BomberPlayerId = input.ReadInt32();
+            KillerPlayerId = input.ReadInt32();
             break;
           }
         }

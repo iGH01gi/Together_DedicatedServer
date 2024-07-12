@@ -275,29 +275,29 @@ public class PlayerManager : MonoBehaviour
     }
     
     /// <summary>
-    /// 랜덤으로 폭탄마를 선택하고 해당 플레이어의 isBomber를 true로 설정
+    /// 랜덤으로 킬러를 선택하고 해당 플레이어의 isKiller를 true로 설정
     /// </summary>
     /// <returns>선정된 폭탄마id</returns>
-    public int RandomSelectBomber()
+    public int RandomSelectKiller()
     {
         List<int> playerIds = new List<int>(_players.Keys);
         int randomIndex = Random.Range(0, playerIds.Count);
         
-        int bomberId = playerIds[randomIndex];
-        //해당 player.cs에 있는 isBomber를 true로 설정
-        _players[bomberId].GetComponent<Player>()._isBomber = true;
+        int killerId = playerIds[randomIndex];
+        //해당 player.cs에 있는 isKiller를 true로 설정
+        _players[killerId].GetComponent<Player>()._isKiller = true;
         
-        return bomberId;
+        return killerId;
     }
 
     /// <summary>
-    /// 폭탄마를 해제하는 함수. 모든 플레이어의 isBomber를 false로 설정
+    /// 킬러를 해제하는 함수. 모든 플레이어의 isKiller를 false로 설정
     /// </summary>
-    public void ClearBomber()
+    public void ClearKiller()
     {
         foreach (KeyValuePair<int, GameObject> a in _players)
         {
-            a.Value.GetComponent<Player>()._isBomber = false;
+            a.Value.GetComponent<Player>()._isKiller = false;
         }
     }
     

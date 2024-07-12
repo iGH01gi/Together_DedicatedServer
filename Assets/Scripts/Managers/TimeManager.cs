@@ -34,6 +34,8 @@ public class TimeManager : MonoBehaviour
         _currentTimer = _daySeconds;
         _syncPacketTimer = 0f;
         
+        Managers.Player.ClearKiller();//킬러 초기화
+        
         DSC_DayTimerStart dayTimerStartPacket = new DSC_DayTimerStart();
         dayTimerStartPacket.DaySeconds = _daySeconds;
         Managers.Player.Broadcast(dayTimerStartPacket);
@@ -76,10 +78,10 @@ public class TimeManager : MonoBehaviour
             {
                 DSC_DayTimerEnd dayTimerEndPacket = new DSC_DayTimerEnd();
                 
-                //폭탄마 초기화 + 선정
-                Managers.Player.ClearBomber();
-                int bomberId = Managers.Player.RandomSelectBomber();
-                dayTimerEndPacket.BomberPlayerId = bomberId;
+                //킬러 초기화 + 선정
+                Managers.Player.ClearKiller();
+                int killerId = Managers.Player.RandomSelectKiller();
+                dayTimerEndPacket.KillerPlayerId = killerId;
                 
                 Managers.Player.Broadcast(dayTimerEndPacket);
                 TimerStop();

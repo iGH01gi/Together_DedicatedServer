@@ -1,6 +1,7 @@
 ﻿using System;
 using Google.Protobuf.Protocol;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Player : MonoBehaviour
     public int RoomId { get; set; }
     public ClientSession Session { get; set; }
     
-    public bool _isBomber = false; //폭탄마 여부
+    public bool _isKiller = false; //폭탄마 여부
 
     CharacterController _controller;
     public GameObject _ghost;
