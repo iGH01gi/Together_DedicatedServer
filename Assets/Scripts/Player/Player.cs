@@ -9,7 +9,9 @@ public class Player : MonoBehaviour
     public int RoomId { get; set; }
     public ClientSession Session { get; set; }
     
-    public bool _isKiller = false; //폭탄마 여부
+    public bool _isKiller = false; //킬러 여부
+    
+    public float _gauge = 0; //생명력 게이지
 
     CharacterController _controller;
     public GameObject _ghost;

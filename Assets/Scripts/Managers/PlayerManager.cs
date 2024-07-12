@@ -277,7 +277,7 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 랜덤으로 킬러를 선택하고 해당 플레이어의 isKiller를 true로 설정
     /// </summary>
-    /// <returns>선정된 폭탄마id</returns>
+    /// <returns>선정된 킬러id</returns>
     public int RandomSelectKiller()
     {
         List<int> playerIds = new List<int>(_players.Keys);
@@ -298,6 +298,26 @@ public class PlayerManager : MonoBehaviour
         foreach (KeyValuePair<int, GameObject> a in _players)
         {
             a.Value.GetComponent<Player>()._isKiller = false;
+        }
+    }
+    
+    //특정 플레이어의 gauge를 감소시킴. 만약 감소시킨 결과가 0 이하라면 0으로 설정
+    public void DecreaseGauge(int playerId,float amount)
+    {
+        _players[playerId].GetComponent<Player>()._gauge -= amount;
+        if (_players[playerId].GetComponent<Player>()._gauge < 0)
+        {
+            _players[playerId].GetComponent<Player>()._gauge = 0;
+        }
+    }
+    
+    //특정 플레이어의 gauge를 증가시킴. 만약 증가시킨 결과가 TimeManger의 maxGauge보다 크다면 maxGauge로 설정
+    public void IncreaseGauge(int playerId,float amount)
+    {
+        _players[playerId].GetComponent<Player>()._gauge += amount;
+        if (_players[playerId].GetComponent<Player>()._gauge > Managers.Time._gaugeMax)
+        {
+            _players[playerId].GetComponent<Player>()._gauge = Managers.Time._gaugeMax;
         }
     }
     
