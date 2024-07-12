@@ -5903,7 +5903,7 @@ namespace Google.Protobuf.Protocol {
     public const int KillerPlayerIdFieldNumber = 1;
     private int killerPlayerId_;
     /// <summary>
-    ///폭탄을 가진 플레이어의 id
+    ///킬러 플레이어의 id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int KillerPlayerId {
