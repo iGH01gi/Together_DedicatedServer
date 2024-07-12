@@ -40,10 +40,5 @@ public class Define
     {
         UIInputHandler
     }
-    
-    public enum DeathCause
-    {
-        TimeOver,
-        GaugeOver,
-    }
+
 }

@@ -84,43 +84,57 @@ namespace Google.Protobuf.Protocol {
             "YnVmLlRpbWVzdGFtcCInChFEU0NfRGF5VGltZXJTdGFydBISCgpkYXlTZWNv",
             "bmRzGAEgASgFIi4KEERTQ19EYXlUaW1lclN5bmMSGgoSY3VycmVudFNlcnZl",
             "clRpbWVyGAEgASgCIikKD0RTQ19EYXlUaW1lckVuZBIWCg5raWxsZXJQbGF5",
-            "ZXJJZBgBIAEoBSIrChNEU0NfTmlnaHRUaW1lclN0YXJ0EhQKDG5pZ2h0U2Vj",
-            "b25kcxgBIAEoBSIwChJEU0NfTmlnaHRUaW1lclN5bmMSGgoSY3VycmVudFNl",
-            "cnZlclRpbWVyGAEgASgCIhMKEURTQ19OaWdodFRpbWVyRW5kIpwBChFEU0Nf",
-            "TmV3Q2hlc3RzSW5mbxI/CgpjaGVzdHNJbmZvGAEgAygLMisuUHJvdG9jb2wu",
-            "RFNDX05ld0NoZXN0c0luZm8uQ2hlc3RzSW5mb0VudHJ5GkYKD0NoZXN0c0lu",
-            "Zm9FbnRyeRILCgNrZXkYASABKAUSIgoFdmFsdWUYAiABKAsyEy5Qcm90b2Nv",
-            "bC5DaGVzdEluZm86AjgBIjsKEENEU19UcnlDaGVzdE9wZW4SFgoObXlEZWRp",
-            "cGxheWVySWQYASABKAUSDwoHY2hlc3RJZBgCIAEoBSI5ChREU0NfQ2hlc3RP",
-            "cGVuU3VjY2VzcxIPCgdjaGVzdElkGAEgASgFEhAKCHBsYXllcklkGAIgASgF",
-            "IhYKFENEU19SZXF1ZXN0VGltZXN0YW1wIkYKFURTQ19SZXNwb25zZVRpbWVz",
-            "dGFtcBItCgl0aW1lc3RhbXAYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
-            "ZXN0YW1wKt8GCgVNc2dJZBIQCgxDU19ST09NX0xJU1QQABIQCgxTQ19ST09N",
-            "X0xJU1QQARIQCgxDU19NQUtFX1JPT00QAhIQCgxTQ19NQUtFX1JPT00QAxIR",
-            "Cg1DU19FTlRFUl9ST09NEAQSFwoTU0NfQUxMT1dfRU5URVJfUk9PTRAFEh4K",
-            "GlNDX0lORk9STV9ORVdfRkFDRV9JTl9ST09NEAYSEQoNQ1NfTEVBVkVfUk9P",
-            "TRAHEhEKDVNDX0xFQVZFX1JPT00QCBIRCg1DU19SRUFEWV9ST09NEAkSEQoN",
-            "U0NfUkVBRFlfUk9PTRAKEhAKDFNDX1BJTkdfUE9ORxALEhAKDENTX1BJTkdf",
-            "UE9ORxAMEhEKDURTQ19QSU5HX1BPTkcQDRIRCg1DRFNfUElOR19QT05HEA4S",
-            "HwobQ1NfQ09OTkVDVF9ERURJQ0FURURfU0VSVkVSEA8SHwobU0NfQ09OTkVD",
-            "VF9ERURJQ0FURURfU0VSVkVSEBASGAoUQ0RTX0lORk9STV9ST09NX0lORk8Q",
-            "ERIYChRDRFNfQUxMT1dfRU5URVJfR0FNRRASEhgKFERTQ19BTExPV19FTlRF",
-            "Ul9HQU1FEBMSKwonRFNDX0lORk9STV9ORVdfRkFDRV9JTl9ERURJQ0FURURf",
-            "U0VSVkVSEBQSJQohRFNDX0lORk9STV9MRUFWRV9ERURJQ0FURURfU0VSVkVS",
-            "EBUSEgoORFNDX1NUQVJUX0dBTUUQFhIMCghDRFNfTU9WRRAXEgwKCERTQ19N",
-            "T1ZFEBgSFwoTRFNDX0RBWV9USU1FUl9TVEFSVBAZEhYKEkRTQ19EQVlfVElN",
-            "RVJfU1lOQxAaEhUKEURTQ19EQVlfVElNRVJfRU5EEBsSGQoVRFNDX05JR0hU",
-            "X1RJTUVSX1NUQVJUEBwSGAoURFNDX05JR0hUX1RJTUVSX1NZTkMQHRIXChNE",
-            "U0NfTklHSFRfVElNRVJfRU5EEB4SFwoTRFNDX05FV19DSEVTVFNfSU5GTxAf",
-            "EhYKEkNEU19UUllfQ0hFU1RfT1BFThAgEhoKFkRTQ19DSEVTVF9PUEVOX1NV",
-            "Q0NFU1MQIRIZChVDRFNfUkVRVUVTVF9USU1FU1RBTVAQIhIaChZEU0NfUkVT",
-            "UE9OU0VfVElNRVNUQU1QECMqWwoOUmVhc29uUmVqZWN0ZWQSEAoMUm9vbU5v",
-            "dEV4aXN0EAASFAoQQ3VycmVudGx5UGxheWluZxABEg4KClJvb21Jc0Z1bGwQ",
-            "AhIRCg1Xcm9uZ1Bhc3N3b3JkEANCG6oCGEdvb2dsZS5Qcm90b2J1Zi5Qcm90",
-            "b2NvbGIGcHJvdG8z"));
+            "ZXJJZBgBIAEoBSKNAQoTRFNDX05pZ2h0VGltZXJTdGFydBIUCgxuaWdodFNl",
+            "Y29uZHMYASABKAUSEAoIZ2F1Z2VNYXgYAiABKAISJwofX3N1cnZpdm9yR2F1",
+            "Z2VEZWNyZWFzZVBlclNlY29uZBgDIAEoAhIlCh1fa2lsbGVyR2F1Z2VEZWNy",
+            "ZWFzZVBlclNlY29uZBgEIAEoAiIwChJEU0NfTmlnaHRUaW1lclN5bmMSGgoS",
+            "Y3VycmVudFNlcnZlclRpbWVyGAEgASgCImwKEURTQ19OaWdodFRpbWVyRW5k",
+            "EigKCmRlYXRoQ2F1c2UYASABKA4yFC5Qcm90b2NvbC5EZWF0aENhdXNlEhUK",
+            "DWRlYXRoUGxheWVySWQYAiABKAUSFgoOa2lsbGVyUGxheWVySWQYAyABKAUi",
+            "nAEKEURTQ19OZXdDaGVzdHNJbmZvEj8KCmNoZXN0c0luZm8YASADKAsyKy5Q",
+            "cm90b2NvbC5EU0NfTmV3Q2hlc3RzSW5mby5DaGVzdHNJbmZvRW50cnkaRgoP",
+            "Q2hlc3RzSW5mb0VudHJ5EgsKA2tleRgBIAEoBRIiCgV2YWx1ZRgCIAEoCzIT",
+            "LlByb3RvY29sLkNoZXN0SW5mbzoCOAEiOwoQQ0RTX1RyeUNoZXN0T3BlbhIW",
+            "Cg5teURlZGlwbGF5ZXJJZBgBIAEoBRIPCgdjaGVzdElkGAIgASgFIjkKFERT",
+            "Q19DaGVzdE9wZW5TdWNjZXNzEg8KB2NoZXN0SWQYASABKAUSEAoIcGxheWVy",
+            "SWQYAiABKAUiFgoUQ0RTX1JlcXVlc3RUaW1lc3RhbXAiRgoVRFNDX1Jlc3Bv",
+            "bnNlVGltZXN0YW1wEi0KCXRpbWVzdGFtcBgBIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXAiqwIKDURTQ19HYXVnZVN5bmMSPwoMcGxheWVyR2F1",
+            "Z2VzGAEgAygLMikuUHJvdG9jb2wuRFNDX0dhdWdlU3luYy5QbGF5ZXJHYXVn",
+            "ZXNFbnRyeRJfChxwbGF5ZXJHYXVnZURlY3JlYXNlUGVyU2Vjb25kGAIgAygL",
+            "MjkuUHJvdG9jb2wuRFNDX0dhdWdlU3luYy5QbGF5ZXJHYXVnZURlY3JlYXNl",
+            "UGVyU2Vjb25kRW50cnkaMwoRUGxheWVyR2F1Z2VzRW50cnkSCwoDa2V5GAEg",
+            "ASgFEg0KBXZhbHVlGAIgASgCOgI4ARpDCiFQbGF5ZXJHYXVnZURlY3JlYXNl",
+            "UGVyU2Vjb25kRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgCOgI4",
+            "ASJNCg9EU0NfUGxheWVyRGVhdGgSEAoIcGxheWVySWQYASABKAUSKAoKZGVh",
+            "dGhDYXVzZRgCIAEoDjIULlByb3RvY29sLkRlYXRoQ2F1c2UqiQcKBU1zZ0lk",
+            "EhAKDENTX1JPT01fTElTVBAAEhAKDFNDX1JPT01fTElTVBABEhAKDENTX01B",
+            "S0VfUk9PTRACEhAKDFNDX01BS0VfUk9PTRADEhEKDUNTX0VOVEVSX1JPT00Q",
+            "BBIXChNTQ19BTExPV19FTlRFUl9ST09NEAUSHgoaU0NfSU5GT1JNX05FV19G",
+            "QUNFX0lOX1JPT00QBhIRCg1DU19MRUFWRV9ST09NEAcSEQoNU0NfTEVBVkVf",
+            "Uk9PTRAIEhEKDUNTX1JFQURZX1JPT00QCRIRCg1TQ19SRUFEWV9ST09NEAoS",
+            "EAoMU0NfUElOR19QT05HEAsSEAoMQ1NfUElOR19QT05HEAwSEQoNRFNDX1BJ",
+            "TkdfUE9ORxANEhEKDUNEU19QSU5HX1BPTkcQDhIfChtDU19DT05ORUNUX0RF",
+            "RElDQVRFRF9TRVJWRVIQDxIfChtTQ19DT05ORUNUX0RFRElDQVRFRF9TRVJW",
+            "RVIQEBIYChRDRFNfSU5GT1JNX1JPT01fSU5GTxAREhgKFENEU19BTExPV19F",
+            "TlRFUl9HQU1FEBISGAoURFNDX0FMTE9XX0VOVEVSX0dBTUUQExIrCidEU0Nf",
+            "SU5GT1JNX05FV19GQUNFX0lOX0RFRElDQVRFRF9TRVJWRVIQFBIlCiFEU0Nf",
+            "SU5GT1JNX0xFQVZFX0RFRElDQVRFRF9TRVJWRVIQFRISCg5EU0NfU1RBUlRf",
+            "R0FNRRAWEgwKCENEU19NT1ZFEBcSDAoIRFNDX01PVkUQGBIXChNEU0NfREFZ",
+            "X1RJTUVSX1NUQVJUEBkSFgoSRFNDX0RBWV9USU1FUl9TWU5DEBoSFQoRRFND",
+            "X0RBWV9USU1FUl9FTkQQGxIZChVEU0NfTklHSFRfVElNRVJfU1RBUlQQHBIY",
+            "ChREU0NfTklHSFRfVElNRVJfU1lOQxAdEhcKE0RTQ19OSUdIVF9USU1FUl9F",
+            "TkQQHhIXChNEU0NfTkVXX0NIRVNUU19JTkZPEB8SFgoSQ0RTX1RSWV9DSEVT",
+            "VF9PUEVOECASGgoWRFNDX0NIRVNUX09QRU5fU1VDQ0VTUxAhEhkKFUNEU19S",
+            "RVFVRVNUX1RJTUVTVEFNUBAiEhoKFkRTQ19SRVNQT05TRV9USU1FU1RBTVAQ",
+            "IxISCg5EU0NfR2F1Z2VfU3luYxAkEhQKEERTQ19QbGF5ZXJfRGVhdGgQJSpb",
+            "Cg5SZWFzb25SZWplY3RlZBIQCgxSb29tTm90RXhpc3QQABIUChBDdXJyZW50",
+            "bHlQbGF5aW5nEAESDgoKUm9vbUlzRnVsbBACEhEKDVdyb25nUGFzc3dvcmQQ",
+            "AyopCgpEZWF0aENhdXNlEgwKCFRpbWVPdmVyEAASDQoJR2F1Z2VPdmVyEAFC",
+            "G6oCGEdvb2dsZS5Qcm90b2J1Zi5Qcm90b2NvbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.MsgId), typeof(global::Google.Protobuf.Protocol.ReasonRejected), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.MsgId), typeof(global::Google.Protobuf.Protocol.ReasonRejected), typeof(global::Google.Protobuf.Protocol.DeathCause), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.PlayerInfo), global::Google.Protobuf.Protocol.PlayerInfo.Parser, new[]{ "PlayerId", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.PositionInfo), global::Google.Protobuf.Protocol.PositionInfo.Parser, new[]{ "PosX", "PosY", "PosZ" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.RotationInfo), global::Google.Protobuf.Protocol.RotationInfo.Parser, new[]{ "RotX", "RotY", "RotZ", "RotW" }, null, null, null, null),
@@ -156,14 +170,16 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerStart), global::Google.Protobuf.Protocol.DSC_DayTimerStart.Parser, new[]{ "DaySeconds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerSync), global::Google.Protobuf.Protocol.DSC_DayTimerSync.Parser, new[]{ "CurrentServerTimer" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DayTimerEnd), global::Google.Protobuf.Protocol.DSC_DayTimerEnd.Parser, new[]{ "KillerPlayerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerStart), global::Google.Protobuf.Protocol.DSC_NightTimerStart.Parser, new[]{ "NightSeconds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerStart), global::Google.Protobuf.Protocol.DSC_NightTimerStart.Parser, new[]{ "NightSeconds", "GaugeMax", "SurvivorGaugeDecreasePerSecond", "KillerGaugeDecreasePerSecond" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerSync), global::Google.Protobuf.Protocol.DSC_NightTimerSync.Parser, new[]{ "CurrentServerTimer" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerEnd), global::Google.Protobuf.Protocol.DSC_NightTimerEnd.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NightTimerEnd), global::Google.Protobuf.Protocol.DSC_NightTimerEnd.Parser, new[]{ "DeathCause", "DeathPlayerId", "KillerPlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NewChestsInfo), global::Google.Protobuf.Protocol.DSC_NewChestsInfo.Parser, new[]{ "ChestsInfo" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_TryChestOpen), global::Google.Protobuf.Protocol.CDS_TryChestOpen.Parser, new[]{ "MyDediplayerId", "ChestId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess), global::Google.Protobuf.Protocol.DSC_ChestOpenSuccess.Parser, new[]{ "ChestId", "PlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_RequestTimestamp), global::Google.Protobuf.Protocol.CDS_RequestTimestamp.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ResponseTimestamp), global::Google.Protobuf.Protocol.DSC_ResponseTimestamp.Parser, new[]{ "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ResponseTimestamp), global::Google.Protobuf.Protocol.DSC_ResponseTimestamp.Parser, new[]{ "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_GaugeSync), global::Google.Protobuf.Protocol.DSC_GaugeSync.Parser, new[]{ "PlayerGauges", "PlayerGaugeDecreasePerSecond" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_PlayerDeath), global::Google.Protobuf.Protocol.DSC_PlayerDeath.Parser, new[]{ "PlayerId", "DeathCause" }, null, null, null, null)
           }));
     }
     #endregion
@@ -270,6 +286,14 @@ namespace Google.Protobuf.Protocol {
     ///데디서버가 클라에게 타임스탬프 응답
     /// </summary>
     [pbr::OriginalName("DSC_RESPONSE_TIMESTAMP")] DscResponseTimestamp = 35,
+    /// <summary>
+    ///데디서버가 클라에게 게이지 동기화 정보 전달
+    /// </summary>
+    [pbr::OriginalName("DSC_Gauge_Sync")] DscGaugeSync = 36,
+    /// <summary>
+    ///플레이어가 죽었음을 알림
+    /// </summary>
+    [pbr::OriginalName("DSC_Player_Death")] DscPlayerDeath = 37,
   }
 
   public enum ReasonRejected {
@@ -277,6 +301,11 @@ namespace Google.Protobuf.Protocol {
     [pbr::OriginalName("CurrentlyPlaying")] CurrentlyPlaying = 1,
     [pbr::OriginalName("RoomIsFull")] RoomIsFull = 2,
     [pbr::OriginalName("WrongPassword")] WrongPassword = 3,
+  }
+
+  public enum DeathCause {
+    [pbr::OriginalName("TimeOver")] TimeOver = 0,
+    [pbr::OriginalName("GaugeOver")] GaugeOver = 1,
   }
 
   #endregion
@@ -6023,6 +6052,9 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DSC_NightTimerStart(DSC_NightTimerStart other) : this() {
       nightSeconds_ = other.nightSeconds_;
+      gaugeMax_ = other.gaugeMax_;
+      SurvivorGaugeDecreasePerSecond_ = other.SurvivorGaugeDecreasePerSecond_;
+      KillerGaugeDecreasePerSecond_ = other.KillerGaugeDecreasePerSecond_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -6045,6 +6077,48 @@ namespace Google.Protobuf.Protocol {
       }
     }
 
+    /// <summary>Field number for the "gaugeMax" field.</summary>
+    public const int GaugeMaxFieldNumber = 2;
+    private float gaugeMax_;
+    /// <summary>
+    ///게이지 최대값
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float GaugeMax {
+      get { return gaugeMax_; }
+      set {
+        gaugeMax_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "_survivorGaugeDecreasePerSecond" field.</summary>
+    public const int SurvivorGaugeDecreasePerSecondFieldNumber = 3;
+    private float SurvivorGaugeDecreasePerSecond_;
+    /// <summary>
+    ///생존자 초당 게이지 감소량
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float SurvivorGaugeDecreasePerSecond {
+      get { return SurvivorGaugeDecreasePerSecond_; }
+      set {
+        SurvivorGaugeDecreasePerSecond_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "_killerGaugeDecreasePerSecond" field.</summary>
+    public const int KillerGaugeDecreasePerSecondFieldNumber = 4;
+    private float KillerGaugeDecreasePerSecond_;
+    /// <summary>
+    ///킬러 초당 게이지 감소량
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float KillerGaugeDecreasePerSecond {
+      get { return KillerGaugeDecreasePerSecond_; }
+      set {
+        KillerGaugeDecreasePerSecond_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DSC_NightTimerStart);
@@ -6059,6 +6133,9 @@ namespace Google.Protobuf.Protocol {
         return true;
       }
       if (NightSeconds != other.NightSeconds) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(GaugeMax, other.GaugeMax)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SurvivorGaugeDecreasePerSecond, other.SurvivorGaugeDecreasePerSecond)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(KillerGaugeDecreasePerSecond, other.KillerGaugeDecreasePerSecond)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6066,6 +6143,9 @@ namespace Google.Protobuf.Protocol {
     public override int GetHashCode() {
       int hash = 1;
       if (NightSeconds != 0) hash ^= NightSeconds.GetHashCode();
+      if (GaugeMax != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(GaugeMax);
+      if (SurvivorGaugeDecreasePerSecond != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SurvivorGaugeDecreasePerSecond);
+      if (KillerGaugeDecreasePerSecond != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(KillerGaugeDecreasePerSecond);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6083,6 +6163,18 @@ namespace Google.Protobuf.Protocol {
         output.WriteRawTag(8);
         output.WriteInt32(NightSeconds);
       }
+      if (GaugeMax != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(GaugeMax);
+      }
+      if (SurvivorGaugeDecreasePerSecond != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(SurvivorGaugeDecreasePerSecond);
+      }
+      if (KillerGaugeDecreasePerSecond != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(KillerGaugeDecreasePerSecond);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -6093,6 +6185,15 @@ namespace Google.Protobuf.Protocol {
       int size = 0;
       if (NightSeconds != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(NightSeconds);
+      }
+      if (GaugeMax != 0F) {
+        size += 1 + 4;
+      }
+      if (SurvivorGaugeDecreasePerSecond != 0F) {
+        size += 1 + 4;
+      }
+      if (KillerGaugeDecreasePerSecond != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -6108,6 +6209,15 @@ namespace Google.Protobuf.Protocol {
       if (other.NightSeconds != 0) {
         NightSeconds = other.NightSeconds;
       }
+      if (other.GaugeMax != 0F) {
+        GaugeMax = other.GaugeMax;
+      }
+      if (other.SurvivorGaugeDecreasePerSecond != 0F) {
+        SurvivorGaugeDecreasePerSecond = other.SurvivorGaugeDecreasePerSecond;
+      }
+      if (other.KillerGaugeDecreasePerSecond != 0F) {
+        KillerGaugeDecreasePerSecond = other.KillerGaugeDecreasePerSecond;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -6121,6 +6231,18 @@ namespace Google.Protobuf.Protocol {
             break;
           case 8: {
             NightSeconds = input.ReadInt32();
+            break;
+          }
+          case 21: {
+            GaugeMax = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            SurvivorGaugeDecreasePerSecond = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            KillerGaugeDecreasePerSecond = input.ReadFloat();
             break;
           }
         }
@@ -6286,12 +6408,57 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DSC_NightTimerEnd(DSC_NightTimerEnd other) : this() {
+      deathCause_ = other.deathCause_;
+      deathPlayerId_ = other.deathPlayerId_;
+      killerPlayerId_ = other.killerPlayerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DSC_NightTimerEnd Clone() {
       return new DSC_NightTimerEnd(this);
+    }
+
+    /// <summary>Field number for the "deathCause" field.</summary>
+    public const int DeathCauseFieldNumber = 1;
+    private global::Google.Protobuf.Protocol.DeathCause deathCause_ = global::Google.Protobuf.Protocol.DeathCause.TimeOver;
+    /// <summary>
+    ///죽은 이유
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.Protocol.DeathCause DeathCause {
+      get { return deathCause_; }
+      set {
+        deathCause_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "deathPlayerId" field.</summary>
+    public const int DeathPlayerIdFieldNumber = 2;
+    private int deathPlayerId_;
+    /// <summary>
+    ///죽은 플레이어의 id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DeathPlayerId {
+      get { return deathPlayerId_; }
+      set {
+        deathPlayerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "killerPlayerId" field.</summary>
+    public const int KillerPlayerIdFieldNumber = 3;
+    private int killerPlayerId_;
+    /// <summary>
+    ///마지막 킬러 플레이어의 id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int KillerPlayerId {
+      get { return killerPlayerId_; }
+      set {
+        killerPlayerId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6307,12 +6474,18 @@ namespace Google.Protobuf.Protocol {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (DeathCause != other.DeathCause) return false;
+      if (DeathPlayerId != other.DeathPlayerId) return false;
+      if (KillerPlayerId != other.KillerPlayerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) hash ^= DeathCause.GetHashCode();
+      if (DeathPlayerId != 0) hash ^= DeathPlayerId.GetHashCode();
+      if (KillerPlayerId != 0) hash ^= KillerPlayerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6326,6 +6499,18 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) DeathCause);
+      }
+      if (DeathPlayerId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(DeathPlayerId);
+      }
+      if (KillerPlayerId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(KillerPlayerId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -6334,6 +6519,15 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DeathCause);
+      }
+      if (DeathPlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DeathPlayerId);
+      }
+      if (KillerPlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(KillerPlayerId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -6344,6 +6538,15 @@ namespace Google.Protobuf.Protocol {
     public void MergeFrom(DSC_NightTimerEnd other) {
       if (other == null) {
         return;
+      }
+      if (other.DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) {
+        DeathCause = other.DeathCause;
+      }
+      if (other.DeathPlayerId != 0) {
+        DeathPlayerId = other.DeathPlayerId;
+      }
+      if (other.KillerPlayerId != 0) {
+        KillerPlayerId = other.KillerPlayerId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -6356,6 +6559,18 @@ namespace Google.Protobuf.Protocol {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            DeathCause = (global::Google.Protobuf.Protocol.DeathCause) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            DeathPlayerId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            KillerPlayerId = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -7034,6 +7249,316 @@ namespace Google.Protobuf.Protocol {
               Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_GaugeSync : pb::IMessage<DSC_GaugeSync> {
+    private static readonly pb::MessageParser<DSC_GaugeSync> _parser = new pb::MessageParser<DSC_GaugeSync>(() => new DSC_GaugeSync());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_GaugeSync> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[43]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_GaugeSync() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_GaugeSync(DSC_GaugeSync other) : this() {
+      playerGauges_ = other.playerGauges_.Clone();
+      playerGaugeDecreasePerSecond_ = other.playerGaugeDecreasePerSecond_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_GaugeSync Clone() {
+      return new DSC_GaugeSync(this);
+    }
+
+    /// <summary>Field number for the "playerGauges" field.</summary>
+    public const int PlayerGaugesFieldNumber = 1;
+    private static readonly pbc::MapField<int, float>.Codec _map_playerGauges_codec
+        = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 10);
+    private readonly pbc::MapField<int, float> playerGauges_ = new pbc::MapField<int, float>();
+    /// <summary>
+    ///플레이어id, 게이지
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, float> PlayerGauges {
+      get { return playerGauges_; }
+    }
+
+    /// <summary>Field number for the "playerGaugeDecreasePerSecond" field.</summary>
+    public const int PlayerGaugeDecreasePerSecondFieldNumber = 2;
+    private static readonly pbc::MapField<int, float>.Codec _map_playerGaugeDecreasePerSecond_codec
+        = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 18);
+    private readonly pbc::MapField<int, float> playerGaugeDecreasePerSecond_ = new pbc::MapField<int, float>();
+    /// <summary>
+    ///플레이어id, 초당 게이지 감소량
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, float> PlayerGaugeDecreasePerSecond {
+      get { return playerGaugeDecreasePerSecond_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_GaugeSync);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_GaugeSync other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!PlayerGauges.Equals(other.PlayerGauges)) return false;
+      if (!PlayerGaugeDecreasePerSecond.Equals(other.PlayerGaugeDecreasePerSecond)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= PlayerGauges.GetHashCode();
+      hash ^= PlayerGaugeDecreasePerSecond.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      playerGauges_.WriteTo(output, _map_playerGauges_codec);
+      playerGaugeDecreasePerSecond_.WriteTo(output, _map_playerGaugeDecreasePerSecond_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += playerGauges_.CalculateSize(_map_playerGauges_codec);
+      size += playerGaugeDecreasePerSecond_.CalculateSize(_map_playerGaugeDecreasePerSecond_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_GaugeSync other) {
+      if (other == null) {
+        return;
+      }
+      playerGauges_.Add(other.playerGauges_);
+      playerGaugeDecreasePerSecond_.Add(other.playerGaugeDecreasePerSecond_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            playerGauges_.AddEntriesFrom(input, _map_playerGauges_codec);
+            break;
+          }
+          case 18: {
+            playerGaugeDecreasePerSecond_.AddEntriesFrom(input, _map_playerGaugeDecreasePerSecond_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_PlayerDeath : pb::IMessage<DSC_PlayerDeath> {
+    private static readonly pb::MessageParser<DSC_PlayerDeath> _parser = new pb::MessageParser<DSC_PlayerDeath>(() => new DSC_PlayerDeath());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_PlayerDeath> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[44]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_PlayerDeath() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_PlayerDeath(DSC_PlayerDeath other) : this() {
+      playerId_ = other.playerId_;
+      deathCause_ = other.deathCause_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_PlayerDeath Clone() {
+      return new DSC_PlayerDeath(this);
+    }
+
+    /// <summary>Field number for the "playerId" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private int playerId_;
+    /// <summary>
+    ///죽은 플레이어의 id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "deathCause" field.</summary>
+    public const int DeathCauseFieldNumber = 2;
+    private global::Google.Protobuf.Protocol.DeathCause deathCause_ = global::Google.Protobuf.Protocol.DeathCause.TimeOver;
+    /// <summary>
+    ///죽은 이유
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.Protocol.DeathCause DeathCause {
+      get { return deathCause_; }
+      set {
+        deathCause_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_PlayerDeath);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_PlayerDeath other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerId != other.PlayerId) return false;
+      if (DeathCause != other.DeathCause) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+      if (DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) hash ^= DeathCause.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PlayerId);
+      }
+      if (DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) DeathCause);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      }
+      if (DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DeathCause);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_PlayerDeath other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerId != 0) {
+        PlayerId = other.PlayerId;
+      }
+      if (other.DeathCause != global::Google.Protobuf.Protocol.DeathCause.TimeOver) {
+        DeathCause = other.DeathCause;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PlayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            DeathCause = (global::Google.Protobuf.Protocol.DeathCause) input.ReadEnum();
             break;
           }
         }

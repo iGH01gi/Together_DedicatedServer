@@ -301,26 +301,234 @@ public class PlayerManager : MonoBehaviour
         }
     }
     
-    //특정 플레이어의 gauge를 감소시킴. 만약 감소시킨 결과가 0 이하라면 0으로 설정
-    public void DecreaseGauge(int playerId,float amount)
+    //킬러의 Player컴포넌트를 반환함. 킬러가 없다면 null 반환
+    public Player GetKillerPlayerComponent()
     {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            if (a.Value.GetComponent<Player>()._isKiller)
+            {
+                return a.Value.GetComponent<Player>();
+            }
+        }
+
+        return null;
+    }
+    
+    /// <summary>
+    /// 킬러의 플레이어id를 반환함. 킬러가 없다면 -1 반환
+    /// </summary>
+    /// <returns></returns>
+    public int GetKillerId()
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            if (a.Value.GetComponent<Player>()._isKiller)
+            {
+                return a.Key;
+            }
+        }
+
+        return -1;
+    }
+    
+    /// <summary>
+    /// 킬러인지 아닌지 확인하는 함수
+    /// </summary>
+    /// <param name="playerId"></param>
+    /// <returns>킬러면 true. 아니면 false</returns>
+    public bool IsKiller(int playerId)
+    {
+        if (_players.ContainsKey(playerId))
+        {
+            return _players[playerId].GetComponent<Player>()._isKiller;
+        }
+
+        return false;
+    }
+
+    
+    
+    #region 밤 게이지 관련
+    
+    /// <summary>
+    /// 킬러의 게이지를 감소시킴. 만약 감소시킨 결과가 0보다 작다면 0으로 설정
+    /// </summary>
+    /// <param name="amount"></param>
+    public void DecreaseKillerGauge(float amount)
+    { 
+        Player killer = GetKillerPlayerComponent();
+        
+        if(killer!=null)
+            DecreaseGauge(killer.Info.PlayerId,amount);
+    }
+
+    /// <summary>
+    /// 킬러를 제외한 모든 플레이어의 게이지를 감소시킴. 만약 감소시킨 결과가 0보다 작다면 0으로 설정
+    /// </summary>
+    /// <param name="amount">얼마나 감소시킬것인지</param>
+    public void DecreaseAllSurvivorGauge(float amount)
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            if (!a.Value.GetComponent<Player>()._isKiller)
+            {
+                DecreaseGauge(a.Key, amount);
+            }
+        }
+    }
+    
+    /// <summary>
+    /// 특정 플레이어의 gauge를 감소시킴. 만약 감소시킨 결과가 0보다 작다면 0으로 설정
+    /// </summary>
+    /// <param name="playerId">플레이어id</param>
+    /// <param name="amount">얼만큼 감소시킬 것인가</param>
+    /// <returns>감소된 게이지 결과. 존재하지 않는 플레이어라면 -1 반환</returns>
+    public float DecreaseGauge(int playerId,float amount)
+    {
+        //존재하지 않는 플레이어라면 -1 반환
+        if (!_players.ContainsKey(playerId))
+        {
+            return -1;
+        }
+        
         _players[playerId].GetComponent<Player>()._gauge -= amount;
         if (_players[playerId].GetComponent<Player>()._gauge < 0)
         {
             _players[playerId].GetComponent<Player>()._gauge = 0;
         }
+        
+        return _players[playerId].GetComponent<Player>()._gauge;
     }
     
-    //특정 플레이어의 gauge를 증가시킴. 만약 증가시킨 결과가 TimeManger의 maxGauge보다 크다면 maxGauge로 설정
-    public void IncreaseGauge(int playerId,float amount)
+    
+    /// <summary>
+    /// 킬러의 gauge를 증가시킴. 만약 증가시킨 결과가 _gaugeMax보다 크다면 _gaugeMax로 설정
+    /// </summary>
+    /// <param name="amount">얼마나 증가시킬것인지</param>
+    public void IncreaseKillerGauge(float amount)
     {
+        Player killer = GetKillerPlayerComponent();
+        
+        if(killer!=null)
+            IncreaseGauge(killer.Info.PlayerId,amount);
+    }
+    
+    /// <summary>
+    /// 킬러를 제외한 모든 플레이어의 게이지를 증가시킴. 만약 증가시킨 결과가 _gaugeMax보다 크다면 _gaugeMax로 설정
+    /// </summary>
+    /// <param name="amount">얼마나 증가시킬 것인가</param>
+    public void IncreaseAllSurvivorGauge(float amount)
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            if (!a.Value.GetComponent<Player>()._isKiller)
+            {
+                IncreaseGauge(a.Key, amount);
+            }
+        }
+    }
+    
+    /// <summary>
+    /// 특정 플레이어의 gauge를 증가시킴. 만약 증가시킨 결과가 _gaugeMax보다 크다면 _gaugeMax로 설정
+    /// </summary>
+    /// <param name="playerId">플레이어id</param>
+    /// <param name="amount">얼만큼 증가시킬 것인가</param>
+    /// <returns>증가된 게이지 결과. 존재하지 않는 플레이어라면 -1 반환</returns>
+    public float IncreaseGauge(int playerId,float amount)
+    {
+        //존재하지 않는 플레이어라면 -1 반환
+        if (!_players.ContainsKey(playerId))
+        {
+            return -1;
+        }
+        
         _players[playerId].GetComponent<Player>()._gauge += amount;
         if (_players[playerId].GetComponent<Player>()._gauge > Managers.Time._gaugeMax)
         {
             _players[playerId].GetComponent<Player>()._gauge = Managers.Time._gaugeMax;
         }
+        
+        return _players[playerId].GetComponent<Player>()._gauge;
     }
     
+    
+    /// <summary>
+    /// 모든 플레이어의 게이지를 amount로 설정함. 만약 amount가 0보다 작다면 0으로 설정, _gaugeMax보다 크다면 _gaugeMax로 설정
+    /// </summary>
+    /// <param name="amount">설정할 게이지 값</param>
+    public void SetAllGauge(float amount)
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            SetGauge(a.Key, amount);
+        }
+    }
+    /// <summary>
+    /// 특정 플레이어의 gauge를 amount로 설정함. 만약 amount가 0보다 작다면 0으로 설정, _gaugeMax보다 크다면 _gaugeMax로 설정
+    /// </summary>
+    /// <param name="playerId">플레이어id</param>
+    /// <param name="amount">설정할 게이지 값</param>
+    /// <returns></returns>
+    public float SetGauge(int playerId,float amount)
+    {
+        //존재하지 않는 플레이어라면 -1 반환
+        if (!_players.ContainsKey(playerId))
+        {
+            return -1;
+        }
+        
+        //만약 amount가 0보다 작다면 0으로 설정
+        if (amount < 0)
+        {
+            amount = 0;
+        }
+        //만약 amount가 _gaugeMax보다 크다면 _gaugeMax로 설정
+        if (amount > Managers.Time._gaugeMax)
+        {
+            amount = Managers.Time._gaugeMax;
+        }
+        
+        _players[playerId].GetComponent<Player>()._gauge = amount;
+        
+        return amount;
+    }
+    
+    
+    /// <summary>
+    /// 특정 플레이어의 게이지를 반환함. 존재하지 않는 플레이어라면 -1 반환
+    /// </summary>
+    /// <param name="playerId"></param>
+    /// <returns></returns>
+    public float GetGauge(int playerId)
+    {
+        if (_players.ContainsKey(playerId))
+        {
+            return _players[playerId].GetComponent<Player>()._gauge;
+        }
+
+        return -1;
+    }
+    
+    /// <summary>
+    /// player들을 순회하면서 게이지가 0인 플레이어가 있는지 확인하고, 있다면 해당 playerId를 반환. 없다면 -1 반환
+    /// </summary>
+    /// <returns></returns>
+    public int CheckZeroGauge()
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            if (a.Value.GetComponent<Player>()._gauge <= 0)
+            {
+                return a.Key;
+            }
+        }
+
+        return -1;
+    }
+
+    #endregion
+
 }
 
 
