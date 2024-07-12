@@ -24,8 +24,8 @@ public class TimeManager : MonoBehaviour
     private float _gaugeSyncPacketTimer = 0f; //게이지 동기화 패킷을 위한 타이머
     private float _gaugeSyncPacketInterval = 5f; //게이지 동기화 패킷을 보내는 간격(초)
     public float _gaugeMax = 180; //게이지 최대값
-    private float _survivorGaugeDecreasePerSecond = 1; //생존자 초당 게이지 감소량
-    private float _killerGaugeDecreasePerSecond = 2; //킬러의 초당 게이지 감소량
+    private float _defaultSurvivorGaugeDecreasePerSecond = 1; //기본 생존자 초당 게이지 감소량
+    private float _defaultKillerGaugeDecreasePerSecond = 2; //기본 킬러의 초당 게이지 감소량
     
 
     private void Update()
@@ -71,8 +71,11 @@ public class TimeManager : MonoBehaviour
         DSC_NightTimerStart nightTimerStartPacket = new DSC_NightTimerStart();
         nightTimerStartPacket.NightSeconds = _nightSeconds;
         nightTimerStartPacket.GaugeMax = _gaugeMax;
-        nightTimerStartPacket.SurvivorGaugeDecreasePerSecond = _survivorGaugeDecreasePerSecond;
-        nightTimerStartPacket.KillerGaugeDecreasePerSecond = _killerGaugeDecreasePerSecond;
+        //Manager.Player의 모든 플레이어id를 key로, value를 _gaugeDecreasePerSecond로
+        foreach (int playerId in Managers.Player._players.Keys)
+        {
+            nightTimerStartPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Player.GetGaugeDecreasePerSecond(playerId));
+        }
         Managers.Player.Broadcast(nightTimerStartPacket);
     }
     
@@ -95,7 +98,7 @@ public class TimeManager : MonoBehaviour
         if (_isDay)
         {
             _currentTimer -= Time.deltaTime;
-            if (_currentTimer <= 0) //낮이 끝났다는 패킷을 보내고 타이머를 멈춤 + n초후 밤 타이머 시작과 해당 패킷 전송
+            if (_currentTimer <= 0) //낮이 끝났다는 패킷을 보내고 타이머를 멈춤 + n초후 밤 타이머 시작과 해당 패킷 전송 + 킬러 선정하고 알림
             {
                 Util.PrintLog($"day timer end");
                 DSC_DayTimerEnd dayTimerEndPacket = new DSC_DayTimerEnd();
@@ -162,7 +165,7 @@ public class TimeManager : MonoBehaviour
     #region 밤 게이지 관련
     
     /// <summary>
-    /// 밤 게이지 시작
+    /// 밤 게이지 시작 + 게이지에 필요한 정보 세팅
     /// </summary>
     public void GaugeStart()
     {
@@ -171,6 +174,15 @@ public class TimeManager : MonoBehaviour
         
         //모든 플레이어의 게이지를 최대로 설정
         Managers.Player.SetAllGauge(_gaugeMax);
+        
+        //킬러가아닌 플레이어들에게 기본 생존차 초당 게이지 감소량 적용. 킬러에겐 기본 킬러 초당 게이지 감소량 적용
+        foreach (int playerId in Managers.Player._players.Keys)
+        {
+            Managers.Player.SetGaugeDecreasePerSecond(playerId, Managers.Player.IsKiller(playerId) ? _defaultKillerGaugeDecreasePerSecond : _defaultSurvivorGaugeDecreasePerSecond);
+        }
+        
+        //TODO: 특정 플레이어의 초기 초당 게이지 감소량을 조절해야 한다면 여기서 조절하기!
+        
     }
     
     /// <summary>
@@ -194,10 +206,7 @@ public class TimeManager : MonoBehaviour
             return;
         
         //시간에 따른 킬러,생존자 게이지 자동감소 적용
-        float killerMinusGauge = _killerGaugeDecreasePerSecond * Time.deltaTime;
-        float survivorMinusGauge = _survivorGaugeDecreasePerSecond * Time.deltaTime;
-        Managers.Player.DecreaseKillerGauge(killerMinusGauge);
-        Managers.Player.IncreaseAllSurvivorGauge(survivorMinusGauge);
+        Managers.Player.DecreaseAllGaugeAuto();
         
         //게이지 동기화 패킷 처리
         _gaugeSyncPacketTimer += Time.deltaTime;
@@ -209,10 +218,10 @@ public class TimeManager : MonoBehaviour
             {
                 gaugeSyncPacket.PlayerGauges.Add(playerId, Managers.Player.GetGauge(playerId));
             }
-            //Manager.Player의 모든 플레이어id를 key로, value를 killer일경우 _killerGaugeDecreasePerSecond, 아닐경우 _survivorGaugeDecreasePerSecond로
+            //Manager.Player의 모든 플레이어id를 key로, value를 _gaugeDecreasePerSecond로
             foreach (int playerId in Managers.Player._players.Keys)
             {
-                gaugeSyncPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Player.IsKiller(playerId) ? _killerGaugeDecreasePerSecond : _survivorGaugeDecreasePerSecond);
+                gaugeSyncPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Player.GetGaugeDecreasePerSecond(playerId));
             }
             Managers.Player.Broadcast(gaugeSyncPacket);
             _gaugeSyncPacketTimer = 0;
@@ -227,6 +236,9 @@ public class TimeManager : MonoBehaviour
             DSC_PlayerDeath playerDeathPacket = new DSC_PlayerDeath();
             playerDeathPacket.PlayerId = zeroGaugePlayerId;
             playerDeathPacket.DeathCause = DeathCause.GaugeOver;
+            
+            //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
+            
             Managers.Player.Broadcast(playerDeathPacket);
         }
         else if (_currentTimer <= 0) //누군가의 게이지가 닳기전 밤 종료. 마지막 킬러 사망 처리
@@ -236,6 +248,9 @@ public class TimeManager : MonoBehaviour
             DSC_PlayerDeath playerDeathPacket = new DSC_PlayerDeath();
             playerDeathPacket.PlayerId = Managers.Player.GetKillerId();
             playerDeathPacket.DeathCause = DeathCause.TimeOver;
+            
+            //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
+            
             Managers.Player.Broadcast(playerDeathPacket);
         }
         

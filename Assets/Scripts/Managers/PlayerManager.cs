@@ -140,62 +140,50 @@ public class PlayerManager : MonoBehaviour
     }
     
     /// <summary>
-    /// 플레이어id에 해당하는 게임오브젝트와 ghost를 destroy하고 플레이어 매니저에서 플레이어,고스트를 제거
+    /// 플레이어 오브젝트를 destroy함
     /// </summary>
-    /// <param name="playerId"></param>
-    /// <returns></returns>
-    public bool Remove(int playerId)
+    /// <param name="playerId">해당 플레이어id</param>
+    public void DestroyPlayerObject(int playerId)
     {
-        lock (_lock)
+        if (_players.ContainsKey(playerId))
         {
-            if (_players.TryGetValue(playerId, out GameObject playerObj) && _ghosts.TryGetValue(playerId, out GameObject ghostObj))
-            {
-                if(playerObj!=null)
-                    DespawnPlayer(playerObj);
-                if(ghostObj!=null)
-                    DespawnGhost(ghostObj);
-                
-                return _players.Remove(playerId);
-            }
-
-            return false;
+            Managers.Resource.Destroy(_players[playerId]);
         }
     }
+
     /// <summary>
-    /// 플레이어를 게임상에서 제거하는 함수 (Destroy처리)
+    /// 고스트 오브젝트를 destroy함
     /// </summary>
-    /// <param name="dediPlayerObj">Destroy할 플레이어 오브젝트</param>
-    public void DespawnPlayer(GameObject dediPlayerObj)
+    /// <param name="playerId">해당 플레이어id</param>
+    public void DestroyGhostObject(int playerId)
     {
-        Managers.Resource.Destroy(dediPlayerObj);
-    }
-    public void DespawnGhost(GameObject ghostObj)
-    {
-        Managers.Resource.Destroy(ghostObj);
+        if (_ghosts.ContainsKey(playerId))
+        {
+            Managers.Resource.Destroy(_ghosts[playerId]);
+        }
     }
     
 
     /// <summary>
-    /// 플레이어 destroy하고 플레이어 매니저에서 플레이어를 제거하고, 모든 클라이언트에게 제거된 플레이어의 정보를 알림
+    /// <para>플레이어가 게임을 아예 나갔을때 호출</para>
+    /// <para>플레이어 destroy하고 플레이어 매니저에서 플레이어를 제거하고, 매니저 map정보도 제거하고, 모든 클라이언트에게 제거된 플레이어의 정보를 알림</para>
     /// </summary>
-    /// <param name="playerId">제거해야할 플레이어id</param>
+    /// <param name="playerId">나간 플레이어id</param>
     public void LeaveGame(int playerId)
     {
-        if (_players.ContainsKey(playerId))
+        if (_players.ContainsKey(playerId) && _ghosts.ContainsKey(playerId))
         {
-            if (Remove(playerId))
-            {
-                DSC_InformLeaveDedicatedServer informLeaveDedicatedServerPacket = new DSC_InformLeaveDedicatedServer();
-                informLeaveDedicatedServerPacket.LeavePlayerId = playerId;
-                foreach (GameObject playerObj in _players.Values)
-                {
-                    if (playerObj != null)
-                    {
-                        ClientSession session = playerObj.GetComponent<Player>().Session;
-                        session.Send(informLeaveDedicatedServerPacket); 
-                    }
-                }
-            }
+            //플레이어오브젝트, 고스트오브젝트 제거
+            DestroyPlayerObject(playerId);
+            DestroyGhostObject(playerId);
+            
+            //플레이어매니저에서 플레이어,고스트 map 정보 제거
+            _players.Remove(playerId);
+            _ghosts.Remove(playerId);
+            
+            DSC_InformLeaveDedicatedServer informLeaveDedicatedServerPacket = new DSC_InformLeaveDedicatedServer();
+            informLeaveDedicatedServerPacket.LeavePlayerId = playerId;
+            Broadcast(informLeaveDedicatedServerPacket);
         }
     }
     
@@ -352,29 +340,15 @@ public class PlayerManager : MonoBehaviour
     #region 밤 게이지 관련
     
     /// <summary>
-    /// 킬러의 게이지를 감소시킴. 만약 감소시킨 결과가 0보다 작다면 0으로 설정
+    /// <para>모든 플레이어의 gauge를 본인의 _gaugeDecreasePerSecond만큼 감소시킴.</para>
+    /// <para>만약 감소시킨 결과가 0보다 작다면 0으로 설정.</para>
+    /// <para>time.deltatime적용된 상태</para>
     /// </summary>
-    /// <param name="amount"></param>
-    public void DecreaseKillerGauge(float amount)
-    { 
-        Player killer = GetKillerPlayerComponent();
-        
-        if(killer!=null)
-            DecreaseGauge(killer.Info.PlayerId,amount);
-    }
-
-    /// <summary>
-    /// 킬러를 제외한 모든 플레이어의 게이지를 감소시킴. 만약 감소시킨 결과가 0보다 작다면 0으로 설정
-    /// </summary>
-    /// <param name="amount">얼마나 감소시킬것인지</param>
-    public void DecreaseAllSurvivorGauge(float amount)
+    public void DecreaseAllGaugeAuto()
     {
         foreach (KeyValuePair<int, GameObject> a in _players)
         {
-            if (!a.Value.GetComponent<Player>()._isKiller)
-            {
-                DecreaseGauge(a.Key, amount);
-            }
+            DecreaseGauge(a.Key, a.Value.GetComponent<Player>()._gaugeDecreasePerSecond * Time.deltaTime);
         }
     }
     
@@ -464,6 +438,7 @@ public class PlayerManager : MonoBehaviour
             SetGauge(a.Key, amount);
         }
     }
+    
     /// <summary>
     /// 특정 플레이어의 gauge를 amount로 설정함. 만약 amount가 0보다 작다면 0으로 설정, _gaugeMax보다 크다면 _gaugeMax로 설정
     /// </summary>
@@ -526,6 +501,35 @@ public class PlayerManager : MonoBehaviour
 
         return -1;
     }
+    
+    /// <summary>
+    /// 특정 플레이어의 _gaugeDecreasePerSecond를 반환함
+    /// </summary>
+    /// <param name="playerId">플레이어id</param>
+    /// <returns></returns>
+    public float GetGaugeDecreasePerSecond(int playerId)
+    {
+        if (_players.ContainsKey(playerId))
+        {
+            return _players[playerId].GetComponent<Player>()._gaugeDecreasePerSecond;
+        }
+
+        return -1;
+    }
+    
+    /// <summary>
+    /// 특정 플레이어의 _gaugeDecreasePerSecond를 설정함
+    /// </summary>
+    /// <param name="playerId">플레이어id</param>
+    /// <param name="gaugeDecreasePerSecond">초당 게이지 감소량</param>
+    public void SetGaugeDecreasePerSecond(int playerId,float gaugeDecreasePerSecond)
+    {
+        if (_players.ContainsKey(playerId))
+        {
+            _players[playerId].GetComponent<Player>()._gaugeDecreasePerSecond = gaugeDecreasePerSecond;
+        }
+    }
+
 
     #endregion
 
