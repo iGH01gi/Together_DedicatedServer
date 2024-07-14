@@ -23,9 +23,7 @@ public class TimeManager : MonoBehaviour
     private bool _isGaugeStart = false; //게이지 시작 여부
     private float _gaugeSyncPacketTimer = 0f; //게이지 동기화 패킷을 위한 타이머
     private float _gaugeSyncPacketInterval = 5f; //게이지 동기화 패킷을 보내는 간격(초)
-    public float _gaugeMax = 180; //게이지 최대값
-    private float _defaultSurvivorGaugeDecreasePerSecond = 1; //기본 생존자 초당 게이지 감소량
-    private float _defaultKillerGaugeDecreasePerSecond = 2; //기본 킬러의 초당 게이지 감소량
+
     
 
     private void Update()
@@ -70,11 +68,11 @@ public class TimeManager : MonoBehaviour
         
         DSC_NightTimerStart nightTimerStartPacket = new DSC_NightTimerStart();
         nightTimerStartPacket.NightSeconds = _nightSeconds;
-        nightTimerStartPacket.GaugeMax = _gaugeMax;
+        nightTimerStartPacket.GaugeMax = Managers.Game._gaugeController._gaugeMax;
         //Manager.Player의 모든 플레이어id를 key로, value를 _gaugeDecreasePerSecond로
         foreach (int playerId in Managers.Player._players.Keys)
         {
-            nightTimerStartPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Player.GetGaugeDecreasePerSecond(playerId));
+            nightTimerStartPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Game._gaugeController.GetGaugeDecreasePerSecond(playerId));
         }
         Managers.Player.Broadcast(nightTimerStartPacket);
     }
@@ -173,12 +171,12 @@ public class TimeManager : MonoBehaviour
         _isGaugeStart = true;
         
         //모든 플레이어의 게이지를 최대로 설정
-        Managers.Player.SetAllGauge(_gaugeMax);
+        Managers.Game._gaugeController.SetAllGauge(Managers.Game._gaugeController._gaugeMax);
         
         //킬러가아닌 플레이어들에게 기본 생존차 초당 게이지 감소량 적용. 킬러에겐 기본 킬러 초당 게이지 감소량 적용
         foreach (int playerId in Managers.Player._players.Keys)
         {
-            Managers.Player.SetGaugeDecreasePerSecond(playerId, Managers.Player.IsKiller(playerId) ? _defaultKillerGaugeDecreasePerSecond : _defaultSurvivorGaugeDecreasePerSecond);
+            Managers.Game._gaugeController.SetGaugeDecreasePerSecond(playerId, Managers.Player.IsKiller(playerId) ? Managers.Game._gaugeController._defaultKillerGaugeDecreasePerSecond : Managers.Game._gaugeController._defaultSurvivorGaugeDecreasePerSecond);
         }
         
         //TODO: 특정 플레이어의 초기 초당 게이지 감소량을 조절해야 한다면 여기서 조절하기!
@@ -194,7 +192,7 @@ public class TimeManager : MonoBehaviour
         _isGaugeStart = false;
         
         //모든 플레이어의 게이지를 0으로 설정
-        Managers.Player.SetAllGauge(0);
+        Managers.Game._gaugeController.SetAllGauge(0);
     }
     
     /// <summary>
@@ -206,7 +204,7 @@ public class TimeManager : MonoBehaviour
             return;
         
         //시간에 따른 킬러,생존자 게이지 자동감소 적용
-        Managers.Player.DecreaseAllGaugeAuto();
+        Managers.Game._gaugeController.DecreaseAllGaugeAuto();
         
         //게이지 동기화 패킷 처리
         _gaugeSyncPacketTimer += Time.deltaTime;
@@ -216,19 +214,19 @@ public class TimeManager : MonoBehaviour
             //Manager.Player의 모든 플레이어id를 key로, value를 해당 플레이어의 현재 게이지로
             foreach (int playerId in Managers.Player._players.Keys)
             {
-                gaugeSyncPacket.PlayerGauges.Add(playerId, Managers.Player.GetGauge(playerId));
+                gaugeSyncPacket.PlayerGauges.Add(playerId, Managers.Game._gaugeController.GetGauge(playerId));
             }
             //Manager.Player의 모든 플레이어id를 key로, value를 _gaugeDecreasePerSecond로
             foreach (int playerId in Managers.Player._players.Keys)
             {
-                gaugeSyncPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Player.GetGaugeDecreasePerSecond(playerId));
+                gaugeSyncPacket.PlayerGaugeDecreasePerSecond.Add(playerId, Managers.Game._gaugeController.GetGaugeDecreasePerSecond(playerId));
             }
             Managers.Player.Broadcast(gaugeSyncPacket);
             _gaugeSyncPacketTimer = 0;
         }
         
         
-        int zeroGaugePlayerId = Managers.Player.CheckZeroGauge();
+        int zeroGaugePlayerId = Managers.Game._gaugeController.CheckZeroGauge();
         if (zeroGaugePlayerId != -1) //누군가의 게이지가 다 닳아서 사망 처리.
         {
             Util.PrintLog($"player {zeroGaugePlayerId} is dead. gauge is 0");
@@ -257,7 +255,5 @@ public class TimeManager : MonoBehaviour
     }
 
     #endregion
-
-
     
 }
