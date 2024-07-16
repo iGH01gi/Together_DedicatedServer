@@ -2,6 +2,7 @@
 using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using Google.Protobuf.WellKnownTypes;
+using Unity.Profiling.LowLevel.Unsafe;
 
 public class PacketHandler
 {
@@ -30,6 +31,9 @@ public class PacketHandler
         {
             //상자 생성 및 정보 전송
             Managers.Object._chestController.ChestSetAllInOne();
+            
+            //클린즈 정보 전송
+            Managers.Object._cleanseController.SendAllCleanseInfo();
             
             //시작 패킷 전송
             DSC_StartGame sendPacket = new DSC_StartGame();
@@ -94,5 +98,40 @@ public class PacketHandler
         DSC_ResponseTimestamp sendPacket = new DSC_ResponseTimestamp();
         sendPacket.Timestamp = DateTime.UtcNow.ToTimestamp();
         clientSession.Send(sendPacket);
+    }
+    
+    //클라에서 클린즈 사용 권한을 요청하는 패킷을 처리
+    public static void CDS_RequestCleansePermissionHandler(PacketSession session, IMessage packet)
+    {
+        CDS_RequestCleansePermission requestCleansePermissionPacket = packet as CDS_RequestCleansePermission;
+        ClientSession clientSession = session as ClientSession;
+        
+        int dediPlayerId =  requestCleansePermissionPacket.MyDediplayerId;
+        int cleanseId = requestCleansePermissionPacket.CleanseId;
+        
+        Managers.Object._cleanseController.ClientTryCleanse(dediPlayerId, cleanseId);
+    }
+    
+    //클라에서 클린즈 취소를 알린 패킷을 처리
+    public static void CDS_CleanseQuitHandler(PacketSession session, IMessage packet)
+    {
+        CDS_CleanseQuit cleanseQuitPacket = packet as CDS_CleanseQuit;
+        ClientSession clientSession = session as ClientSession;
+        
+        int dediPlayerId = cleanseQuitPacket.MyDediplayerId;
+        int cleanseId = cleanseQuitPacket.CleanseId;
+        
+        Managers.Object._cleanseController.ClientQuitCleanse(dediPlayerId, cleanseId);
+    }
+    
+    public static void CDS_CleanseSuccessHandler(PacketSession session, IMessage packet)
+    {
+        CDS_CleanseSuccess cleanseSuccessPacket = packet as CDS_CleanseSuccess;
+        ClientSession clientSession = session as ClientSession;
+        
+        int dediPlayerId = cleanseSuccessPacket.MyDediplayerId;
+        int cleanseId = cleanseSuccessPacket.CleanseId;
+        
+        Managers.Object._cleanseController.ClientCleanseSuccess(dediPlayerId, cleanseId);
     }
 }

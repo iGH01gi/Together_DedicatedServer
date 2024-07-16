@@ -26,6 +26,7 @@ public class ObjectManager
         _chestController.Init();
         
         _cleanseController = Util.GetOrAddComponent<CleanseController>(root);
+        _cleanseController.Init();
     }
 }
     

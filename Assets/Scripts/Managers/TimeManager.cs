@@ -64,7 +64,11 @@ public class TimeManager : MonoBehaviour
         _currentTimer = _nightSeconds;
         _timerSyncPacketTimer = 0f;
         
+        //게이지 시작 + 게이지에 필요한 정보 세팅
         GaugeStart();
+        
+        //클린즈 리셋
+        Managers.Object._cleanseController.ResetCleanses();
         
         DSC_NightTimerStart nightTimerStartPacket = new DSC_NightTimerStart();
         nightTimerStartPacket.NightSeconds = _nightSeconds;
