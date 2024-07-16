@@ -16,7 +16,7 @@ public class Managers : MonoBehaviour
     NetworkManager _network = new NetworkManager();
     SessionManager _session = new SessionManager();
     PlayerManager _player;
-    ObjectManager _object;
+    ObjectManager _object = new ObjectManager();
     LogicManager _logic = new LogicManager();
     TimeManager _time;
     GameManager _game = new GameManager();
@@ -60,14 +60,12 @@ public class Managers : MonoBehaviour
                 go = new GameObject { name = "@Managers" };
                 go.AddComponent<Managers>();
                 go.AddComponent<PlayerManager>(); //특별처리 (모노비헤비어)
-                go.AddComponent<ObjectManager>(); //특별처리 (모노비헤비어)
                 go.AddComponent<TimeManager>(); //특별처리 (모노비헤비어)
             }
 
             DontDestroyOnLoad(go);
             _instance = go.GetComponent<Managers>();
             _instance._player = go.GetComponent<PlayerManager>(); //특별처리 (모노비헤비어)
-            _instance._object = go.GetComponent<ObjectManager>(); //특별처리 (모노비헤비어)
             _instance._object.Init();
             _instance._pool.Init();
             _instance._input.Init();

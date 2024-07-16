@@ -109,31 +109,47 @@ namespace Google.Protobuf.Protocol {
             "ASABKAUSDQoFdmFsdWUYAiABKAI6AjgBGkMKIVBsYXllckdhdWdlRGVjcmVh",
             "c2VQZXJTZWNvbmRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAI6",
             "AjgBIk0KD0RTQ19QbGF5ZXJEZWF0aBIQCghwbGF5ZXJJZBgBIAEoBRIoCgpk",
-            "ZWF0aENhdXNlGAIgASgOMhQuUHJvdG9jb2wuRGVhdGhDYXVzZSqJBwoFTXNn",
-            "SWQSEAoMQ1NfUk9PTV9MSVNUEAASEAoMU0NfUk9PTV9MSVNUEAESEAoMQ1Nf",
-            "TUFLRV9ST09NEAISEAoMU0NfTUFLRV9ST09NEAMSEQoNQ1NfRU5URVJfUk9P",
-            "TRAEEhcKE1NDX0FMTE9XX0VOVEVSX1JPT00QBRIeChpTQ19JTkZPUk1fTkVX",
-            "X0ZBQ0VfSU5fUk9PTRAGEhEKDUNTX0xFQVZFX1JPT00QBxIRCg1TQ19MRUFW",
-            "RV9ST09NEAgSEQoNQ1NfUkVBRFlfUk9PTRAJEhEKDVNDX1JFQURZX1JPT00Q",
-            "ChIQCgxTQ19QSU5HX1BPTkcQCxIQCgxDU19QSU5HX1BPTkcQDBIRCg1EU0Nf",
-            "UElOR19QT05HEA0SEQoNQ0RTX1BJTkdfUE9ORxAOEh8KG0NTX0NPTk5FQ1Rf",
-            "REVESUNBVEVEX1NFUlZFUhAPEh8KG1NDX0NPTk5FQ1RfREVESUNBVEVEX1NF",
-            "UlZFUhAQEhgKFENEU19JTkZPUk1fUk9PTV9JTkZPEBESGAoUQ0RTX0FMTE9X",
-            "X0VOVEVSX0dBTUUQEhIYChREU0NfQUxMT1dfRU5URVJfR0FNRRATEisKJ0RT",
-            "Q19JTkZPUk1fTkVXX0ZBQ0VfSU5fREVESUNBVEVEX1NFUlZFUhAUEiUKIURT",
-            "Q19JTkZPUk1fTEVBVkVfREVESUNBVEVEX1NFUlZFUhAVEhIKDkRTQ19TVEFS",
-            "VF9HQU1FEBYSDAoIQ0RTX01PVkUQFxIMCghEU0NfTU9WRRAYEhcKE0RTQ19E",
-            "QVlfVElNRVJfU1RBUlQQGRIWChJEU0NfREFZX1RJTUVSX1NZTkMQGhIVChFE",
-            "U0NfREFZX1RJTUVSX0VORBAbEhkKFURTQ19OSUdIVF9USU1FUl9TVEFSVBAc",
-            "EhgKFERTQ19OSUdIVF9USU1FUl9TWU5DEB0SFwoTRFNDX05JR0hUX1RJTUVS",
-            "X0VORBAeEhcKE0RTQ19ORVdfQ0hFU1RTX0lORk8QHxIWChJDRFNfVFJZX0NI",
-            "RVNUX09QRU4QIBIaChZEU0NfQ0hFU1RfT1BFTl9TVUNDRVNTECESGQoVQ0RT",
-            "X1JFUVVFU1RfVElNRVNUQU1QECISGgoWRFNDX1JFU1BPTlNFX1RJTUVTVEFN",
-            "UBAjEhIKDkRTQ19HYXVnZV9TeW5jECQSFAoQRFNDX1BsYXllcl9EZWF0aBAl",
-            "KlsKDlJlYXNvblJlamVjdGVkEhAKDFJvb21Ob3RFeGlzdBAAEhQKEEN1cnJl",
-            "bnRseVBsYXlpbmcQARIOCgpSb29tSXNGdWxsEAISEQoNV3JvbmdQYXNzd29y",
-            "ZBADKikKCkRlYXRoQ2F1c2USDAoIVGltZU92ZXIQABINCglHYXVnZU92ZXIQ",
-            "AUIbqgIYR29vZ2xlLlByb3RvYnVmLlByb3RvY29sYgZwcm90bzM="));
+            "ZWF0aENhdXNlGAIgASgOMhQuUHJvdG9jb2wuRGVhdGhDYXVzZSJ9ChJEU0Nf",
+            "TmV3Q2xlYW5zZUluZm8SEQoJY2xlYW5zZUlkGAEgASgFEhQKDGNsZWFuc2VQ",
+            "b2ludBgCIAEoAhIeChZjbGVhbnNlRHVyYXRpb25TZWNvbmRzGAMgASgCEh4K",
+            "FmNsZWFuc2VDb29sVGltZVNlY29uZHMYBCABKAIiSQocQ0RTX1JlcXVlc3RD",
+            "bGVhbnNlUGVybWlzc2lvbhIWCg5teURlZGlwbGF5ZXJJZBgBIAEoBRIRCglj",
+            "bGVhbnNlSWQYAiABKAUiQAoZRFNDX0dpdmVDbGVhbnNlUGVybWlzc2lvbhIQ",
+            "CghwbGF5ZXJJZBgBIAEoBRIRCgljbGVhbnNlSWQYAiABKAUiPAoPQ0RTX0Ns",
+            "ZWFuc2VRdWl0EhYKDm15RGVkaXBsYXllcklkGAEgASgFEhEKCWNsZWFuc2VJ",
+            "ZBgCIAEoBSI2Cg9EU0NfQ2xlYW5zZVF1aXQSEAoIcGxheWVySWQYASABKAUS",
+            "EQoJY2xlYW5zZUlkGAIgASgFIj8KEkNEU19DbGVhbnNlU3VjY2VzcxIWCg5t",
+            "eURlZGlwbGF5ZXJJZBgBIAEoBRIRCgljbGVhbnNlSWQYAiABKAUiOQoSRFND",
+            "X0NsZWFuc2VTdWNjZXNzEhAKCHBsYXllcklkGAEgASgFEhEKCWNsZWFuc2VJ",
+            "ZBgCIAEoBSrGCAoFTXNnSWQSEAoMQ1NfUk9PTV9MSVNUEAASEAoMU0NfUk9P",
+            "TV9MSVNUEAESEAoMQ1NfTUFLRV9ST09NEAISEAoMU0NfTUFLRV9ST09NEAMS",
+            "EQoNQ1NfRU5URVJfUk9PTRAEEhcKE1NDX0FMTE9XX0VOVEVSX1JPT00QBRIe",
+            "ChpTQ19JTkZPUk1fTkVXX0ZBQ0VfSU5fUk9PTRAGEhEKDUNTX0xFQVZFX1JP",
+            "T00QBxIRCg1TQ19MRUFWRV9ST09NEAgSEQoNQ1NfUkVBRFlfUk9PTRAJEhEK",
+            "DVNDX1JFQURZX1JPT00QChIQCgxTQ19QSU5HX1BPTkcQCxIQCgxDU19QSU5H",
+            "X1BPTkcQDBIRCg1EU0NfUElOR19QT05HEA0SEQoNQ0RTX1BJTkdfUE9ORxAO",
+            "Eh8KG0NTX0NPTk5FQ1RfREVESUNBVEVEX1NFUlZFUhAPEh8KG1NDX0NPTk5F",
+            "Q1RfREVESUNBVEVEX1NFUlZFUhAQEhgKFENEU19JTkZPUk1fUk9PTV9JTkZP",
+            "EBESGAoUQ0RTX0FMTE9XX0VOVEVSX0dBTUUQEhIYChREU0NfQUxMT1dfRU5U",
+            "RVJfR0FNRRATEisKJ0RTQ19JTkZPUk1fTkVXX0ZBQ0VfSU5fREVESUNBVEVE",
+            "X1NFUlZFUhAUEiUKIURTQ19JTkZPUk1fTEVBVkVfREVESUNBVEVEX1NFUlZF",
+            "UhAVEhIKDkRTQ19TVEFSVF9HQU1FEBYSDAoIQ0RTX01PVkUQFxIMCghEU0Nf",
+            "TU9WRRAYEhcKE0RTQ19EQVlfVElNRVJfU1RBUlQQGRIWChJEU0NfREFZX1RJ",
+            "TUVSX1NZTkMQGhIVChFEU0NfREFZX1RJTUVSX0VORBAbEhkKFURTQ19OSUdI",
+            "VF9USU1FUl9TVEFSVBAcEhgKFERTQ19OSUdIVF9USU1FUl9TWU5DEB0SFwoT",
+            "RFNDX05JR0hUX1RJTUVSX0VORBAeEhcKE0RTQ19ORVdfQ0hFU1RTX0lORk8Q",
+            "HxIWChJDRFNfVFJZX0NIRVNUX09QRU4QIBIaChZEU0NfQ0hFU1RfT1BFTl9T",
+            "VUNDRVNTECESGQoVQ0RTX1JFUVVFU1RfVElNRVNUQU1QECISGgoWRFNDX1JF",
+            "U1BPTlNFX1RJTUVTVEFNUBAjEhIKDkRTQ19HYXVnZV9TeW5jECQSFAoQRFND",
+            "X1BsYXllcl9EZWF0aBAlEhgKFERTQ19ORVdfQ0xFQU5TRV9JTkZPECYSIgoe",
+            "Q0RTX1JFUVVFU1RfQ0xFQU5TRV9QRVJNSVNTSU9OECcSHwobRFNDX0dJVkVf",
+            "Q2xFQU5TRV9QRVJNSVNTSU9OECgSFAoQQ0RTX0NMRUFOU0VfUVVJVBApEhQK",
+            "EERTQ19DTEVBTlNFX1FVSVQQKhIXChNDRFNfQ0xFQU5TRV9TVUNDRVNTECsS",
+            "FwoTRFNDX0NMRUFOU0VfU1VDQ0VTUxAsKlsKDlJlYXNvblJlamVjdGVkEhAK",
+            "DFJvb21Ob3RFeGlzdBAAEhQKEEN1cnJlbnRseVBsYXlpbmcQARIOCgpSb29t",
+            "SXNGdWxsEAISEQoNV3JvbmdQYXNzd29yZBADKikKCkRlYXRoQ2F1c2USDAoI",
+            "VGltZU92ZXIQABINCglHYXVnZU92ZXIQAUIbqgIYR29vZ2xlLlByb3RvYnVm",
+            "LlByb3RvY29sYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.MsgId), typeof(global::Google.Protobuf.Protocol.ReasonRejected), typeof(global::Google.Protobuf.Protocol.DeathCause), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -181,7 +197,14 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_RequestTimestamp), global::Google.Protobuf.Protocol.CDS_RequestTimestamp.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_ResponseTimestamp), global::Google.Protobuf.Protocol.DSC_ResponseTimestamp.Parser, new[]{ "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_GaugeSync), global::Google.Protobuf.Protocol.DSC_GaugeSync.Parser, new[]{ "PlayerGauges", "PlayerGaugeDecreasePerSecond" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_PlayerDeath), global::Google.Protobuf.Protocol.DSC_PlayerDeath.Parser, new[]{ "PlayerId", "DeathCause" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_PlayerDeath), global::Google.Protobuf.Protocol.DSC_PlayerDeath.Parser, new[]{ "PlayerId", "DeathCause" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_NewCleanseInfo), global::Google.Protobuf.Protocol.DSC_NewCleanseInfo.Parser, new[]{ "CleanseId", "CleansePoint", "CleanseDurationSeconds", "CleanseCoolTimeSeconds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_RequestCleansePermission), global::Google.Protobuf.Protocol.CDS_RequestCleansePermission.Parser, new[]{ "MyDediplayerId", "CleanseId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_GiveCleansePermission), global::Google.Protobuf.Protocol.DSC_GiveCleansePermission.Parser, new[]{ "PlayerId", "CleanseId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_CleanseQuit), global::Google.Protobuf.Protocol.CDS_CleanseQuit.Parser, new[]{ "MyDediplayerId", "CleanseId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_CleanseQuit), global::Google.Protobuf.Protocol.DSC_CleanseQuit.Parser, new[]{ "PlayerId", "CleanseId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_CleanseSuccess), global::Google.Protobuf.Protocol.CDS_CleanseSuccess.Parser, new[]{ "MyDediplayerId", "CleanseId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_CleanseSuccess), global::Google.Protobuf.Protocol.DSC_CleanseSuccess.Parser, new[]{ "PlayerId", "CleanseId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -296,6 +319,34 @@ namespace Google.Protobuf.Protocol {
     ///플레이어가 죽었음을 알림
     /// </summary>
     [pbr::OriginalName("DSC_Player_Death")] DscPlayerDeath = 37,
+    /// <summary>
+    ///데디서버가 클라에게 새로운 정화관련 정보 전달
+    /// </summary>
+    [pbr::OriginalName("DSC_NEW_CLEANSE_INFO")] DscNewCleanseInfo = 38,
+    /// <summary>
+    ///클라가 데디서버에게 정화 시도 소유권 요청
+    /// </summary>
+    [pbr::OriginalName("CDS_REQUEST_CLEANSE_PERMISSION")] CdsRequestCleansePermission = 39,
+    /// <summary>
+    ///데디서버가 클라들에게 정화 소유권 허가 여부 전달
+    /// </summary>
+    [pbr::OriginalName("DSC_GIVE_ClEANSE_PERMISSION")] DscGiveClEansePermission = 40,
+    /// <summary>
+    ///클라가 데디서버에게 정화 포기 전달
+    /// </summary>
+    [pbr::OriginalName("CDS_CLEANSE_QUIT")] CdsCleanseQuit = 41,
+    /// <summary>
+    ///데디서버가 클라들에게 정화 포기 전달
+    /// </summary>
+    [pbr::OriginalName("DSC_CLEANSE_QUIT")] DscCleanseQuit = 42,
+    /// <summary>
+    ///클라가 데디서버에게 정화 성공 전달
+    /// </summary>
+    [pbr::OriginalName("CDS_CLEANSE_SUCCESS")] CdsCleanseSuccess = 43,
+    /// <summary>
+    ///데디서버가 클라들에게 정화 성공 전달
+    /// </summary>
+    [pbr::OriginalName("DSC_CLEANSE_SUCCESS")] DscCleanseSuccess = 44,
   }
 
   public enum ReasonRejected {
@@ -7522,6 +7573,1173 @@ namespace Google.Protobuf.Protocol {
           }
           case 16: {
             DeathCause = (global::Google.Protobuf.Protocol.DeathCause) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_NewCleanseInfo : pb::IMessage<DSC_NewCleanseInfo> {
+    private static readonly pb::MessageParser<DSC_NewCleanseInfo> _parser = new pb::MessageParser<DSC_NewCleanseInfo>(() => new DSC_NewCleanseInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_NewCleanseInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[45]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NewCleanseInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NewCleanseInfo(DSC_NewCleanseInfo other) : this() {
+      cleanseId_ = other.cleanseId_;
+      cleansePoint_ = other.cleansePoint_;
+      cleanseDurationSeconds_ = other.cleanseDurationSeconds_;
+      cleanseCoolTimeSeconds_ = other.cleanseCoolTimeSeconds_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_NewCleanseInfo Clone() {
+      return new DSC_NewCleanseInfo(this);
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 1;
+    private int cleanseId_;
+    /// <summary>
+    ///정화 아이디
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleansePoint" field.</summary>
+    public const int CleansePointFieldNumber = 2;
+    private float cleansePoint_;
+    /// <summary>
+    ///정화로 올라갈 게이지 정도
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CleansePoint {
+      get { return cleansePoint_; }
+      set {
+        cleansePoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseDurationSeconds" field.</summary>
+    public const int CleanseDurationSecondsFieldNumber = 3;
+    private float cleanseDurationSeconds_;
+    /// <summary>
+    ///정화하는데 걸리는 시간
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CleanseDurationSeconds {
+      get { return cleanseDurationSeconds_; }
+      set {
+        cleanseDurationSeconds_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseCoolTimeSeconds" field.</summary>
+    public const int CleanseCoolTimeSecondsFieldNumber = 4;
+    private float cleanseCoolTimeSeconds_;
+    /// <summary>
+    ///정화 재사용 쿨타임
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CleanseCoolTimeSeconds {
+      get { return cleanseCoolTimeSeconds_; }
+      set {
+        cleanseCoolTimeSeconds_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_NewCleanseInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_NewCleanseInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CleanseId != other.CleanseId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CleansePoint, other.CleansePoint)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CleanseDurationSeconds, other.CleanseDurationSeconds)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CleanseCoolTimeSeconds, other.CleanseCoolTimeSeconds)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (CleansePoint != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CleansePoint);
+      if (CleanseDurationSeconds != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CleanseDurationSeconds);
+      if (CleanseCoolTimeSeconds != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CleanseCoolTimeSeconds);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (CleanseId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(CleanseId);
+      }
+      if (CleansePoint != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(CleansePoint);
+      }
+      if (CleanseDurationSeconds != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(CleanseDurationSeconds);
+      }
+      if (CleanseCoolTimeSeconds != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(CleanseCoolTimeSeconds);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (CleansePoint != 0F) {
+        size += 1 + 4;
+      }
+      if (CleanseDurationSeconds != 0F) {
+        size += 1 + 4;
+      }
+      if (CleanseCoolTimeSeconds != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_NewCleanseInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      if (other.CleansePoint != 0F) {
+        CleansePoint = other.CleansePoint;
+      }
+      if (other.CleanseDurationSeconds != 0F) {
+        CleanseDurationSeconds = other.CleanseDurationSeconds;
+      }
+      if (other.CleanseCoolTimeSeconds != 0F) {
+        CleanseCoolTimeSeconds = other.CleanseCoolTimeSeconds;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CleanseId = input.ReadInt32();
+            break;
+          }
+          case 21: {
+            CleansePoint = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            CleanseDurationSeconds = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            CleanseCoolTimeSeconds = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CDS_RequestCleansePermission : pb::IMessage<CDS_RequestCleansePermission> {
+    private static readonly pb::MessageParser<CDS_RequestCleansePermission> _parser = new pb::MessageParser<CDS_RequestCleansePermission>(() => new CDS_RequestCleansePermission());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CDS_RequestCleansePermission> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[46]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_RequestCleansePermission() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_RequestCleansePermission(CDS_RequestCleansePermission other) : this() {
+      myDediplayerId_ = other.myDediplayerId_;
+      cleanseId_ = other.cleanseId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_RequestCleansePermission Clone() {
+      return new CDS_RequestCleansePermission(this);
+    }
+
+    /// <summary>Field number for the "myDediplayerId" field.</summary>
+    public const int MyDediplayerIdFieldNumber = 1;
+    private int myDediplayerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MyDediplayerId {
+      get { return myDediplayerId_; }
+      set {
+        myDediplayerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 2;
+    private int cleanseId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CDS_RequestCleansePermission);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CDS_RequestCleansePermission other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MyDediplayerId != other.MyDediplayerId) return false;
+      if (CleanseId != other.CleanseId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MyDediplayerId != 0) hash ^= MyDediplayerId.GetHashCode();
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (MyDediplayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(MyDediplayerId);
+      }
+      if (CleanseId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CleanseId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (MyDediplayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MyDediplayerId);
+      }
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CDS_RequestCleansePermission other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MyDediplayerId != 0) {
+        MyDediplayerId = other.MyDediplayerId;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            MyDediplayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CleanseId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_GiveCleansePermission : pb::IMessage<DSC_GiveCleansePermission> {
+    private static readonly pb::MessageParser<DSC_GiveCleansePermission> _parser = new pb::MessageParser<DSC_GiveCleansePermission>(() => new DSC_GiveCleansePermission());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_GiveCleansePermission> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[47]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_GiveCleansePermission() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_GiveCleansePermission(DSC_GiveCleansePermission other) : this() {
+      playerId_ = other.playerId_;
+      cleanseId_ = other.cleanseId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_GiveCleansePermission Clone() {
+      return new DSC_GiveCleansePermission(this);
+    }
+
+    /// <summary>Field number for the "playerId" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private int playerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 2;
+    private int cleanseId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_GiveCleansePermission);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_GiveCleansePermission other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerId != other.PlayerId) return false;
+      if (CleanseId != other.CleanseId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PlayerId);
+      }
+      if (CleanseId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CleanseId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      }
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_GiveCleansePermission other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerId != 0) {
+        PlayerId = other.PlayerId;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PlayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CleanseId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CDS_CleanseQuit : pb::IMessage<CDS_CleanseQuit> {
+    private static readonly pb::MessageParser<CDS_CleanseQuit> _parser = new pb::MessageParser<CDS_CleanseQuit>(() => new CDS_CleanseQuit());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CDS_CleanseQuit> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[48]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_CleanseQuit() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_CleanseQuit(CDS_CleanseQuit other) : this() {
+      myDediplayerId_ = other.myDediplayerId_;
+      cleanseId_ = other.cleanseId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_CleanseQuit Clone() {
+      return new CDS_CleanseQuit(this);
+    }
+
+    /// <summary>Field number for the "myDediplayerId" field.</summary>
+    public const int MyDediplayerIdFieldNumber = 1;
+    private int myDediplayerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MyDediplayerId {
+      get { return myDediplayerId_; }
+      set {
+        myDediplayerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 2;
+    private int cleanseId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CDS_CleanseQuit);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CDS_CleanseQuit other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MyDediplayerId != other.MyDediplayerId) return false;
+      if (CleanseId != other.CleanseId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MyDediplayerId != 0) hash ^= MyDediplayerId.GetHashCode();
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (MyDediplayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(MyDediplayerId);
+      }
+      if (CleanseId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CleanseId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (MyDediplayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MyDediplayerId);
+      }
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CDS_CleanseQuit other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MyDediplayerId != 0) {
+        MyDediplayerId = other.MyDediplayerId;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            MyDediplayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CleanseId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_CleanseQuit : pb::IMessage<DSC_CleanseQuit> {
+    private static readonly pb::MessageParser<DSC_CleanseQuit> _parser = new pb::MessageParser<DSC_CleanseQuit>(() => new DSC_CleanseQuit());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_CleanseQuit> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[49]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_CleanseQuit() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_CleanseQuit(DSC_CleanseQuit other) : this() {
+      playerId_ = other.playerId_;
+      cleanseId_ = other.cleanseId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_CleanseQuit Clone() {
+      return new DSC_CleanseQuit(this);
+    }
+
+    /// <summary>Field number for the "playerId" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private int playerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 2;
+    private int cleanseId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_CleanseQuit);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_CleanseQuit other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerId != other.PlayerId) return false;
+      if (CleanseId != other.CleanseId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PlayerId);
+      }
+      if (CleanseId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CleanseId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      }
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_CleanseQuit other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerId != 0) {
+        PlayerId = other.PlayerId;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PlayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CleanseId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CDS_CleanseSuccess : pb::IMessage<CDS_CleanseSuccess> {
+    private static readonly pb::MessageParser<CDS_CleanseSuccess> _parser = new pb::MessageParser<CDS_CleanseSuccess>(() => new CDS_CleanseSuccess());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CDS_CleanseSuccess> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[50]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_CleanseSuccess() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_CleanseSuccess(CDS_CleanseSuccess other) : this() {
+      myDediplayerId_ = other.myDediplayerId_;
+      cleanseId_ = other.cleanseId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CDS_CleanseSuccess Clone() {
+      return new CDS_CleanseSuccess(this);
+    }
+
+    /// <summary>Field number for the "myDediplayerId" field.</summary>
+    public const int MyDediplayerIdFieldNumber = 1;
+    private int myDediplayerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MyDediplayerId {
+      get { return myDediplayerId_; }
+      set {
+        myDediplayerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 2;
+    private int cleanseId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CDS_CleanseSuccess);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CDS_CleanseSuccess other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MyDediplayerId != other.MyDediplayerId) return false;
+      if (CleanseId != other.CleanseId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MyDediplayerId != 0) hash ^= MyDediplayerId.GetHashCode();
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (MyDediplayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(MyDediplayerId);
+      }
+      if (CleanseId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CleanseId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (MyDediplayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MyDediplayerId);
+      }
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CDS_CleanseSuccess other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MyDediplayerId != 0) {
+        MyDediplayerId = other.MyDediplayerId;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            MyDediplayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CleanseId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DSC_CleanseSuccess : pb::IMessage<DSC_CleanseSuccess> {
+    private static readonly pb::MessageParser<DSC_CleanseSuccess> _parser = new pb::MessageParser<DSC_CleanseSuccess>(() => new DSC_CleanseSuccess());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DSC_CleanseSuccess> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[51]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_CleanseSuccess() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_CleanseSuccess(DSC_CleanseSuccess other) : this() {
+      playerId_ = other.playerId_;
+      cleanseId_ = other.cleanseId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DSC_CleanseSuccess Clone() {
+      return new DSC_CleanseSuccess(this);
+    }
+
+    /// <summary>Field number for the "playerId" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private int playerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cleanseId" field.</summary>
+    public const int CleanseIdFieldNumber = 2;
+    private int cleanseId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CleanseId {
+      get { return cleanseId_; }
+      set {
+        cleanseId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DSC_CleanseSuccess);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DSC_CleanseSuccess other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerId != other.PlayerId) return false;
+      if (CleanseId != other.CleanseId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+      if (CleanseId != 0) hash ^= CleanseId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PlayerId);
+      }
+      if (CleanseId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CleanseId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      }
+      if (CleanseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CleanseId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DSC_CleanseSuccess other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerId != 0) {
+        PlayerId = other.PlayerId;
+      }
+      if (other.CleanseId != 0) {
+        CleanseId = other.CleanseId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PlayerId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            CleanseId = input.ReadInt32();
             break;
           }
         }

@@ -2,7 +2,7 @@
 
 public class GameManager
 {
-    public static GameObject root;
+    public GameObject root;
     
     public GaugeController _gaugeController;
     public CleanseController _cleanseController;

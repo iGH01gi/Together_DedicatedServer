@@ -29,7 +29,7 @@ public class PacketHandler
         JobTimer.Instance.Push(() =>
         {
             //상자 생성 및 정보 전송
-            Managers.Object.ChestSetAllInOne();
+            Managers.Object._chestController.ChestSetAllInOne();
             
             //시작 패킷 전송
             DSC_StartGame sendPacket = new DSC_StartGame();
@@ -82,7 +82,7 @@ public class PacketHandler
         CDS_TryChestOpen tryChestOpenPacket = packet as CDS_TryChestOpen;
         ClientSession clientSession = session as ClientSession;
         
-        Managers.Object.ClientTryChestOpen(tryChestOpenPacket);
+        Managers.Object._chestController.ClientTryChestOpen(tryChestOpenPacket);
     }
     
     //클라에서 타임스탬프를 요청하는 패킷을 처리

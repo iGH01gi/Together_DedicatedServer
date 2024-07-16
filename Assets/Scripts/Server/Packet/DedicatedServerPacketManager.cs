@@ -33,7 +33,13 @@ class PacketManager
 		_onRecv.Add((ushort)MsgId.CdsTryChestOpen, MakePacket<CDS_TryChestOpen>);
 		_handler.Add((ushort)MsgId.CdsTryChestOpen, PacketHandler.CDS_TryChestOpenHandler);		
 		_onRecv.Add((ushort)MsgId.CdsRequestTimestamp, MakePacket<CDS_RequestTimestamp>);
-		_handler.Add((ushort)MsgId.CdsRequestTimestamp, PacketHandler.CDS_RequestTimestampHandler);
+		_handler.Add((ushort)MsgId.CdsRequestTimestamp, PacketHandler.CDS_RequestTimestampHandler);		
+		_onRecv.Add((ushort)MsgId.CdsRequestCleansePermission, MakePacket<CDS_RequestCleansePermission>);
+		_handler.Add((ushort)MsgId.CdsRequestCleansePermission, PacketHandler.CDS_RequestCleansePermissionHandler);		
+		_onRecv.Add((ushort)MsgId.CdsCleanseQuit, MakePacket<CDS_CleanseQuit>);
+		_handler.Add((ushort)MsgId.CdsCleanseQuit, PacketHandler.CDS_CleanseQuitHandler);		
+		_onRecv.Add((ushort)MsgId.CdsCleanseSuccess, MakePacket<CDS_CleanseSuccess>);
+		_handler.Add((ushort)MsgId.CdsCleanseSuccess, PacketHandler.CDS_CleanseSuccessHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)
