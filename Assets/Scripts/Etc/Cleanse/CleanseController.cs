@@ -91,6 +91,10 @@ public class CleanseController : MonoBehaviour
     /// <param name="cleanseId">클린즈id</param>
     public void ClientTryCleanse(int playerId,int cleanseId)
     {
+        //해당 플레이어가 킬러면 정화 불가능처리
+        if (Managers.Player.IsKiller(playerId))
+            return;
+        
         //clenaseId를 가지고 있는 클린즈가 사용 가능한지 확인
         Cleanse cleanse = _cleansetList[cleanseId].GetComponent<Cleanse>();
         if (cleanse.IsAvailable())
