@@ -273,6 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 941760309846153461}
+  - component: {fileID: 9077209372974353550}
   m_Layer: 0
   m_Name: Cleanse
   m_TagString: Untagged
@@ -296,6 +297,27 @@ Transform:
   - {fileID: 8415959970531440604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9077209372974353550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982433662987390681}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.047437042, y: 0.111224055, z: 0.038014792}
+  m_Center: {x: -0.000045011442, y: 0.08106192, z: -0.04139255}
 --- !u!1 &8594203449687270659
 GameObject:
   m_ObjectHideFlags: 0
