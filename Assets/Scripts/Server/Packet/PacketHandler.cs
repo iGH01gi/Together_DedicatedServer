@@ -30,10 +30,7 @@ public class PacketHandler
         JobTimer.Instance.Push(() =>
         {
             //상자 생성 및 정보 전송
-            Managers.Object._chestController.ChestSetAllInOne();
-            
-            //클린즈 정보 전송
-            Managers.Object._cleanseController.SendAllCleanseInfo();
+            //Managers.Object._chestController.ChestSetAllInOne();
             
             //시작 패킷 전송
             DSC_StartGame sendPacket = new DSC_StartGame();

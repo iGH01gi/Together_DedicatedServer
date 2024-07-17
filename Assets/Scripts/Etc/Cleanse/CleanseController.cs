@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using Google.Protobuf.Protocol;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CleanseController : MonoBehaviour
 {
-    public string _cleanseObjectPath = "Map/Cleanses"; //클린즈들이 모여있는 부모 게임오브젝트 경로
+    [FormerlySerializedAs("_cleanseObjectPath")] public string _cleanseParentPath = "Map/Cleanses"; //클린즈들이 모여있는 부모 게임오브젝트 경로
+    public GameObject _cleanseParent; //클린즈들이 실제로 생성될 부모 오브젝트
     public List<GameObject> _cleansetList = new List<GameObject>(); //클린즈 리스트(인덱스는 클린즈 고유 ID)
     public float _cleansePoint = 20; //클린즈로 올라갈 게이지 정도
     public float _cleanseDurationSeconds = 3; //정화하는데 걸리는 시간(초 단위)
@@ -16,7 +18,7 @@ public class CleanseController : MonoBehaviour
     public void Init()
     {
         //clenaseObjectPath 산하에 있는 자식들을 모두 가져와서 클린즈 리스트에 추가
-        Transform cleansesParent = GameObject.Find(_cleanseObjectPath).transform;
+        Transform cleansesParent = GameObject.Find(_cleanseParentPath).transform;
         foreach (Transform cleanse in cleansesParent)
         {
             _cleansetList.Add(cleanse.gameObject);
@@ -41,6 +43,10 @@ public class CleanseController : MonoBehaviour
             
             cleanse.InitCleanse(i, transformInfo, _cleansePoint, _cleanseDurationSeconds, _cleanseCoolTimeSeconds);
         }
+        
+        //_cleanseParentPath에 해당하는 게임오브젝트 active false해서 꺼놓기
+        _cleanseParent = GameObject.Find(_cleanseParentPath);
+        _cleanseParent.SetActive(false);
     }
 
     /// <summary>

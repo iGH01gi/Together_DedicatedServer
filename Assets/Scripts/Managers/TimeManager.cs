@@ -9,8 +9,8 @@ using UnityEngine;
 /// </summary>
 public class TimeManager : MonoBehaviour
 {
-    private int _daySeconds = 1; //낮 시간(초)
-    private int _nightSeconds = 20; //밤 시간(초)
+    private int _daySeconds = 60; //낮 시간(초)
+    private int _nightSeconds = 200; //밤 시간(초)
     private float _currentTimer = 0f; //현재 시간(초)
     
     private bool _isDay = false; 
@@ -54,6 +54,9 @@ public class TimeManager : MonoBehaviour
         
         //상자 생성 및 정보 전송
         Managers.Object._chestController.ChestSetAllInOne();
+        
+        //클린즈 끄기
+        Managers.Object._cleanseController._cleanseParent.SetActive(false);
     }
     
     /// <summary>
@@ -70,6 +73,8 @@ public class TimeManager : MonoBehaviour
         //게이지 시작 + 게이지에 필요한 정보 세팅
         GaugeStart();
         
+        //클린즈 켜기
+        Managers.Object._cleanseController._cleanseParent.SetActive(true);
         //클린즈 리셋
         Managers.Object._cleanseController.ResetCleanses();
         
@@ -115,6 +120,14 @@ public class TimeManager : MonoBehaviour
                 
                 Managers.Player.Broadcast(dayTimerEndPacket);
                 TimerStop();
+                
+                //상자 삭제
+                Managers.Object._chestController.ClearAllChest();
+                
+                //클린즈 켜기
+                Managers.Object._cleanseController._cleanseParent.SetActive(true);
+                //클린즈 정보 보냄
+                Managers.Object._cleanseController.SendAllCleanseInfo();
                 
                 JobTimer.Instance.Push(() =>
                 {
