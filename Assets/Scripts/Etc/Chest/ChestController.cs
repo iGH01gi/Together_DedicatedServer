@@ -204,13 +204,17 @@ public class ChestController : MonoBehaviour
         Chest chestScript = _chestList[chestId].GetComponent<Chest>();
         if (chestScript.TryOpenChestAtomic())
         {
-            //TODO: 상자 열기가 성공했으므로, 해당 플레이어에게 포인트 추가 처리
+            //상자 열기가 성공했으므로, 해당 플레이어에게 포인트 추가 처리
+            Managers.Player._players[dediPlayerId].GetComponent<Player>()._totalPoint += chestScript._point;
+            int totalPoint = Managers.Player._players[dediPlayerId].GetComponent<Player>()._totalPoint;
 
             //상자 열기 성공 패킷 브로드캐스트
             DSC_ChestOpenSuccess chestOpenSuccess = new DSC_ChestOpenSuccess()
             {
                 ChestId = chestId,
-                PlayerId = dediPlayerId
+                PlayerId = dediPlayerId,
+                GetPoint = chestScript._point,
+                TotalPoint = totalPoint
             };
             Managers.Player.Broadcast(chestOpenSuccess);
         }

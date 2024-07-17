@@ -136,6 +136,7 @@ public class CleanseController : MonoBehaviour
         DSC_CleanseSuccess cleanseSuccess = new DSC_CleanseSuccess();
         cleanseSuccess.PlayerId = playerId;
         cleanseSuccess.CleanseId = cleanseId;
+        cleanseSuccess.Gauge = Managers.Game._gaugeController.IncreaseGauge(playerId, cleanse._cleansePoint);
         Managers.Player.Broadcast(cleanseSuccess);
     }
 }

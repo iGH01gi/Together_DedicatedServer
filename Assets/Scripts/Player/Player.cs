@@ -20,11 +20,14 @@ public class Player : MonoBehaviour
     public bool _isRunning = false;
     public Quaternion _targetRotation; //서버에서 받은 목표 회전값. 이 값으로 update문에서 회전시킴
     
+    public int _totalPoint = 0; //상자로 얻은 총 포인트(낮마다 초기화)
+    
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         _velocity = new Vector3(0f, 0f, 0f);
         _isRunning = false;
+        _totalPoint = 0;
     }
 
     private void Update()

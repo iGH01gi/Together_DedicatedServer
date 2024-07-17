@@ -10,7 +10,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     private int _daySeconds = 1; //낮 시간(초)
-    private int _nightSeconds = 200; //밤 시간(초)
+    private int _nightSeconds = 20; //밤 시간(초)
     private float _currentTimer = 0f; //현재 시간(초)
     
     private bool _isDay = false; 
@@ -46,11 +46,14 @@ public class TimeManager : MonoBehaviour
         _currentTimer = _daySeconds;
         _timerSyncPacketTimer = 0f;
         
-        Managers.Player.ClearKiller();//킬러 초기화
+        Managers.Player.ResetPlayerOnDayStart(); //낮이 시작되면 플레이어들의 상태를 초기화
         
         DSC_DayTimerStart dayTimerStartPacket = new DSC_DayTimerStart();
         dayTimerStartPacket.DaySeconds = _daySeconds;
         Managers.Player.Broadcast(dayTimerStartPacket);
+        
+        //상자 생성 및 정보 전송
+        Managers.Object._chestController.ChestSetAllInOne();
     }
     
     /// <summary>
@@ -134,13 +137,22 @@ public class TimeManager : MonoBehaviour
         else if (_isNight)
         {
             _currentTimer -= Time.deltaTime;
-            if (_currentTimer <= 0) //밤이 끝났다는 패킷을 보내고 타이머를 멈춤 + n초후 낮 타이머 시작과 해당 패킷 전송
+            if (_currentTimer <= 0) //밤이 끝났다는 패킷을 보내고 타이머를 멈춤 + n초후 낮 타이머 시작과 해당 패킷 전송 + 킬러가 죽었다는 정보도 보냄 + 게이지 멈춤
             {
-                Util.PrintLog($"night timer end");
-                DSC_NightTimerEnd nightTimerEndPacket = new DSC_NightTimerEnd();
-                Managers.Player.Broadcast(nightTimerEndPacket);
                 TimerStop();
+                GaugeStop();
                 
+                Util.PrintLog($"night timer end. {Managers.Player.GetKillerId()} is dead. last killer");
+                DSC_NightTimerEnd nightTimerEndPacket = new DSC_NightTimerEnd();
+                nightTimerEndPacket.DeathCause = DeathCause.TimeOver;
+                nightTimerEndPacket.DeathPlayerId = Managers.Player.GetKillerId();
+                nightTimerEndPacket.KillerPlayerId = Managers.Player.GetKillerId();
+            
+                //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
+            
+                Managers.Player.Broadcast(nightTimerEndPacket);
+            
+                //일정 시간 후에 낮 시작
                 JobTimer.Instance.Push(() =>
                 {
                     DayTimerStart();
@@ -231,29 +243,26 @@ public class TimeManager : MonoBehaviour
         
         
         int zeroGaugePlayerId = Managers.Game._gaugeController.CheckZeroGauge();
-        if (zeroGaugePlayerId != -1) //누군가의 게이지가 다 닳아서 사망 처리.
+        if (zeroGaugePlayerId != -1) //누군가의 게이지가 다 닳아서 사망 처리. 밤 끝났다는 패킷에 넣어서 보냄
         {
             Util.PrintLog($"player {zeroGaugePlayerId} is dead. gauge is 0");
             GaugeStop();
-            DSC_PlayerDeath playerDeathPacket = new DSC_PlayerDeath();
-            playerDeathPacket.PlayerId = zeroGaugePlayerId;
-            playerDeathPacket.DeathCause = DeathCause.GaugeOver;
+            TimerStop();
+            
+            DSC_NightTimerEnd nightTimerEndPacket = new DSC_NightTimerEnd();
+            nightTimerEndPacket.DeathCause = DeathCause.GaugeOver;
+            nightTimerEndPacket.DeathPlayerId = zeroGaugePlayerId;
+            nightTimerEndPacket.KillerPlayerId = Managers.Player.GetKillerId();
             
             //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
             
-            Managers.Player.Broadcast(playerDeathPacket);
-        }
-        else if (_currentTimer <= 0) //누군가의 게이지가 닳기전 밤 종료. 마지막 킬러 사망 처리
-        {
-            Util.PrintLog($"night timer end. {Managers.Player.GetKillerId()} is dead. last killer");
-            GaugeStop();
-            DSC_PlayerDeath playerDeathPacket = new DSC_PlayerDeath();
-            playerDeathPacket.PlayerId = Managers.Player.GetKillerId();
-            playerDeathPacket.DeathCause = DeathCause.TimeOver;
+            Managers.Player.Broadcast(nightTimerEndPacket);
             
-            //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
-            
-            Managers.Player.Broadcast(playerDeathPacket);
+            //일정 시간 후에 낮 시작
+            JobTimer.Instance.Push(() =>
+            {
+                DayTimerStart();
+            }, _dayNightInterval);
         }
         
     }

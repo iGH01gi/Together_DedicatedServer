@@ -335,6 +335,19 @@ public class PlayerManager : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// 낮 시작할때 모든 플레이어를 초기화
+    /// </summary>
+    public void ResetPlayerOnDayStart()
+    {
+        foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            a.Value.GetComponent<Player>()._isKiller = false;
+            a.Value.GetComponent<Player>()._gauge = 0;
+            a.Value.GetComponent<Player>()._totalPoint = 0;
+        }
+    }
+
 }
 
 
