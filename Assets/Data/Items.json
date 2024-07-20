@@ -1,0 +1,22 @@
+﻿{
+  "Items": [
+    {
+      "Id": 1,
+      "Price": 3,
+      "EnglishName": "Dash",
+      "KoreanName": "대쉬",
+      "EnglishDescription": "Dash forward",
+      "KoreanDescription": "앞으로 대쉬합니다.",
+      "DashDistance": 3
+    },
+    {
+      "Id": 2,
+      "Price": 5,
+      "EnglishName": "Firework",
+      "KoreanName": "폭죽",
+      "EnglishDescription": "Show everyone the fireworks",
+      "KoreanDescription": "모두에게 폭죽놀이를 보여주세요!",
+      "FlightHeight": 15
+    }
+  ]
+}
