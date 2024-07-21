@@ -20,6 +20,8 @@ public class Managers : MonoBehaviour
     LogicManager _logic = new LogicManager();
     TimeManager _time;
     GameManager _game = new GameManager();
+    ItemManager _item = new ItemManager();
+    KillerManager _killer = new KillerManager();
     
     
     public static  ResourceManager Resource { get { return Instance._resource;} }
@@ -33,6 +35,8 @@ public class Managers : MonoBehaviour
     public static LogicManager Logic { get { return Instance._logic; } }
     public static TimeManager Time { get { return Instance._time; } }
     public static GameManager Game { get { return Instance._game; } }
+    public static ItemManager Item { get { return Instance._item; } }
+    public static KillerManager Killer { get { return Instance._killer; } }
 
 
     void Start()
@@ -74,6 +78,8 @@ public class Managers : MonoBehaviour
             _instance._player.Init();
             _instance._time = go.GetComponent<TimeManager>(); //특별처리 (모노비헤비어)
             _instance._game.Init();
+            _instance._item.Init();
+            _instance._killer.Init();
         }
     }
     

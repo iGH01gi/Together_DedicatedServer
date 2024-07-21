@@ -33,8 +33,12 @@ public class PacketHandler
             //Managers.Object._chestController.ChestSetAllInOne();
             
             //시작 패킷 전송
-            DSC_StartGame sendPacket = new DSC_StartGame();
-            Managers.Player.Broadcast(sendPacket);
+            DSC_StartGame startGamePacket = new DSC_StartGame();
+            //startGamePacket.Items에 Application.dataPath+"/Data/Item/Items.json 내용을 string으로 보냄
+            startGamePacket.Items = Managers.Item.GetItemsDataJson();
+            //startGamePacket.Killers에 Application.dataPath+"/Data/Killer/Killers.json 내용을 string으로 보냄
+            startGamePacket.Killers = Managers.Killer.GetKillersDataJson();
+            Managers.Player.Broadcast(startGamePacket);
         }, 3000);
         
         JobTimer.Instance.Push(() =>

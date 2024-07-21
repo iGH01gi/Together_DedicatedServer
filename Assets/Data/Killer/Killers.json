@@ -1,0 +1,17 @@
+{
+  "Killers": [
+    {
+      "Id": 0,
+      "EnglishName": "TheHeartless",
+      "KoreanName": "냉혹한 심장",
+      "EnglishDescription": "In the hands of The Heartless, heartbeats can vanish and reappear, transforming into instruments of terror",
+      "KoreanDescription": "그의 심장은 사라졌다 다시 나타나며, 공포의 악기로 변신한다",
+      "EnglishAbilityName": "Moment of silence",
+      "KoreanAbilityName": "침묵의 순간",
+      "EnglishAbilityDescription": "Silence the heartbeat for 7 seconds",
+      "KoreanAbilityDescription": "심장 소리를 7초동안 숨긴다",
+      "SkillCoolTimeSeconds": 20.0,
+      "HeartlessSeconds": 7.0
+    }
+  ]
+}
