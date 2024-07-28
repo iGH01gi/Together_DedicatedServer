@@ -63,7 +63,7 @@ public class PlayerManager : MonoBehaviour
         DSC_AllowEnterGame allowEnterPacket = new DSC_AllowEnterGame();
         DSC_InformNewFaceInDedicatedServer informNewFaceInDedicatedServerPacket = new DSC_InformNewFaceInDedicatedServer();
         
-        lock (_lock)
+        lock (_lock) //TODO: 이거 아마 lock 안써도 될듯... 잡 시스템 써서. 검토해보고 지우기
         {
             if (!_players.ContainsKey(session.SessionId))//이미 생성돼있는 플레이어가 아닐때
             {
