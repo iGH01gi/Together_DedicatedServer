@@ -73,11 +73,12 @@ public class PacketHandler
         CDS_Move movePacket = packet as CDS_Move;
         ClientSession clientSession = session as ClientSession;
         
+        Managers.Player._playerMoveController.ProcessingCDSMove(clientSession.SessionId, movePacket);
         //10ms 레이턴시 가정하고 테스트
-        JobTimer.Instance.Push(() =>
+        /*JobTimer.Instance.Push(() =>
         {
             Managers.Player._playerMoveController.ProcessingCDSMove(clientSession.SessionId, movePacket);
-        }, 10);
+        }, 10);*/
        //Managers.Player._playerMoveController.ProcessingCDSMove(clientSession.SessionId, movePacket);
     }
     
