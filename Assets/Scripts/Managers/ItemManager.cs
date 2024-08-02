@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class ItemManager
 {
-    private string _jsonPath = Application.dataPath+"/Data/Item/Items.json";
+    private string _jsonPath;
     private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름
     private Dictionary<int, ItemFactory> _itemFactories; //key: 아이템Id, value: 아이템 팩토리 객체
     public Dictionary<int, IItem> _items; //key: 아이템Id, value: 아이템 객체(아이템별 데이터 저장용. 전시품이라고 생각)
@@ -18,6 +18,7 @@ public class ItemManager
     
     public void Init()
     {
+        _jsonPath = Application.streamingAssetsPath + "/Data/Item/Items.json";
         InitItemFactories();
         LoadItemPrefabs();
         LoadItemData();

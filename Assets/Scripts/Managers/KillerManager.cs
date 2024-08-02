@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class KillerManager
 {
-    private string _jsonPath = Application.dataPath + "/Data/Killer/Killers.json";
+    private string _jsonPath;
     private Dictionary<int, KillerFactory> _killerFactories; //key: 킬러Id, value: 킬러 팩토리 객체
     public Dictionary<int, IKiller> _killers; //key: 킬러Id, value: 킬러 객체(킬러별 데이터 저장용. 전시품이라고 생각)
     private static string _killersDataJson; //json이 들어 있게 됨(파싱 해야 함)
@@ -14,6 +14,7 @@ public class KillerManager
 
     public void Init()
     {
+        _jsonPath = Application.streamingAssetsPath + "/Data/Killer/Killers.json";
         InitKillerFactories();
         LoadKillerData();
     }
