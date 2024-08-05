@@ -113,10 +113,11 @@ public class TimeManager : MonoBehaviour
                 Util.PrintLog($"day timer end");
                 DSC_DayTimerEnd dayTimerEndPacket = new DSC_DayTimerEnd();
                 
-                //킬러 초기화 + 선정
+                //킬러 초기화 + 선정 + 어떤 킬러인지 결정
                 Managers.Player.ClearKiller();
-                int killerId = Managers.Player.RandomSelectKiller();
-                dayTimerEndPacket.KillerPlayerId = killerId;
+                Tuple<int,int> killerIdAndType = Managers.Player.RandomSelectKiller();
+                dayTimerEndPacket.KillerPlayerId = killerIdAndType.Item1;
+                dayTimerEndPacket.KillerType = killerIdAndType.Item2;
                 
                 Managers.Player.Broadcast(dayTimerEndPacket);
                 TimerStop();

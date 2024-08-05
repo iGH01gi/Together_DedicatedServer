@@ -265,8 +265,8 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 랜덤으로 킬러를 선택하고 해당 플레이어의 isKiller를 true로 설정
     /// </summary>
-    /// <returns>선정된 킬러id</returns>
-    public int RandomSelectKiller()
+    /// <returns>선정된 킬러id,킬러타입</returns>
+    public Tuple<int,int>  RandomSelectKiller()
     {
         List<int> playerIds = new List<int>(_players.Keys);
         int randomIndex = Random.Range(0, playerIds.Count);
@@ -275,7 +275,13 @@ public class PlayerManager : MonoBehaviour
         //해당 player.cs에 있는 isKiller를 true로 설정
         _players[killerId].GetComponent<Player>()._isKiller = true;
         
-        return killerId;
+        //Managers.Killer._killers의 key들 중에서 하나를 랜덤으로 선택
+        List<int> killerIds = Managers.Killer._killers.Keys.ToList();
+        int randomIndex2 = Random.Range(0, killerIds.Count);
+        int killerType = killerIds[randomIndex2];
+        _players[killerId].GetComponent<Player>()._killerType = killerType;
+        
+        return Tuple.Create(killerId,killerType);
     }
 
     /// <summary>
