@@ -9,8 +9,8 @@ using UnityEngine;
 /// </summary>
 public class TimeManager : MonoBehaviour
 {
-    private int _daySeconds = 60; //낮 시간(초)
-    private int _nightSeconds = 200; //밤 시간(초)
+    private int _daySeconds = 5; //낮 시간(초)
+    private int _nightSeconds = 5; //밤 시간(초)
     private float _currentTimer = 0f; //현재 시간(초)
     
     private bool _isDay = false; 
