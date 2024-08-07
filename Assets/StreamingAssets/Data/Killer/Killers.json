@@ -8,7 +8,7 @@
       "KoreanDescription": "그의 심장은 사라졌다 다시 나타나며, 공포의 악기로 변신한다",
       "EnglishAbilityName": "Moment of Silence",
       "KoreanAbilityName": "침묵의 순간",
-      "EnglishAbilityDescription": "Silence the heartbeat for 7 seconds",
+      "EnglishAbilityDescription": "Conceals the heartbeat for 7 seconds",
       "KoreanAbilityDescription": "심장 소리를 7초동안 숨긴다",
       "SkillCoolTimeSeconds": 20.0,
       "HeartlessSeconds": 7.0
@@ -21,7 +21,7 @@
       "KoreanDescription": "한 치의 빈틈도 남기지 않는 집요한 추적자, 모든 구석을 스캔하여 숨통을 조여온다",
       "EnglishAbilityName": "Void Vision",
       "KoreanAbilityName": "공허의 시선",
-      "EnglishAbilityDescription": "Scans the vicinity",
+      "EnglishAbilityDescription": "Scans the surrounding area",
       "KoreanAbilityDescription": "주변을 스캔한다",
       "SkillCoolTimeSeconds": 15.0
     }
