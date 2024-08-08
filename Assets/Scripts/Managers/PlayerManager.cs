@@ -276,11 +276,11 @@ public class PlayerManager : MonoBehaviour
         _players[killerId].GetComponent<Player>()._isKiller = true;
         
         //Managers.Killer._killers의 key들 중에서 하나를 랜덤으로 선택
-        List<int> killerIds = Managers.Killer._killers.Keys.ToList();
+        List<int> killerIds = Managers.Killer._killers.Keys.ToList(); 
         int randomIndex2 = Random.Range(0, killerIds.Count);
         int killerType = killerIds[randomIndex2];
         _players[killerId].GetComponent<Player>()._killerType = killerType;
-        
+        Debug.Log($"이번 랜덤 킬러타입은 {killerType}");
         return Tuple.Create(killerId,killerType);
     }
 
