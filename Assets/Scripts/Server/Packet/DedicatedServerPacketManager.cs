@@ -39,7 +39,9 @@ class PacketManager
 		_onRecv.Add((ushort)MsgId.CdsCleanseQuit, MakePacket<CDS_CleanseQuit>);
 		_handler.Add((ushort)MsgId.CdsCleanseQuit, PacketHandler.CDS_CleanseQuitHandler);		
 		_onRecv.Add((ushort)MsgId.CdsCleanseSuccess, MakePacket<CDS_CleanseSuccess>);
-		_handler.Add((ushort)MsgId.CdsCleanseSuccess, PacketHandler.CDS_CleanseSuccessHandler);
+		_handler.Add((ushort)MsgId.CdsCleanseSuccess, PacketHandler.CDS_CleanseSuccessHandler);		
+		_onRecv.Add((ushort)MsgId.CdsItemBuyRequest, MakePacket<CDS_ItemBuyRequest>);
+		_handler.Add((ushort)MsgId.CdsItemBuyRequest, PacketHandler.CDS_ItemBuyRequestHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)

@@ -5,6 +5,7 @@ public class Inventory
 {
     public Dictionary<int,int> _itemCount; //key: 아이템Id, value: 아이템 개수
     public Dictionary<int, List<GameObject>> _ownedItems; //key: 아이템Id, value: 아이템 오브젝트
+
     
     /// <summary>
     /// 아이템을 인벤에 1개 추가함
@@ -47,5 +48,22 @@ public class Inventory
             }
         }
     }
-    
+
+    /// <summary>
+    /// 현재 보유하고 있는 아이템 개수를 반환함
+    /// </summary>
+    /// <param name="itemId">개수를 확인하려는 아이템id</param>
+    /// <returns></returns>
+    public int GetItemCount(int itemId)
+    {
+        if (_itemCount.ContainsKey(itemId))
+        {
+            return _itemCount[itemId];
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
 }

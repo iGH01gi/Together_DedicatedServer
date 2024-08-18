@@ -37,7 +37,7 @@ public class ItemManager
         Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
         if(dediPlayer._totalPoint < price)
         {
-            Debug.Log("아이템 구매 포인트가 부족함.");
+            Util.PrintLog($"not enough money");
             return false;
         }
 

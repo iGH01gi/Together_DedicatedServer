@@ -125,7 +125,8 @@ public class PacketHandler
         
         Managers.Object._cleanseController.ClientQuitCleanse(dediPlayerId, cleanseId);
     }
-    
+
+    //클라에서 클린즈 성공을 알린 패킷을 처리
     public static void CDS_CleanseSuccessHandler(PacketSession session, IMessage packet)
     {
         CDS_CleanseSuccess cleanseSuccessPacket = packet as CDS_CleanseSuccess;
@@ -135,5 +136,36 @@ public class PacketHandler
         int cleanseId = cleanseSuccessPacket.CleanseId;
         
         Managers.Object._cleanseController.ClientCleanseSuccess(dediPlayerId, cleanseId);
+    }
+
+    //클라에서 아이템 구매를 요청하는 패킷을 처리
+    public static void CDS_ItemBuyRequestHandler(PacketSession session, IMessage packet)
+    {
+        CDS_ItemBuyRequest itemBuyRequestPacket = packet as CDS_ItemBuyRequest;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = itemBuyRequestPacket.MyDediplayerId;
+        int itemId = itemBuyRequestPacket.ItemId;
+
+        if (Managers.Item.BuyItem(dediPlayerId, itemId))
+        {
+            DSC_ItemBuyResult itemBuySuccessPacket = new DSC_ItemBuyResult();
+            itemBuySuccessPacket.PlayerId = dediPlayerId;
+            itemBuySuccessPacket.ItemId = itemId;
+            itemBuySuccessPacket.ItemTotalCount = Managers.Player._players[dediPlayerId].GetComponent<Player>()._inventory.GetItemCount(itemId);
+            itemBuySuccessPacket.IsSuccess = true;
+            itemBuySuccessPacket.RemainMoney = Managers.Player._players[dediPlayerId].GetComponent<Player>()._totalPoint;
+            clientSession.Send(itemBuySuccessPacket);
+        }
+        else
+        {
+            DSC_ItemBuyResult itemBuyFailPacket = new DSC_ItemBuyResult();
+            itemBuyFailPacket.PlayerId = dediPlayerId;
+            itemBuyFailPacket.ItemId = itemId;
+            itemBuyFailPacket.ItemTotalCount = Managers.Player._players[dediPlayerId].GetComponent<Player>()._inventory.GetItemCount(itemId);
+            itemBuyFailPacket.IsSuccess = false;
+            itemBuyFailPacket.RemainMoney = Managers.Player._players[dediPlayerId].GetComponent<Player>()._totalPoint;
+            clientSession.Send(itemBuyFailPacket);
+        }
     }
 }
