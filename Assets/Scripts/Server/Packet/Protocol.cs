@@ -167,8 +167,8 @@ namespace Google.Protobuf.Protocol {
             "UxArEh8KG0RTQ19DTEVBTlNFX0NPT0xUSU1FX0ZJTklTSBAsEhgKFENEU19J",
             "VEVNX0JVWV9SRVFVRVNUEC0SFwoTRFNDX0lURU1fQlVZX1JFU1VMVBAuEhQK",
             "EENEU19PTl9IT0xEX0lURU0QLxIUChBEU0NfT05fSE9MRF9JVEVNEDASGQoV",
-            "Q0RTX1VTRV9GSVJFV09SS19JVEVNEDESGQoVRFNDX1VTRV9GSVJFV09SS19J",
-            "VEVNEDISGgoWQ0RTX1VTRV9JTlZJU0lCTEVfSVRFTRA1EhoKFkRTQ19VU0Vf",
+            "Q0RTX1VTRV9GSVJFV09SS19JVEVNEDMSGQoVRFNDX1VTRV9GSVJFV09SS19J",
+            "VEVNEDQSGgoWQ0RTX1VTRV9JTlZJU0lCTEVfSVRFTRA1EhoKFkRTQ19VU0Vf",
             "SU5WSVNJQkxFX0lURU0QNipbCg5SZWFzb25SZWplY3RlZBIQCgxSb29tTm90",
             "RXhpc3QQABIUChBDdXJyZW50bHlQbGF5aW5nEAESDgoKUm9vbUlzRnVsbBAC",
             "EhEKDVdyb25nUGFzc3dvcmQQAyopCgpEZWF0aENhdXNlEgwKCFRpbWVPdmVy",
@@ -399,11 +399,11 @@ namespace Google.Protobuf.Protocol {
     /// <summary>
     ///폭죽 아이템을 사용했다고 데디서버에 알림
     /// </summary>
-    [pbr::OriginalName("CDS_USE_FIREWORK_ITEM")] CdsUseFireworkItem = 49,
+    [pbr::OriginalName("CDS_USE_FIREWORK_ITEM")] CdsUseFireworkItem = 51,
     /// <summary>
     ///데디서버가 특정 플레이어의 폭죽 아이템 사용을 클라들에게 알림(사용 가능여부 검증하고 가능했을때만)
     /// </summary>
-    [pbr::OriginalName("DSC_USE_FIREWORK_ITEM")] DscUseFireworkItem = 50,
+    [pbr::OriginalName("DSC_USE_FIREWORK_ITEM")] DscUseFireworkItem = 52,
     /// <summary>
     ///투명 아이템을 사용했다고 데디서버에 알림
     /// </summary>
