@@ -17,6 +17,39 @@
       "EnglishDescription": "Show everyone the fireworks",
       "KoreanDescription": "모두에게 폭죽놀이를 보여주세요!",
       "FlightHeight": 15
+    },
+    {
+      "Id": 2,
+      "Price": 2,
+      "EnglishName": "Invisible",
+      "KoreanName": "투명화",
+      "EnglishDescription": "Becomes invisible for a short time",
+      "KoreanDescription": "잠깐 투명상태가 됩니다.",
+      "InvisibleSeconds": 2
+    },
+    {
+      "Id": 3,
+      "Price": 2,
+      "EnglishName": "Flashlight",
+      "KoreanName": "손전등",
+      "EnglishDescription": "Blinds the killer when aimed precisely.",
+      "KoreanDescription": "킬러에게 조준 시 시야를 방해합니다.",
+      "BlindDuration": 2,
+      "FlashlightDistance": 6,
+      "FlashlightAngle": 30,
+      "FlashlightAvailableTime": 2,
+      "FlashlightTimeRequired": 1
+    },
+    {
+      "Id": 4,
+      "Price": 2,
+      "EnglishName": "Trap",
+      "KoreanName": "덫",
+      "EnglishDescription": "Traps anyone passing by",
+      "KoreanDescription": "지나가는 사람을 덫에 걸리게 합니다.",
+      "TrapDuration": 20,
+      "TrapDistanc": 3,
+      "StunDuration": 2
     }
   ]
 }
