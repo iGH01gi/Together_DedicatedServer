@@ -87,7 +87,9 @@ public class PacketHandler
     {
         CDS_TryChestOpen tryChestOpenPacket = packet as CDS_TryChestOpen;
         ClientSession clientSession = session as ClientSession;
-        
+
+        Util.PrintLog("CDS_TryChestOpenHandler");
+
         Managers.Object._chestController.ClientTryChestOpen(tryChestOpenPacket);
     }
     
@@ -144,17 +146,24 @@ public class PacketHandler
         CDS_ItemBuyRequest itemBuyRequestPacket = packet as CDS_ItemBuyRequest;
         ClientSession clientSession = session as ClientSession;
 
+        Util.PrintLog("CDS_ItemBuyRequest");
+
         int dediPlayerId = itemBuyRequestPacket.MyDediplayerId;
         int itemId = itemBuyRequestPacket.ItemId;
 
-        if (Managers.Item.BuyItem(dediPlayerId, itemId))
+        Player player = Managers.Player._players[dediPlayerId].GetComponent<Player>();
+        //낮일때만 아이템 구매 가능
+        if (Managers.Time._isDay && Managers.Item.BuyItem(dediPlayerId, itemId))
         {
+            //해당 플레이어 인벤토리에 아이템추가
+            player._inventory.AddOneItem(itemId);
+
             DSC_ItemBuyResult itemBuySuccessPacket = new DSC_ItemBuyResult();
             itemBuySuccessPacket.PlayerId = dediPlayerId;
             itemBuySuccessPacket.ItemId = itemId;
-            itemBuySuccessPacket.ItemTotalCount = Managers.Player._players[dediPlayerId].GetComponent<Player>()._inventory.GetItemCount(itemId);
+            itemBuySuccessPacket.ItemTotalCount = player._inventory.GetItemCount(itemId);
             itemBuySuccessPacket.IsSuccess = true;
-            itemBuySuccessPacket.RemainMoney = Managers.Player._players[dediPlayerId].GetComponent<Player>()._totalPoint;
+            itemBuySuccessPacket.RemainMoney = player._totalPoint;
             clientSession.Send(itemBuySuccessPacket);
         }
         else
@@ -162,10 +171,22 @@ public class PacketHandler
             DSC_ItemBuyResult itemBuyFailPacket = new DSC_ItemBuyResult();
             itemBuyFailPacket.PlayerId = dediPlayerId;
             itemBuyFailPacket.ItemId = itemId;
-            itemBuyFailPacket.ItemTotalCount = Managers.Player._players[dediPlayerId].GetComponent<Player>()._inventory.GetItemCount(itemId);
+            itemBuyFailPacket.ItemTotalCount = player._inventory.GetItemCount(itemId);
             itemBuyFailPacket.IsSuccess = false;
-            itemBuyFailPacket.RemainMoney = Managers.Player._players[dediPlayerId].GetComponent<Player>()._totalPoint;
+            itemBuyFailPacket.RemainMoney = player._totalPoint;
             clientSession.Send(itemBuyFailPacket);
         }
+    }
+
+    //클라에서 아이템을 들었음을 알리는 패킷을 처리
+    public static void CDS_OnHoldItemHandler(PacketSession session, IMessage packet)
+    {
+        CDS_OnHoldItem onHoldItemPacket = packet as CDS_OnHoldItem;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = onHoldItemPacket.MyDediplayerId;
+        int itemId = onHoldItemPacket.ItemId;
+
+        Managers.Item.OnHoldItem(dediPlayerId, itemId);
     }
 }

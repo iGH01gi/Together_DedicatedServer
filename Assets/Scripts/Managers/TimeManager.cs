@@ -13,12 +13,12 @@ public class TimeManager : MonoBehaviour
     private int _nightSeconds = 5; //밤 시간(초)
     private float _currentTimer = 0f; //현재 시간(초)
     
-    private bool _isDay = false; 
-    private bool _isNight = false;
+    public bool _isDay = false;
+    public bool _isNight = false;
     
     private float _timerSyncPacketTimer = 0f; //타이머 동기화 패킷을 위한 타이머
     private float _timerSyncPacketInterval = 5f; //타이머 동기화 패킷을 보내는 간격(초)
-    private int _dayNightInterval = 3000;//낮, 밤 사이 전환 간격(ms)
+    private int _dayNightInterval = 3000; //낮, 밤 사이 전환 간격(ms)
     
     private bool _isGaugeStart = false; //게이지 시작 여부
     private float _gaugeSyncPacketTimer = 0f; //게이지 동기화 패킷을 위한 타이머
@@ -127,9 +127,10 @@ public class TimeManager : MonoBehaviour
                 
                 //클린즈 켜기
                 Managers.Object._cleanseController._cleanseParent.SetActive(true);
+
                 //클린즈 정보 보냄
                 Managers.Object._cleanseController.SendAllCleanseInfo();
-                
+
                 JobTimer.Instance.Push(() =>
                 {
                     NightTimerStart();

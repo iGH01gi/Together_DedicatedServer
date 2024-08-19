@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         _velocity = new Vector3(0f, 0f, 0f);
         _isRunning = false;
         _totalPoint = 0;
+        _inventory = new Inventory();
     }
 
     private void Update()

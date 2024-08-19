@@ -3,27 +3,22 @@ using UnityEngine;
 
 public class Inventory
 {
-    public Dictionary<int,int> _itemCount; //key: 아이템Id, value: 아이템 개수
-    public Dictionary<int, List<GameObject>> _ownedItems; //key: 아이템Id, value: 아이템 오브젝트
+    public Dictionary<int,int> _itemCount = new Dictionary<int, int>(); //key: 아이템Id, value: 아이템 개수
 
-    
+
     /// <summary>
     /// 아이템을 인벤에 1개 추가함
     /// </summary>
-    /// <param name="item">아이템 컴포넌트</param>
-    public void AddOneItem(GameObject itemObject)
+    /// <param name="itemId">아이템 id</param>
+    public void AddOneItem(int itemId)
     {
-        IItem item = itemObject.GetComponent<IItem>();
-        if(_itemCount.ContainsKey(item.Id) && _ownedItems.ContainsKey(item.Id))
+        if(_itemCount.ContainsKey(itemId))
         {
-            _itemCount[item.Id]++;
-            _ownedItems[item.Id].Add(itemObject);
+            _itemCount[itemId]++;
         }
         else
         {
-            _itemCount.Add(item.Id, 1);
-            _ownedItems.Add(item.Id, new List<GameObject>(){itemObject});
-            _ownedItems[item.Id].Add(itemObject);
+            _itemCount.Add(itemId, 1);
         }
     }
     
@@ -33,18 +28,13 @@ public class Inventory
     /// <param name="itemId">제거할 아이템id</param>
     public void RemoveOneItem(int itemId)
     {
-        if(_itemCount.ContainsKey(itemId) && _ownedItems.ContainsKey(itemId))
+        if(_itemCount.ContainsKey(itemId))
         {
             _itemCount[itemId]--;
-            _ownedItems[itemId].RemoveAt(0);
             
             if(_itemCount[itemId] == 0)
             {
                 _itemCount.Remove(itemId);
-            }
-            if(_ownedItems[itemId].Count == 0)
-            {
-                _ownedItems.Remove(itemId);
             }
         }
     }
@@ -64,6 +54,11 @@ public class Inventory
         {
             return 0;
         }
+    }
+
+    public void Clear()
+    {
+        _itemCount.Clear();
     }
 
 }

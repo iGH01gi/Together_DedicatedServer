@@ -10,17 +10,14 @@ using UnityEngine;
 public class ItemManager
 {
     private string _jsonPath;
-    private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름
     private Dictionary<int, ItemFactory> _itemFactories; //key: 아이템Id, value: 아이템 팩토리 객체
     public Dictionary<int, IItem> _items; //key: 아이템Id, value: 아이템 객체(아이템별 데이터 저장용. 전시품이라고 생각)
-    public Dictionary<int, GameObject> _itemPrefabs; //key: 아이템Id, value: 아이템 프리팹
     private static string _itemsDataJson; //json이 들어 있게 됨(파싱 해야 함)
     
     public void Init()
     {
         _jsonPath = Application.streamingAssetsPath + "/Data/Item/Items.json";
         InitItemFactories();
-        LoadItemPrefabs();
         LoadItemData();
     }
     
@@ -43,41 +40,11 @@ public class ItemManager
 
         dediPlayer._totalPoint -= price;
         
-        //아이템 생성
-        GameObject itemObject = GameObject.Instantiate(_itemPrefabs[itemId]);
-        IItem itemScript = CreateItem(itemId);
-        itemObject.AddComponent(itemScript.GetType());
-        itemObject.transform.SetParent(dediPlayer.transform);
-        
-        //인벤토리에 생성된 아이템 추가
-        dediPlayer._inventory.AddOneItem(itemObject);
+        //TODO : 인벤토리에 생성된 아이템 추가
         
         return true;
     }
 
-    /// <summary>
-    /// 아이템 사용
-    /// </summary>
-    /// <para name="playerId">플레이어id</para>
-    /// <param name="itemId">사용할 아이템</param>
-    public void UseItem(int playerId, int itemId)
-    {
-        //인벤토리에 해당 아이템이 있는지 확인
-        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
-        if (dediPlayer._inventory._itemCount.ContainsKey(itemId))
-        {
-            //아이템 사용
-            IItem item = dediPlayer._inventory._ownedItems[itemId][0].GetComponent<IItem>();
-            item.Use();
-            
-            //인벤토리에서 아이템 제거
-            dediPlayer._inventory.RemoveOneItem(itemId);
-        }
-        else
-        {
-            Util.PrintLog($"인벤토리에 {itemId} 아이템이 없음.");
-        }
-    }
     
     /// <summary>
     /// 아이템 선택시 기능 실행
@@ -90,9 +57,8 @@ public class ItemManager
         Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
         if (dediPlayer._inventory._itemCount.ContainsKey(itemId))
         {
-            //아이템 선택시 기능 실행
-            IItem item = dediPlayer._inventory._ownedItems[itemId][0].GetComponent<IItem>();
-            item.OnHold();
+            //TODO : 아이템 선택시 기능 실행
+            Inventory inventory = dediPlayer._inventory;
         }
         else
         {
@@ -133,20 +99,6 @@ public class ItemManager
         //아이템 팩토리 생성
         _itemFactories.Add(1, new DashFactory());
         _itemFactories.Add(2, new FireworkFactory());
-    }
-    
-    /// <summary>
-    /// 아이템 프리팹 로드(반드시 아이템 팩토리 초기화 이후에 호출해야 함)
-    /// </summary>
-    public void LoadItemPrefabs()
-    {
-        _itemPrefabs = new Dictionary<int, GameObject>();
-        
-        foreach (var itemFactory in _itemFactories)
-        {
-            GameObject itemPrefab = Managers.Resource.Load<GameObject>(_itemPrefabFolderPath + itemFactory.Key);
-            _itemPrefabs.Add(itemFactory.Key, itemPrefab);
-        }
     }
     
     /// <summary>

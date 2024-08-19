@@ -351,9 +351,11 @@ public class PlayerManager : MonoBehaviour
             a.Value.GetComponent<Player>()._isKiller = false;
             a.Value.GetComponent<Player>()._gauge = 0;
             a.Value.GetComponent<Player>()._totalPoint = 0;
+
+            //보유 아이템 초기화
+            a.Value.GetComponent<Player>()._inventory.Clear();
         }
     }
-
 }
 
 

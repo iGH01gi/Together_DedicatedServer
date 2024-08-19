@@ -200,6 +200,13 @@ public class ChestController : MonoBehaviour
         int dediPlayerId = tryChestOpenPacket.MyDediplayerId;
         int chestId = tryChestOpenPacket.ChestId;
 
+        //상자가 클라 근처에 있는지 러프하게 체크해서 핵 및 버그 방지 (6m 이상 떨어져 있으면 열지 않음)
+        if (Vector3.Distance(Managers.Player._players[dediPlayerId].transform.position,
+                _chestList[chestId].transform.position) > 6f)
+        {
+            return;
+        }
+
         //상자 열기를 atomic 하게 시도. 여는데 성공했으면 열었다는 패킷을 모든 클라이언트에게 보냄
         Chest chestScript = _chestList[chestId].GetComponent<Chest>();
         if (chestScript.TryOpenChestAtomic())
