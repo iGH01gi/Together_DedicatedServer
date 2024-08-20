@@ -384,6 +384,9 @@ public class PlayerManager : MonoBehaviour
             _players.Remove(playerId);
             _deadPlayer.Add(playerId, deadPlayer);
 
+            //캐릭터컨트롤러 비활성화
+            deadPlayer.GetComponent<CharacterController>().enabled = false;
+
             //해당 오브젝트의 모든 children을 비활성화
             foreach (Transform child in deadPlayer.transform)
             {
