@@ -122,6 +122,11 @@ public class CleanseController : MonoBehaviour
     /// <param name="cleanseId">클린즈id</param>
     public void ClientQuitCleanse(int playerId,int cleanseId)
     {
+        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
         Cleanse cleanse = _cleansetList[cleanseId].GetComponent<Cleanse>();
         cleanse.QuitCleansing();
         
@@ -139,6 +144,11 @@ public class CleanseController : MonoBehaviour
     /// <param name="cleanseId">정화된 클린즈id</param>
     public void ClientCleanseSuccess(int playerId ,int cleanseId)
     {
+        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
         Cleanse cleanse = _cleansetList[cleanseId].GetComponent<Cleanse>();
         cleanse.CleanseSuccess(playerId);
         

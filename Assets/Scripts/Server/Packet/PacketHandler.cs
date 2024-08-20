@@ -151,6 +151,11 @@ public class PacketHandler
         int dediPlayerId = itemBuyRequestPacket.MyDediplayerId;
         int itemId = itemBuyRequestPacket.ItemId;
 
+        if (Managers.Player.IsPlayerDead(dediPlayerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
         Player player = Managers.Player._players[dediPlayerId].GetComponent<Player>();
         //낮일때만 아이템 구매 가능
         if (Managers.Time._isDay && Managers.Item.BuyItem(dediPlayerId, itemId))
@@ -186,6 +191,11 @@ public class PacketHandler
 
         int dediPlayerId = onHoldItemPacket.MyDediplayerId;
         int itemId = onHoldItemPacket.ItemId;
+
+        if (Managers.Player.IsPlayerDead(dediPlayerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
 
         Managers.Item.OnHoldItem(dediPlayerId, itemId);
     }

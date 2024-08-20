@@ -27,6 +27,11 @@ public class PlayerMoveController : MonoBehaviour
     /// <param name="movePacket"></param>
     public void ProcessingCDSMove(int playerId, CDS_Move movePacket)
     {
+        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
         if (Managers.Player._ghosts.TryGetValue(playerId, out GameObject ghostObj))
         {
             {

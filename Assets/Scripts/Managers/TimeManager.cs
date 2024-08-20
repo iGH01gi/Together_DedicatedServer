@@ -163,10 +163,11 @@ public class TimeManager : MonoBehaviour
                 nightTimerEndPacket.DeathPlayerId = Managers.Player.GetKillerId();
                 nightTimerEndPacket.KillerPlayerId = Managers.Player.GetKillerId();
             
-                //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
-            
                 Managers.Player.Broadcast(nightTimerEndPacket);
-            
+
+                //플레이어가 죽었을때 처리
+                Managers.Player.ProcessPlayerDeath(nightTimerEndPacket.DeathPlayerId);
+
                 //일정 시간 후에 낮 시작
                 JobTimer.Instance.Push(() =>
                 {
@@ -269,10 +270,11 @@ public class TimeManager : MonoBehaviour
             nightTimerEndPacket.DeathPlayerId = zeroGaugePlayerId;
             nightTimerEndPacket.KillerPlayerId = Managers.Player.GetKillerId();
             
-            //TODO: 사망해서 오브젝트,고스트 삭제 처리등등... 추가로 여기다가 해줘야 함
-            
             Managers.Player.Broadcast(nightTimerEndPacket);
-            
+
+            //플레이어가 죽었을때 처리
+            Managers.Player.ProcessPlayerDeath(nightTimerEndPacket.DeathPlayerId);
+
             //일정 시간 후에 낮 시작
             JobTimer.Instance.Push(() =>
             {

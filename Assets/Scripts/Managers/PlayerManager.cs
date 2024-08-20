@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     object _lock = new object();
     public Dictionary<int,GameObject> _players = new Dictionary<int, GameObject>(); //key: 데디서버의 playerId, value: 플레이어 오브젝트
     public Dictionary<int,GameObject> _ghosts = new Dictionary<int, GameObject>()   ; //key: 데디서버의 playerId, value: 고스트 오브젝트
+    public Dictionary<int,GameObject> _deadPlayer = new Dictionary<int, GameObject>(); //key: 데디서버의 playerId, value: 죽은 플레이어 오브젝트  (_players에서 여기로 옮겨옴)
     public string _tempPlayerPrefabPath = "Player/Player";
     public string _tempTargetGhost = "Player/TargetGhost";
     public Transform _spawnPointCenter;
@@ -38,11 +39,23 @@ public class PlayerManager : MonoBehaviour
         _roomId = roomId;
         _configuredPlayerCount = playerCount;
     }
-    
-    //모든 플레이어에게 패킷 전송
+
+    /// <summary>
+    /// 모든 플레이어에게 패킷 전송(생존,죽은 플레이어 모두에게)
+    /// </summary>
+    /// <param name="packet"></param>
     public void Broadcast(IMessage packet)
     {
         foreach (KeyValuePair<int, GameObject> a in _players)
+        {
+            Managers.Session._sessions.TryGetValue(a.Key, out ClientSession session);
+            if (session != null)
+            {
+                session.Send(packet);
+            }
+        }
+
+        foreach (KeyValuePair<int, GameObject> a in _deadPlayer)
         {
             Managers.Session._sessions.TryGetValue(a.Key, out ClientSession session);
             if (session != null)
@@ -241,6 +254,7 @@ public class PlayerManager : MonoBehaviour
 
         return obj;
     }
+
     /// <summary>
     /// 플레이어id(=세션id)에 해당하는 고스트를 생성하는 함수. 위치도 초기 위치로 설정
     /// </summary>
@@ -355,6 +369,40 @@ public class PlayerManager : MonoBehaviour
             //보유 아이템 초기화
             a.Value.GetComponent<Player>()._inventory.Clear();
         }
+    }
+
+    /// <summary>
+    /// 플레이어가 죽었을때의 처리
+    /// </summary>
+    /// <param name="playerId">죽은 플레이어 id</param>
+    public void ProcessPlayerDeath(int playerId)
+    {
+        if (_players.ContainsKey(playerId))
+        {
+            //플레이어목록에서 죽은플레이어목록으로 이동
+            GameObject deadPlayer = _players[playerId];
+            _players.Remove(playerId);
+            _deadPlayer.Add(playerId, deadPlayer);
+
+            //해당 오브젝트의 모든 children을 비활성화
+            foreach (Transform child in deadPlayer.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+
+            //고스트 삭제
+            DestroyGhostObject(playerId);
+        }
+    }
+
+    /// <summary>
+    /// 죽은 플레이어인지 확인하는 함수
+    /// </summary>
+    /// <param name="playerId">확인할 플레이어의 id</param>
+    /// <returns>죽었으면 true, 살아있으면 false</returns>
+    public bool IsPlayerDead(int playerId)
+    {
+        return _deadPlayer.ContainsKey(playerId);
     }
 }
 

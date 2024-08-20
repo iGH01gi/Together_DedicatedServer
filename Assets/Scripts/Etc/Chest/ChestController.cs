@@ -197,8 +197,14 @@ public class ChestController : MonoBehaviour
     /// <param name="tryChestOpenPacket"></param>
     public void ClientTryChestOpen(CDS_TryChestOpen tryChestOpenPacket)
     {
+
         int dediPlayerId = tryChestOpenPacket.MyDediplayerId;
         int chestId = tryChestOpenPacket.ChestId;
+
+        if(Managers.Player.IsPlayerDead(dediPlayerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
 
         //상자가 클라 근처에 있는지 러프하게 체크해서 핵 및 버그 방지 (6m 이상 떨어져 있으면 열지 않음)
         if (Vector3.Distance(Managers.Player._players[dediPlayerId].transform.position,
