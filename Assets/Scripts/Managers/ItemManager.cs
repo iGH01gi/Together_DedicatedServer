@@ -4,6 +4,7 @@ using System.IO;
 using Google.Protobuf.Protocol;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 /// <summary>
 /// json 데이터로부터 아이템 데이터를 로드하고, 아이템을 생성하기 위해서 필요한 클래스
@@ -11,14 +12,13 @@ using UnityEngine;
 public class ItemManager
 {
     private string _jsonPath;
-    private Dictionary<int, ItemFactory> _itemFactories; //key: 아이템Id, value: 아이템 팩토리 객체
-    public Dictionary<int, IItem> _items; //key: 아이템Id, value: 아이템 객체(아이템별 데이터 저장용. 전시품이라고 생각)
+    private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름
     private static string _itemsDataJson; //json이 들어 있게 됨(파싱 해야 함)
-    
+    private Dictionary<int, ItemFactory> _itemFactories; //key: 아이템Id, value: 아이템 팩토리 객체
+
     public void Init()
     {
         _jsonPath = Application.streamingAssetsPath + "/Data/Item/Items.json";
-        InitItemFactories();
         LoadItemData();
     }
     
@@ -173,41 +173,10 @@ public class ItemManager
 
 
 
+    #region json관련
 
-
     /// <summary>
-    /// 아이템 생성
-    /// </summary>
-    /// <param name="itemId">아이템Id</param>
-    /// <returns>초기 데이터 세팅까지 완료된 아이템 </returns>
-    public IItem CreateItem(int itemId)
-    {
-        if (_itemFactories.ContainsKey(itemId))
-        {
-            return _itemFactories[itemId].CreateItem();
-        }
-        else
-        {
-            Util.PrintLog("Cannot find item factory with id: " + itemId);
-            return null;
-        }
-    }
-    
-    /// <summary>
-    /// 아이템 팩토리 초기화
-    /// </summary>
-    public void InitItemFactories()
-    {
-        _itemFactories = new Dictionary<int, ItemFactory>();
-        _items = new Dictionary<int, IItem>();
-        
-        //아이템 팩토리 생성
-        _itemFactories.Add(1, new DashFactory());
-        _itemFactories.Add(2, new FireworkFactory());
-    }
-    
-    /// <summary>
-    /// 아이템 데이터를 로드후 파싱
+    /// 아이템 데이터 json을 로드후 파싱과정으로 넘김
     /// </summary>
     public void LoadItemData()
     {
@@ -221,36 +190,111 @@ public class ItemManager
             Debug.LogError("Cannot find file at " + _jsonPath);
             return;
         }
-        
+
         //파싱
         ParseItemData();
     }
 
     /// <summary>
-    /// json파일을 이미 받은 상태에서 아이템 데이터를 파싱
+    /// json파일을 이미 받은 상태에서 아이템 데이터를 파싱 + 팩토리 초기화
     /// </summary>
     private void ParseItemData()
     {
         var itemsData = JObject.Parse(_itemsDataJson)["Items"];
-        _items = new Dictionary<int, IItem>();
-        
+
         foreach (var itemData in itemsData)
         {
-            IItem item = null;
-            string className = itemData["EnglishName"].ToString();
-            
-            Type type = Type.GetType(className);
-            if (type != null)
+            //아이템 타입에 따라서 아이템 팩토리 생성
+            //Dash 아이템 팩토리 생성
+            Debug.Log(itemData["EnglishName"]?.ToString());
+            if (itemData["EnglishName"]?.ToString() == "Dash")
             {
-                item = (IItem)itemData.ToObject(type);
+                DashFactory itemFactory = new DashFactory(itemData["Id"].Value<int>(),
+                    itemData["Price"].Value<int>(),
+                    itemData["EnglishName"].ToString(),
+                    itemData["KoreanName"].ToString(),
+                    itemData["EnglishDescription"].ToString(),
+                    itemData["KoreanDescription"].ToString(),
+                    itemData["DashDistance"].Value<float>());
+
+                _itemFactories.Add(itemFactory.FactoryId, itemFactory);
             }
-            
-            if (item != null)
+            //Firework 아이템 팩토리 생성
+            else if (itemData["EnglishName"]?.ToString() == "Firework")
             {
-                _items.Add(item.Id, item);
+                FireworkFactory itemFactory = new FireworkFactory(itemData["Id"].Value<int>(),
+                    itemData["Price"].Value<int>(),
+                    itemData["EnglishName"].ToString(),
+                    itemData["KoreanName"].ToString(),
+                    itemData["EnglishDescription"].ToString(),
+                    itemData["KoreanDescription"].ToString(),
+                    itemData["FlightHeight"].Value<float>());
+                _itemFactories.Add(itemFactory.FactoryId, itemFactory);
+            }
+            //Invisible 아이템 팩토리 생성
+            else if (itemData["EnglishName"]?.ToString() == "Invisible")
+            {
+                InvisibleFactory itemFactory = new InvisibleFactory(itemData["Id"].Value<int>(),
+                    itemData["Price"].Value<int>(),
+                    itemData["EnglishName"].ToString(),
+                    itemData["KoreanName"].ToString(),
+                    itemData["EnglishDescription"].ToString(),
+                    itemData["KoreanDescription"].ToString(),
+                    itemData["InvisibleSeconds"].Value<float>());
+                _itemFactories.Add(itemFactory.FactoryId, itemFactory);
+            }
+            //Flashlight 아이템 팩토리 생성
+            else if (itemData["EnglishName"]?.ToString() == "Flashlight")
+            {
+                FlashlightFactory itemFactory = new FlashlightFactory(itemData["Id"].Value<int>(),
+                    itemData["Price"].Value<int>(),
+                    itemData["EnglishName"].ToString(),
+                    itemData["KoreanName"].ToString(),
+                    itemData["EnglishDescription"].ToString(),
+                    itemData["KoreanDescription"].ToString(),
+                    itemData["BlindDuration"].Value<float>(),
+                    itemData["FlashlightDistance"].Value<float>(),
+                    itemData["FlashlightAngle"].Value<float>(),
+                    itemData["FlashlightAvailableTime"].Value<float>(),
+                    itemData["FlashlightTimeRequired"].Value<float>()
+                    );
+                _itemFactories.Add(itemFactory.FactoryId, itemFactory);
+            }
+            // Trap 아이템 팩토리 생성
+            else if (itemData["EnglishName"]?.ToString() == "Trap")
+            {
+                TrapFactory itemFactory = new TrapFactory(itemData["Id"].Value<int>(),
+                    itemData["Price"].Value<int>(),
+                    itemData["EnglishName"].ToString(),
+                    itemData["KoreanName"].ToString(),
+                    itemData["EnglishDescription"].ToString(),
+                    itemData["KoreanDescription"].ToString(),
+                    itemData["TrapDuration"].Value<float>(),
+                    itemData["TrapRadius"].Value<float>(),
+                    itemData["StunDuration"].Value<float>()
+                    );
+                _itemFactories.Add(itemFactory.FactoryId, itemFactory);
+            }
+
+            else
+            {
+                Debug.LogError("읽을 수 없는 아이템이 입력되었습니다.");
+                return;
             }
         }
     }
+
+    /// <summary>
+    /// 아이템 데이터 json 반환
+    /// </summary>
+    /// <returns>string형식의 json 아이템 데이터</returns>
+    public string GetItemsDataJson()
+    {
+        return _itemsDataJson;
+    }
+    #endregion
+
+    #region GetterMethods
 
     /// <summary>
     /// 아이템 가격 반환
@@ -259,10 +303,15 @@ public class ItemManager
     /// <returns></returns>
     public int GetItemPrice(int itemId)
     {
-        if(_items!=null && _items.ContainsKey(itemId))
-            return _items[itemId].Price;
+        if (_itemFactories.ContainsKey(itemId))
+        {
+            return (_itemFactories[itemId].FactoryPrice);
+        }
         else
-            return -1;
+        {
+            Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
+            return 0;
+        }
     }
 
     /// <summary>
@@ -272,12 +321,17 @@ public class ItemManager
     /// <returns>아이템 영어 이름</returns>
     public string GetItemEnglishName(int itemId)
     {
-        if(_items!=null && _items.ContainsKey(itemId))
-            return _items[itemId].EnglishName;
+        if (_itemFactories.ContainsKey(itemId))
+        {
+            return (_itemFactories[itemId].FactoryEnglishName);
+        }
         else
+        {
+            Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
             return null;
+        }
     }
-    
+
     /// <summary>
     /// 아이템 한글 이름 반환
     /// </summary>
@@ -285,12 +339,17 @@ public class ItemManager
     /// <returns>아이템 한글 이름</returns>
     public string GetItemKoreanName(int itemId)
     {
-        if(_items!=null && _items.ContainsKey(itemId))
-            return _items[itemId].KoreanName;
+        if (_itemFactories.ContainsKey(itemId))
+        {
+            return (_itemFactories[itemId].FactoryKoreanName);
+        }
         else
+        {
+            Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
             return null;
+        }
     }
-    
+
     /// <summary>
     /// 아이템 영어 설명 반환
     /// </summary>
@@ -298,12 +357,17 @@ public class ItemManager
     /// <returns>아이템 영어 설명</returns>
     public string GetItemEnglishDescription(int itemId)
     {
-        if(_items!=null && _items.ContainsKey(itemId))
-            return _items[itemId].EnglishDescription;
+        if (_itemFactories.ContainsKey(itemId))
+        {
+            return (_itemFactories[itemId].FactoryEnglishDescription);
+        }
         else
+        {
+            Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
             return null;
+        }
     }
-    
+
     /// <summary>
     /// 아이템 한글 설명 반환
     /// </summary>
@@ -311,18 +375,17 @@ public class ItemManager
     /// <returns>아이템 한글 설명</returns>
     public string GetItemKoreanDescription(int itemId)
     {
-        if(_items!=null && _items.ContainsKey(itemId))
-            return _items[itemId].KoreanDescription;
+        if (_itemFactories.ContainsKey(itemId))
+        {
+            return (_itemFactories[itemId].FactoryKoreanDescription);
+        }
         else
+        {
+            Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
             return null;
+        }
     }
-    
-    /// <summary>
-    /// 아이템 데이터 json 반환
-    /// </summary>
-    /// <returns>string형식의 json 아이템 데이터</returns>
-    public string GetItemsDataJson()
-    {
-        return _itemsDataJson;
-    }
+
+    #endregion
+
 }

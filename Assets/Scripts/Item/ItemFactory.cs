@@ -1,11 +1,24 @@
 ﻿public abstract class ItemFactory
 {
-    public IItem CreateItem()
+    //공통 속성
+    public int FactoryId { get; set; }
+    public int FactoryPrice { get; set; }
+    public string FactoryEnglishName { get; set; }
+    public string FactoryKoreanName { get; set; }
+    public string FactoryEnglishDescription { get; set; }
+    public string FactoryKoreanDescription { get; set; }
+
+    //필수 설정되어야 하는 것들 설정
+    public virtual void FactoryInit(int id, int price, string englishName, string koreanName, string englishDescription,
+        string koreanDescription)
     {
-        IItem item = CreateProduct();
-        item.Setting();
-        return item;
+        FactoryId = id;
+        FactoryPrice = price;
+        FactoryEnglishName = englishName;
+        FactoryKoreanName = koreanName;
+        FactoryEnglishDescription = englishDescription;
+        FactoryKoreanDescription = koreanDescription;
     }
 
-    protected abstract IItem CreateProduct(); //상속한 팩토리에서 구현
+    public abstract IItem CreateItem(int playerId);
 }

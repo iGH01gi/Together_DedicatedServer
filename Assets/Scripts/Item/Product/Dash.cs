@@ -3,39 +3,39 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour, IItem
 {
-    //아이템 공통 보유 속성
-    public int Id { get; set; }
-    public int Price { get; set; }
+    //IItem 인터페이스 구현
+    public int ItemID { get; set; }
+    public int PlayerID { get; set; }
     public string EnglishName { get; set; }
-    public string KoreanName { get; set; }
-    public string EnglishDescription { get; set; }
-    public string KoreanDescription { get; set; }
-    
+
+
     //이 아이템만의 속성
     public float DashDistance { get; set; }
-    
-    public void Setting()
+
+    public void Init(int itemId, int playerId, string englishName)
     {
-        //아이템 매니저로부터 아이템 데이터를 받아와서 설정
-        Dash dashData = Managers.Item._items[1] as Dash;
-        
-        Id = dashData.Id;
-        Price = dashData.Price;
-        EnglishName = dashData.EnglishName;
-        KoreanName = dashData.KoreanName;
-        EnglishDescription = dashData.EnglishDescription;
-        KoreanDescription = dashData.KoreanDescription;
-        DashDistance = dashData.DashDistance;
+        this.ItemID = itemId;
+        this.PlayerID = playerId;
+        this.EnglishName = englishName;
+    }
+
+    public void Init(int itemId, int playerId, string englishName, float dashDistance)
+    {
+        Init(itemId, playerId, englishName);
+        DashDistance = dashDistance;
     }
 
     public void Use()
     {
-
+        Util.PrintLog("Item Dash Use");
     }
-    
+
     public void OnHold()
     {
         //예상 대시 경로, 또는 도착지점을 보여준다던지 하는 기능을 실행
     }
 
+    public void OnHit()
+    {
+    }
 }

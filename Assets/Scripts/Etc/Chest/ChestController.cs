@@ -197,7 +197,6 @@ public class ChestController : MonoBehaviour
     /// <param name="tryChestOpenPacket"></param>
     public void ClientTryChestOpen(CDS_TryChestOpen tryChestOpenPacket)
     {
-
         int dediPlayerId = tryChestOpenPacket.MyDediplayerId;
         int chestId = tryChestOpenPacket.ChestId;
 
