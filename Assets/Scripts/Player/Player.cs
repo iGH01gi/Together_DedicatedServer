@@ -20,7 +20,8 @@ public class Player : MonoBehaviour
     public Vector3 _velocity;
     public bool _isRunning = false;
     public Quaternion _targetRotation; //서버에서 받은 목표 회전값. 이 값으로 update문에서 회전시킴
-    
+    public bool _isFollowGhostOn = true; //고스트를 따라다니는 기능을 켜고 끄는 변수. 스킬사용할때 껐다가 켜는 용도
+
     public int _totalPoint = 0; //상자로 얻은 총 포인트(낮마다 초기화)
     
     public Inventory _inventory; //인벤토리
@@ -41,7 +42,10 @@ public class Player : MonoBehaviour
             _ghost = GameObject.Find("Ghost_" + Info.PlayerId);
         }
 
-        FollowGhost();
+        if(_isFollowGhostOn)
+        {
+            FollowGhost();
+        }
     }
     
 

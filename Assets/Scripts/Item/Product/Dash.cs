@@ -27,7 +27,16 @@ public class Dash : MonoBehaviour, IItem
 
     public void Use()
     {
-        Util.PrintLog("Item Dash Use");
+        //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
+        float dashTime = 0.24f;
+
+        //고스트 따라가기 기능 멈춤(대시 사용을 위해서)
+        GameObject playerObjet = Managers.Player._players[PlayerID];
+        Player player = playerObjet.GetComponent<Player>();
+        player._isFollowGhostOn = false;
+
+        //DashDistance 만큼 앞으로 대시
+        gameObject.transform.position += gameObject.transform.forward * DashDistance;
     }
 
     public void OnHold()
