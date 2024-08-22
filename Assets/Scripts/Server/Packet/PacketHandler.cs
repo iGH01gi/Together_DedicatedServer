@@ -191,4 +191,26 @@ public class PacketHandler
 
         Managers.Item.OnHoldItem(dediPlayerId, itemId);
     }
+
+    public static void CDS_UseFireworkItemHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseFireworkItem useFireworkItemPacket = packet as CDS_UseFireworkItem;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useFireworkItemPacket.MyDediplayerId;
+        int itemId = useFireworkItemPacket.ItemId;
+
+        Managers.Item.UseFireworkItem(dediPlayerId, itemId, useFireworkItemPacket);
+    }
+
+    public static void CDS_UseInvisibleItemHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseInvisibleItem useInvisibleItemPacket = packet as CDS_UseInvisibleItem;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useInvisibleItemPacket.MyDediplayerId;
+        int itemId = useInvisibleItemPacket.ItemId;
+
+        Managers.Item.UseInvisibleItem(dediPlayerId, itemId);
+    }
 }

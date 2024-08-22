@@ -44,10 +44,10 @@ class PacketManager
 		_handler.Add((ushort)MsgId.CdsItemBuyRequest, PacketHandler.CDS_ItemBuyRequestHandler);		
 		_onRecv.Add((ushort)MsgId.CdsOnHoldItem, MakePacket<CDS_OnHoldItem>);
 		_handler.Add((ushort)MsgId.CdsOnHoldItem, PacketHandler.CDS_OnHoldItemHandler);		
-		/*_onRecv.Add((ushort)MsgId.CdsUseFireworkItem, MakePacket<CDS_UseFireworkItem>);
+		_onRecv.Add((ushort)MsgId.CdsUseFireworkItem, MakePacket<CDS_UseFireworkItem>);
 		_handler.Add((ushort)MsgId.CdsUseFireworkItem, PacketHandler.CDS_UseFireworkItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseInvisibleItem, MakePacket<CDS_UseInvisibleItem>);
-		_handler.Add((ushort)MsgId.CdsUseInvisibleItem, PacketHandler.CDS_UseInvisibleItemHandler);*/
+		_handler.Add((ushort)MsgId.CdsUseInvisibleItem, PacketHandler.CDS_UseInvisibleItemHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)

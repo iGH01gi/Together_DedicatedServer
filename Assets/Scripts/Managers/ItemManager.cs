@@ -56,7 +56,6 @@ public class ItemManager
         return true;
     }
 
-    
     /// <summary>
     /// 아이템 선택시 기능 실행
     /// </summary>
@@ -93,11 +92,89 @@ public class ItemManager
             }
         }
     }
-    
-    
-    
-    
-    
+
+    /// <summary>
+    /// 폭죽 아이템 썼을때 처리
+    /// </summary>
+    /// <param name="playerId">폭죽을 사용한 플레이어id</param>
+    /// <param name="itemId">폭죽 아이템id</param>
+    public void UseFireworkItem(int playerId, int itemId, CDS_UseFireworkItem packet)
+    {
+        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
+        DSC_UseFireworkItem useFireworkItemPacket = new DSC_UseFireworkItem();
+        useFireworkItemPacket.PlayerId = playerId;
+        useFireworkItemPacket.ItemId = itemId;
+        useFireworkItemPacket.FireworkStartingTransform = packet.FireworkStartingTransform;
+
+        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
+
+        Vector3 playerPosition = dediPlayer.transform.position;
+        Vector3 fireworkStartingPosition = new Vector3(packet.FireworkStartingTransform.Position.PosX, packet.FireworkStartingTransform.Position.PosY, packet.FireworkStartingTransform.Position.PosZ);
+
+        //플레이어위치와 폭죽시작 위치가 일정범위 이내여야 함(핵 러프하게 검사)
+        if (Vector3.Distance(playerPosition, fireworkStartingPosition) > 10f)
+        {
+            //핵의심. 무시
+            Util.PrintLog($"The distance between the player and the firework start position is too far. Suspected cheat.");
+            return;
+        }
+        else
+        {
+            //아이템이 없다면 무시
+            if (dediPlayer._inventory.GetItemCount(itemId) == 0)
+            {
+                Util.PrintLog($"The {playerId}player does not have the {itemId}item.");
+                return;
+            }
+
+            //아이템 사용처리
+            dediPlayer._inventory.RemoveOneItem(itemId);
+
+            //아이템 사용 패킷 브로드캐스트
+            Managers.Player.Broadcast(useFireworkItemPacket);
+        }
+    }
+
+    /// <summary>
+    /// 투명화 아이템을 썼을때 처리
+    /// </summary>
+    /// <param name="playerId">투명 아이템을 사용한 플레이어id</param>
+    /// <param name="itemId">투명 아이템id</param>
+    public void UseInvisibleItem(int playerId, int itemId)
+    {
+        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
+        DSC_UseInvisibleItem useInvisibleItemPacket = new DSC_UseInvisibleItem();
+        useInvisibleItemPacket.PlayerId = playerId;
+        useInvisibleItemPacket.ItemId = itemId;
+
+        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
+
+        //아이템이 없다면 무시
+        if (dediPlayer._inventory.GetItemCount(itemId) == 0)
+        {
+            Util.PrintLog($"The {playerId}player does not have the {itemId}item.");
+            return;
+        }
+
+        //아이템 사용처리
+        dediPlayer._inventory.RemoveOneItem(itemId);
+
+        //아이템 사용 패킷 브로드캐스트
+        Managers.Player.Broadcast(useInvisibleItemPacket);
+    }
+
+
+
+
+
     /// <summary>
     /// 아이템 생성
     /// </summary>

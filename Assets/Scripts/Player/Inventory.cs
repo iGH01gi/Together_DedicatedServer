@@ -43,7 +43,7 @@ public class Inventory
     /// 현재 보유하고 있는 아이템 개수를 반환함
     /// </summary>
     /// <param name="itemId">개수를 확인하려는 아이템id</param>
-    /// <returns></returns>
+    /// <returns>없다면 0리턴</returns>
     public int GetItemCount(int itemId)
     {
         if (_itemCount.ContainsKey(itemId))
