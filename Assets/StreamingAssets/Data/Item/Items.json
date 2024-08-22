@@ -7,7 +7,7 @@
       "KoreanName": "대쉬",
       "EnglishDescription": "Dash forward",
       "KoreanDescription": "앞으로 대쉬합니다.",
-      "DashDistance": 3
+      "DashDistance": 2
     },
     {
       "Id": 1,
