@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Google.Protobuf.Protocol;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -39,9 +40,19 @@ public class ItemManager
         }
 
         dediPlayer._totalPoint -= price;
-        
-        //TODO : 인벤토리에 생성된 아이템 추가
-        
+
+        //인벤토리에 생성된 아이템 추가
+        dediPlayer._inventory.AddOneItem(itemId);
+
+        //구매 성공 패킷 전송
+        DSC_ItemBuyResult itemBuySuccessPacket = new DSC_ItemBuyResult();
+        itemBuySuccessPacket.PlayerId = playerId;
+        itemBuySuccessPacket.ItemId = itemId;
+        itemBuySuccessPacket.ItemTotalCount = dediPlayer._inventory.GetItemCount(itemId);
+        itemBuySuccessPacket.IsSuccess = true;
+        itemBuySuccessPacket.RemainMoney = dediPlayer._totalPoint;
+        dediPlayer.Session.Send(itemBuySuccessPacket);
+
         return true;
     }
 
@@ -53,16 +64,33 @@ public class ItemManager
     /// <param name="itemId">아이템id</param>
     public void OnHoldItem(int playerId, int itemId)
     {
-        //인벤토리에 해당 아이템이 있는지 확인
-        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
-        if (dediPlayer._inventory._itemCount.ContainsKey(itemId))
+        //itemId가 -1이면 아이템을 안든것임
+        if (itemId == -1)
         {
-            //TODO : 아이템 선택시 기능 실행
-            Inventory inventory = dediPlayer._inventory;
+            //아이템 선택 패킷 브로드캐스트
+            DSC_OnHoldItem onHoldItemPacket = new DSC_OnHoldItem();
+            onHoldItemPacket.PlayerId = playerId;
+            onHoldItemPacket.ItemId = -1;
+
+            Managers.Player.Broadcast(onHoldItemPacket);
         }
         else
         {
-            Util.PrintLog($"인벤토리에 {itemId} 아이템이 없음.");
+            //인벤토리에 해당 아이템이 있는지 확인
+            Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
+            if (dediPlayer._inventory._itemCount.ContainsKey(itemId))
+            {
+                //아이템 선택 패킷 브로드캐스트
+                DSC_OnHoldItem onHoldItemPacket = new DSC_OnHoldItem();
+                onHoldItemPacket.PlayerId = playerId;
+                onHoldItemPacket.ItemId = itemId;
+
+                Managers.Player.Broadcast(onHoldItemPacket);
+            }
+            else
+            {
+                Util.PrintLog($"플레이어{playerId}의 인벤토리에 {itemId}아이템이 없음.");
+            }
         }
     }
     

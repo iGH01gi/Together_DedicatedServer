@@ -156,23 +156,15 @@ public class PacketHandler
             return;
         }
 
-        Player player = Managers.Player._players[dediPlayerId].GetComponent<Player>();
+        
         //낮일때만 아이템 구매 가능
         if (Managers.Time._isDay && Managers.Item.BuyItem(dediPlayerId, itemId))
         {
-            //해당 플레이어 인벤토리에 아이템추가
-            player._inventory.AddOneItem(itemId);
-
-            DSC_ItemBuyResult itemBuySuccessPacket = new DSC_ItemBuyResult();
-            itemBuySuccessPacket.PlayerId = dediPlayerId;
-            itemBuySuccessPacket.ItemId = itemId;
-            itemBuySuccessPacket.ItemTotalCount = player._inventory.GetItemCount(itemId);
-            itemBuySuccessPacket.IsSuccess = true;
-            itemBuySuccessPacket.RemainMoney = player._totalPoint;
-            clientSession.Send(itemBuySuccessPacket);
         }
         else
         {
+            Player player = Managers.Player._players[dediPlayerId].GetComponent<Player>();
+
             DSC_ItemBuyResult itemBuyFailPacket = new DSC_ItemBuyResult();
             itemBuyFailPacket.PlayerId = dediPlayerId;
             itemBuyFailPacket.ItemId = itemId;
