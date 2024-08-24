@@ -13,7 +13,7 @@ public class InvisibleFactory : ItemFactory
         InvisibleSeconds = invisibleSeconds;
     }
 
-    public override IItem CreateItem(int playerId)
+    public override GameObject CreateItem(int playerId)
     {
         //if else를 통해 여기서 맞는 아이템을 생성
         return null;

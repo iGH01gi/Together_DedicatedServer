@@ -1,4 +1,6 @@
-﻿public abstract class ItemFactory
+﻿using UnityEngine;
+
+public abstract class ItemFactory
 {
     //공통 속성
     public int FactoryId { get; set; }
@@ -20,5 +22,5 @@
         FactoryKoreanDescription = koreanDescription;
     }
 
-    public abstract IItem CreateItem(int playerId);
+    public abstract GameObject CreateItem(int playerId);
 }

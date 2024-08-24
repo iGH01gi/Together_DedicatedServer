@@ -93,6 +93,30 @@ public class ItemManager
         }
     }
 
+    public void UseItem(int playerId, int itemId)
+    {
+        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
+        {
+            return;
+        }
+
+        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
+        if (dediPlayer._inventory.GetItemCount(itemId) == 0) //아이템이 없다면 처리X
+        {
+            Util.PrintLog($"The {playerId}player does not have the {itemId}item.");
+            return;
+        }
+
+        if (_itemFactories.ContainsKey(itemId))
+        {
+            _itemFactories[itemId].CreateItem(playerId);
+        }
+        else
+        {
+            Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
+        }
+    }
+
     /// <summary>
     /// 폭죽 아이템 썼을때 처리
     /// </summary>

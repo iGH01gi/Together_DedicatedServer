@@ -44,6 +44,8 @@ class PacketManager
 		_handler.Add((ushort)MsgId.CdsItemBuyRequest, PacketHandler.CDS_ItemBuyRequestHandler);		
 		_onRecv.Add((ushort)MsgId.CdsOnHoldItem, MakePacket<CDS_OnHoldItem>);
 		_handler.Add((ushort)MsgId.CdsOnHoldItem, PacketHandler.CDS_OnHoldItemHandler);		
+		_onRecv.Add((ushort)MsgId.CdsUseDashItem, MakePacket<CDS_UseDashItem>);
+		_handler.Add((ushort)MsgId.CdsUseDashItem, PacketHandler.CDS_UseDashItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseFireworkItem, MakePacket<CDS_UseFireworkItem>);
 		_handler.Add((ushort)MsgId.CdsUseFireworkItem, PacketHandler.CDS_UseFireworkItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseInvisibleItem, MakePacket<CDS_UseInvisibleItem>);

@@ -96,4 +96,13 @@ public class Player : MonoBehaviour
         RoomId = dediPlayer.RoomId;
         Session = dediPlayer.Session;
     }
+
+    /// <summary>
+    /// 고스트 따라가기 기능을 켜고 끄는 함수
+    /// </summary>
+    /// <param name="isOn">고스트 따라가기를 킬거면 true, 끌거면 false</param>
+    public void ToggleFollowGhost(bool isOn)
+    {
+        _isFollowGhostOn = isOn;
+    }
 }

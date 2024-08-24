@@ -3,6 +3,7 @@ using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using Google.Protobuf.WellKnownTypes;
 using Unity.Profiling.LowLevel.Unsafe;
+using UnityEngine.UIElements;
 
 public class PacketHandler
 {
@@ -190,6 +191,17 @@ public class PacketHandler
         }
 
         Managers.Item.OnHoldItem(dediPlayerId, itemId);
+    }
+
+    public static void CDS_UseDashItemHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseDashItem useDashItemPacket = packet as CDS_UseDashItem;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useDashItemPacket.MyDediplayerId;
+        int itemId = useDashItemPacket.ItemId;
+        TransformInfo dashStartingTransformInfo = useDashItemPacket.DashStartingTransform;
+
     }
 
     public static void CDS_UseFireworkItemHandler(PacketSession session, IMessage packet)

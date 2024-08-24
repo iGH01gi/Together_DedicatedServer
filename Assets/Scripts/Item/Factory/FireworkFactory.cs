@@ -1,4 +1,6 @@
-﻿public class FireworkFactory : ItemFactory
+﻿using UnityEngine;
+
+public class FireworkFactory : ItemFactory
 {
     //이 아이템만의 속성
     public float FlightHeight { get; set; }
@@ -9,7 +11,7 @@
         base.FactoryInit(id, price, englishName, koreanName, englishDescription, koreanDescription);
         FlightHeight = flightHeight;
     }
-    public override IItem CreateItem(int playerId)
+    public override GameObject CreateItem(int playerId)
     {
         return null;
     }
