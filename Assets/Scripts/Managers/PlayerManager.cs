@@ -440,6 +440,20 @@ public class PlayerManager : MonoBehaviour
 
         return -1;
     }
+
+    /// <summary>
+    /// 유일한 생존자(최종 승자)의 이름을 반환하는 함수
+    /// </summary>
+    /// <returns>승자의 이름</returns>
+    public string GetWinnerName()
+    {
+        if (GetWinnerPlayerId() != -1)
+        {
+            return _players[GetWinnerPlayerId()].GetComponent<Player>().Info.Name;
+        }
+
+        return "";
+    }
 }
 
 

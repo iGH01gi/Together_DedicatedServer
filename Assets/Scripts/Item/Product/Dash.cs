@@ -16,7 +16,7 @@ public class Dash : MonoBehaviour, IItem
 
     private Player _player;
     private CharacterController _characterController;
-    private float _dashTime = 0.5f; //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
+    private float _dashTime = 0.35f; //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
     private float _dashSpeed; //대시 속도
     private bool _isDashing = false; //대시 중인지 여부
 

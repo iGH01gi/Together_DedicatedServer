@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class TimeManager : MonoBehaviour
 {
-    private int _daySeconds = 20; //낮 시간(초)
+    private int _daySeconds = 200; //낮 시간(초)
     private int _nightSeconds = 5; //밤 시간(초)
     private float _currentTimer = 0f; //현재 시간(초)
     
@@ -177,6 +177,7 @@ public class TimeManager : MonoBehaviour
                 {
                     DSC_EndGame endGamePacket = new DSC_EndGame();
                     endGamePacket.WinnerPlayerId = Managers.Player.GetWinnerPlayerId();
+                    endGamePacket.WinnerName = Managers.Player.GetWinnerName();
                     Managers.Player.Broadcast(endGamePacket);
 
                     //게임 종료 처리
@@ -297,6 +298,7 @@ public class TimeManager : MonoBehaviour
             {
                 DSC_EndGame endGamePacket = new DSC_EndGame();
                 endGamePacket.WinnerPlayerId = Managers.Player.GetWinnerPlayerId();
+                endGamePacket.WinnerName = Managers.Player.GetWinnerName();
                 Managers.Player.Broadcast(endGamePacket);
 
                 //게임 종료 처리
