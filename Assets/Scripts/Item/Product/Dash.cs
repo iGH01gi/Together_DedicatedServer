@@ -33,6 +33,8 @@ public class Dash : MonoBehaviour, IItem
             _dashTime -= Time.deltaTime;
             if (_dashTime <= 0)
             {
+                _isDashing = false;
+
                 //대시 끝 패킷 브로드캐스트
                 DSC_EndDashItem endDashItemPacket = new DSC_EndDashItem()
                 {
@@ -57,7 +59,6 @@ public class Dash : MonoBehaviour, IItem
                 };
                 Managers.Player.Broadcast(endDashItemPacket);
 
-                _isDashing = false;
 
                 //고스트 따라가기 기능 다시 활성화 코드 추가
                 _player.ToggleFollowGhost(true);
