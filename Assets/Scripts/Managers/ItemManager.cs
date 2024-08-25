@@ -179,39 +179,6 @@ public class ItemManager
         }
     }
 
-    /// <summary>
-    /// 투명화 아이템을 썼을때 처리
-    /// </summary>
-    /// <param name="playerId">투명 아이템을 사용한 플레이어id</param>
-    /// <param name="itemId">투명 아이템id</param>
-    public void UseInvisibleItem(int playerId, int itemId)
-    {
-        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
-        {
-            return;
-        }
-
-        DSC_UseInvisibleItem useInvisibleItemPacket = new DSC_UseInvisibleItem();
-        useInvisibleItemPacket.PlayerId = playerId;
-        useInvisibleItemPacket.ItemId = itemId;
-
-        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
-
-        //아이템이 없다면 무시
-        if (dediPlayer._inventory.GetItemCount(itemId) == 0)
-        {
-            Util.PrintLog($"The {playerId}player does not have the {itemId}item.");
-            return;
-        }
-
-        //아이템 사용처리
-        dediPlayer._inventory.RemoveOneItem(itemId);
-
-        //아이템 사용 패킷 브로드캐스트
-        Managers.Player.Broadcast(useInvisibleItemPacket);
-    }
-
-
 
     #region json관련
 

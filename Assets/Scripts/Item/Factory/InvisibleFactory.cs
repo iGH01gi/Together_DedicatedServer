@@ -15,7 +15,9 @@ public class InvisibleFactory : ItemFactory
 
     public override GameObject CreateItem(int playerId)
     {
-        //if else를 통해 여기서 맞는 아이템을 생성
-        return null;
+        GameObject invisibleGameObject = new GameObject("Invisible");
+        Invisible invisible = invisibleGameObject.AddComponent<Invisible>();
+        invisible.Init(FactoryId, playerId, FactoryEnglishName, InvisibleSeconds);
+        return invisibleGameObject;
     }
 }

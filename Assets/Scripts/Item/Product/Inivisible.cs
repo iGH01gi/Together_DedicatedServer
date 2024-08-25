@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Google.Protobuf;
+using Google.Protobuf.Protocol;
 using UnityEngine;
 
 public class Invisible : MonoBehaviour, IItem
@@ -26,6 +27,17 @@ public class Invisible : MonoBehaviour, IItem
 
     public void Use(IMessage packet)
     {
+        //투명 아이템 시작 패킷 브로드캐스트
+        DSC_UseInvisibleItem useInvisibleItemPacket = new DSC_UseInvisibleItem()
+        {
+            PlayerId = PlayerID,
+            ItemId = ItemID,
+        };
+        Managers.Player.Broadcast(useInvisibleItemPacket);
+
+
+
+
         Util.PrintLog($"Player{PlayerID} Use Item Invisible");
     }
 
