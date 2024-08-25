@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using static UnityEditor.Progress;
+using Object = UnityEngine.Object;
 
 /// <summary>
 /// json 데이터로부터 아이템 데이터를 로드하고, 아이템을 생성하기 위해서 필요한 클래스
 /// </summary>
 public class ItemManager
 {
+
+    public static GameObject root; //여기에 자식으로 아이템 gameobject들이 생성됨.
+
     private string _jsonPath;
     private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름
     private static string _itemsDataJson; //json이 들어 있게 됨(파싱 해야 함)
@@ -18,10 +23,26 @@ public class ItemManager
 
     public void Init()
     {
+        root = GameObject.Find("@Item");
+        if (root == null)
+        {
+            root = new GameObject { name = "@Item" };
+            Object.DontDestroyOnLoad(root);
+        }
+
         _jsonPath = Application.streamingAssetsPath + "/Data/Item/Items.json";
         LoadItemData();
     }
-    
+
+    public void Clear()
+    {
+        //root의 모든 자식을 삭제(=생성된 아이템을 모두 삭제)
+        foreach (Transform child in root.transform)
+        {
+            Object.Destroy(child.gameObject);
+        }
+    }
+
     /// <summary>
     /// 아이템을 구매해서 인벤토리에 추가
     /// </summary>
@@ -93,7 +114,13 @@ public class ItemManager
         }
     }
 
-    public void UseItem(int playerId, int itemId)
+    /// <summary>
+    /// 클라 -> 서버로 아이템 사용 요청 패킷을 받았을때 처리
+    /// </summary>
+    /// <param name="playerId">아이템 사용 요청을 한 플레이어id</param>
+    /// <param name="itemId">아이템id</param>
+    /// <param name="packet">아이템 사용요청 패킷</param>
+    public void UseItem(int playerId, int itemId, IMessage packet)
     {
         if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
         {
@@ -109,57 +136,22 @@ public class ItemManager
 
         if (_itemFactories.ContainsKey(itemId))
         {
-            _itemFactories[itemId].CreateItem(playerId);
+            //인벤토리에서 아이템1개 제거
+            dediPlayer._inventory.RemoveOneItem(itemId);
+
+            //아이템 생성
+            GameObject itemGameObject = _itemFactories[itemId].CreateItem(playerId);
+
+            //생성한 아이템을 @Item 밑에 넣음
+            itemGameObject.transform.SetParent(root.transform);
+
+            //아이템 사용 효과 발동(IItem 컴포넌트를 가져와서 사용함)
+            IItem item = itemGameObject.GetComponent<IItem>();
+            item.Use(packet);
         }
         else
         {
             Debug.LogError("해당 아이템이 존재하지 않습니다: " + itemId);
-        }
-    }
-
-    /// <summary>
-    /// 폭죽 아이템 썼을때 처리
-    /// </summary>
-    /// <param name="playerId">폭죽을 사용한 플레이어id</param>
-    /// <param name="itemId">폭죽 아이템id</param>
-    public void UseFireworkItem(int playerId, int itemId, CDS_UseFireworkItem packet)
-    {
-        if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
-        {
-            return;
-        }
-
-        DSC_UseFireworkItem useFireworkItemPacket = new DSC_UseFireworkItem();
-        useFireworkItemPacket.PlayerId = playerId;
-        useFireworkItemPacket.ItemId = itemId;
-        useFireworkItemPacket.FireworkStartingTransform = packet.FireworkStartingTransform;
-
-        Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
-
-        Vector3 playerPosition = dediPlayer.transform.position;
-        Vector3 fireworkStartingPosition = new Vector3(packet.FireworkStartingTransform.Position.PosX, packet.FireworkStartingTransform.Position.PosY, packet.FireworkStartingTransform.Position.PosZ);
-
-        //플레이어위치와 폭죽시작 위치가 일정범위 이내여야 함(핵 러프하게 검사)
-        if (Vector3.Distance(playerPosition, fireworkStartingPosition) > 10f)
-        {
-            //핵의심. 무시
-            Util.PrintLog($"The distance between the player and the firework start position is too far. Suspected cheat.");
-            return;
-        }
-        else
-        {
-            //아이템이 없다면 무시
-            if (dediPlayer._inventory.GetItemCount(itemId) == 0)
-            {
-                Util.PrintLog($"The {playerId}player does not have the {itemId}item.");
-                return;
-            }
-
-            //아이템 사용처리
-            dediPlayer._inventory.RemoveOneItem(itemId);
-
-            //아이템 사용 패킷 브로드캐스트
-            Managers.Player.Broadcast(useFireworkItemPacket);
         }
     }
 

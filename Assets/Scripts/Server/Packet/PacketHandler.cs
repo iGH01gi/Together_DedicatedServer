@@ -202,6 +202,7 @@ public class PacketHandler
         int itemId = useDashItemPacket.ItemId;
         TransformInfo dashStartingTransformInfo = useDashItemPacket.DashStartingTransform;
 
+        Managers.Item.UseItem(dediPlayerId, itemId, dashStartingTransformInfo);
     }
 
     public static void CDS_UseFireworkItemHandler(PacketSession session, IMessage packet)
@@ -212,7 +213,7 @@ public class PacketHandler
         int dediPlayerId = useFireworkItemPacket.MyDediplayerId;
         int itemId = useFireworkItemPacket.ItemId;
 
-        Managers.Item.UseFireworkItem(dediPlayerId, itemId, useFireworkItemPacket);
+        Managers.Item.UseItem(dediPlayerId, itemId, useFireworkItemPacket);
     }
 
     public static void CDS_UseInvisibleItemHandler(PacketSession session, IMessage packet)

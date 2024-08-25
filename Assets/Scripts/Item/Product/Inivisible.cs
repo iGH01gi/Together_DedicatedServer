@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Google.Protobuf;
 using UnityEngine;
 
 public class Invisible : MonoBehaviour, IItem
@@ -23,7 +24,7 @@ public class Invisible : MonoBehaviour, IItem
         InvisibleSeconds = invisibleSeconds;
     }
 
-    public void Use()
+    public void Use(IMessage packet)
     {
         Debug.Log("Item Invisible Use");
     }

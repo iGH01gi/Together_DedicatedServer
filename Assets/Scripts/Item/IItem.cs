@@ -1,4 +1,6 @@
-﻿public interface IItem
+﻿using Google.Protobuf;
+
+public interface IItem
 {
     public int ItemID { get; set; }
     public int PlayerID { get; set; }
@@ -12,7 +14,8 @@
     /// <summary>
     /// 아이템 사용시 기능 구현
     /// </summary>
-    public abstract void Use();
+    /// <param name="packet">아이템 사용에 필요한 패킷정보</param>
+    public abstract void Use(IMessage packet);
 
     /// <summary>
     /// 아이템 맞았을 때의 기능

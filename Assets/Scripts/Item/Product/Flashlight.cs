@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Google.Protobuf;
 using UnityEngine;
 
 public class Flashlight : MonoBehaviour, IItem
@@ -31,7 +32,7 @@ public class Flashlight : MonoBehaviour, IItem
         FlashlightTimeRequired = flashlightTimeRequired;
     }
 
-    public void Use()
+    public void Use(IMessage packet)
     {
         Debug.Log("Item Flashlight Use");
     }

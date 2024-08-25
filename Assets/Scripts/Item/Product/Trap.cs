@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Google.Protobuf;
 using UnityEngine;
 
 public class Trap : MonoBehaviour, IItem
@@ -28,7 +29,7 @@ public class Trap : MonoBehaviour, IItem
         StunDuration = stunDuration;
     }
 
-    public void Use()
+    public void Use(IMessage packet)
     {
         Debug.Log("Item Trap Use");
     }

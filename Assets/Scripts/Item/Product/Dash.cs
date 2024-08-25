@@ -1,4 +1,5 @@
 ﻿using System;
+using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ public class Dash : MonoBehaviour, IItem
 
     private Player _player;
     private CharacterController _characterController;
-    private float _dashTime = 0.24f; //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
+    private float _dashTime = 0.5f; //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
     private float _dashSpeed; //대시 속도
     private bool _isDashing = false; //대시 중인지 여부
 
@@ -26,8 +27,8 @@ public class Dash : MonoBehaviour, IItem
             //대시 속도만큼 이동
             _characterController.Move(_player.transform.forward * _dashSpeed * Time.deltaTime);
             //고스트도 같이 이동
-            _player._ghost.transform.position = transform.position;
-            _player._ghost.transform.rotation = transform.rotation;
+            _player._ghost.transform.position = _player.transform.position;
+            _player._ghost.transform.rotation = _player.transform.rotation;
 
             _dashTime -= Time.deltaTime;
             if (_dashTime <= 0)
@@ -41,20 +42,20 @@ public class Dash : MonoBehaviour, IItem
                     {
                         Position = new PositionInfo()
                         {
-                            PosX = transform.position.x,
-                            PosY = transform.position.y,
-                            PosZ = transform.position.z
+                            PosX = _player.transform.position.x,
+                            PosY = _player.transform.position.y,
+                            PosZ = _player.transform.position.z
                         },
                         Rotation = new RotationInfo()
                         {
-                            RotX = transform.rotation.x,
-                            RotY = transform.rotation.y,
-                            RotZ = transform.rotation.z,
-                            RotW = transform.rotation.w
+                            RotX = _player.transform.rotation.x,
+                            RotY = _player.transform.rotation.y,
+                            RotZ = _player.transform.rotation.z,
+                            RotW = _player.transform.rotation.w
                         }
                     }
-
                 };
+                Managers.Player.Broadcast(endDashItemPacket);
 
                 _isDashing = false;
 
@@ -62,6 +63,9 @@ public class Dash : MonoBehaviour, IItem
                 _player.ToggleFollowGhost(true);
 
                 //TODO: 대시 무적 해제 코드 추가
+
+                //대시가 끝났으므로 대시오브젝트 삭제
+                Destroy(gameObject);
             }
         }
     }
@@ -79,10 +83,8 @@ public class Dash : MonoBehaviour, IItem
         DashDistance = dashDistance;
     }
 
-    public void Use()
+    public void Use(IMessage packet)
     {
-        //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
-        float dashTime = 0.24f;
 
         //TODO: 대시 동안 무적처리 코드 추가
 
@@ -94,23 +96,43 @@ public class Dash : MonoBehaviour, IItem
         _characterController = playerObjet.GetComponent<CharacterController>();
 
         //대시 시작 패킷 브로드캐스트
-        DSC_UseDashItem useDashItemPacket = new DSC_UseDashItem();
-        useDashItemPacket.PlayerId = PlayerID;
-        useDashItemPacket.ItemId = ItemID;
-        useDashItemPacket.DashStartingTransform.Position.PosX = playerObjet.transform.position.x;
-        useDashItemPacket.DashStartingTransform.Position.PosY = playerObjet.transform.position.y;
-        useDashItemPacket.DashStartingTransform.Position.PosZ = playerObjet.transform.position.z;
-        useDashItemPacket.DashStartingTransform.Rotation.RotX = playerObjet.transform.rotation.x;
-        useDashItemPacket.DashStartingTransform.Rotation.RotY = playerObjet.transform.rotation.y;
-        useDashItemPacket.DashStartingTransform.Rotation.RotZ = playerObjet.transform.rotation.z;
-        useDashItemPacket.DashStartingTransform.Rotation.RotW = playerObjet.transform.rotation.w;
+        DSC_UseDashItem useDashItemPacket = new DSC_UseDashItem
+        {
+            PlayerId = PlayerID,
+            ItemId = ItemID,
+            DashStartingTransform = new TransformInfo()
+            {
+                Position = new PositionInfo()
+                {
+                    PosX = playerObjet.transform.position.x,
+                    PosY = playerObjet.transform.position.y,
+                    PosZ = playerObjet.transform.position.z
+                },
+                Rotation = new RotationInfo()
+                {
+                    RotX = playerObjet.transform.rotation.x,
+                    RotY = playerObjet.transform.rotation.y,
+                    RotZ = playerObjet.transform.rotation.z,
+                    RotW = playerObjet.transform.rotation.w
+                }
+            }
+        };
         Managers.Player.Broadcast(useDashItemPacket);
 
         //DashDistance만큼의 거리를 dashTime동안 이동하려면 속도가 몇이어야 하는지
         _dashSpeed = DashDistance / _dashTime;
 
+        //시작위치 클라와 맞춤 (고스트도 포함)
+        playerObjet.transform.position = new Vector3(useDashItemPacket.DashStartingTransform.Position.PosX, useDashItemPacket.DashStartingTransform.Position.PosY, useDashItemPacket.DashStartingTransform.Position.PosZ);
+        playerObjet.transform.rotation = new Quaternion(useDashItemPacket.DashStartingTransform.Rotation.RotX, useDashItemPacket.DashStartingTransform.Rotation.RotY, useDashItemPacket.DashStartingTransform.Rotation.RotZ, useDashItemPacket.DashStartingTransform.Rotation.RotW);
+        _player._ghost.transform.position = playerObjet.transform.position;
+        _player._ghost.transform.rotation = playerObjet.transform.rotation;
+
+
         //대시 시작(update문에서 대시 수행)
         _isDashing = true;
+
+        Util.PrintLog("Item Dash Use");
     }
 
     public void OnHit()
