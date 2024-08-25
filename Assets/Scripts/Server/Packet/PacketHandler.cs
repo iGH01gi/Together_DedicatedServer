@@ -67,7 +67,17 @@ public class PacketHandler
         
         
     }
-    
+
+    // 플레이어가 데디서버를 나가기를 요청했을때 처리
+    public static void CDS_InformLeaveDedicatedServerHandler(PacketSession session, IMessage packet)
+    {
+        Util.PrintLog("CDS_InformLeaveDedicatedServerHandler");
+        CDS_InformLeaveDedicatedServer informLeaveDedicatedServerPacket = packet as CDS_InformLeaveDedicatedServer;
+        ClientSession clientSession = session as ClientSession;
+
+        session.Disconnect();
+    }
+
     //클라에서 주기적으로 보내는 움직임동기화 패킷을 처리(핵 아닐시 고스트 위치 설정 + 다른 클라들에게 움직임 동기화패킷 보냄)
     public static void CDS_MoveHandler(PacketSession session, IMessage packet)
     {
@@ -224,6 +234,6 @@ public class PacketHandler
         int dediPlayerId = useInvisibleItemPacket.MyDediplayerId;
         int itemId = useInvisibleItemPacket.ItemId;
 
-        Managers.Item.UseInvisibleItem(dediPlayerId, itemId);
+        Managers.Item.UseItem(dediPlayerId, itemId, useInvisibleItemPacket);
     }
 }

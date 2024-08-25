@@ -133,7 +133,7 @@ public class Dash : MonoBehaviour, IItem
         //대시 시작(update문에서 대시 수행)
         _isDashing = true;
 
-        Util.PrintLog("Item Dash Use");
+        Util.PrintLog($"Player{PlayerID} Use Item Dash");
     }
 
     public void OnHit()

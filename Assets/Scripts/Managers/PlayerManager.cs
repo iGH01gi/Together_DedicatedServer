@@ -175,7 +175,15 @@ public class PlayerManager : MonoBehaviour
             Managers.Resource.Destroy(_ghosts[playerId]);
         }
     }
-    
+
+    public void DestroyDeadPlayerObject(int playerId)
+    {
+        if (_deadPlayer.ContainsKey(playerId))
+        {
+            Managers.Resource.Destroy(_deadPlayer[playerId]);
+        }
+    }
+
 
     /// <summary>
     /// <para>플레이어가 게임을 아예 나갔을때 호출</para>
@@ -186,14 +194,16 @@ public class PlayerManager : MonoBehaviour
     {
         if (_players.ContainsKey(playerId) && _ghosts.ContainsKey(playerId))
         {
-            //플레이어오브젝트, 고스트오브젝트 제거
+            //플레이어오브젝트, 고스트오브젝트, 데드플레이어 제거
             DestroyPlayerObject(playerId);
             DestroyGhostObject(playerId);
-            
-            //플레이어매니저에서 플레이어,고스트 map 정보 제거
+            DestroyDeadPlayerObject(playerId);
+
+            //플레이어매니저에서 플레이어,고스트,데드 플레이어 map 정보 제거
             _players.Remove(playerId);
             _ghosts.Remove(playerId);
-            
+            _deadPlayer.Remove(playerId);
+
             DSC_InformLeaveDedicatedServer informLeaveDedicatedServerPacket = new DSC_InformLeaveDedicatedServer();
             informLeaveDedicatedServerPacket.LeavePlayerId = playerId;
             Broadcast(informLeaveDedicatedServerPacket);

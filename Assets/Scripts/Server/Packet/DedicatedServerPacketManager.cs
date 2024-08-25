@@ -28,6 +28,8 @@ class PacketManager
 		_handler.Add((ushort)MsgId.CdsInformRoomInfo, PacketHandler.CDS_InformRoomInfoHandler);		
 		_onRecv.Add((ushort)MsgId.CdsAllowEnterGame, MakePacket<CDS_AllowEnterGame>);
 		_handler.Add((ushort)MsgId.CdsAllowEnterGame, PacketHandler.CDS_AllowEnterGameHandler);		
+		_onRecv.Add((ushort)MsgId.CdsInformLeaveDedicatedServer, MakePacket<CDS_InformLeaveDedicatedServer>);
+		_handler.Add((ushort)MsgId.CdsInformLeaveDedicatedServer, PacketHandler.CDS_InformLeaveDedicatedServerHandler);		
 		_onRecv.Add((ushort)MsgId.CdsMove, MakePacket<CDS_Move>);
 		_handler.Add((ushort)MsgId.CdsMove, PacketHandler.CDS_MoveHandler);		
 		_onRecv.Add((ushort)MsgId.CdsTryChestOpen, MakePacket<CDS_TryChestOpen>);

@@ -26,7 +26,7 @@ public class Invisible : MonoBehaviour, IItem
 
     public void Use(IMessage packet)
     {
-        Debug.Log("Item Invisible Use");
+        Util.PrintLog($"Player{PlayerID} Use Item Invisible");
     }
 
     public void OnHit()
