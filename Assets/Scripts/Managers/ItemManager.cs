@@ -41,6 +41,12 @@ public class ItemManager
         {
             Object.Destroy(child.gameObject);
         }
+
+        //모든 플레이어의 인벤토리를 초기화
+        foreach (GameObject player in Managers.Player._players.Values)
+        {
+            player.GetComponent<Player>()._inventory.Clear();
+        }
     }
 
     /// <summary>
@@ -51,6 +57,12 @@ public class ItemManager
     /// <returns>구매 성공 여부</returns>
     public bool BuyItem(int playerId, int itemId)
     {
+        //게임 종료됐으면 처리X
+        if (Managers.Game.IsGameEnd())
+        {
+            return false;
+        }
+
         //아이템 가격만큼 포인트 차감
         int price = GetItemPrice(itemId);
         Player dediPlayer = Managers.Player._players[playerId].GetComponent<Player>();
@@ -84,6 +96,12 @@ public class ItemManager
     /// <param name="itemId">아이템id</param>
     public void OnHoldItem(int playerId, int itemId)
     {
+        //게임 종료됐으면 처리X
+        if (Managers.Game.IsGameEnd())
+        {
+            return ;
+        }
+
         //itemId가 -1이면 아이템을 안든것임
         if (itemId == -1)
         {
@@ -122,6 +140,12 @@ public class ItemManager
     /// <param name="packet">아이템 사용요청 패킷</param>
     public void UseItem(int playerId, int itemId, IMessage packet)
     {
+        //게임 종료됐으면 처리X
+        if (Managers.Game.IsGameEnd())
+        {
+            return;
+        }
+
         if (Managers.Player.IsPlayerDead(playerId)) //플레이어가 죽었으면 처리X
         {
             return;

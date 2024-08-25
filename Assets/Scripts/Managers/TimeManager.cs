@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class TimeManager : MonoBehaviour
 {
-    private int _daySeconds = 200; //낮 시간(초)
+    private int _daySeconds = 20; //낮 시간(초)
     private int _nightSeconds = 5; //밤 시간(초)
     private float _currentTimer = 0f; //현재 시간(초)
     
@@ -28,9 +28,11 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        TimerLogic(); //낮,밤 타이머 로직
-
-        GaugeLogic(); //밤 생명력 게이지 로직
+        if (!Managers.Game.IsGameEnd()) //게임이 끝났다면 아무것도 하지 않음
+        {
+            TimerLogic(); //낮,밤 타이머 로직
+            GaugeLogic(); //밤 생명력 게이지 로직
+        }
     }
 
     #region 타이머 관련
@@ -57,6 +59,9 @@ public class TimeManager : MonoBehaviour
         
         //클린즈 끄기
         Managers.Object._cleanseController._cleanseParent.SetActive(false);
+
+        //아이템 제거
+        Managers.Item.Clear();
     }
     
     /// <summary>
@@ -162,17 +167,31 @@ public class TimeManager : MonoBehaviour
                 nightTimerEndPacket.DeathCause = DeathCause.TimeOver;
                 nightTimerEndPacket.DeathPlayerId = Managers.Player.GetKillerId();
                 nightTimerEndPacket.KillerPlayerId = Managers.Player.GetKillerId();
-            
-                Managers.Player.Broadcast(nightTimerEndPacket);
 
                 //플레이어가 죽었을때 처리
                 Managers.Player.ProcessPlayerDeath(nightTimerEndPacket.DeathPlayerId);
 
-                //일정 시간 후에 낮 시작
-                JobTimer.Instance.Push(() =>
+
+                //1명만 살아남았다면 최종 승자임. 게임 종료 패킷을 보냄
+                if (Managers.Player.GetAlivePlayerCount()==1)
                 {
-                    DayTimerStart();
-                }, _dayNightInterval);
+                    DSC_EndGame endGamePacket = new DSC_EndGame();
+                    endGamePacket.WinnerPlayerId = Managers.Player.GetWinnerPlayerId();
+                    Managers.Player.Broadcast(endGamePacket);
+
+                    //게임 종료 처리
+                    Managers.Game.SetGameEnd();
+                }
+                else
+                {
+                    Managers.Player.Broadcast(nightTimerEndPacket);
+
+                    //일정 시간 후에 낮 시작
+                    JobTimer.Instance.Push(() =>
+                    {
+                        DayTimerStart();
+                    }, _dayNightInterval);
+                }
             }
             else
             {
@@ -269,17 +288,30 @@ public class TimeManager : MonoBehaviour
             nightTimerEndPacket.DeathCause = DeathCause.GaugeOver;
             nightTimerEndPacket.DeathPlayerId = zeroGaugePlayerId;
             nightTimerEndPacket.KillerPlayerId = Managers.Player.GetKillerId();
-            
-            Managers.Player.Broadcast(nightTimerEndPacket);
 
             //플레이어가 죽었을때 처리
             Managers.Player.ProcessPlayerDeath(nightTimerEndPacket.DeathPlayerId);
 
-            //일정 시간 후에 낮 시작
-            JobTimer.Instance.Push(() =>
+            //1명만 살아남았다면 최종 승자임. 게임 종료 패킷을 보냄
+            if (Managers.Player.GetAlivePlayerCount() == 1)
             {
-                DayTimerStart();
-            }, _dayNightInterval);
+                DSC_EndGame endGamePacket = new DSC_EndGame();
+                endGamePacket.WinnerPlayerId = Managers.Player.GetWinnerPlayerId();
+                Managers.Player.Broadcast(endGamePacket);
+
+                //게임 종료 처리
+                Managers.Game.SetGameEnd();
+            }
+            else
+            {
+                Managers.Player.Broadcast(nightTimerEndPacket);
+
+                //일정 시간 후에 낮 시작
+                JobTimer.Instance.Push(() =>
+                {
+                    DayTimerStart();
+                }, _dayNightInterval);
+            }
         }
         
     }

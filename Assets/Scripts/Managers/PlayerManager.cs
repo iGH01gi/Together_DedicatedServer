@@ -417,6 +417,29 @@ public class PlayerManager : MonoBehaviour
     {
         return _deadPlayer.ContainsKey(playerId);
     }
+
+    /// <summary>
+    /// 살아있는 플레이어의 수를 반환하는 함수
+    /// </summary>
+    /// <returns>생존자 수</returns>
+    public int GetAlivePlayerCount()
+    {
+        return _players.Count;
+    }
+
+    /// <summary>
+    /// 유일한 생존자(최종 승자)의 데디플레이어id를 반환하는 함수
+    /// </summary>
+    /// <returns>최종승자의 id. -1이면 최종승자를 못구하는 상태</returns>
+    public int GetWinnerPlayerId()
+    {
+        if (GetAlivePlayerCount() == 1)
+        {
+            return _players.Keys.First();
+        }
+
+        return -1;
+    }
 }
 
 

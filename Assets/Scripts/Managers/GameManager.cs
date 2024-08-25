@@ -7,6 +7,8 @@ public class GameManager
     public GaugeController _gaugeController;
     public CleanseController _cleanseController;
 
+    public bool _isGameEnd = false; //게임이 끝났는지 여부
+
     //Managers Init과 함께 불리는 Init
     public void Init()
     {
@@ -19,6 +21,24 @@ public class GameManager
         
         _gaugeController = Util.GetOrAddComponent<GaugeController>(root);
         _cleanseController = Util.GetOrAddComponent<CleanseController>(root);
+        _isGameEnd = false;
+    }
+
+    /// <summary>
+    /// 게임이 종료됐는지 여부를 반환 (최종 승자가 나왔는지)
+    /// </summary>
+    /// <returns>종료됐다면 true, 진행중이면 false</returns>
+    public bool IsGameEnd()
+    {
+        return _isGameEnd;
+    }
+
+    /// <summary>
+    /// 게임이 종료됐음을 설정
+    /// </summary>
+    public void SetGameEnd()
+    {
+        _isGameEnd = true;
     }
 
 }
