@@ -52,13 +52,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Height: 0.5
+  m_Height: 0.45
   m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.15
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.24, z: 0}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!114 &1028996245369759178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,4 +71,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd9c0de7db580f48ae9759629e710eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: {x: 0, y: 0, z: 0}
