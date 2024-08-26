@@ -13,6 +13,9 @@ public class FireworkFactory : ItemFactory
     }
     public override GameObject CreateItem(int playerId)
     {
-        return null;
+        GameObject firworkGameObject = new GameObject("Firwork");
+        Firework firework = firworkGameObject.AddComponent<Firework>();
+        firework.Init(FactoryId, playerId, FactoryEnglishName, FlightHeight);
+        return firworkGameObject;
     }
 }
