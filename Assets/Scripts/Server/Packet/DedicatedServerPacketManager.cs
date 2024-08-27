@@ -51,7 +51,9 @@ class PacketManager
 		_onRecv.Add((ushort)MsgId.CdsUseFireworkItem, MakePacket<CDS_UseFireworkItem>);
 		_handler.Add((ushort)MsgId.CdsUseFireworkItem, PacketHandler.CDS_UseFireworkItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseInvisibleItem, MakePacket<CDS_UseInvisibleItem>);
-		_handler.Add((ushort)MsgId.CdsUseInvisibleItem, PacketHandler.CDS_UseInvisibleItemHandler);
+		_handler.Add((ushort)MsgId.CdsUseInvisibleItem, PacketHandler.CDS_UseInvisibleItemHandler);		
+		_onRecv.Add((ushort)MsgId.CdsUseHeartlessSkill, MakePacket<CDS_UseHeartlessSkill>);
+		_handler.Add((ushort)MsgId.CdsUseHeartlessSkill, PacketHandler.CDS_UseHeartlessSkillHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)

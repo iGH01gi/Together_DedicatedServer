@@ -236,4 +236,15 @@ public class PacketHandler
 
         Managers.Item.UseItem(dediPlayerId, itemId, useInvisibleItemPacket);
     }
+
+    public static void CDS_UseHeartlessSkillHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseHeartlessSkill useHeartlessSkillPacket = packet as CDS_UseHeartlessSkill;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useHeartlessSkillPacket.MyDediplayerId;
+        int itemId = useHeartlessSkillPacket.KillerId;
+
+        Managers.Player.Broadcast(useHeartlessSkillPacket);
+    }
 }
