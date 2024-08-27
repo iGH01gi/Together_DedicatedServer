@@ -23,7 +23,8 @@
       "KoreanAbilityName": "공허의 시선",
       "EnglishAbilityDescription": "Scans the surrounding area",
       "KoreanAbilityDescription": "주변을 스캔한다",
-      "SkillCoolTimeSeconds": 15.0
+      "SkillCoolTimeSeconds": 15.0,
+      "DetectionRange": 10.0
     }
   ]
 }

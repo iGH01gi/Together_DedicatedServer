@@ -48,7 +48,7 @@
       "EnglishDescription": "Traps anyone passing by",
       "KoreanDescription": "지나가는 사람을 덫에 걸리게 합니다.",
       "TrapDuration": 20,
-      "TrapRadius": 3,
+      "TrapRadius": 0.007,
       "StunDuration": 2
     }
   ]

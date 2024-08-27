@@ -203,6 +203,7 @@ public class PacketHandler
         Managers.Item.OnHoldItem(dediPlayerId, itemId);
     }
 
+    //클라에서 대시 아이템을 썼음을 알리는 패킷을 처리
     public static void CDS_UseDashItemHandler(PacketSession session, IMessage packet)
     {
         CDS_UseDashItem useDashItemPacket = packet as CDS_UseDashItem;
@@ -215,6 +216,7 @@ public class PacketHandler
         Managers.Item.UseItem(dediPlayerId, itemId, dashStartingTransformInfo);
     }
 
+    //클라에서 폭죽 아이템을 썼음을 알리는 패킷을 처리
     public static void CDS_UseFireworkItemHandler(PacketSession session, IMessage packet)
     {
         CDS_UseFireworkItem useFireworkItemPacket = packet as CDS_UseFireworkItem;
@@ -226,6 +228,7 @@ public class PacketHandler
         Managers.Item.UseItem(dediPlayerId, itemId, useFireworkItemPacket);
     }
 
+    //클라에서 투명 아이템을 썼음을 알리는 패킷을 처리
     public static void CDS_UseInvisibleItemHandler(PacketSession session, IMessage packet)
     {
         CDS_UseInvisibleItem useInvisibleItemPacket = packet as CDS_UseInvisibleItem;
@@ -237,6 +240,7 @@ public class PacketHandler
         Managers.Item.UseItem(dediPlayerId, itemId, useInvisibleItemPacket);
     }
 
+    //임시
     public static void CDS_UseHeartlessSkillHandler(PacketSession session, IMessage packet)
     {
         CDS_UseHeartlessSkill useHeartlessSkillPacket = packet as CDS_UseHeartlessSkill;
@@ -248,6 +252,23 @@ public class PacketHandler
         DSC_UseHeartlessSkill sendPacket = new DSC_UseHeartlessSkill();
         sendPacket.PlayerId = dediPlayerId;
         sendPacket.KillerId = killerId;
+
+        Managers.Player.Broadcast(sendPacket);
+    }
+
+    //임시
+    public static void CDS_UseDetectorSkillHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseDetectorSkill useDetectorSkillPacket = packet as CDS_UseDetectorSkill;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useDetectorSkillPacket.MyDediplayerId;
+        int killerId = useDetectorSkillPacket.KillerId;
+
+        DSC_UseDetectorSkill sendPacket = new DSC_UseDetectorSkill();
+        sendPacket.PlayerId = dediPlayerId;
+        sendPacket.KillerId = killerId;
+        sendPacket.DetectedPlayerIds.AddRange(useDetectorSkillPacket.DetectedPlayerIds);
 
         Managers.Player.Broadcast(sendPacket);
     }
