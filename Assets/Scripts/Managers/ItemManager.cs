@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 public class ItemManager
 {
 
-    public static GameObject root; //여기에 자식으로 아이템 gameobject들이 생성됨.
+    public GameObject root; //여기에 자식으로 아이템 gameobject들이 생성됨.
 
     private string _jsonPath;
     private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름

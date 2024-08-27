@@ -240,6 +240,18 @@ public class PacketHandler
         Managers.Item.UseItem(dediPlayerId, itemId, useInvisibleItemPacket);
     }
 
+    //클라에서 함정 아이템을 썼음을 알리는 패킷을 처리
+    public static void CDS_UseTrapItemHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseTrapItem useTrapItemPacket = packet as CDS_UseTrapItem;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useTrapItemPacket.MyDediplayerId;
+        int itemId = useTrapItemPacket.ItemId;
+
+        Managers.Item.UseItem(dediPlayerId, itemId, useTrapItemPacket);
+    }
+
     //임시
     public static void CDS_UseHeartlessSkillHandler(PacketSession session, IMessage packet)
     {

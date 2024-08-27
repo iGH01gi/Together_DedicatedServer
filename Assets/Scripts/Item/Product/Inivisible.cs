@@ -35,9 +35,6 @@ public class Invisible : MonoBehaviour, IItem
         };
         Managers.Player.Broadcast(useInvisibleItemPacket);
 
-
-
-
         Util.PrintLog($"Player{PlayerID} Use Item Invisible");
     }
 

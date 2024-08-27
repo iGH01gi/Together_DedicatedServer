@@ -42,7 +42,7 @@ public class Firework : MonoBehaviour, IItem
         Vector3 fireworkStartingPosition = new Vector3(receivedPacket.FireworkStartingTransform.Position.PosX, receivedPacket.FireworkStartingTransform.Position.PosY, receivedPacket.FireworkStartingTransform.Position.PosZ);
 
         //플레이어위치와 폭죽시작 위치가 일정범위 이내여야 함(핵 러프하게 검사)
-        if (Vector3.Distance(playerPosition, fireworkStartingPosition) > 10f)
+        if (Vector3.Distance(playerPosition, fireworkStartingPosition) > 5f)
         {
             //핵의심. 무시
             Util.PrintLog($"The distance between the player and the firework start position is too far. Suspected cheat.");

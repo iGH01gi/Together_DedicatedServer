@@ -19,7 +19,10 @@ public class TrapFactory : ItemFactory
 
     public override GameObject CreateItem(int playerId)
     {
-        //if else를 통해 여기서 맞는 아이템을 생성
-        return null;
+        GameObject trapGameObject = Managers.Resource.Instantiate("Items/Trap/Trap");
+        trapGameObject.name = "Trap";
+        Trap trap = trapGameObject.AddComponent<Trap>();
+        trap.Init(FactoryId, playerId, FactoryEnglishName, TrapDuration, TrapRadius, StunDuration);
+        return trapGameObject;
     }
 }

@@ -19,6 +19,7 @@ public class Dash : MonoBehaviour, IItem
     private float _dashTime = 0.35f; //대시 시간(애니메이션 재생 시간) (무적시간이기도 함)
     private float _dashSpeed; //대시 속도
     private bool _isDashing = false; //대시 중인지 여부
+    private GameObject _playerTrigger;
 
     void Update()
     {
@@ -63,7 +64,8 @@ public class Dash : MonoBehaviour, IItem
                 //고스트 따라가기 기능 다시 활성화 코드 추가
                 _player.ToggleFollowGhost(true);
 
-                //TODO: 대시 무적 해제 코드 추가
+                //대시 동안 무적해제(PlayerTrigger의 캡슐콜라이더를 킴)
+                _playerTrigger.GetComponent<CapsuleCollider>().enabled = true;
 
                 //대시가 끝났으므로 대시오브젝트 삭제
                 Destroy(gameObject);
@@ -86,15 +88,16 @@ public class Dash : MonoBehaviour, IItem
 
     public void Use(IMessage packet)
     {
-
-        //TODO: 대시 동안 무적처리 코드 추가
-
         //고스트 따라가기 기능 멈춤(대시 사용을 위해서)
         GameObject playerObjet = Managers.Player._players[PlayerID];
         _player = playerObjet.GetComponent<Player>();
         _player.ToggleFollowGhost(false);
 
         _characterController = playerObjet.GetComponent<CharacterController>();
+
+        //대시 동안 무적처리(PlayerTrigger의 캡슐콜라이더를 끔)
+        _playerTrigger = Util.FindChild(playerObjet, "PlayerTrigger", true);
+        _playerTrigger.GetComponent<CapsuleCollider>().enabled = false;
 
         //대시 시작 패킷 브로드캐스트
         DSC_UseDashItem useDashItemPacket = new DSC_UseDashItem
@@ -112,7 +115,7 @@ public class Dash : MonoBehaviour, IItem
                 Rotation = new RotationInfo()
                 {
                     RotX = playerObjet.transform.rotation.x,
-                    RotY = playerObjet.transform.rotation.y,
+                    RotY = playerObjet.transform.rotation.y, 
                     RotZ = playerObjet.transform.rotation.z,
                     RotW = playerObjet.transform.rotation.w
                 }
