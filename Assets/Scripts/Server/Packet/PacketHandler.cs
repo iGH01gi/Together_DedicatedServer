@@ -243,8 +243,12 @@ public class PacketHandler
         ClientSession clientSession = session as ClientSession;
 
         int dediPlayerId = useHeartlessSkillPacket.MyDediplayerId;
-        int itemId = useHeartlessSkillPacket.KillerId;
+        int killerId = useHeartlessSkillPacket.KillerId;
 
-        Managers.Player.Broadcast(useHeartlessSkillPacket);
+        DSC_UseHeartlessSkill sendPacket = new DSC_UseHeartlessSkill();
+        sendPacket.PlayerId = dediPlayerId;
+        sendPacket.KillerId = killerId;
+
+        Managers.Player.Broadcast(sendPacket);
     }
 }
