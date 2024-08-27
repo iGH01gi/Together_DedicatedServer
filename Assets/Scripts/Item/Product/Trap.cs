@@ -88,6 +88,10 @@ public class Trap : MonoBehaviour, IItem
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+    }
+
     public void OnHit()
     {
 
