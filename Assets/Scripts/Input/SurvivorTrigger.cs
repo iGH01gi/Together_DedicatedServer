@@ -35,6 +35,14 @@ public class SurvivorTriggerInput : MonoBehaviour
         else
         {
             //덫 트리거 처리
+            if (other.CompareTag("Trap") && !other.transform.GetComponent<Trap>()._isAlreadyTrapped)
+            {
+                other.transform.GetComponent<Trap>()._isAlreadyTrapped = true;
+                other.transform.GetComponent<SphereCollider>().enabled = false;
+                string trapId = other.transform.GetComponent<Trap>()._trapId;
+                other.transform.GetComponent<Trap>().OnHit();
+                _objectInput.ProcessTrapped(_dediPlayerId, trapId);
+            }
         }
     }
 }

@@ -32,9 +32,17 @@ public class KillerTrigger : MonoBehaviour
                 _objectInput.ProcessTrapped(_dediPlayerId, trapId);
             }
         }
-        else
+        else //广
         {
             //担 飘府芭 贸府
+            if (other.CompareTag("Trap") && !other.transform.GetComponent<Trap>()._isAlreadyTrapped)
+            {
+                other.transform.GetComponent<Trap>()._isAlreadyTrapped = true;
+                other.transform.GetComponent<SphereCollider>().enabled = false;
+                string trapId = other.transform.GetComponent<Trap>()._trapId;
+                other.transform.GetComponent<Trap>().OnHit();
+                _objectInput.ProcessTrapped(_dediPlayerId, trapId);
+            }
         }
     }
 }
