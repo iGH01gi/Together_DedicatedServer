@@ -19,7 +19,7 @@ public class ItemManager
     private string _jsonPath;
     private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름
     private static string _itemsDataJson; //json이 들어 있게 됨(파싱 해야 함)
-    private Dictionary<int, ItemFactory> _itemFactories = new Dictionary<int, ItemFactory>(); //key: 아이템Id, value: 아이템 팩토리 객체
+    public Dictionary<int, ItemFactory> _itemFactories = new Dictionary<int, ItemFactory>(); //key: 아이템Id, value: 아이템 팩토리 객체
 
     public void Init()
     {
@@ -155,6 +155,12 @@ public class ItemManager
         if (dediPlayer._inventory.GetItemCount(itemId) == 0) //아이템이 없다면 처리X
         {
             Util.PrintLog($"The {playerId}player does not have the {itemId}item.");
+            return;
+        }
+
+        //킬러라면 처리 x
+        if (Managers.Player.IsKiller(playerId))
+        {
             return;
         }
 

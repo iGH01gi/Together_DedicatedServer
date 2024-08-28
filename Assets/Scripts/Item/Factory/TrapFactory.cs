@@ -20,7 +20,6 @@ public class TrapFactory : ItemFactory
     public override GameObject CreateItem(int playerId)
     {
         GameObject trapGameObject = Managers.Resource.Instantiate("Items/Trap/Trap");
-        trapGameObject.name = "Trap";
         Trap trap = trapGameObject.AddComponent<Trap>();
         trap.Init(FactoryId, playerId, FactoryEnglishName, TrapDuration, TrapRadius, StunDuration);
         return trapGameObject;

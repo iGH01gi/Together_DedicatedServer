@@ -285,9 +285,9 @@ public class PlayerManager : MonoBehaviour
 
         return newGhost;
     }
-    
+
     /// <summary>
-    /// 랜덤으로 킬러를 선택하고 해당 플레이어의 isKiller를 true로 설정
+    /// 랜덤으로 킬러를 선택하고 해당 플레이어의 isKiller를 true로 설정 + 킬러전용 트리거로 변경
     /// </summary>
     /// <returns>선정된 킬러id,킬러타입</returns>
     public Tuple<int,int>  RandomSelectKiller()
@@ -305,17 +305,26 @@ public class PlayerManager : MonoBehaviour
         int killerType = killerIds[randomIndex2];
         _players[killerId].GetComponent<Player>()._killerType = killerType;
         Debug.Log($"이번 랜덤 킬러타입은 {killerType}");
-        return Tuple.Create(killerId,killerType);
+        
+        //킬러트리거 켜고 서바이버 트리거 끔
+        _players[killerId].transform.Find("KillerTrigger").GetComponent<CapsuleCollider>().enabled = true;
+        _players[killerId].transform.Find("SurvivorTrigger").GetComponent<CapsuleCollider>().enabled = false;
+
+        return Tuple.Create(killerId, killerType);
     }
 
     /// <summary>
-    /// 킬러를 해제하는 함수. 모든 플레이어의 isKiller를 false로 설정
+    /// 킬러를 해제하는 함수. 모든 플레이어의 isKiller를 false로 설정 + 트리거도 생존자용으로 세팅
     /// </summary>
     public void ClearKiller()
     {
         foreach (KeyValuePair<int, GameObject> a in _players)
         {
             a.Value.GetComponent<Player>()._isKiller = false;
+
+            //킬러트리거 끄고 서바이버 트리거 켬
+            a.Value.transform.Find("KillerTrigger").GetComponent<CapsuleCollider>().enabled = false;
+            a.Value.transform.Find("SurvivorTrigger").GetComponent<CapsuleCollider>().enabled = true;
         }
     }
     
@@ -378,6 +387,10 @@ public class PlayerManager : MonoBehaviour
 
             //보유 아이템 초기화
             a.Value.GetComponent<Player>()._inventory.Clear();
+
+            //킬러트리거 끄고 서바이버 트리거 켬
+            a.Value.transform.Find("KillerTrigger").GetComponent<CapsuleCollider>().enabled = false;
+            a.Value.transform.Find("SurvivorTrigger").GetComponent<CapsuleCollider>().enabled = true;
         }
     }
 

@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 2d8ad408a6ce6cc4cb807f374c20ecf3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 2d8ad408a6ce6cc4cb807f374c20ecf3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -197,7 +197,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Radius: 0.007
+  m_Radius: 0.003
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4412840852838647520 stripped
 Transform:

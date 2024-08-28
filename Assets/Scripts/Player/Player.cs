@@ -25,7 +25,9 @@ public class Player : MonoBehaviour
     public int _totalPoint = 0; //상자로 얻은 총 포인트(낮마다 초기화)
     
     public Inventory _inventory; //인벤토리
-    
+
+    public PlayerStatus _playerStatus; //플레이어의 상태
+
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
         _isRunning = false;
         _totalPoint = 0;
         _inventory = new Inventory();
+        _playerStatus = new PlayerStatus();
     }
 
     private void Update()
@@ -64,7 +67,7 @@ public class Player : MonoBehaviour
             directionToGhost.y = 0; // Y축을 고려하지 않음
 
             //목표 위치까지 거리가 beta보다 작으면 도착한것으로 간주하고 멈춤
-            float beta = 0.05f;
+            float beta = 0.02f;
             if (directionToGhost.magnitude < beta)
             {
                 _velocity = Vector3.zero;

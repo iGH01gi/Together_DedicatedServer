@@ -15,8 +15,13 @@ public class Trap : MonoBehaviour, IItem
     public float TrapRadius { get; set; }
     public float StunDuration { get; set; }
 
+    public bool _isAlreadyTrapped = false; //이미 누군가가 트랩에 걸렸는지 여부
+
 
     private float _setTrapSeconds = 1f; //트랩 설치 시간
+
+    public string _trapId; //덫 고유 아이디
+
     public void Init(int itemId, int playerId, string englishName)
     {
         this.ItemID = itemId;
@@ -48,12 +53,17 @@ public class Trap : MonoBehaviour, IItem
             return;
         }
 
+        _trapId = recvPacket.TrapId;
+        //덫 이름 변경
+        gameObject.name = "Trap_" + _trapId;
+
         //트랩 설치 정보 브로드캐스트
         DSC_UseTrapItem useTrapItemPacket = new DSC_UseTrapItem()
         {
             PlayerId = PlayerID,
             ItemId = ItemID,
-            TrapTransform = recvPacket.TrapTransform
+            TrapTransform = recvPacket.TrapTransform,
+            TrapId = _trapId
         };
         Managers.Player.Broadcast(useTrapItemPacket);
 
@@ -90,10 +100,19 @@ public class Trap : MonoBehaviour, IItem
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "SurvivorTrigger" || other.gameObject.tag == "KillerTrigger")
+        {
+            //트랩이 설치된 위치에서 트리거가 발생하면 트랩이 터지게 함
+            OnHit();
+        }
     }
 
+    /// <summary>
+    /// 덫이 사람한테 닿았을때 처리(사라지기 관련)
+    /// </summary>
     public void OnHit()
     {
-
+        StopCoroutine("DestroyAfterSeconds");
+        StartCoroutine(DestroyAfterSeconds(StunDuration));
     }
 }

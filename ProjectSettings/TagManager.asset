@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trigger
   - Trap
+  - SurvivorTrigger
+  - KillerTrigger
   layers:
   - Default
   - TransparentFX

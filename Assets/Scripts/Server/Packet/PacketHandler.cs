@@ -248,6 +248,7 @@ public class PacketHandler
 
         int dediPlayerId = useTrapItemPacket.MyDediplayerId;
         int itemId = useTrapItemPacket.ItemId;
+        string trapId = useTrapItemPacket.TrapId;
 
         Managers.Item.UseItem(dediPlayerId, itemId, useTrapItemPacket);
     }
