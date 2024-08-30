@@ -5,7 +5,6 @@ using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 using Object = UnityEngine.Object;
 
 /// <summary>
