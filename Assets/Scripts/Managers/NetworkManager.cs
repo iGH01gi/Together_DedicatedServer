@@ -13,8 +13,8 @@ public class NetworkManager
         /*string host = Dns.GetHostName();
         IPHostEntry ipHost = Dns.GetHostEntry(host);
         IPAddress ipAddr = ipHost.AddressList[0];*/
-        IPAddress ipAddr = IPAddress.Any;
-        IPEndPoint endPoint = new IPEndPoint(ipAddr, 8888);
+        //IPAddress ipAddr = IPAddress.Any;
+        IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, 8888);
 
         _listener.Init(endPoint, () => { return Managers.Session.Generate(); });
         Util.PrintLog("Listening...");
