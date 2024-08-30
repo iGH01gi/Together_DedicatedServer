@@ -10,9 +10,10 @@ public class NetworkManager
     public void Init() //데디케이티드 서버 정보... 원래는 이런 고정이 아니라 게임룸서버에 의해서 동적으로 설정되어야함.
     {
         //DNS
-        string host = Dns.GetHostName();
+        /*string host = Dns.GetHostName();
         IPHostEntry ipHost = Dns.GetHostEntry(host);
-        IPAddress ipAddr = ipHost.AddressList[0];
+        IPAddress ipAddr = ipHost.AddressList[0];*/
+        IPAddress ipAddr = IPAddress.Any;
         IPEndPoint endPoint = new IPEndPoint(ipAddr, 8888);
 
         _listener.Init(endPoint, () => { return Managers.Session.Generate(); });
