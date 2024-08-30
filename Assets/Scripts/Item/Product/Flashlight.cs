@@ -19,15 +19,93 @@ public class Flashlight : MonoBehaviour, IItem
 
 
     private bool _isLightOn = false;
-    private GameObject _lightGameObject;
+    private GameObject _flashLightSource;
+    private Light _light;
     private Coroutine _currentPlayingCoroutine;
-    private Quaternion _originalLightRotation;
+    private float _angleLimit = 50; //플레이어 눈 forward와 빛 과
 
     public void LateUpdate()
     {
         if (_isLightOn)
         {
-            
+            //빛과 동일한 길이의 레이 표시
+            Debug.DrawRay(_flashLightSource.transform.position, _flashLightSource.transform.forward * FlashlightDistance, Color.red, 0.1f);
+
+            //회전 목표 카메라 위치를 가져옴
+            Quaternion targetRotation = Managers.Player._players[PlayerID].GetComponent<Player>()._cameraWorldRotation;
+
+            // 현재 회전을 가져옵니다.
+            Quaternion currentRotation = _flashLightSource.transform.rotation;
+
+            // 현재 회전의 Euler 각도를 가져옵니다.
+            Vector3 eulerAngles = currentRotation.eulerAngles;
+
+            // X축 회전값을 _movementInput._rotationX로 설정합니다.
+            float newXRotation = targetRotation.eulerAngles.x;
+
+            // 새로운 회전값을 적용합니다.
+            Quaternion newRotation = Quaternion.Euler(newXRotation, eulerAngles.y, eulerAngles.z);
+            _flashLightSource.transform.rotation = newRotation;
+
+            //손전등에서 빛 길이만큼 ray를 쏴서 SurvivorTrigger든 KillerTrigger든 첫번째로 감지된 콜라이더를 구함
+            Ray ray = new Ray(_flashLightSource.transform.position, _flashLightSource.transform.forward);
+
+            // 모든 충돌된 콜라이더를 배열로 반환
+            RaycastHit[] hits = Physics.RaycastAll(ray, FlashlightDistance);
+
+            // 배열을 순회하며 "Eye" 태그를 가진 콜라이더를 찾음
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.collider.CompareTag("Eye"))
+                {
+                    Debug.Log("Raycast hit: " + hit.collider.name);
+
+                    //감지된 콜라이더의 부모 오브젝트를 가져옴
+                    GameObject eyeGameObject = hit.collider.gameObject;
+
+                    //빛 시작점과, Eye의 거리가 FlashlightDistance이하인지 계산
+                    if (Vector3.Distance(_flashLightSource.transform.position, eyeGameObject.transform.position) <=
+                        FlashlightDistance)
+                    {
+
+                        //_flashLightSource의 backward 방향과 eyeGameObject의 forward 방향이 이루는 각도가 50도 이하인지 계산
+                        if (Vector3.Angle(-_flashLightSource.transform.forward, eyeGameObject.transform.forward) <=
+                            _angleLimit)
+                        {
+                            Debug.Log("Flashlight hit Eye with angle limit");
+
+                            DSC_OnHitFlashlightItem onHitFlashlightItemPacket = new DSC_OnHitFlashlightItem()
+                            {
+                                PlayerId = PlayerID,
+                                ItemId = ItemID
+                            };
+                            Managers.Player.Broadcast(onHitFlashlightItemPacket);
+                        }
+                    }
+
+                    // 원하는 콜라이더를 찾았으므로, 더 이상 순회하지 않음
+                    break;
+                }
+            }
+
+            /*RaycastHit hit;
+            if (Physics.Raycast(_flashLightSource.transform.position, _flashLightSource.transform.forward, out hit, FlashlightDistance))
+            {
+                //감지된 콜라이더의 태그가 Eye이면
+                if (hit.collider.CompareTag("Eye"))
+                {
+                    //감지된 콜라이더의 부모 오브젝트를 가져옴
+                    GameObject eyeGameObject = hit.collider.gameObject;
+
+                    //빛 시작점과, Eye의 거리가 FlashlightDistance이하인지 계산
+                    if (Vector3.Distance(_flashLightSource.transform.position, eyeGameObject.transform.position) <=
+                        FlashlightDistance)
+                    {
+                        Debug.Log("Flashlight hit Eye");
+                        //_light의 backward 방향과 eyeGameObject의 forward 방향이
+                    }
+                }
+            }*/
         }
     }
 
@@ -60,23 +138,19 @@ public class Flashlight : MonoBehaviour, IItem
         }
 
         GameObject playerGameObject = Managers.Player._players[PlayerID];
-        GameObject flashlightGameObject = Util.FindChild(playerGameObject, "3", true);
+        _flashLightSource = Util.FindChild(playerGameObject, "FlashLightSource", true);
 
-        if (flashlightGameObject != null)
+        if (_flashLightSource != null)
         {
-            _lightGameObject = Util.FindChild(flashlightGameObject, "Light", true);
-            if (_lightGameObject != null)
-            {
-                //회전 원복을 위한 값 저장
-                _originalLightRotation = _lightGameObject.transform.rotation;
+            _light = _flashLightSource.GetComponent<Light>();
 
-                //불 킴
-                _isLightOn = true;
+            //불 킴
+            _isLightOn = true;
 
-                //일정 시간 후 불 끔
-                _currentPlayingCoroutine = StartCoroutine(LightOffAfterSeconds(FlashlightAvailableTime));
-            }
+            //일정 시간 후 불 끔
+            _currentPlayingCoroutine = StartCoroutine(LightOffAfterSeconds(FlashlightAvailableTime));
         }
+
     }
 
     IEnumerator LightOffAfterSeconds(float seconds)
@@ -91,9 +165,6 @@ public class Flashlight : MonoBehaviour, IItem
 
         yield return new WaitForSeconds(seconds);
         _isLightOn = false;
-
-        //회전 원복
-        _lightGameObject.transform.rotation = _originalLightRotation;
 
         //파괴
         Destroy(gameObject);

@@ -6,40 +6,54 @@ using UnityEngine;
 public class PlayerAnimController : MonoBehaviour
 {
     private Animator _anim;
+    public bool isRunning = false;
+    public bool isWalking = false;
+    public bool isDigging = false;
+    public bool isPraying = false;
+    public bool isFlashlight = false;
+    public bool isTrapped = false;
 
     private void Start()
     {
         _anim = GetComponent<Animator>();
     }
 
-    public void PlayAnim(Define.PlayerAction name)
+    public void PlayAnim()
     {
-        switch (name)
-        {
-            case Define.PlayerAction.Idle:
-                PlayerAnimClear();
-                break;
-            case Define.PlayerAction.Run:
-                PlayerAnimClear();
-                _anim.SetBool("isRunning", true);
-                break;
-            case Define.PlayerAction.Walk:
-                PlayerAnimClear();
-                _anim.SetBool("isWalking", true);
-                break;
-            case Define.PlayerAction.Jump:
-                Debug.Log("Jump Jump!");
-                _anim.SetTrigger("isJumping");
-                break;
-            default:
-                PlayerAnimClear();
-                break;
-        }
+        _anim.SetBool("isRunning", isRunning);
+        _anim.SetBool("isWalking", isWalking);
+        _anim.SetBool("isDigging", isDigging);
+        _anim.SetBool("isPraying", isPraying);
+        _anim.SetBool("isFlashlight", isFlashlight);
+        _anim.SetBool("isTrapped", isTrapped);
     }
-    
-    void PlayerAnimClear()
+
+    public void KillerBaseAttack()
     {
-        _anim.SetBool("isRunning", false);
-        _anim.SetBool("isWalking",false);
+        SetTriggerByString("Attack");
+    }
+
+    public bool IsAttacking()
+    {
+        return _anim.GetCurrentAnimatorStateInfo(_anim.GetLayerIndex("Base Layer")).IsName("Attack");
+    }
+
+    public void PlayerAnimClear()
+    {
+        isRunning = false;
+        isWalking = false;
+        isDigging = false;
+        isPraying = false;
+        isFlashlight = false;
+        isTrapped = false;
+    }
+
+    public void SetTriggerByString(string triggerName)
+    {
+        if (_anim == null)
+        {
+            _anim = GetComponent<Animator>();
+        }
+        _anim.SetTrigger(triggerName);
     }
 }

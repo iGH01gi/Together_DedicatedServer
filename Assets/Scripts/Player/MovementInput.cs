@@ -25,6 +25,7 @@ public class MovementInput : MonoBehaviour
     private Transform _camera;
     private Transform _player;
     private Transform _prefab;
+    PlayerAnimController _playerAnimController;
 
     public static bool _isRunning = false;
     private void ChangeAnim()
@@ -46,6 +47,8 @@ public class MovementInput : MonoBehaviour
 
     private void Start()
     {
+        _playerAnimController = transform.GetComponentInChildren<PlayerAnimController>();
+
         _controller = GetComponent<CharacterController>();
         _prefab = gameObject.transform;
         _camera = _prefab.transform.GetChild(0);

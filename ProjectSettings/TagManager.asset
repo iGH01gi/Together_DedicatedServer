@@ -7,6 +7,7 @@ TagManager:
   - Trap
   - SurvivorTrigger
   - KillerTrigger
+  - Eye
   layers:
   - Default
   - TransparentFX
