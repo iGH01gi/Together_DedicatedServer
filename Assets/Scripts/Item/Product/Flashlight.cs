@@ -24,6 +24,9 @@ public class Flashlight : MonoBehaviour, IItem
     private Coroutine _currentPlayingCoroutine;
     private float _angleLimit = 50; //플레이어 눈 forward와 빛 과
 
+
+    private float _lastPacketSentTime = 0f;
+    private float _packetInterval = 0.2f; //패킷 보내는 최소 간격
     public void LateUpdate()
     {
         if (_isLightOn)
@@ -60,7 +63,7 @@ public class Flashlight : MonoBehaviour, IItem
                 {
                     Debug.Log("Raycast hit: " + hit.collider.name);
 
-                    //감지된 콜라이더의 부모 오브젝트를 가져옴
+                    //감지된 콜라이더의 오브젝트를 가져옴
                     GameObject eyeGameObject = hit.collider.gameObject;
 
                     //빛 시작점과, Eye의 거리가 FlashlightDistance이하인지 계산
@@ -74,12 +77,23 @@ public class Flashlight : MonoBehaviour, IItem
                         {
                             Debug.Log("Flashlight hit Eye with angle limit");
 
-                            DSC_OnHitFlashlightItem onHitFlashlightItemPacket = new DSC_OnHitFlashlightItem()
+                            // 현재 시간이 마지막으로 패킷을 보낸 시간에서 0.2초 이상 지났는지 확인
+                            if (Time.time - _lastPacketSentTime >= _packetInterval)
                             {
-                                PlayerId = PlayerID,
-                                ItemId = ItemID
-                            };
-                            Managers.Player.Broadcast(onHitFlashlightItemPacket);
+
+                                // eyeGameObject 의 부모 오브젝트들을 Player 컴포넌트를 가진 오브젝트까지 찾아서, PlayerId를 가져옴
+                                int hitPlayerId = eyeGameObject.GetComponentInParent<Player>().Info.PlayerId;
+
+                                DSC_OnHitFlashlightItem onHitFlashlightItemPacket = new DSC_OnHitFlashlightItem()
+                                {
+                                    PlayerId = hitPlayerId,
+                                    ItemId = ItemID
+                                };
+
+                                Managers.Player.Broadcast(onHitFlashlightItemPacket);
+                                _lastPacketSentTime = Time.time; // 패킷 보낸 시간 업데이트
+                                Debug.Log("dsc_플래시맞음 패킷 보냈음");
+                            }
                         }
                     }
 
@@ -87,25 +101,6 @@ public class Flashlight : MonoBehaviour, IItem
                     break;
                 }
             }
-
-            /*RaycastHit hit;
-            if (Physics.Raycast(_flashLightSource.transform.position, _flashLightSource.transform.forward, out hit, FlashlightDistance))
-            {
-                //감지된 콜라이더의 태그가 Eye이면
-                if (hit.collider.CompareTag("Eye"))
-                {
-                    //감지된 콜라이더의 부모 오브젝트를 가져옴
-                    GameObject eyeGameObject = hit.collider.gameObject;
-
-                    //빛 시작점과, Eye의 거리가 FlashlightDistance이하인지 계산
-                    if (Vector3.Distance(_flashLightSource.transform.position, eyeGameObject.transform.position) <=
-                        FlashlightDistance)
-                    {
-                        Debug.Log("Flashlight hit Eye");
-                        //_light의 backward 방향과 eyeGameObject의 forward 방향이
-                    }
-                }
-            }*/
         }
     }
 
