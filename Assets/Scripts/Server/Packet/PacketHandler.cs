@@ -299,4 +299,19 @@ public class PacketHandler
 
         Managers.Player.Broadcast(sendPacket);
     }
+
+    public static void CDS_DetectedPlayersHandler(PacketSession session, IMessage packet)
+    {
+        CDS_DetectedPlayers detectedPlayersPacket = packet as CDS_DetectedPlayers;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = detectedPlayersPacket.MyDediplayerId;
+        
+
+        DSC_DetectedPlayers sendPacket = new DSC_DetectedPlayers();
+        sendPacket.PlayerId = dediPlayerId;
+        sendPacket.DetectedPlayerIds.AddRange(detectedPlayersPacket.DetectedPlayerIds);
+
+        Managers.Player.Broadcast(sendPacket);
+    }
 }
