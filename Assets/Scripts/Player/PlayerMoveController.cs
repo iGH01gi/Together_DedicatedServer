@@ -20,7 +20,7 @@ public class PlayerMoveController : MonoBehaviour
     public float _walkSpeed = 2f;
     public float _runSpeed = 3f;  //최대 뛰기속도 8f까지 정상작동확인 완료.
 
-     /// <summary>
+    /// <summary>
     /// 핵 검사한 후 팔로워가 따라갈 targetGhost를 설정함. (추측항법)
     /// 핵 아닐때만 다른 클라이언트들에게 동기화 패킷을 보냄
     /// </summary>
@@ -39,70 +39,79 @@ public class PlayerMoveController : MonoBehaviour
                 float posX = movePacket.TransformInfo.Position.PosX;
                 float posY = movePacket.TransformInfo.Position.PosY;
                 float posZ = movePacket.TransformInfo.Position.PosZ;
-                Vector3 pastPosition = new Vector3(posX, posY, posZ);}
-                float rotX = movePacket.TransformInfo.Rotation.RotX;
-                float rotY = movePacket.TransformInfo.Rotation.RotY;
-                float rotZ = movePacket.TransformInfo.Rotation.RotZ;
-                float rotW = movePacket.TransformInfo.Rotation.RotW;
-                Quaternion pastLocalRotation = new Quaternion(rotX, rotY, rotZ, rotW);
-                
-                int keyboardInput = movePacket.KeyboardInput;
+                Vector3 pastPosition = new Vector3(posX, posY, posZ);
+            }
+            float rotX = movePacket.TransformInfo.Rotation.RotX;
+            float rotY = movePacket.TransformInfo.Rotation.RotY;
+            float rotZ = movePacket.TransformInfo.Rotation.RotZ;
+            float rotW = movePacket.TransformInfo.Rotation.RotW;
+            Quaternion pastLocalRotation = new Quaternion(rotX, rotY, rotZ, rotW);
 
-                Vector3 velocity = new Vector3();
-                velocity.x = movePacket.Velocity.X;
-                velocity.y = movePacket.Velocity.Y;
-                velocity.z = movePacket.Velocity.Z;
-                
-                DateTime pastDateTime = movePacket.Timestamp.ToDateTime();
-                
-                
-                //TODO : 데디서버의 고스트의 위치와 받은 패킷의 정보를 대조해서 해킹인지 아닌지 판별하는 코드가 필요 (해킹같다면 return해서 무시)
-                
-                
-                //추측항법을 이용해서 위치 예측
-                TransformInfo predictedTransformInfo = DeadReckoning(pastDateTime, movePacket.TransformInfo, velocity);
-                Vector3 predictedPosition = new Vector3(predictedTransformInfo.Position.PosX, predictedTransformInfo.Position.PosY, predictedTransformInfo.Position.PosZ);
+            int keyboardInput = movePacket.KeyboardInput;
 
-                ghostObj.transform.position = predictedPosition; //고스트 위치 갱신
-                
-                SetPlayerRunState(playerId, keyboardInput); //플레이어 뛰는 상태 동기화
-                
-                if (Managers.Player._players.TryGetValue(playerId, out GameObject playerObj))
+            Vector3 velocity = new Vector3();
+            velocity.x = movePacket.Velocity.X;
+            velocity.y = movePacket.Velocity.Y;
+            velocity.z = movePacket.Velocity.Z;
+
+            DateTime pastDateTime = movePacket.Timestamp.ToDateTime();
+
+
+            //TODO : 데디서버의 고스트의 위치와 받은 패킷의 정보를 대조해서 해킹인지 아닌지 판별하는 코드가 필요 (해킹같다면 return해서 무시)
+
+
+            //추측항법을 이용해서 위치 예측
+            TransformInfo predictedTransformInfo = DeadReckoning(pastDateTime, movePacket.TransformInfo, velocity);
+            Vector3 predictedPosition = new Vector3(predictedTransformInfo.Position.PosX, predictedTransformInfo.Position.PosY, predictedTransformInfo.Position.PosZ);
+
+            ghostObj.transform.position = predictedPosition; //고스트 위치 갱신
+
+            SetPlayerRunState(playerId, keyboardInput); //플레이어 뛰는 상태 동기화
+
+            if (Managers.Player._players.TryGetValue(playerId, out GameObject playerObj))
+            {
+                //회전해야하는 값 세팅해주기
+                playerObj.GetComponent<Player>()._targetRotation = pastLocalRotation;
+
+                //카메라 월드 회전값 저장(시야 정보 얻는 것)
+                float cameraWorldRotX = movePacket.CameraWorldRotation.RotX;
+                float cameraWorldRotY = movePacket.CameraWorldRotation.RotY;
+                float cameraWorldRotZ = movePacket.CameraWorldRotation.RotZ;
+                float cameraWorldRotW = movePacket.CameraWorldRotation.RotW;
+                playerObj.GetComponent<Player>()._cameraWorldRotation = new Quaternion(cameraWorldRotX, cameraWorldRotY, cameraWorldRotZ, cameraWorldRotW);
+            }
+
+            //다른 클라이언트들에게 동기화 패킷 보냄 (클라 입장에선 고스트 정보임)
+            DSC_Move dscMovePacket = new DSC_Move();
+            dscMovePacket.DediplayerId = movePacket.DediplayerId;
+            //dscMovePacket.TransformInfo = movePacket.TransformInfo; (고스트 위치가 아닌, 데디서버의 실 플레이어 위치를 보냄)
+            dscMovePacket.TransformInfo = new TransformInfo()
+            {
+                Position = new PositionInfo()
                 {
-                    //회전해야하는 값 세팅해주기
-                    playerObj.GetComponent<Player>()._targetRotation = pastLocalRotation;
+                    PosX = playerObj.transform.position.x,
+                    PosY = playerObj.transform.position.y,
+                    PosZ = playerObj.transform.position.z
+                },
+                Rotation = new RotationInfo()
+                {
+                    RotX = playerObj.transform.rotation.x,
+                    RotY = playerObj.transform.rotation.y,
+                    RotZ = playerObj.transform.rotation.z,
+                    RotW = playerObj.transform.rotation.w
                 }
-                
-                //다른 클라이언트들에게 동기화 패킷 보냄 (클라 입장에선 고스트 정보임)
-                DSC_Move dscMovePacket = new DSC_Move();
-                dscMovePacket.DediplayerId = movePacket.DediplayerId;
-                //dscMovePacket.TransformInfo = movePacket.TransformInfo; (고스트 위치가 아닌, 데디서버의 실 플레이어 위치를 보냄)
-                dscMovePacket.TransformInfo = new TransformInfo()
-                {
-                    Position = new PositionInfo()
-                    {
-                        PosX = playerObj.transform.position.x,
-                        PosY = playerObj.transform.position.y,
-                        PosZ = playerObj.transform.position.z
-                    },
-                    Rotation = new RotationInfo()
-                    {
-                        RotX = playerObj.transform.rotation.x,
-                        RotY = playerObj.transform.rotation.y,
-                        RotZ = playerObj.transform.rotation.z,
-                        RotW = playerObj.transform.rotation.w
-                    }
-                };  
-                dscMovePacket.KeyboardInput = movePacket.KeyboardInput;
-                dscMovePacket.Velocity = movePacket.Velocity;
-                dscMovePacket.Timestamp = movePacket.Timestamp;
-                Managers.Player.Broadcast(dscMovePacket);
+            };
+            dscMovePacket.KeyboardInput = movePacket.KeyboardInput;
+            dscMovePacket.Velocity = movePacket.Velocity;
+            dscMovePacket.Timestamp = movePacket.Timestamp;
+            dscMovePacket.CameraWorldRotation = movePacket.CameraWorldRotation;
+            Managers.Player.Broadcast(dscMovePacket);
         }
-        
+
     }
-     
-     
-    
+
+
+
     /// <summary>
     /// 과거의 정보를 갖고 데드레커닝을 통해 현재 위치를 예측하는 함수
     /// </summary>

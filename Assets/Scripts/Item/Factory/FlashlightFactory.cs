@@ -23,7 +23,17 @@ public class FlashlightFactory : ItemFactory
 
     public override GameObject CreateItem(int playerId)
     {
-        //if else를 통해 여기서 맞는 아이템을 생성
-        return null;
+        GameObject existedFlashLightGameObject = null;
+        Transform existedFlashLightTransform = Managers.Item._root.transform.Find($"FlashLight{playerId}");
+        if (existedFlashLightTransform != null)
+        {
+            existedFlashLightGameObject = existedFlashLightTransform.gameObject;
+            return existedFlashLightGameObject;
+        }
+
+        GameObject flashlightGameObject = new GameObject($"Flashlight{playerId}");
+        Flashlight flashlight = flashlightGameObject.AddComponent<Flashlight>();
+        flashlight.Init(FactoryId, playerId, FactoryEnglishName, BlindDuration, FlashlightDistance, FlashlightAngle, FlashlightAvailableTime, FlashlightTimeRequired);
+        return flashlightGameObject;
     }
 }

@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 public class ItemManager
 {
 
-    public GameObject root; //여기에 자식으로 아이템 gameobject들이 생성됨.
+    public GameObject _root; //여기에 자식으로 아이템 gameobject들이 생성됨.
 
     private string _jsonPath;
     private string _itemPrefabFolderPath = "Items/"; //아이템 프리팹들이 들어있는 폴더 경로. 아이템id가 해당 폴더에서 프리팹의 이름
@@ -23,11 +23,11 @@ public class ItemManager
 
     public void Init()
     {
-        root = GameObject.Find("@Item");
-        if (root == null)
+        _root = GameObject.Find("@Item");
+        if (_root == null)
         {
-            root = new GameObject { name = "@Item" };
-            Object.DontDestroyOnLoad(root);
+            _root = new GameObject { name = "@Item" };
+            Object.DontDestroyOnLoad(_root);
         }
 
         _jsonPath = Application.streamingAssetsPath + "/Data/Item/Items.json";
@@ -37,7 +37,7 @@ public class ItemManager
     public void Clear()
     {
         //root의 모든 자식을 삭제(=생성된 아이템을 모두 삭제)
-        foreach (Transform child in root.transform)
+        foreach (Transform child in _root.transform)
         {
             Object.Destroy(child.gameObject);
         }
@@ -173,7 +173,7 @@ public class ItemManager
             GameObject itemGameObject = _itemFactories[itemId].CreateItem(playerId);
 
             //생성한 아이템을 @Item 밑에 넣음
-            itemGameObject.transform.SetParent(root.transform);
+            itemGameObject.transform.SetParent(_root.transform);
 
             //아이템 사용 효과 발동(IItem 컴포넌트를 가져와서 사용함)
             IItem item = itemGameObject.GetComponent<IItem>();

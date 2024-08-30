@@ -35,6 +35,8 @@ public class Invisible : MonoBehaviour, IItem
         };
         Managers.Player.Broadcast(useInvisibleItemPacket);
 
+        Destroy(gameObject); //안지우는것 같아서 추가함
+
         Util.PrintLog($"Player{PlayerID} Use Item Invisible");
     }
 

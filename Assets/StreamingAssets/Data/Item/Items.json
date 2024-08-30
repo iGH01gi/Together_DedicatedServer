@@ -35,10 +35,10 @@
       "EnglishDescription": "Blinds the killer when aimed precisely.",
       "KoreanDescription": "킬러에게 조준 시 시야를 방해합니다.",
       "BlindDuration": 2,
-      "FlashlightDistance": 6,
+      "FlashlightDistance": 2,
       "FlashlightAngle": 30,
       "FlashlightAvailableTime": 2,
-      "FlashlightTimeRequired": 1
+      "FlashlightTimeRequired": 1 
     },
     {
       "Id": 4,

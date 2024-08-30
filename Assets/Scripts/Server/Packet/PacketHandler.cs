@@ -85,6 +85,8 @@ public class PacketHandler
         ClientSession clientSession = session as ClientSession;
         
         Managers.Player._playerMoveController.ProcessingCDSMove(clientSession.SessionId, movePacket);
+        
+
         //10ms 레이턴시 가정하고 테스트
         /*JobTimer.Instance.Push(() =>
         {
@@ -238,6 +240,18 @@ public class PacketHandler
         int itemId = useInvisibleItemPacket.ItemId;
 
         Managers.Item.UseItem(dediPlayerId, itemId, useInvisibleItemPacket);
+    }
+
+    //클라에서 손전등 아이템을 썼음을 알리는 패킷을 처리
+    public static void CDS_UseFlashlightItemHandler(PacketSession session, IMessage packet)
+    {
+        CDS_UseFlashlightItem useFlashlightItemPacket = packet as CDS_UseFlashlightItem;
+        ClientSession clientSession = session as ClientSession;
+
+        int dediPlayerId = useFlashlightItemPacket.MyDediplayerId;
+        int itemId = useFlashlightItemPacket.ItemId;
+
+        Managers.Item.UseItem(dediPlayerId, itemId, useFlashlightItemPacket);
     }
 
     //클라에서 함정 아이템을 썼음을 알리는 패킷을 처리

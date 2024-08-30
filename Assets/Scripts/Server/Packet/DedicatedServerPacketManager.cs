@@ -52,6 +52,10 @@ class PacketManager
 		_handler.Add((ushort)MsgId.CdsUseFireworkItem, PacketHandler.CDS_UseFireworkItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseInvisibleItem, MakePacket<CDS_UseInvisibleItem>);
 		_handler.Add((ushort)MsgId.CdsUseInvisibleItem, PacketHandler.CDS_UseInvisibleItemHandler);		
+		_onRecv.Add((ushort)MsgId.CdsUseFlashlightItem, MakePacket<CDS_UseFlashlightItem>);
+		_handler.Add((ushort)MsgId.CdsUseFlashlightItem, PacketHandler.CDS_UseFlashlightItemHandler);		
+		_onRecv.Add((ushort)MsgId.CdsEndFlashlightItem, MakePacket<CDS_EndFlashlightItem>);
+		//_handler.Add((ushort)MsgId.CdsEndFlashlightItem, PacketHandler.CDS_EndFlashlightItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseTrapItem, MakePacket<CDS_UseTrapItem>);
 		_handler.Add((ushort)MsgId.CdsUseTrapItem, PacketHandler.CDS_UseTrapItemHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseHeartlessSkill, MakePacket<CDS_UseHeartlessSkill>);
