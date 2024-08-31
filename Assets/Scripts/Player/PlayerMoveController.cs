@@ -84,8 +84,8 @@ public class PlayerMoveController : MonoBehaviour
             //다른 클라이언트들에게 동기화 패킷 보냄 (클라 입장에선 고스트 정보임)
             DSC_Move dscMovePacket = new DSC_Move();
             dscMovePacket.DediplayerId = movePacket.DediplayerId;
-            //dscMovePacket.TransformInfo = movePacket.TransformInfo; (고스트 위치가 아닌, 데디서버의 실 플레이어 위치를 보냄)
-            dscMovePacket.TransformInfo = new TransformInfo()
+            dscMovePacket.TransformInfo = movePacket.TransformInfo; 
+            /*dscMovePacket.TransformInfo = new TransformInfo()
             {
                 Position = new PositionInfo()
                 {
@@ -100,7 +100,7 @@ public class PlayerMoveController : MonoBehaviour
                     RotZ = playerObj.transform.rotation.z,
                     RotW = playerObj.transform.rotation.w
                 }
-            };
+            };*/
             dscMovePacket.KeyboardInput = movePacket.KeyboardInput;
             dscMovePacket.Velocity = movePacket.Velocity;
             dscMovePacket.Timestamp = movePacket.Timestamp;
