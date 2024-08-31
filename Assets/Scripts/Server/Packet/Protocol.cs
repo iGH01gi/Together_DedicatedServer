@@ -173,7 +173,7 @@ namespace Google.Protobuf.Protocol {
             "ZXRlY3RvclNraWxsEhAKCHBsYXllcklkGAEgASgFEhAKCGtpbGxlcklkGAIg",
             "ASgFEhkKEWRldGVjdGVkUGxheWVySWRzGAMgAygFIkYKEkNEU19EZXRlY3Rl",
             "ZFBsYXllchIWCg5teURlZGlwbGF5ZXJJZBgBIAEoBRIYChBkZXRlY3RlZFBs",
-            "YXllcklkGAIgASgFIkAKEkRTQ19EZXRlY3RlZFBsYXllchIQCghwbGF5ZXJJ",
+            "YXllcklkGAIgASgFIkAKEkRTQ19EZXRlY3RlZFBsYXllchIQCghraWxsZXJJ",
             "ZBgBIAEoBRIYChBkZXRlY3RlZFBsYXllcklkGAIgASgFIjkKC0RTQ19FbmRH",
             "YW1lEhYKDndpbm5lclBsYXllcklkGAEgASgFEhIKCndpbm5lck5hbWUYAiAB",
             "KAkqnQ4KBU1zZ0lkEhAKDENTX1JPT01fTElTVBAAEhAKDFNDX1JPT01fTElT",
@@ -302,7 +302,7 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_UseDetectorSkill), global::Google.Protobuf.Protocol.CDS_UseDetectorSkill.Parser, new[]{ "MyDediplayerId", "KillerId", "DetectedPlayerIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_UseDetectorSkill), global::Google.Protobuf.Protocol.DSC_UseDetectorSkill.Parser, new[]{ "PlayerId", "KillerId", "DetectedPlayerIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_DetectedPlayer), global::Google.Protobuf.Protocol.CDS_DetectedPlayer.Parser, new[]{ "MyDediplayerId", "DetectedPlayerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DetectedPlayer), global::Google.Protobuf.Protocol.DSC_DetectedPlayer.Parser, new[]{ "PlayerId", "DetectedPlayerId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DetectedPlayer), global::Google.Protobuf.Protocol.DSC_DetectedPlayer.Parser, new[]{ "KillerId", "DetectedPlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_EndGame), global::Google.Protobuf.Protocol.DSC_EndGame.Parser, new[]{ "WinnerPlayerId", "WinnerName" }, null, null, null, null)
           }));
     }
@@ -13782,7 +13782,7 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DSC_DetectedPlayer(DSC_DetectedPlayer other) : this() {
-      playerId_ = other.playerId_;
+      killerId_ = other.killerId_;
       detectedPlayerId_ = other.detectedPlayerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -13792,14 +13792,14 @@ namespace Google.Protobuf.Protocol {
       return new DSC_DetectedPlayer(this);
     }
 
-    /// <summary>Field number for the "playerId" field.</summary>
-    public const int PlayerIdFieldNumber = 1;
-    private int playerId_;
+    /// <summary>Field number for the "killerId" field.</summary>
+    public const int KillerIdFieldNumber = 1;
+    private int killerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PlayerId {
-      get { return playerId_; }
+    public int KillerId {
+      get { return killerId_; }
       set {
-        playerId_ = value;
+        killerId_ = value;
       }
     }
 
@@ -13827,7 +13827,7 @@ namespace Google.Protobuf.Protocol {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PlayerId != other.PlayerId) return false;
+      if (KillerId != other.KillerId) return false;
       if (DetectedPlayerId != other.DetectedPlayerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -13835,7 +13835,7 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (PlayerId != 0) hash ^= PlayerId.GetHashCode();
+      if (KillerId != 0) hash ^= KillerId.GetHashCode();
       if (DetectedPlayerId != 0) hash ^= DetectedPlayerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -13850,9 +13850,9 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (PlayerId != 0) {
+      if (KillerId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(PlayerId);
+        output.WriteInt32(KillerId);
       }
       if (DetectedPlayerId != 0) {
         output.WriteRawTag(16);
@@ -13866,8 +13866,8 @@ namespace Google.Protobuf.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (PlayerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerId);
+      if (KillerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(KillerId);
       }
       if (DetectedPlayerId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(DetectedPlayerId);
@@ -13883,8 +13883,8 @@ namespace Google.Protobuf.Protocol {
       if (other == null) {
         return;
       }
-      if (other.PlayerId != 0) {
-        PlayerId = other.PlayerId;
+      if (other.KillerId != 0) {
+        KillerId = other.KillerId;
       }
       if (other.DetectedPlayerId != 0) {
         DetectedPlayerId = other.DetectedPlayerId;
@@ -13901,7 +13901,7 @@ namespace Google.Protobuf.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PlayerId = input.ReadInt32();
+            KillerId = input.ReadInt32();
             break;
           }
           case 16: {

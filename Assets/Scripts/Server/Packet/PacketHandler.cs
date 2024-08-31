@@ -309,7 +309,7 @@ public class PacketHandler
         
 
         DSC_DetectedPlayer sendPacket = new DSC_DetectedPlayer();
-        sendPacket.PlayerId = dediPlayerId;
+        sendPacket.KillerId = 1;
         sendPacket.DetectedPlayerId = detectedPlayersPacket.DetectedPlayerId;
 
         Managers.Player.Broadcast(sendPacket);
