@@ -300,17 +300,17 @@ public class PacketHandler
         Managers.Player.Broadcast(sendPacket);
     }
 
-    public static void CDS_DetectedPlayersHandler(PacketSession session, IMessage packet)
+    public static void CDS_DetectedPlayerHandler(PacketSession session, IMessage packet)
     {
-        CDS_DetectedPlayers detectedPlayersPacket = packet as CDS_DetectedPlayers;
+        CDS_DetectedPlayer detectedPlayersPacket = packet as CDS_DetectedPlayer;
         ClientSession clientSession = session as ClientSession;
 
         int dediPlayerId = detectedPlayersPacket.MyDediplayerId;
         
 
-        DSC_DetectedPlayers sendPacket = new DSC_DetectedPlayers();
+        DSC_DetectedPlayer sendPacket = new DSC_DetectedPlayer();
         sendPacket.PlayerId = dediPlayerId;
-        sendPacket.DetectedPlayerIds.AddRange(detectedPlayersPacket.DetectedPlayerIds);
+        sendPacket.DetectedPlayerId = detectedPlayersPacket.DetectedPlayerId;
 
         Managers.Player.Broadcast(sendPacket);
     }

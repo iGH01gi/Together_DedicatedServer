@@ -62,8 +62,8 @@ class PacketManager
 		_handler.Add((ushort)MsgId.CdsUseHeartlessSkill, PacketHandler.CDS_UseHeartlessSkillHandler);		
 		_onRecv.Add((ushort)MsgId.CdsUseDetectorSkill, MakePacket<CDS_UseDetectorSkill>);
 		_handler.Add((ushort)MsgId.CdsUseDetectorSkill, PacketHandler.CDS_UseDetectorSkillHandler);		
-		_onRecv.Add((ushort)MsgId.CdsDetectedPlayers, MakePacket<CDS_DetectedPlayers>);
-		_handler.Add((ushort)MsgId.CdsDetectedPlayers, PacketHandler.CDS_DetectedPlayersHandler);
+		_onRecv.Add((ushort)MsgId.CdsDetectedPlayer, MakePacket<CDS_DetectedPlayer>);
+		_handler.Add((ushort)MsgId.CdsDetectedPlayer, PacketHandler.CDS_DetectedPlayerHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)
