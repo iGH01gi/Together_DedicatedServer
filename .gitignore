@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# 저작권 문제로 인해 제외된 파일
+/[Aa]ssets/AddressableAssetsData
+/[Aa]ssets/Animations
+/[Aa]ssets/Art
+/[Aa]ssets/Data
+/[Aa]ssets/Resources
+/[Aa]ssets/Scenes
