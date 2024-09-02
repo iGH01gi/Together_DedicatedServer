@@ -1,5 +1,5 @@
 # 데디케이티드 서버
-Together게임의 인 게임 로직을 담당하는 데디케이티드 서버
+Together게임의 인 게임 로직을 담당하는 데디케이티드 서버 (저작권 문제로 에셋 등 리소스는 제외한 버전)
 
 ### 영상 링크 : [Together 유튜브 바로가기](https://www.youtube.com/watch?v=I5oIDU53050)
 
