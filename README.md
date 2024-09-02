@@ -5,6 +5,15 @@ Together게임의 인 게임 로직을 담당하는 데디케이티드 서버 (�
 
 # Together
 ![포폴썸네일](https://github.com/user-attachments/assets/a3cad82a-9fe1-49d3-8bb6-cd04d368fa79)
+![스크린샷 2024-09-02 110720](https://github.com/user-attachments/assets/18030390-6ff2-4547-881d-fbc4c91579e5)
+![image](https://github.com/user-attachments/assets/eb3ce92e-293c-4505-ab11-206c0220028a)
+![image](https://github.com/user-attachments/assets/d2dd081d-8025-4dd1-9e3c-f7a1130283d9)
+![image](https://github.com/user-attachments/assets/f34ea6eb-d96b-4ebb-bd74-e04ab3e906c2)
+
+
+
+
+
 - 2인 개발중인 멀티 게임
 - 저는 데디서버, 룸서버, 아이템 구현 및 동기화 부분을 담당하였습니다.
 - 포톤이나 미러같은 상용 네트워크 서비스를 이용하지 않고 직접 만들었습니다.
