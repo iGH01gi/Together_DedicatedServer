@@ -4,6 +4,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using UnityEngine;
+using Object = System.Object;
 
 public abstract class PacketSession : Session
 {
@@ -77,6 +79,8 @@ public abstract class Session
     public void Start(Socket socket)
     {
         _socket = socket;
+        //_socket 네이글 알고리즘 끄기
+        _socket.NoDelay = true;
 
         _recvArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnRecvCompleted);
         _sendArgs.Completed += new EventHandler<SocketAsyncEventArgs>(OnSendCompleted);
@@ -133,7 +137,10 @@ public abstract class Session
     {
         if (_disconnected == 1)
             return;
-        
+
+        //sendQueue.Count를 로그찍음. 아마 항상 1일거같은데.. 메인쓰레드가 혼자서 처리하니까
+        //근데 아래 SendAsync자체는 메인쓰레드말고 다른 쓰레드에서 처리되는듯? pending이 항상 true로 나옴
+        Debug.Log($"RegisterSend sendQueue.Count: {_sendQueue.Count}");
         while (_sendQueue.Count > 0)
         {
             ArraySegment<byte> buff = _sendQueue.Dequeue();
@@ -146,7 +153,12 @@ public abstract class Session
             bool pending = _socket.SendAsync(_sendArgs);
             if (pending == false)
             {
+                Debug.Log("send pending아니라서 직접 송신!");
                 OnSendCompleted(null, _sendArgs);
+            }
+            else
+            {
+                Debug.Log("send pending이라서 다른 쓰레드가 송신 대기중!");
             }
         }
         catch (Exception e)

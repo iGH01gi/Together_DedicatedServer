@@ -176,51 +176,61 @@ namespace Google.Protobuf.Protocol {
             "YXllcklkGAIgASgFIkAKEkRTQ19EZXRlY3RlZFBsYXllchIQCghraWxsZXJJ",
             "ZBgBIAEoBRIYChBkZXRlY3RlZFBsYXllcklkGAIgASgFIjkKC0RTQ19FbmRH",
             "YW1lEhYKDndpbm5lclBsYXllcklkGAEgASgFEhIKCndpbm5lck5hbWUYAiAB",
-            "KAkqnQ4KBU1zZ0lkEhAKDENTX1JPT01fTElTVBAAEhAKDFNDX1JPT01fTElT",
-            "VBABEhAKDENTX01BS0VfUk9PTRACEhAKDFNDX01BS0VfUk9PTRADEhEKDUNT",
-            "X0VOVEVSX1JPT00QBBIXChNTQ19BTExPV19FTlRFUl9ST09NEAUSHgoaU0Nf",
-            "SU5GT1JNX05FV19GQUNFX0lOX1JPT00QBhIRCg1DU19MRUFWRV9ST09NEAcS",
-            "EQoNU0NfTEVBVkVfUk9PTRAIEhEKDUNTX1JFQURZX1JPT00QCRIRCg1TQ19S",
-            "RUFEWV9ST09NEAoSEAoMU0NfUElOR19QT05HEAsSEAoMQ1NfUElOR19QT05H",
-            "EAwSEQoNRFNDX1BJTkdfUE9ORxANEhEKDUNEU19QSU5HX1BPTkcQDhIfChtD",
-            "U19DT05ORUNUX0RFRElDQVRFRF9TRVJWRVIQDxIfChtTQ19DT05ORUNUX0RF",
-            "RElDQVRFRF9TRVJWRVIQEBIYChRDRFNfSU5GT1JNX1JPT01fSU5GTxAREhgK",
-            "FENEU19BTExPV19FTlRFUl9HQU1FEBISGAoURFNDX0FMTE9XX0VOVEVSX0dB",
-            "TUUQExIrCidEU0NfSU5GT1JNX05FV19GQUNFX0lOX0RFRElDQVRFRF9TRVJW",
-            "RVIQFBIlCiFDRFNfSU5GT1JNX0xFQVZFX0RFRElDQVRFRF9TRVJWRVIQFRIl",
-            "CiFEU0NfSU5GT1JNX0xFQVZFX0RFRElDQVRFRF9TRVJWRVIQFhISCg5EU0Nf",
-            "U1RBUlRfR0FNRRAXEgwKCENEU19NT1ZFEBgSDAoIRFNDX01PVkUQGRIXChNE",
-            "U0NfREFZX1RJTUVSX1NUQVJUEBoSFgoSRFNDX0RBWV9USU1FUl9TWU5DEBsS",
-            "FQoRRFNDX0RBWV9USU1FUl9FTkQQHBIZChVEU0NfTklHSFRfVElNRVJfU1RB",
-            "UlQQHRIYChREU0NfTklHSFRfVElNRVJfU1lOQxAeEhcKE0RTQ19OSUdIVF9U",
-            "SU1FUl9FTkQQHxIXChNEU0NfTkVXX0NIRVNUU19JTkZPECASFgoSQ0RTX1RS",
-            "WV9DSEVTVF9PUEVOECESGgoWRFNDX0NIRVNUX09QRU5fU1VDQ0VTUxAiEhkK",
-            "FUNEU19SRVFVRVNUX1RJTUVTVEFNUBAjEhoKFkRTQ19SRVNQT05TRV9USU1F",
-            "U1RBTVAQJBISCg5EU0NfR2F1Z2VfU3luYxAlEhkKFURTQ19ORVdfQ0xFQU5T",
-            "RVNfSU5GTxAmEiIKHkNEU19SRVFVRVNUX0NMRUFOU0VfUEVSTUlTU0lPThAn",
-            "Eh8KG0RTQ19HSVZFX0NMRUFOU0VfUEVSTUlTU0lPThAoEhQKEENEU19DTEVB",
-            "TlNFX1FVSVQQKRIUChBEU0NfQ0xFQU5TRV9RVUlUECoSFwoTQ0RTX0NMRUFO",
-            "U0VfU1VDQ0VTUxArEhcKE0RTQ19DTEVBTlNFX1NVQ0NFU1MQLBIfChtEU0Nf",
-            "Q0xFQU5TRV9DT09MVElNRV9GSU5JU0gQLRIYChRDRFNfSVRFTV9CVVlfUkVR",
-            "VUVTVBAuEhcKE0RTQ19JVEVNX0JVWV9SRVNVTFQQLxIUChBDRFNfT05fSE9M",
-            "RF9JVEVNEDASFAoQRFNDX09OX0hPTERfSVRFTRAxEhUKEUNEU19VU0VfREFT",
-            "SF9JVEVNEDISFQoRRFNDX1VTRV9EQVNIX0lURU0QMxIVChFEU0NfRU5EX0RB",
-            "U0hfSVRFTRA0EhkKFUNEU19VU0VfRklSRVdPUktfSVRFTRA1EhkKFURTQ19V",
-            "U0VfRklSRVdPUktfSVRFTRA2EhoKFkNEU19VU0VfSU5WSVNJQkxFX0lURU0Q",
-            "NxIaChZEU0NfVVNFX0lOVklTSUJMRV9JVEVNEDgSGwoXQ0RTX1VTRV9GTEFT",
-            "SExJR0hUX0lURU0QORIbChdEU0NfVVNFX0ZMQVNITElHSFRfSVRFTRA6EhsK",
-            "F0NEU19FTkRfRkxBU0hMSUdIVF9JVEVNEDsSGwoXRFNDX0VORF9GTEFTSExJ",
-            "R0hUX0lURU0QPBIeChpEU0NfT05fSElUX0ZMQVNITElHSFRfSVRFTRA9EhUK",
-            "EUNEU19VU0VfVFJBUF9JVEVNED4SFQoRRFNDX1VTRV9UUkFQX0lURU0QPxIY",
-            "ChREU0NfT05fSElUX1RSQVBfSVRFTRBAEhsKF0NEU19VU0VfSEVBUlRMRVNT",
-            "X1NLSUxMEEESGwoXRFNDX1VTRV9IRUFSVExFU1NfU0tJTEwQQhIaChZDRFNf",
-            "VVNFX0RFVEVDVE9SX1NLSUxMEEMSGgoWRFNDX1VTRV9ERVRFQ1RPUl9TS0lM",
-            "TBBEEhcKE0NEU19ERVRFQ1RFRF9QTEFZRVIQRRIXChNEU0NfREVURUNURURf",
-            "UExBWUVSEEYSEAoMRFNDX0VORF9HQU1FEFAqWwoOUmVhc29uUmVqZWN0ZWQS",
-            "EAoMUm9vbU5vdEV4aXN0EAASFAoQQ3VycmVudGx5UGxheWluZxABEg4KClJv",
-            "b21Jc0Z1bGwQAhIRCg1Xcm9uZ1Bhc3N3b3JkEAMqKQoKRGVhdGhDYXVzZRIM",
-            "CghUaW1lT3ZlchAAEg0KCUdhdWdlT3ZlchABQhuqAhhHb29nbGUuUHJvdG9i",
-            "dWYuUHJvdG9jb2xiBnByb3RvMw=="));
+            "KAkiIAoNQ1NfR2V0U2V0dGluZxIPCgdzdGVhbUlkGAEgASgEIrMBCg1TQ19H",
+            "ZXRTZXR0aW5nEhYKDmlzU2V0dGluZ0V4aXN0GAEgASgIEg8KB3N0ZWFtSWQY",
+            "AiABKAQSEgoKaW5zdGFuY2VJZBgDIAEoBRIYChBtb3VzZVNlbnNpdGl2aXR5",
+            "GAQgASgCEhQKDGlzRnVsbFNjcmVlbhgFIAEoCBIWCg5kaXNwbGF5UXVhbGl0",
+            "eRgGIAEoBRINCgV3aWR0aBgHIAEoBRIOCgZoZWlnaHQYCCABKAUimwEKDUNT",
+            "X1NldFNldHRpbmcSDwoHc3RlYW1JZBgBIAEoBBISCgppbnN0YW5jZUlkGAIg",
+            "ASgFEhgKEG1vdXNlU2Vuc2l0aXZpdHkYAyABKAISFAoMaXNGdWxsU2NyZWVu",
+            "GAQgASgIEhYKDmRpc3BsYXlRdWFsaXR5GAUgASgFEg0KBXdpZHRoGAYgASgF",
+            "Eg4KBmhlaWdodBgHIAEoBSrcDgoFTXNnSWQSEAoMQ1NfUk9PTV9MSVNUEAAS",
+            "EAoMU0NfUk9PTV9MSVNUEAESEAoMQ1NfTUFLRV9ST09NEAISEAoMU0NfTUFL",
+            "RV9ST09NEAMSEQoNQ1NfRU5URVJfUk9PTRAEEhcKE1NDX0FMTE9XX0VOVEVS",
+            "X1JPT00QBRIeChpTQ19JTkZPUk1fTkVXX0ZBQ0VfSU5fUk9PTRAGEhEKDUNT",
+            "X0xFQVZFX1JPT00QBxIRCg1TQ19MRUFWRV9ST09NEAgSEQoNQ1NfUkVBRFlf",
+            "Uk9PTRAJEhEKDVNDX1JFQURZX1JPT00QChIQCgxTQ19QSU5HX1BPTkcQCxIQ",
+            "CgxDU19QSU5HX1BPTkcQDBIRCg1EU0NfUElOR19QT05HEA0SEQoNQ0RTX1BJ",
+            "TkdfUE9ORxAOEh8KG0NTX0NPTk5FQ1RfREVESUNBVEVEX1NFUlZFUhAPEh8K",
+            "G1NDX0NPTk5FQ1RfREVESUNBVEVEX1NFUlZFUhAQEhgKFENEU19JTkZPUk1f",
+            "Uk9PTV9JTkZPEBESGAoUQ0RTX0FMTE9XX0VOVEVSX0dBTUUQEhIYChREU0Nf",
+            "QUxMT1dfRU5URVJfR0FNRRATEisKJ0RTQ19JTkZPUk1fTkVXX0ZBQ0VfSU5f",
+            "REVESUNBVEVEX1NFUlZFUhAUEiUKIUNEU19JTkZPUk1fTEVBVkVfREVESUNB",
+            "VEVEX1NFUlZFUhAVEiUKIURTQ19JTkZPUk1fTEVBVkVfREVESUNBVEVEX1NF",
+            "UlZFUhAWEhIKDkRTQ19TVEFSVF9HQU1FEBcSDAoIQ0RTX01PVkUQGBIMCghE",
+            "U0NfTU9WRRAZEhcKE0RTQ19EQVlfVElNRVJfU1RBUlQQGhIWChJEU0NfREFZ",
+            "X1RJTUVSX1NZTkMQGxIVChFEU0NfREFZX1RJTUVSX0VORBAcEhkKFURTQ19O",
+            "SUdIVF9USU1FUl9TVEFSVBAdEhgKFERTQ19OSUdIVF9USU1FUl9TWU5DEB4S",
+            "FwoTRFNDX05JR0hUX1RJTUVSX0VORBAfEhcKE0RTQ19ORVdfQ0hFU1RTX0lO",
+            "Rk8QIBIWChJDRFNfVFJZX0NIRVNUX09QRU4QIRIaChZEU0NfQ0hFU1RfT1BF",
+            "Tl9TVUNDRVNTECISGQoVQ0RTX1JFUVVFU1RfVElNRVNUQU1QECMSGgoWRFND",
+            "X1JFU1BPTlNFX1RJTUVTVEFNUBAkEhIKDkRTQ19HYXVnZV9TeW5jECUSGQoV",
+            "RFNDX05FV19DTEVBTlNFU19JTkZPECYSIgoeQ0RTX1JFUVVFU1RfQ0xFQU5T",
+            "RV9QRVJNSVNTSU9OECcSHwobRFNDX0dJVkVfQ0xFQU5TRV9QRVJNSVNTSU9O",
+            "ECgSFAoQQ0RTX0NMRUFOU0VfUVVJVBApEhQKEERTQ19DTEVBTlNFX1FVSVQQ",
+            "KhIXChNDRFNfQ0xFQU5TRV9TVUNDRVNTECsSFwoTRFNDX0NMRUFOU0VfU1VD",
+            "Q0VTUxAsEh8KG0RTQ19DTEVBTlNFX0NPT0xUSU1FX0ZJTklTSBAtEhgKFENE",
+            "U19JVEVNX0JVWV9SRVFVRVNUEC4SFwoTRFNDX0lURU1fQlVZX1JFU1VMVBAv",
+            "EhQKEENEU19PTl9IT0xEX0lURU0QMBIUChBEU0NfT05fSE9MRF9JVEVNEDES",
+            "FQoRQ0RTX1VTRV9EQVNIX0lURU0QMhIVChFEU0NfVVNFX0RBU0hfSVRFTRAz",
+            "EhUKEURTQ19FTkRfREFTSF9JVEVNEDQSGQoVQ0RTX1VTRV9GSVJFV09SS19J",
+            "VEVNEDUSGQoVRFNDX1VTRV9GSVJFV09SS19JVEVNEDYSGgoWQ0RTX1VTRV9J",
+            "TlZJU0lCTEVfSVRFTRA3EhoKFkRTQ19VU0VfSU5WSVNJQkxFX0lURU0QOBIb",
+            "ChdDRFNfVVNFX0ZMQVNITElHSFRfSVRFTRA5EhsKF0RTQ19VU0VfRkxBU0hM",
+            "SUdIVF9JVEVNEDoSGwoXQ0RTX0VORF9GTEFTSExJR0hUX0lURU0QOxIbChdE",
+            "U0NfRU5EX0ZMQVNITElHSFRfSVRFTRA8Eh4KGkRTQ19PTl9ISVRfRkxBU0hM",
+            "SUdIVF9JVEVNED0SFQoRQ0RTX1VTRV9UUkFQX0lURU0QPhIVChFEU0NfVVNF",
+            "X1RSQVBfSVRFTRA/EhgKFERTQ19PTl9ISVRfVFJBUF9JVEVNEEASGwoXQ0RT",
+            "X1VTRV9IRUFSVExFU1NfU0tJTEwQQRIbChdEU0NfVVNFX0hFQVJUTEVTU19T",
+            "S0lMTBBCEhoKFkNEU19VU0VfREVURUNUT1JfU0tJTEwQQxIaChZEU0NfVVNF",
+            "X0RFVEVDVE9SX1NLSUxMEEQSFwoTQ0RTX0RFVEVDVEVEX1BMQVlFUhBFEhcK",
+            "E0RTQ19ERVRFQ1RFRF9QTEFZRVIQRhIQCgxEU0NfRU5EX0dBTUUQUBITCg5D",
+            "U19HRVRfU0VUVElORxDIARITCg5TQ19HRVRfU0VUVElORxDJARITCg5DU19T",
+            "RVRfU0VUVElORxDKASpbCg5SZWFzb25SZWplY3RlZBIQCgxSb29tTm90RXhp",
+            "c3QQABIUChBDdXJyZW50bHlQbGF5aW5nEAESDgoKUm9vbUlzRnVsbBACEhEK",
+            "DVdyb25nUGFzc3dvcmQQAyopCgpEZWF0aENhdXNlEgwKCFRpbWVPdmVyEAAS",
+            "DQoJR2F1Z2VPdmVyEAFCG6oCGEdvb2dsZS5Qcm90b2J1Zi5Qcm90b2NvbGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.MsgId), typeof(global::Google.Protobuf.Protocol.ReasonRejected), typeof(global::Google.Protobuf.Protocol.DeathCause), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -303,7 +313,10 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_UseDetectorSkill), global::Google.Protobuf.Protocol.DSC_UseDetectorSkill.Parser, new[]{ "PlayerId", "KillerId", "DetectedPlayerIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CDS_DetectedPlayer), global::Google.Protobuf.Protocol.CDS_DetectedPlayer.Parser, new[]{ "MyDediplayerId", "DetectedPlayerId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_DetectedPlayer), global::Google.Protobuf.Protocol.DSC_DetectedPlayer.Parser, new[]{ "KillerId", "DetectedPlayerId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_EndGame), global::Google.Protobuf.Protocol.DSC_EndGame.Parser, new[]{ "WinnerPlayerId", "WinnerName" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.DSC_EndGame), global::Google.Protobuf.Protocol.DSC_EndGame.Parser, new[]{ "WinnerPlayerId", "WinnerName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CS_GetSetting), global::Google.Protobuf.Protocol.CS_GetSetting.Parser, new[]{ "SteamId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.SC_GetSetting), global::Google.Protobuf.Protocol.SC_GetSetting.Parser, new[]{ "IsSettingExist", "SteamId", "InstanceId", "MouseSensitivity", "IsFullScreen", "DisplayQuality", "Width", "Height" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.CS_SetSetting), global::Google.Protobuf.Protocol.CS_SetSetting.Parser, new[]{ "SteamId", "InstanceId", "MouseSensitivity", "IsFullScreen", "DisplayQuality", "Width", "Height" }, null, null, null, null)
           }));
     }
     #endregion
@@ -554,6 +567,18 @@ namespace Google.Protobuf.Protocol {
     ///게임 종료를 클라들에게 알림
     /// </summary>
     [pbr::OriginalName("DSC_END_GAME")] DscEndGame = 80,
+    /// <summary>
+    ///룸서버한테 본인 steamId를 보내면서 해당하는 세팅값이 있으면 보내달라고 요청
+    /// </summary>
+    [pbr::OriginalName("CS_GET_SETTING")] CsGetSetting = 200,
+    /// <summary>
+    ///룸서버는 steamId에 해당하는 세팅값이 있으면 클라에게 보내줌
+    /// </summary>
+    [pbr::OriginalName("SC_GET_SETTING")] ScGetSetting = 201,
+    /// <summary>
+    ///클라가 새로운 세팅값을 룸서버에게 보냄
+    /// </summary>
+    [pbr::OriginalName("CS_SET_SETTING")] CsSetSetting = 202,
   }
 
   public enum ReasonRejected {
@@ -14069,6 +14094,763 @@ namespace Google.Protobuf.Protocol {
           }
           case 18: {
             WinnerName = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CS_GetSetting : pb::IMessage<CS_GetSetting> {
+    private static readonly pb::MessageParser<CS_GetSetting> _parser = new pb::MessageParser<CS_GetSetting>(() => new CS_GetSetting());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CS_GetSetting> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[80]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_GetSetting() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_GetSetting(CS_GetSetting other) : this() {
+      steamId_ = other.steamId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_GetSetting Clone() {
+      return new CS_GetSetting(this);
+    }
+
+    /// <summary>Field number for the "steamId" field.</summary>
+    public const int SteamIdFieldNumber = 1;
+    private ulong steamId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong SteamId {
+      get { return steamId_; }
+      set {
+        steamId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CS_GetSetting);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CS_GetSetting other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SteamId != other.SteamId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SteamId != 0UL) hash ^= SteamId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (SteamId != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(SteamId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (SteamId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SteamId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CS_GetSetting other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SteamId != 0UL) {
+        SteamId = other.SteamId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            SteamId = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SC_GetSetting : pb::IMessage<SC_GetSetting> {
+    private static readonly pb::MessageParser<SC_GetSetting> _parser = new pb::MessageParser<SC_GetSetting>(() => new SC_GetSetting());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SC_GetSetting> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[81]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SC_GetSetting() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SC_GetSetting(SC_GetSetting other) : this() {
+      isSettingExist_ = other.isSettingExist_;
+      steamId_ = other.steamId_;
+      instanceId_ = other.instanceId_;
+      mouseSensitivity_ = other.mouseSensitivity_;
+      isFullScreen_ = other.isFullScreen_;
+      displayQuality_ = other.displayQuality_;
+      width_ = other.width_;
+      height_ = other.height_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SC_GetSetting Clone() {
+      return new SC_GetSetting(this);
+    }
+
+    /// <summary>Field number for the "isSettingExist" field.</summary>
+    public const int IsSettingExistFieldNumber = 1;
+    private bool isSettingExist_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsSettingExist {
+      get { return isSettingExist_; }
+      set {
+        isSettingExist_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "steamId" field.</summary>
+    public const int SteamIdFieldNumber = 2;
+    private ulong steamId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong SteamId {
+      get { return steamId_; }
+      set {
+        steamId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "instanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 3;
+    private int instanceId_;
+    /// <summary>
+    ///언어 정보
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mouseSensitivity" field.</summary>
+    public const int MouseSensitivityFieldNumber = 4;
+    private float mouseSensitivity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float MouseSensitivity {
+      get { return mouseSensitivity_; }
+      set {
+        mouseSensitivity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isFullScreen" field.</summary>
+    public const int IsFullScreenFieldNumber = 5;
+    private bool isFullScreen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsFullScreen {
+      get { return isFullScreen_; }
+      set {
+        isFullScreen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "displayQuality" field.</summary>
+    public const int DisplayQualityFieldNumber = 6;
+    private int displayQuality_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DisplayQuality {
+      get { return displayQuality_; }
+      set {
+        displayQuality_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "width" field.</summary>
+    public const int WidthFieldNumber = 7;
+    private int width_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Width {
+      get { return width_; }
+      set {
+        width_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "height" field.</summary>
+    public const int HeightFieldNumber = 8;
+    private int height_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Height {
+      get { return height_; }
+      set {
+        height_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SC_GetSetting);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SC_GetSetting other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsSettingExist != other.IsSettingExist) return false;
+      if (SteamId != other.SteamId) return false;
+      if (InstanceId != other.InstanceId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MouseSensitivity, other.MouseSensitivity)) return false;
+      if (IsFullScreen != other.IsFullScreen) return false;
+      if (DisplayQuality != other.DisplayQuality) return false;
+      if (Width != other.Width) return false;
+      if (Height != other.Height) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsSettingExist != false) hash ^= IsSettingExist.GetHashCode();
+      if (SteamId != 0UL) hash ^= SteamId.GetHashCode();
+      if (InstanceId != 0) hash ^= InstanceId.GetHashCode();
+      if (MouseSensitivity != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MouseSensitivity);
+      if (IsFullScreen != false) hash ^= IsFullScreen.GetHashCode();
+      if (DisplayQuality != 0) hash ^= DisplayQuality.GetHashCode();
+      if (Width != 0) hash ^= Width.GetHashCode();
+      if (Height != 0) hash ^= Height.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (IsSettingExist != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsSettingExist);
+      }
+      if (SteamId != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(SteamId);
+      }
+      if (InstanceId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(InstanceId);
+      }
+      if (MouseSensitivity != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(MouseSensitivity);
+      }
+      if (IsFullScreen != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsFullScreen);
+      }
+      if (DisplayQuality != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(DisplayQuality);
+      }
+      if (Width != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Width);
+      }
+      if (Height != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Height);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsSettingExist != false) {
+        size += 1 + 1;
+      }
+      if (SteamId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SteamId);
+      }
+      if (InstanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(InstanceId);
+      }
+      if (MouseSensitivity != 0F) {
+        size += 1 + 4;
+      }
+      if (IsFullScreen != false) {
+        size += 1 + 1;
+      }
+      if (DisplayQuality != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DisplayQuality);
+      }
+      if (Width != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Width);
+      }
+      if (Height != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SC_GetSetting other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsSettingExist != false) {
+        IsSettingExist = other.IsSettingExist;
+      }
+      if (other.SteamId != 0UL) {
+        SteamId = other.SteamId;
+      }
+      if (other.InstanceId != 0) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.MouseSensitivity != 0F) {
+        MouseSensitivity = other.MouseSensitivity;
+      }
+      if (other.IsFullScreen != false) {
+        IsFullScreen = other.IsFullScreen;
+      }
+      if (other.DisplayQuality != 0) {
+        DisplayQuality = other.DisplayQuality;
+      }
+      if (other.Width != 0) {
+        Width = other.Width;
+      }
+      if (other.Height != 0) {
+        Height = other.Height;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            IsSettingExist = input.ReadBool();
+            break;
+          }
+          case 16: {
+            SteamId = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            InstanceId = input.ReadInt32();
+            break;
+          }
+          case 37: {
+            MouseSensitivity = input.ReadFloat();
+            break;
+          }
+          case 40: {
+            IsFullScreen = input.ReadBool();
+            break;
+          }
+          case 48: {
+            DisplayQuality = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            Width = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Height = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CS_SetSetting : pb::IMessage<CS_SetSetting> {
+    private static readonly pb::MessageParser<CS_SetSetting> _parser = new pb::MessageParser<CS_SetSetting>(() => new CS_SetSetting());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CS_SetSetting> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Protocol.ProtocolReflection.Descriptor.MessageTypes[82]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_SetSetting() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_SetSetting(CS_SetSetting other) : this() {
+      steamId_ = other.steamId_;
+      instanceId_ = other.instanceId_;
+      mouseSensitivity_ = other.mouseSensitivity_;
+      isFullScreen_ = other.isFullScreen_;
+      displayQuality_ = other.displayQuality_;
+      width_ = other.width_;
+      height_ = other.height_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_SetSetting Clone() {
+      return new CS_SetSetting(this);
+    }
+
+    /// <summary>Field number for the "steamId" field.</summary>
+    public const int SteamIdFieldNumber = 1;
+    private ulong steamId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong SteamId {
+      get { return steamId_; }
+      set {
+        steamId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "instanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 2;
+    private int instanceId_;
+    /// <summary>
+    ///언어 정보
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mouseSensitivity" field.</summary>
+    public const int MouseSensitivityFieldNumber = 3;
+    private float mouseSensitivity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float MouseSensitivity {
+      get { return mouseSensitivity_; }
+      set {
+        mouseSensitivity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isFullScreen" field.</summary>
+    public const int IsFullScreenFieldNumber = 4;
+    private bool isFullScreen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsFullScreen {
+      get { return isFullScreen_; }
+      set {
+        isFullScreen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "displayQuality" field.</summary>
+    public const int DisplayQualityFieldNumber = 5;
+    private int displayQuality_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DisplayQuality {
+      get { return displayQuality_; }
+      set {
+        displayQuality_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "width" field.</summary>
+    public const int WidthFieldNumber = 6;
+    private int width_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Width {
+      get { return width_; }
+      set {
+        width_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "height" field.</summary>
+    public const int HeightFieldNumber = 7;
+    private int height_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Height {
+      get { return height_; }
+      set {
+        height_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CS_SetSetting);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CS_SetSetting other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SteamId != other.SteamId) return false;
+      if (InstanceId != other.InstanceId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MouseSensitivity, other.MouseSensitivity)) return false;
+      if (IsFullScreen != other.IsFullScreen) return false;
+      if (DisplayQuality != other.DisplayQuality) return false;
+      if (Width != other.Width) return false;
+      if (Height != other.Height) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SteamId != 0UL) hash ^= SteamId.GetHashCode();
+      if (InstanceId != 0) hash ^= InstanceId.GetHashCode();
+      if (MouseSensitivity != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MouseSensitivity);
+      if (IsFullScreen != false) hash ^= IsFullScreen.GetHashCode();
+      if (DisplayQuality != 0) hash ^= DisplayQuality.GetHashCode();
+      if (Width != 0) hash ^= Width.GetHashCode();
+      if (Height != 0) hash ^= Height.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (SteamId != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(SteamId);
+      }
+      if (InstanceId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(InstanceId);
+      }
+      if (MouseSensitivity != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(MouseSensitivity);
+      }
+      if (IsFullScreen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsFullScreen);
+      }
+      if (DisplayQuality != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(DisplayQuality);
+      }
+      if (Width != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Width);
+      }
+      if (Height != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Height);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (SteamId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SteamId);
+      }
+      if (InstanceId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(InstanceId);
+      }
+      if (MouseSensitivity != 0F) {
+        size += 1 + 4;
+      }
+      if (IsFullScreen != false) {
+        size += 1 + 1;
+      }
+      if (DisplayQuality != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DisplayQuality);
+      }
+      if (Width != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Width);
+      }
+      if (Height != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CS_SetSetting other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SteamId != 0UL) {
+        SteamId = other.SteamId;
+      }
+      if (other.InstanceId != 0) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.MouseSensitivity != 0F) {
+        MouseSensitivity = other.MouseSensitivity;
+      }
+      if (other.IsFullScreen != false) {
+        IsFullScreen = other.IsFullScreen;
+      }
+      if (other.DisplayQuality != 0) {
+        DisplayQuality = other.DisplayQuality;
+      }
+      if (other.Width != 0) {
+        Width = other.Width;
+      }
+      if (other.Height != 0) {
+        Height = other.Height;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            SteamId = input.ReadUInt64();
+            break;
+          }
+          case 16: {
+            InstanceId = input.ReadInt32();
+            break;
+          }
+          case 29: {
+            MouseSensitivity = input.ReadFloat();
+            break;
+          }
+          case 32: {
+            IsFullScreen = input.ReadBool();
+            break;
+          }
+          case 40: {
+            DisplayQuality = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Width = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            Height = input.ReadInt32();
             break;
           }
         }
